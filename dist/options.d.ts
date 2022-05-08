@@ -1,5 +1,5 @@
-import { CSS } from "./options/csso";
-import { HTML } from "./options/html-minifier";
+import CSS from "./options/csso";
+import HTML from "./options/html-minifier";
 export default interface Options {
     /**
      * Astro build path.
@@ -7,11 +7,11 @@ export default interface Options {
      */
     path?: string;
     /**
-     * csso options.
+     * [csso] options.
      */
-    css?: CSS;
+    css?: CSS | false;
     /**
-     * html-minifier options.
+     * [html-minifier-terser] options.
      */
-    html?: HTML;
+    html?: HTML | false;
 }

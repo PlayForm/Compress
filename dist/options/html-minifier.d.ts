@@ -1,4 +1,4 @@
-export interface HTML {
+export default interface HTML {
     /**
      * Treat attributes in case sensitive manner (useful for custom HTML tags).
      * Default: false

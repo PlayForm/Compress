@@ -6,7 +6,7 @@ export interface afterCompressOptions {
     compressResult?: String;
     options?: {};
 }
-export interface CSS {
+export default interface CSS {
     /**
      * Generate a source map when true.
      * Default: false

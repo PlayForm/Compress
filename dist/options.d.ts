@@ -1,6 +1,6 @@
-import { CSS } from "./csso";
-import { HTML } from "./html-minifier";
-export interface Options {
+import { CSS } from "./options/csso";
+import { HTML } from "./options/html-minifier";
+export default interface Options {
     /**
      * Astro build path.
      * Default: "./dist/"
@@ -15,4 +15,3 @@ export interface Options {
      */
     html?: HTML;
 }
-export declare const defaultOptions: Options;

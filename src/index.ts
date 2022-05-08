@@ -77,19 +77,23 @@ export default function createPlugin(
 		hooks: {
 			"astro:build:done": async ({ pages }) => {
 				const files: Files = {
-					css: FastGlob.sync(`${options.path}**/*.css`),
-					html: pages.map((page) => {
-						const pathname = page.pathname.endsWith("/")
-							? page.pathname
-							: `${page.pathname}/`;
+					css: !options.css
+						? []
+						: FastGlob.sync(`${options.path}**/*.css`),
+					html: !options.html
+						? []
+						: pages.map((page) => {
+								const pathname = page.pathname.endsWith("/")
+									? page.pathname
+									: `${page.pathname}/`;
 
-						const file =
-							pathname === "404/"
-								? "404.html"
-								: `${pathname}index.html`;
+								const file =
+									pathname === "404/"
+										? "404.html"
+										: `${pathname}index.html`;
 
-						return `${options.path}${file}`;
-					}),
+								return `${options.path}${file}`;
+						  }),
 				};
 
 				for (const type in files) {

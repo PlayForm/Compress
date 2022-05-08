@@ -62,8 +62,8 @@ function createPlugin(integrationOptions = {}) {
     hooks: {
       "astro:build:done": async ({ pages }) => {
         const files = {
-          css: FastGlob.sync(`${options.path}**/*.css`),
-          html: pages.map((page) => {
+          css: !options.css ? [] : FastGlob.sync(`${options.path}**/*.css`),
+          html: !options.html ? [] : pages.map((page) => {
             const pathname = page.pathname.endsWith("/") ? page.pathname : `${page.pathname}/`;
             const file = pathname === "404/" ? "404.html" : `${pathname}index.html`;
             return `${options.path}${file}`;

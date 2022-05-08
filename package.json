@@ -1,0 +1,47 @@
+{
+	"name": "astro-compress",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nhristov/astro-compress.git"
+	},
+	"homepage": "https://github.com/nhristov/astro-compress#readme",
+	"bugs": {
+		"url": "https://github.com/nhristov/astro-compress/issues"
+	},
+	"author": "Nikola Hristov <nikola@playform.cloud>",
+	"license": "SEE LICENSE IN LICENSE",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"keywords": [
+		"astro-component",
+		"astro",
+		"compression",
+		"css",
+		"html",
+		"img",
+		"performance"
+	],
+	"scripts": {
+		"build": "esbuild --format=esm --platform=node --target=node14 --sources-content=false --outdir=dist src/index.ts && tsc"
+	},
+	"dependencies": {
+		"csso": "5.0.3",
+		"fast-glob": "3.2.11",
+		"gifsicle": "7.0.0",
+		"html-minifier-terser": "6.1.0",
+		"marked": "4.0.15",
+		"pngquant-bin": "8.0.0",
+		"sharp": "0.30.4",
+		"svgo": "2.8.0",
+		"terser": "5.13.1"
+	},
+	"devDependencies": {
+		"@types/node": "17.0.31",
+		"astro": "1.0.0-beta.27",
+		"esbuild": "0.14.38",
+		"typescript": "4.6.4"
+	}
+}

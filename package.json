@@ -25,7 +25,7 @@
 		"performance"
 	],
 	"scripts": {
-		"build": "esbuild --format=esm --platform=node --target=node14 --sources-content=false --outdir=dist src/index.ts && tsc"
+		"build": "esbuild --format=esm --platform=node --target=node14 --sources-content=false --minify --outdir=dist src/index.ts && tsc"
 	},
 	"dependencies": {
 		"csso": "5.0.3",

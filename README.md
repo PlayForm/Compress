@@ -1,10 +1,11 @@
-# astro-compress 🗜️
+# [astro-compress] 🗜️
 
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
 [csso](https://npmjs.org/csso)
 [html-minifier-terser](https://npmjs.org/html-minifier-terser)
+[terser](https://npmjs.org/html-minifier-terser)
 
 ## Installation
 
@@ -44,18 +45,46 @@ Then, apply this integration to your `astro.config.*` file using the
 
 **astro.config.mjs**
 
-```js
+```ts
+import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
-export default {
+export default defineConfig({
 	// ...
 	integrations: [compress()],
-};
+});
 ```
 
 ## Getting started
 
-The utility should now automatically compress all your css and html files in the
+The utility should now automatically compress all your CSS and HTML files in the
 dist folder.
 
+You can override any of the default options from the configurations of:
+
+-   [csso](src/options/csso.ts)
+-   [html-minifier-terser](src/options/html-minifier-terser.ts)
+-   [terser](src/options/terser.ts)
+
+or disable them entirely:
+
+```ts
+import { defineConfig } from "astro/config";
+import compress from "astro-compress";
+
+export default defineConfig({
+	integrations: [
+		compress({
+			css: false,
+			html: false,
+			js: false,
+		}),
+	],
+});
+```
+
+[astro-compress]: https://npmjs.org/astro-compress
+[csso]: https://npmjs.org/csso
+[html-minifier-terser]: https://npmjs.org/html-minifier-terser
+[terser]: https://npmjs.org/html-minifier-terser
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/

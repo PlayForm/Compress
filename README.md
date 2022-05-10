@@ -45,7 +45,7 @@ Then, apply this integration to your `astro.config.*` file using the
 
 **astro.config.mjs**
 
-```ts
+```js
 import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
@@ -57,7 +57,7 @@ export default defineConfig({
 
 ## Getting started
 
-The utility should now automatically compress all your CSS and HTML files in the
+The utility should now automatically compress all your CSS, HTML and JavaScript files in the
 dist folder.
 
 You can override any of the default options from the configurations of:
@@ -68,7 +68,7 @@ You can override any of the default options from the configurations of:
 
 or disable them entirely:
 
-```ts
+```js
 import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
@@ -86,5 +86,5 @@ export default defineConfig({
 [astro-compress]: https://npmjs.org/astro-compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser
-[terser]: https://npmjs.org/html-minifier-terser
+[terser]: https://npmjs.org/terser
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/

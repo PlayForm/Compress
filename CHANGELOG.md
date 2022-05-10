@@ -1,3 +1,7 @@
+## 0.0.4
+
+-	Bug fix
+
 ## 0.0.3
 
 -	Updates README.md

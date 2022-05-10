@@ -48,7 +48,7 @@ const minify = async (
 				await fs.promises.writeFile(
 					file,
 					// @ts-ignore
-					terserMinify(file, options),
+					await terserMinify(file, options).code,
 					"utf-8"
 				);
 

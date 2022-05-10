@@ -12,15 +12,15 @@ export default interface Options {
 	/**
 	 * [csso] options.
 	 */
-	css?: CSS;
+	css?: CSS | false;
 
 	/**
 	 * [html-minifier-terser] options.
 	 */
-	html?: HTML;
+	html?: HTML | false;
 
 	/**
 	 * [terser] options.
 	 */
-	js?: JS;
+	js?: JS | false;
 }

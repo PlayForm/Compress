@@ -6,7 +6,7 @@ import Options from "./options";
 // @ts-ignore
 import * as cssoMinify from "csso";
 // @ts-ignore
-import htmlMinifierTerserMinify from "html-minifier-terser";
+import * as htmlMinifierTerserMinify from "html-minifier-terser";
 import { minify as terserMinify } from "terser";
 
 import CSS from "./options/csso";
@@ -35,23 +35,32 @@ const minify = async (
 
 			case "html-minifier-terser":
 				await fs.promises.readFile(file, "utf-8").then(async (data) => {
-					await fs.promises.writeFile(
-						file,
-						htmlMinifierTerserMinify.minify(data, options),
-						"utf-8"
-					);
+					await htmlMinifierTerserMinify
+						.minify(data, options)
+						.then(async (minified: string) => {
+							await fs.promises.writeFile(
+								file,
+								minified,
+								"utf-8"
+							);
+						});
 				});
 
 				break;
 
 			case "terser":
-				await fs.promises.writeFile(
-					file,
+				await fs.promises.readFile(file, "utf-8").then(async (data) => {
 					// @ts-ignore
-					await terserMinify(file, options).code,
-					"utf-8"
-				);
-
+					await terserMinify(data, options).then(
+						async (minified: any) => {
+							await fs.promises.writeFile(
+								file,
+								minified.code,
+								"utf-8"
+							);
+						}
+					);
+				});
 				break;
 
 			default:
@@ -136,11 +145,15 @@ export default function createPlugin(
 		hooks: {
 			"astro:build:done": async () => {
 				if (options.css) {
-					minify(`${options.path}**/*.css`, options.css, "csso");
+					await minify(
+						`${options.path}**/*.css`,
+						options.css,
+						"csso"
+					);
 				}
 
 				if (options.html) {
-					minify(
+					await minify(
 						`${options.path}**/*.html`,
 						options.html,
 						"html-minifier-terser"
@@ -148,7 +161,11 @@ export default function createPlugin(
 				}
 
 				if (options.js) {
-					minify(`${options.path}**/*.js`, options.js, "terser");
+					await minify(
+						`${options.path}**/*.js`,
+						options.js,
+						"terser"
+					);
 				}
 			},
 		},

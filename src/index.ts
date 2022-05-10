@@ -1,15 +1,64 @@
 import fs from "fs";
 import FastGlob from "fast-glob";
 import type { AstroIntegration } from "astro";
-// @ts-ignore
-import * as cssMinify from "csso";
-// @ts-ignore
-import * as htmlMinify from "html-minifier-terser";
 import Options from "./options";
 
-export interface Files {
-	[type: string]: string[];
-}
+// @ts-ignore
+import * as cssoMinify from "csso";
+// @ts-ignore
+import htmlMinifierTerserMinify from "html-minifier-terser";
+import { minify as terserMinify } from "terser";
+
+import CSS from "./options/csso";
+import HTML from "./options/html-minifier-terser";
+import JS from "./options/terser";
+
+const minify = async (
+	glob: string,
+	options: CSS | HTML | JS,
+	parser: "csso" | "html-minifier-terser" | "terser"
+) => {
+	const files = await FastGlob(glob);
+
+	for (const file of files) {
+		switch (parser) {
+			case "csso":
+				await fs.promises.readFile(file, "utf-8").then(async (data) => {
+					await fs.promises.writeFile(
+						file,
+						cssoMinify.minify(data, options).css,
+						"utf-8"
+					);
+				});
+
+				break;
+
+			case "html-minifier-terser":
+				await fs.promises.readFile(file, "utf-8").then(async (data) => {
+					await fs.promises.writeFile(
+						file,
+						htmlMinifierTerserMinify.minify(data, options),
+						"utf-8"
+					);
+				});
+
+				break;
+
+			case "terser":
+				await fs.promises.writeFile(
+					file,
+					// @ts-ignore
+					terserMinify(file, options),
+					"utf-8"
+				);
+
+				break;
+
+			default:
+				break;
+		}
+	}
+};
 
 export default function createPlugin(
 	integrationOptions: Options = {}
@@ -64,6 +113,16 @@ export default function createPlugin(
 			trimCustomFragments: false,
 			useShortDoctype: true,
 		},
+		js: {
+			ecma: 5,
+			enclose: false,
+			keep_classnames: false,
+			keep_fnames: false,
+			ie8: false,
+			module: false,
+			safari10: false,
+			toplevel: false,
+		},
 	};
 
 	const options = Object.assign(defaultOptions, integrationOptions);
@@ -75,69 +134,21 @@ export default function createPlugin(
 	return {
 		name: "astro-critters",
 		hooks: {
-			"astro:build:done": async ({ pages }) => {
-				const files: Files = {
-					css: !options.css
-						? []
-						: FastGlob.sync(`${options.path}**/*.css`),
-					html: !options.html
-						? []
-						: pages.map((page) => {
-								const pathname = page.pathname.endsWith("/")
-									? page.pathname
-									: `${page.pathname}/`;
+			"astro:build:done": async () => {
+				if (options.css) {
+					minify(`${options.path}**/*.css`, options.css, "csso");
+				}
 
-								const file =
-									pathname === "404/"
-										? "404.html"
-										: `${pathname}index.html`;
+				if (options.html) {
+					minify(
+						`${options.path}**/*.html`,
+						options.html,
+						"html-minifier-terser"
+					);
+				}
 
-								return `${options.path}${file}`;
-						  }),
-				};
-
-				for (const type in files) {
-					if (Object.prototype.hasOwnProperty.call(files, type)) {
-						for (const file of files[type]) {
-							const data = await fs.promises.readFile(
-								file,
-								"utf-8"
-							);
-
-							switch (type) {
-								// csso
-								case "css":
-									await fs.promises.writeFile(
-										file,
-										cssMinify.minify(data, options.css).css,
-										"utf-8"
-									);
-									break;
-
-								// gifsicle
-								// marked
-								// pngquant-bin
-								// sharp
-								// svgo
-								// terser
-
-								// html-minifier
-								case "html":
-									await fs.promises.writeFile(
-										file,
-										await htmlMinify.minify(
-											data,
-											options.html
-										),
-										"utf-8"
-									);
-									break;
-
-								default:
-									break;
-							}
-						}
-					}
+				if (options.js) {
+					minify(`${options.path}**/*.js`, options.js, "terser");
 				}
 			},
 		},

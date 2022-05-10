@@ -3,9 +3,7 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-[csso](https://npmjs.org/csso)
-[html-minifier-terser](https://npmjs.org/html-minifier-terser)
-[terser](https://npmjs.org/html-minifier-terser)
+[csso] [html-minifier-terser] [terser]
 
 ## Installation
 
@@ -57,8 +55,8 @@ export default defineConfig({
 
 ## Getting started
 
-The utility should now automatically compress all your CSS, HTML and JavaScript files in the
-dist folder.
+The utility should now automatically compress all your CSS, HTML and JavaScript
+files in the dist folder.
 
 You can override any of the default options from the configurations of:
 

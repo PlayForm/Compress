@@ -1,10 +1,14 @@
+## 0.0.5
+
+-   Bug fix
+
 ## 0.0.4
 
--	Bug fix
+-   Bug fix
 
 ## 0.0.3
 
--	Updates README.md
+-   Updates README.md
 -   Refactor
 
 ## 0.0.2

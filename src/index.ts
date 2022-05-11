@@ -141,7 +141,7 @@ export default function createPlugin(
 		: `${options.path}/`;
 
 	return {
-		name: "astro-critters",
+		name: "astro-compress",
 		hooks: {
 			"astro:build:done": async () => {
 				if (options.css) {

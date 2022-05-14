@@ -4,67 +4,25 @@ import type { AstroIntegration } from "astro";
 import Options from "./options";
 
 // @ts-ignore
-import * as cssoMinify from "csso";
+import * as csso from "csso";
 // @ts-ignore
-import * as htmlMinifierTerserMinify from "html-minifier-terser";
+import * as htmlMinifierTerser from "html-minifier-terser";
 import { minify as terserMinify } from "terser";
+// @ts-ignore
+import * as sharpMinify from "sharp";
 
-import CSS from "./options/csso";
-import HTML from "./options/html-minifier-terser";
-import JS from "./options/terser";
-
-const minify = async (
-	glob: string,
-	options: CSS | HTML | JS,
-	parser: "csso" | "html-minifier-terser" | "terser"
-) => {
+const parse = async (glob: string, write: (data: string) => any) => {
 	const files = await FastGlob(glob);
 
 	for (const file of files) {
-		switch (parser) {
-			case "csso":
-				await fs.promises.readFile(file, "utf-8").then(async (data) => {
-					await fs.promises.writeFile(
-						file,
-						cssoMinify.minify(data, options).css,
-						"utf-8"
-					);
-				});
-
-				break;
-
-			case "html-minifier-terser":
-				await fs.promises.readFile(file, "utf-8").then(async (data) => {
-					await htmlMinifierTerserMinify
-						.minify(data, options)
-						.then(async (minified: string) => {
-							await fs.promises.writeFile(
-								file,
-								minified,
-								"utf-8"
-							);
-						});
-				});
-
-				break;
-
-			case "terser":
-				await fs.promises.readFile(file, "utf-8").then(async (data) => {
-					// @ts-ignore
-					await terserMinify(data, options).then(
-						async (minified: any) => {
-							await fs.promises.writeFile(
-								file,
-								minified.code,
-								"utf-8"
-							);
-						}
-					);
-				});
-				break;
-
-			default:
-				break;
+		try {
+			await fs.promises.writeFile(
+				file,
+				await write(await fs.promises.readFile(file, "utf-8")),
+				"utf-8"
+			);
+		} catch (error) {
+			console.log("Error: Cannot minify file " + file + "!");
 		}
 	}
 };
@@ -145,26 +103,34 @@ export default function createPlugin(
 		hooks: {
 			"astro:build:done": async () => {
 				if (options.css) {
-					await minify(
+					await parse(
 						`${options.path}**/*.css`,
-						options.css,
-						"csso"
+						(data) => csso.minify(data, options.css).css
 					);
 				}
 
 				if (options.html) {
-					await minify(
+					await parse(
 						`${options.path}**/*.html`,
-						options.html,
-						"html-minifier-terser"
+						async (data) =>
+							await htmlMinifierTerser.minify(data, options.html)
 					);
 				}
 
 				if (options.js) {
-					await minify(
-						`${options.path}**/*.js`,
-						options.js,
-						"terser"
+					await parse(
+						`${options.path}**/*.{js,mjs,cjs}`,
+						async (data) =>
+							(
+								await terserMinify(data, options.js)
+							).code
+					);
+				}
+
+				if (options.img) {
+					await parse(
+						`${options.path}**/*.{png,jpeg,jpg,gif,ico}`,
+						async (data) => { }
 					);
 				}
 			},

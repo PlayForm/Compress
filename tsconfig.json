@@ -1,5 +1,7 @@
 {
-	"include": ["src"],
+	"include": [
+		"src"
+	],
 	"compilerOptions": {
 		"allowJs": true,
 		"baseUrl": ".",
@@ -8,7 +10,9 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
-		"lib": ["es2015"],
+		"lib": [
+			"es2015"
+		],
 		"target": "esnext",
 		"module": "esnext",
 		"moduleResolution": "node",
@@ -16,6 +20,8 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"outDir": "dist",
-		"types": ["node"]
+		"types": [
+			"node"
+		]
 	}
 }

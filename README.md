@@ -81,6 +81,22 @@ export default defineConfig({
 });
 ```
 
+If your path is different than dist be sure to update it accordingly:
+
+```js
+import { defineConfig } from "astro/config";
+import compress from "astro-compress";
+
+export default defineConfig({
+	outDir: "./build",
+	integrations: [
+		compress({
+			path: "./build",
+		}),
+	],
+});
+```
+
 [astro-compress]: https://npmjs.org/astro-compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser

@@ -29,4 +29,10 @@ export default interface Options {
 	 * [sharp] options.
 	 */
 	img?: IMG;
+
+	/**
+	 * Logger level.
+	 * Default: 2
+	 */
+	logger?: number;
 }

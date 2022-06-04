@@ -2,6 +2,7 @@ import fs from "fs";
 import FastGlob from "fast-glob";
 import type { AstroIntegration } from "astro";
 import Options from "./options";
+import IMG from "./options/sharp";
 
 // @ts-ignore
 import * as csso from "csso";
@@ -9,7 +10,19 @@ import * as csso from "csso";
 import * as htmlMinifierTerser from "html-minifier-terser";
 import { minify as terserMinify } from "terser";
 // @ts-ignore
-import * as sharpMinify from "sharp";
+import sharp from "sharp";
+
+function formatBytes(bytes: number, decimals = 2) {
+	if (bytes === 0) return "0 Bytes";
+
+	const k = 1024;
+	const dm = decimals < 0 ? 0 : decimals;
+	const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+	const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+	return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+}
 
 const parse = async (glob: string, write: (data: string) => any) => {
 	const files = await FastGlob(glob);
@@ -24,6 +37,106 @@ const parse = async (glob: string, write: (data: string) => any) => {
 		} catch (error) {
 			console.log("Error: Cannot minify file " + file + "!");
 		}
+	}
+};
+
+const sharpParse = async (glob: string, options: IMG, debug = 2) => {
+	const files = await FastGlob(glob);
+	let totalDifference = {
+		files: 0,
+		size: 0,
+	};
+
+	for (const file of files) {
+		try {
+			const fileType = file.split(".").pop();
+
+			if (typeof fileType !== "string") {
+				return;
+			}
+
+			const typeToOption: {
+				[key: string]: any;
+			} = {
+				"avci": "avif",
+				"avcs": "avif",
+				"avifs": "avif",
+				"heic": "heif",
+				"heics": "heif",
+				"heifs": "heif",
+				"jfif": "jpeg",
+				"jif": "jpeg",
+				"jpe": "jpeg",
+				"jpg": "jpeg",
+			};
+
+			const optionType =
+				typeof typeToOption[fileType] !== "undefined"
+					? typeToOption[fileType]
+					: typeof options[fileType] !== "undefined"
+					? fileType
+					: false;
+
+			const validOptionCalls = [
+				"avif",
+				"gif",
+				"heif",
+				"jpeg",
+				"png",
+				"raw",
+				"tiff",
+				"webp",
+			];
+
+			if (
+				validOptionCalls.includes(optionType) &&
+				options[optionType] !== false
+			) {
+				const fileSizeBefore = (await fs.promises.stat(file)).size;
+
+				const sharpFile = await sharp(file);
+				const sharpBuffer = await sharpFile[optionType](
+					options[optionType]
+				).toBuffer();
+
+				if (fileSizeBefore > Buffer.byteLength(sharpBuffer)) {
+					await fs.promises.writeFile(file, sharpBuffer, "utf-8");
+
+					const fileSizeAfter = (await fs.promises.stat(file)).size;
+
+					totalDifference.files++;
+					totalDifference.size += fileSizeBefore - fileSizeAfter;
+
+					if (debug > 1) {
+						console.info(
+							"\u001b[32mCompressed " +
+								file.replace(/^.*[\\\/]/, "") +
+								" for " +
+								formatBytes(fileSizeBefore - fileSizeAfter) +
+								" (" +
+								(
+									(fileSizeAfter / fileSizeBefore) *
+									100
+								).toFixed(2) +
+								"% compression ratio)" +
+								".\u001b[39m"
+						);
+					}
+				}
+			}
+		} catch (error) {
+			console.log("Error: Cannot compress file " + file + "!");
+		}
+	}
+
+	if (debug > 0 && totalDifference.files > 0) {
+		console.info(
+			"\u001b[32mSuccessfully compressed a total of " +
+				totalDifference.files +
+				" images for " +
+				formatBytes(totalDifference.size) +
+				".\u001b[39m"
+		);
 	}
 };
 
@@ -78,7 +191,7 @@ export default function createPlugin(
 			sortAttributes: true,
 			sortClassName: true,
 			trimCustomFragments: false,
-			useShortDoctype: true,
+			useShortDoctype: false,
 		},
 		js: {
 			ecma: 5,
@@ -90,47 +203,88 @@ export default function createPlugin(
 			safari10: false,
 			toplevel: false,
 		},
+		img: {
+			fit: {
+				width: 1920,
+				height: 1080,
+			},
+			avif: {
+				chromaSubsampling: "4:4:4",
+				effort: 9,
+			},
+			gif: {
+				effort: 10,
+			},
+			heif: {
+				chromaSubsampling: "4:4:4",
+			},
+			jpeg: {
+				chromaSubsampling: "4:4:4",
+				mozjpeg: true,
+				trellisQuantisation: true,
+				overshootDeringing: true,
+				optimiseScans: true,
+			},
+			png: {
+				compressionLevel: 9,
+				palette: true,
+			},
+			raw: {},
+			tiff: {
+				compression: "lzw",
+			},
+			webp: {
+				effort: 6,
+			},
+		},
+		logger: 2,
 	};
 
-	const options = Object.assign(defaultOptions, integrationOptions);
+	const _options = Object.assign(defaultOptions, integrationOptions);
 
-	options.path = options.path?.endsWith("/")
-		? options.path
-		: `${options.path}/`;
+	_options.path = _options.path?.endsWith("/")
+		? _options.path
+		: `${_options.path}/`;
 
 	return {
 		name: "astro-compress",
 		hooks: {
+			"astro:config:done": async (options) => {
+				_options.path = !_options.path
+					? options.config.outDir.toString()
+					: _options.path;
+			},
 			"astro:build:done": async () => {
-				if (options.css) {
+				if (_options.css) {
 					await parse(
-						`${options.path}**/*.css`,
-						(data) => csso.minify(data, options.css).css
+						`${_options.path}**/*.css`,
+						(data) => csso.minify(data, _options.css).css
 					);
 				}
 
-				if (options.html) {
+				if (_options.html) {
 					await parse(
-						`${options.path}**/*.html`,
+						`${_options.path}**/*.html`,
 						async (data) =>
-							await htmlMinifierTerser.minify(data, options.html)
+							await htmlMinifierTerser.minify(data, _options.html)
 					);
 				}
 
-				if (options.js) {
+				if (_options.js) {
 					await parse(
-						`${options.path}**/*.{js,mjs,cjs}`,
+						`${_options.path}**/*.{js,mjs,cjs}`,
 						async (data) =>
 							(
-								await terserMinify(data, options.js)
+								await terserMinify(data, _options.js)
 							).code
 					);
 				}
 
-				if (options.img) {
-					await parse(
-						`${options.path}**/*.{png,jpeg,jpg,gif,ico}`,
-						async (data) => { }
+				if (_options.img) {
+					await sharpParse(
+						`${_options.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
+						_options.img,
+						_options.logger
 					);
 				}
 			},

@@ -1,3 +1,7 @@
+## 0.0.7
+
+-   Introduces sharp image processing
+
 ## 0.0.6
 
 -   Bug fix

@@ -3,7 +3,7 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-[csso] [html-minifier-terser] [terser]
+[csso] [html-minifier-terser] [terser] [sharp]
 
 ## Installation
 
@@ -63,6 +63,7 @@ You can override any of the default options from the configurations of:
 -   [csso](src/options/csso.ts)
 -   [html-minifier-terser](src/options/html-minifier-terser.ts)
 -   [terser](src/options/terser.ts)
+-   [sharp](src/options/sharp.ts)
 
 or disable them entirely:
 
@@ -76,6 +77,7 @@ export default defineConfig({
 			css: false,
 			html: false,
 			js: false,
+			img: false,
 		}),
 	],
 });
@@ -101,4 +103,5 @@ export default defineConfig({
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser
 [terser]: https://npmjs.org/terser
+[sharp]: https://npmjs.org/sharp
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/

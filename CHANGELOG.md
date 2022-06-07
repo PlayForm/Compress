@@ -1,3 +1,8 @@
+## 0.0.9
+
+-   Refactor
+-   Introduces svgo svg processing
+
 ## 0.0.8
 
 -   Updates README.md

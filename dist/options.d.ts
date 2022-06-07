@@ -1,29 +1,35 @@
-import CSS from "./options/csso";
-import HTML from "./options/html-minifier-terser";
-import JS from "./options/terser";
-import IMG from "./options/sharp";
+import CSS from "./options/css";
+import HTML from "./options/html";
+import JS from "./options/js";
+import IMG from "./options/img";
+import SVG from "./options/svg";
 export default interface Options {
+    [key: string]: any;
     /**
      * Astro build path.
-     * Default: "./dist/"
+     * @default "./dist/"
      */
     path?: string;
     /**
      * [csso] options.
      */
-    css?: CSS;
+    css?: boolean | CSS;
     /**
      * [html-minifier-terser] options.
      */
-    html?: HTML;
+    html?: boolean | HTML;
     /**
      * [terser] options.
      */
-    js?: JS;
+    js?: boolean | JS;
     /**
      * [sharp] options.
      */
-    img?: IMG;
+    img?: boolean | IMG;
+    /**
+     * [svgo] options.
+     */
+    svg?: boolean | SVG;
     /**
      * Logger level.
      * Default: 2

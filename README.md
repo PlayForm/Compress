@@ -3,7 +3,7 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-[csso] [html-minifier-terser] [terser] [sharp]
+[csso] [html-minifier-terser] [terser] [sharp] [svgo]
 
 ## Installation
 
@@ -58,12 +58,36 @@ export default defineConfig({
 The utility should now automatically compress all your CSS, HTML and JavaScript
 files in the dist folder.
 
+The following image file types will also be compressed.
+
+-   avci
+-   avcs
+-   avif
+-   avifs
+-   gif
+-   heic
+-   heics
+-   heif
+-   heifs
+-   jfif
+-   jif
+-   jpe
+-   jpeg
+-   jpg
+-   png
+-   raw
+-   tiff
+-   webp
+
+SVG compression is supported, as well via [svgo].
+
 You can override any of the default options from the configurations of:
 
--   [csso](src/options/csso.ts)
--   [html-minifier-terser](src/options/html-minifier-terser.ts)
--   [terser](src/options/terser.ts)
--   [sharp](src/options/sharp.ts)
+-   [csso](src/options/css.ts)
+-   [html-minifier-terser](src/options/html.ts)
+-   [terser](src/options/js.ts)
+-   [sharp](src/options/img.ts)
+-   [svgo](src/options/svg.ts)
 
 or disable them entirely:
 
@@ -78,6 +102,7 @@ export default defineConfig({
 			html: false,
 			js: false,
 			img: false,
+			svg: false,
 		}),
 	],
 });
@@ -99,9 +124,25 @@ export default defineConfig({
 });
 ```
 
+Set logger to 0 if you do not want to see debug messages. Default is 2.
+
+```js
+import { defineConfig } from "astro/config";
+import compress from "astro-compress";
+
+export default defineConfig({
+	integrations: [
+		compress({
+			logger: 0,
+		}),
+	],
+});
+```
+
 [astro-compress]: https://npmjs.org/astro-compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser
 [terser]: https://npmjs.org/terser
 [sharp]: https://npmjs.org/sharp
+[svgo]: https://npmjs.org/svgo
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/

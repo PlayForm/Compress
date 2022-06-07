@@ -288,7 +288,6 @@ export default function createPlugin(
 		},
 		svg: {
 			multipass: true,
-			datauri: "base64",
 			js2svg: {
 				indent: 0,
 				pretty: false,

@@ -79,6 +79,10 @@ const pipeAll = async (settings: Options) => {
 		if (Object.prototype.hasOwnProperty.call(settings, fileType)) {
 			const setting = settings[fileType];
 
+			if (!setting) {
+				continue;
+			}
+
 			switch (fileType) {
 				case "css":
 					await parse(
@@ -151,7 +155,7 @@ const parse = async (
 			const writeBuffer = await write(await read(file));
 
 			if (!writeBuffer) {
-				return;
+				continue;
 			}
 
 			if (fileSizeBefore > Buffer.byteLength(writeBuffer)) {

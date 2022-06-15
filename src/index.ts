@@ -14,7 +14,14 @@ import sharpMinify from "sharp";
 // @ts-ignore
 import svgoMinify from "svgo";
 
-function formatBytes(bytes: number, decimals = 2) {
+/**
+ * Convert a number of bytes into a human readable format.
+ * @param {number} bytes - The number of bytes to format.
+ * @param [decimals=2] - The number of decimals to show.
+ * @returns the size of the file in bytes, kilobytes, megabytes, gigabytes, terabytes, petabytes,
+ * exabytes, zettabytes, or yottabytes.
+ */
+const formatBytes = async (bytes: number, decimals = 2) => {
 	if (bytes === 0) return "0 Bytes";
 
 	const k = 1024;
@@ -24,10 +31,17 @@ function formatBytes(bytes: number, decimals = 2) {
 	const i = Math.floor(Math.log(bytes) / Math.log(k));
 
 	return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
-}
+};
 
-const sharp = async (pipe: any, options: IMG = {}) => {
-	const fileType = pipe.options.input.file.split(".").pop();
+/**
+ * If the file type is supported by Sharp, then it will run the appropriate Sharp function with the
+ * options provided
+ * @param {any} sharpFile - The sharp object
+ * @param {IMG} options - IMG = {}
+ * @returns A function that takes two arguments, pipe and options.
+ */
+const sharp = async (sharpFile: any, options: IMG = {}) => {
+	const fileType = sharpFile.options.input.file.split(".").pop();
 
 	if (!fileType) {
 		return;
@@ -70,10 +84,15 @@ const sharp = async (pipe: any, options: IMG = {}) => {
 		validOptionCalls.includes(optionType) &&
 		options[optionType] !== false
 	) {
-		return await pipe[optionType](options[optionType]).toBuffer();
+		return await sharpFile[optionType](options[optionType]).toBuffer();
 	}
 };
 
+/**
+ * It loops through the settings object, and for each file type, it calls the parse function with the
+ * appropriate arguments
+ * @param {Options} settings - Options - The settings object that you pass to the function.
+ */
 const pipeAll = async (settings: Options) => {
 	for (const fileType in settings) {
 		if (Object.prototype.hasOwnProperty.call(settings, fileType)) {
@@ -136,6 +155,16 @@ const pipeAll = async (settings: Options) => {
 	}
 };
 
+/**
+ * It takes a glob, a debug level, a write function, and a read function, and then it compresses all
+ * the files that match the glob using the write function, and then it logs the compression rate of
+ * each file and the total compression rate if the debug level is greater than 0
+ * @param {string} glob - The glob pattern to search for files.
+ * @param [debug=2] - The debug level. 0 = no output, 1 = output only total difference, 2 = output
+ * every file difference.
+ * @param write - (data: string) => Promise<string> = async (data) => data,
+ * @param read - (file: string) => Promise<string> = async (file) => await fs.promises.readFile(file, "utf-8")
+ */
 const parse = async (
 	glob: string,
 	debug = 2,
@@ -171,7 +200,9 @@ const parse = async (
 						"\u001b[32mCompressed " +
 							file.replace(/^.*[\\\/]/, "") +
 							" for " +
-							formatBytes(fileSizeBefore - fileSizeAfter) +
+							(await formatBytes(
+								fileSizeBefore - fileSizeAfter
+							)) +
 							" (" +
 							((fileSizeAfter / fileSizeBefore) * 100).toFixed(
 								2
@@ -191,12 +222,17 @@ const parse = async (
 			"\u001b[32mSuccessfully compressed a total of " +
 				totalDifference.files +
 				" files for " +
-				formatBytes(totalDifference.size) +
+				(await formatBytes(totalDifference.size)) +
 				".\u001b[39m"
 		);
 	}
 };
 
+/**
+ * It takes in an object of options, and returns an object with a name and a hook
+ * @param {Options} integrationOptions - Options = {}
+ * @returns A function that returns an object.
+ */
 export default function createPlugin(
 	integrationOptions: Options = {}
 ): AstroIntegration {

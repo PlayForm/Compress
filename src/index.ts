@@ -34,11 +34,11 @@ const formatBytes = async (bytes: number, decimals = 2) => {
 };
 
 /**
- * If the file type is supported by Sharp, then it will run the appropriate Sharp function with the
- * options provided
- * @param {any} sharpFile - The sharp object
+ * It takes a sharp file and an options object, and returns a buffer of the file if the file type is
+ * valid and the options object has a valid option for the file type
+ * @param {any} sharpFile - The sharp file object
  * @param {IMG} options - IMG = {}
- * @returns A function that takes two arguments, pipe and options.
+ * @returns A function that takes two arguments, sharpFile and options.
  */
 const sharp = async (sharpFile: any, options: IMG = {}) => {
 	const fileType = sharpFile.options.input.file.split(".").pop();

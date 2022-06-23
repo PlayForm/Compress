@@ -89,24 +89,27 @@ const sharp = async (sharpFile: any, options: IMG = {}) => {
 };
 
 /**
- * It loops through the settings object, and for each file type, it calls the parse function with the
- * appropriate arguments
- * @param {Options} settings - Options - The settings object that you pass to the function.
+ * It loops through the settings object, and if the setting is truthy, it will run the appropriate
+ * function
+ * @param {Options} settings - Options - The settings object that you pass to the pipeAll function.
  */
 const pipeAll = async (settings: Options) => {
-	for (const fileType in settings) {
-		if (Object.prototype.hasOwnProperty.call(settings, fileType)) {
-			const setting = settings[fileType];
+	for (const files in settings) {
+		if (Object.prototype.hasOwnProperty.call(settings, files)) {
+			const setting = settings[files];
 
 			if (!setting) {
 				continue;
 			}
 
-			switch (fileType) {
+			const debug = settings.logger ? settings.logger : 0;
+
+			switch (files) {
 				case "css":
 					await parse(
 						`${settings.path}**/*.css`,
-						settings.logger,
+						debug,
+						files,
 						(data) => cssoMinify.minify(data, setting).css
 					);
 					break;
@@ -114,7 +117,8 @@ const pipeAll = async (settings: Options) => {
 				case "html":
 					await parse(
 						`${settings.path}**/*.html`,
-						settings.logger,
+						debug,
+						files,
 						async (data) =>
 							await htmlMinifierTerserMinify.minify(data, setting)
 					);
@@ -123,18 +127,17 @@ const pipeAll = async (settings: Options) => {
 				case "js":
 					await parse(
 						`${settings.path}**/*.{js,mjs,cjs}`,
-						settings.logger,
-						async (data) => {
-							const result = await terserMinify(data, setting);
-							return result.code ? result.code : data;
-						}
+						debug,
+						files,
+						async (data) => (await terserMinify(data, setting)).code
 					);
 					break;
 
 				case "img":
 					await parse(
 						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
-						settings.logger,
+						debug,
+						files,
 						async (sharpFile) => await sharp(sharpFile, setting),
 						async (file) => await sharpMinify(file)
 					);
@@ -143,7 +146,8 @@ const pipeAll = async (settings: Options) => {
 				case "svg":
 					await parse(
 						`${settings.path}**/*.svg`,
-						settings.logger,
+						debug,
+						files,
 						async (data) => svgoMinify.optimize(data, setting).data
 					);
 					break;
@@ -156,73 +160,91 @@ const pipeAll = async (settings: Options) => {
 };
 
 /**
- * It takes a glob, a debug level, a write function, and a read function, and then it compresses all
- * the files that match the glob using the write function, and then it logs the compression rate of
- * each file and the total compression rate if the debug level is greater than 0
+ * It takes a glob, a debug level, a type, a write function, and a read function, and then it
+ * compresses all the files that match the glob using the write function, and then it prints out how
+ * much it compressed the files by using the read function
  * @param {string} glob - The glob pattern to search for files.
- * @param [debug=2] - The debug level. 0 = no output, 1 = output only total difference, 2 = output
- * every file difference.
- * @param write - (data: string) => Promise<string> = async (data) => data,
- * @param read - (file: string) => Promise<string> = async (file) => await fs.promises.readFile(file, "utf-8")
+ * @param {number} debug - 0 = no output, 1 = output only when files are compressed, 2 = output for
+ * every file
+ * @param {string} type - The type of file you're compressing.
+ * @param write - (data: string) => Promise<string | undefined> = async (data) => data,
+ * @param read - (file: string) => Promise<string> = async (file) =>
  */
 const parse = async (
 	glob: string,
-	debug = 2,
-	write: (data: string) => Promise<string> = async (data) => data,
+	debug: number = 2,
+	type: string = "",
+	write: (data: string) => Promise<string | undefined> = async (data) => data,
 	read: (file: string) => Promise<string> = async (file) =>
 		await fs.promises.readFile(file, "utf-8")
 ) => {
-	const files = await FastGlob(glob);
-	let totalDifference = {
-		files: 0,
-		size: 0,
+	let pipe = {
+		files: await FastGlob(glob),
+		sizebefore: 0,
 	};
 
-	for (const file of files) {
-		try {
-			const fileSizeBefore = (await fs.promises.stat(file)).size;
-			const writeBuffer = await write(await read(file));
+	let savings = {
+		files: 0,
+		total: 0,
+	};
 
-			if (!writeBuffer) {
-				continue;
-			}
+	while (pipe.files.length > 0) {
+		const file = pipe.files.shift();
 
-			if (fileSizeBefore > Buffer.byteLength(writeBuffer)) {
-				await fs.promises.writeFile(file, writeBuffer, "utf-8");
+		if (file) {
+			try {
+				const fileSizeBefore = (await fs.promises.stat(file)).size;
+				pipe.sizebefore += fileSizeBefore;
 
-				const fileSizeAfter = (await fs.promises.stat(file)).size;
+				const writeBuffer = await write(await read(file));
 
-				totalDifference.files++;
-				totalDifference.size += fileSizeBefore - fileSizeAfter;
-
-				if (debug > 1) {
-					console.info(
-						"\u001b[32mCompressed " +
-							file.replace(/^.*[\\\/]/, "") +
-							" for " +
-							(await formatBytes(
-								fileSizeBefore - fileSizeAfter
-							)) +
-							" (" +
-							((fileSizeAfter / fileSizeBefore) * 100).toFixed(
-								2
-							) +
-							"% compression rate)" +
-							".\u001b[39m"
-					);
+				if (!writeBuffer) {
+					continue;
 				}
+
+				if (fileSizeBefore > Buffer.byteLength(writeBuffer)) {
+					await fs.promises.writeFile(file, writeBuffer, "utf-8");
+
+					const fileSizeAfter = (await fs.promises.stat(file)).size;
+
+					savings.files++;
+					savings.total += fileSizeBefore - fileSizeAfter;
+
+					if (debug > 1) {
+						console.info(
+							"\u001b[32mCompressed " +
+								file.replace(/^.*[\\\/]/, "") +
+								" for " +
+								(await formatBytes(
+									fileSizeBefore - fileSizeAfter
+								)) +
+								" (" +
+								(
+									((fileSizeBefore - fileSizeAfter) /
+										fileSizeBefore) *
+									100
+								).toFixed(2) +
+								"% reduction)" +
+								".\u001b[39m"
+						);
+					}
+				}
+			} catch (error) {
+				console.log("Error: Cannot compress file " + file + "!");
 			}
-		} catch (error) {
-			console.log("Error: Cannot compress file " + file + "!");
 		}
 	}
 
-	if (debug > 0 && totalDifference.files > 0) {
+	if (debug > 0) {
 		console.info(
 			"\u001b[32mSuccessfully compressed a total of " +
-				totalDifference.files +
-				" files for " +
-				(await formatBytes(totalDifference.size)) +
+				savings.files +
+				" " +
+				type.toUpperCase() +
+				" " +
+				(savings.files === 1 ? "file" : "files") +
+				" for " +
+				(await formatBytes(savings.total)) +
 				".\u001b[39m"
 		);
 	}
@@ -338,10 +360,6 @@ export default function createPlugin(
 	};
 
 	const _options = Object.assign(defaultOptions, integrationOptions);
-
-	_options.path = _options.path?.endsWith("/")
-		? _options.path
-		: `${_options.path}/`;
 
 	return {
 		name: "astro-compress",

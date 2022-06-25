@@ -15,7 +15,8 @@ import sharpMinify from "sharp";
 import svgoMinify from "svgo";
 
 /**
- * Convert a number of bytes into a human readable format.
+ * It takes a number of bytes and returns a string with the number of bytes formatted in a human
+ * readable way
  * @param {number} bytes - The number of bytes to format.
  * @param [decimals=2] - The number of decimals to show.
  * @returns the size of the file in bytes, kilobytes, megabytes, gigabytes, terabytes, petabytes,
@@ -30,7 +31,7 @@ const formatBytes = async (bytes: number, decimals = 2) => {
 
 	const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-	return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+	return `${parseFloat((bytes / k ** i).toFixed(dm))} ${sizes[i]}`;
 };
 
 /**
@@ -89,11 +90,12 @@ const sharp = async (sharpFile: any, options: IMG = {}) => {
 };
 
 /**
- * It loops through the settings object, and if the setting is truthy, it will run the appropriate
- * function
- * @param {Options} settings - Options - The settings object that you pass to the pipeAll function.
+ * It takes a settings object, loops through each key, and then runs the appropriate function for each
+ * key
+ * @param {Options} settings - Options - The settings object.
+ * @param {number} [debug=2] - 0 = no output, 1 = output file names, 2 = output file names and sizes
  */
-const pipeAll = async (settings: Options) => {
+const pipeAll = async (settings: Options, debug: number = 2) => {
 	for (const files in settings) {
 		if (Object.prototype.hasOwnProperty.call(settings, files)) {
 			const setting = settings[files];
@@ -101,8 +103,6 @@ const pipeAll = async (settings: Options) => {
 			if (!setting) {
 				continue;
 			}
-
-			const debug = settings.logger ? settings.logger : 0;
 
 			switch (files) {
 				case "css":
@@ -370,7 +370,7 @@ export default function createPlugin(
 					: _options.path;
 			},
 			"astro:build:done": async () => {
-				await pipeAll(_options);
+				await pipeAll(_options, _options.logger);
 			},
 		},
 	};

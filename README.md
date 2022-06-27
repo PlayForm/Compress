@@ -1,6 +1,4 @@
 # [astro-compress] 🗜️
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnhristov%2Fastro-compress.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnhristov%2Fastro-compress?ref=badge_shield)
-
 
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
@@ -148,7 +146,3 @@ export default defineConfig({
 [sharp]: https://npmjs.org/sharp
 [svgo]: https://npmjs.org/svgo
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/
-
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnhristov%2Fastro-compress.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnhristov%2Fastro-compress?ref=badge_large)

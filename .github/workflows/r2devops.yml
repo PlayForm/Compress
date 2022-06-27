@@ -1,0 +1,40 @@
+# R2Devops.io pipeline generation - this aims to be included in your pipeline
+#
+# Inputs:
+#   - List of technologies detected in the project : javascript, json with comments, markdown, npm, text, typescript,
+
+name: R2Devops
+on:
+  push:
+    branches: [ main, r2devops]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  npm-workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    - run: npm ci
+    - run: npm test --if present
+    - run: npm teste2e --if present
+    - run: npm coverage --if present
+    - run: npm lint --if-present
+    - run: npm build --if-present
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: gitleaks-action
+      uses: zricethezav/gitleaks-action@master
+
+
+# R2DEVOPS - PROJECT CUSTOMIZATIONS
+# You can update them in your settings :)
+

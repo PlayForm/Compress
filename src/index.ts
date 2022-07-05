@@ -1,6 +1,6 @@
-import fs from "fs";
-import FastGlob from "fast-glob";
 import type { AstroIntegration } from "astro";
+import FastGlob from "fast-glob";
+import fs from "fs";
 import Options from "./options";
 import IMG from "./options/img";
 
@@ -175,7 +175,7 @@ const parse = async (
 	debug: number = 2,
 	type: string = "",
 	write: (data: string) => Promise<string | undefined> = async (data) => data,
-	read: (file: string) => Promise<string> = async (file) =>
+	read: (file: string) => Promise<any> = async (file) =>
 		await fs.promises.readFile(file, "utf-8")
 ) => {
 	let pipe = {
@@ -360,6 +360,10 @@ export default function createPlugin(
 	};
 
 	const _options = Object.assign(defaultOptions, integrationOptions);
+
+	_options.path = _options.path?.endsWith("/")
+		? _options.path
+		: `${_options.path}/`;
 
 	return {
 		name: "astro-compress",

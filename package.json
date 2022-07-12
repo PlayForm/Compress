@@ -5,11 +5,11 @@
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NicholasJoyChrist/astro-compress.git"
+		"url": "git+https://github.com/Playform/astro-compress.git"
 	},
-	"homepage": "https://github.com/NicholasJoyChrist/astro-compress#readme",
+	"homepage": "https://github.com/Playform/astro-compress#readme",
 	"bugs": {
-		"url": "https://github.com/NicholasJoyChrist/astro-compress/issues"
+		"url": "https://github.com/Playform/astro-compress/issues"
 	},
 	"author": "Nikola Hristov <nikola@playform.cloud>",
 	"license": "SEE LICENSE IN LICENSE",
@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "18.0.3",
-		"astro": "1.0.0-beta.65",
+		"astro": "1.0.0-beta.66",
 		"esbuild": "0.14.49",
 		"typescript": "4.7.4"
 	}

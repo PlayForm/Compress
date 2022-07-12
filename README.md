@@ -146,3 +146,7 @@ export default defineConfig({
 [sharp]: https://npmjs.org/sharp
 [svgo]: https://npmjs.org/svgo
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/
+
+## License
+
+[Hippocratic License](LICENSE)

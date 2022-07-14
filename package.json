@@ -35,11 +35,11 @@
 		"html-minifier-terser": "6.1.0",
 		"sharp": "0.30.7",
 		"svgo": "2.8.0",
-		"terser": "5.14.1"
+		"terser": "5.14.2"
 	},
 	"devDependencies": {
-		"@types/node": "18.0.3",
-		"astro": "1.0.0-beta.66",
+		"@types/node": "18.0.4",
+		"astro": "1.0.0-beta.70",
 		"esbuild": "0.14.49",
 		"typescript": "4.7.4"
 	}

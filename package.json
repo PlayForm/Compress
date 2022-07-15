@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "18.0.4",
-		"astro": "1.0.0-beta.70",
+		"astro": "1.0.0-beta.72",
 		"esbuild": "0.14.49",
 		"typescript": "4.7.4"
 	}

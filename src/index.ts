@@ -19,8 +19,7 @@ import svgoMinify from "svgo";
  * readable way
  * @param {number} bytes - The number of bytes to format.
  * @param [decimals=2] - The number of decimals to show.
- * @returns the size of the file in bytes, kilobytes, megabytes, gigabytes, terabytes, petabytes,
- * exabytes, zettabytes, or yottabytes.
+ * @returns A function that takes two parameters, bytes and decimals.
  */
 const formatBytes = async (bytes: number, decimals = 2) => {
 	if (bytes === 0) return "0 Bytes";
@@ -36,7 +35,7 @@ const formatBytes = async (bytes: number, decimals = 2) => {
 
 /**
  * It takes a sharp file and an options object, and returns a buffer of the file if the file type is
- * valid and the options object has a valid option for the file type
+ * valid and the options object has a valid option for that file type
  * @param {any} sharpFile - The sharp file object
  * @param {IMG} options - IMG = {}
  * @returns A function that takes two arguments, sharpFile and options.
@@ -90,8 +89,8 @@ const sharp = async (sharpFile: any, options: IMG = {}) => {
 };
 
 /**
- * It takes a settings object, loops through each key, and then runs the appropriate function for each
- * key
+ * It takes a settings object, loops through each key, and calls the appropriate function to minify the
+ * files
  * @param {Options} settings - Options - The settings object.
  * @param {number} [debug=2] - 0 = no output, 1 = output file names, 2 = output file names and sizes
  */
@@ -161,12 +160,11 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 
 /**
  * It takes a glob, a debug level, a type, a write function, and a read function, and then it
- * compresses all the files that match the glob using the write function, and then it prints out how
- * much it compressed the files by using the read function
+ * compresses all the files that match the glob using the write function, and then it logs the results
+ * to the console using the debug level, type, and read function
  * @param {string} glob - The glob pattern to search for files.
- * @param {number} debug - 0 = no output, 1 = output only when files are compressed, 2 = output for
- * every file
- * @param {string} type - The type of file you're compressing.
+ * @param {number} [debug=2] - The level of debug output. 0 = none, 1 = summary, 2 = detailed.
+ * @param {string} [type] - The type of file you're compressing. This is used for the console output.
  * @param write - (data: string) => Promise<string | undefined> = async (data) => data,
  * @param read - (file: string) => Promise<string> = async (file) =>
  */
@@ -175,63 +173,57 @@ const parse = async (
 	debug: number = 2,
 	type: string = "",
 	write: (data: string) => Promise<string | undefined> = async (data) => data,
-	read: (file: string) => Promise<any> = async (file) =>
+	read: (file: string) => Promise<string> = async (file) =>
 		await fs.promises.readFile(file, "utf-8")
 ) => {
-	let pipe = {
-		files: await FastGlob(glob),
-		sizebefore: 0,
-	};
+	const files = await FastGlob(glob);
 
-	let savings = {
+	const savings = {
+		initial: 0,
 		files: 0,
 		total: 0,
 	};
 
-	while (pipe.files.length > 0) {
-		const file = pipe.files.shift();
+	for (const file of files) {
+		try {
+			const fileSizeBefore = (await fs.promises.stat(file)).size;
+			savings.initial += fileSizeBefore;
 
-		if (file) {
-			try {
-				const fileSizeBefore = (await fs.promises.stat(file)).size;
-				pipe.sizebefore += fileSizeBefore;
+			const writeBuffer = await write(await read(file));
 
-				const writeBuffer = await write(await read(file));
-
-				if (!writeBuffer) {
-					continue;
-				}
-
-				if (fileSizeBefore > Buffer.byteLength(writeBuffer)) {
-					await fs.promises.writeFile(file, writeBuffer, "utf-8");
-
-					const fileSizeAfter = (await fs.promises.stat(file)).size;
-
-					savings.files++;
-					savings.total += fileSizeBefore - fileSizeAfter;
-
-					if (debug > 1) {
-						console.info(
-							"\u001b[32mCompressed " +
-								file.replace(/^.*[\\\/]/, "") +
-								" for " +
-								(await formatBytes(
-									fileSizeBefore - fileSizeAfter
-								)) +
-								" (" +
-								(
-									((fileSizeBefore - fileSizeAfter) /
-										fileSizeBefore) *
-									100
-								).toFixed(2) +
-								"% reduction)" +
-								".\u001b[39m"
-						);
-					}
-				}
-			} catch (error) {
-				console.log("Error: Cannot compress file " + file + "!");
+			if (!writeBuffer) {
+				continue;
 			}
+
+			if (fileSizeBefore > Buffer.byteLength(writeBuffer)) {
+				await fs.promises.writeFile(file, writeBuffer, "utf-8");
+
+				const fileSizeAfter = (await fs.promises.stat(file)).size;
+
+				savings.files++;
+				savings.total += fileSizeBefore - fileSizeAfter;
+
+				if (debug > 1) {
+					console.info(
+						"\u001b[32mCompressed " +
+							file.replace(/^.*[\\\/]/, "") +
+							" for " +
+							(await formatBytes(
+								fileSizeBefore - fileSizeAfter
+							)) +
+							" (" +
+							(
+								((fileSizeBefore - fileSizeAfter) /
+									fileSizeBefore) *
+								100
+							).toFixed(2) +
+							"% reduction)" +
+							".\u001b[39m"
+					);
+				}
+			}
+		} catch (error) {
+			console.log("Error: Cannot compress file " + file + "!");
 		}
 	}
 
@@ -251,7 +243,7 @@ const parse = async (
 };
 
 /**
- * It takes in an object of options, and returns an object with a name and a hook
+ * It takes in an object of options, and returns an object that Astro can use to create a plugin
  * @param {Options} integrationOptions - Options = {}
  * @returns A function that returns an object.
  */

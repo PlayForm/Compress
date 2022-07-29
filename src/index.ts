@@ -255,10 +255,7 @@ export default function createPlugin(
 		css: {
 			clone: false,
 			comments: false,
-			debug: false,
 			forceMediaMerge: true,
-			restructure: true,
-			sourceMap: false,
 		},
 		html: {
 			caseSensitive: true,

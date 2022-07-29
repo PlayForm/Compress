@@ -42,6 +42,7 @@ export default interface CSS {
      * Enables merging of @media rules with the same media query by splitted by other rules.
      * The optimisation is unsafe in general, but should work fine in most cases. Use it on your own risk.
      * @default false
+     * @default astro-compress: true
      */
     forceMediaMerge?: Boolean;
     /**
@@ -54,6 +55,7 @@ export default interface CSS {
      * 'exclamation' | true – leave all exclamation comments (i.e. /*! .. *\/)
      * 'first-exclamation' – remove every comment except first one false – remove all comments
      * @default true
+     * @default astro-compress: false
      */
     comments?: String | Boolean;
     /**

@@ -4,15 +4,11 @@ import fs from "fs";
 import Options from "./options";
 import IMG from "./options/img";
 
-// @ts-ignore
-import * as cssoMinify from "csso";
-// @ts-ignore
-import * as htmlMinifierTerserMinify from "html-minifier-terser";
-import { minify as terserMinify } from "terser";
-// @ts-ignore
-import sharpMinify from "sharp";
-// @ts-ignore
-import svgoMinify from "svgo";
+import { minify as csso } from "csso";
+import { minify as htmlMinifierTerser } from "html-minifier-terser";
+import { minify as terser } from "terser";
+import sharp from "sharp";
+import { optimize as svgo } from "svgo";
 
 /**
  * It takes a number of bytes and returns a string with the number of bytes formatted in a human
@@ -34,13 +30,13 @@ const formatBytes = async (bytes: number, decimals = 2) => {
 };
 
 /**
- * It takes a sharp file and an options object, and returns a buffer of the file if the file type is
- * valid and the options object has a valid option for that file type
+ * It takes a sharp file and an options object, and returns a buffer of the file in the format
+ * specified in the options object
  * @param {any} sharpFile - The sharp file object
  * @param {IMG} options - IMG = {}
- * @returns A function that takes two arguments, sharpFile and options.
+ * @returns A function that returns a promise that resolves to a buffer.
  */
-const sharp = async (sharpFile: any, options: IMG = {}) => {
+const sharpRead = async (sharpFile: any, options: IMG = {}) => {
 	const fileType = sharpFile.options.input.file.split(".").pop();
 
 	if (!fileType) {
@@ -89,9 +85,8 @@ const sharp = async (sharpFile: any, options: IMG = {}) => {
 };
 
 /**
- * It takes a settings object, loops through each key, and calls the appropriate function to minify the
- * files
- * @param {Options} settings - Options - The settings object.
+ * It takes a settings object, loops through each key, and calls the appropriate function for each key
+ * @param {Options} settings - Options - The settings object that you pass to the pipeAll function.
  * @param {number} [debug=2] - 0 = no output, 1 = output file names, 2 = output file names and sizes
  */
 const pipeAll = async (settings: Options, debug: number = 2) => {
@@ -109,7 +104,7 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.css`,
 						debug,
 						files,
-						(data) => cssoMinify.minify(data, setting).css
+						(data) => csso(data, setting).css
 					);
 					break;
 
@@ -118,8 +113,7 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.html`,
 						debug,
 						files,
-						async (data) =>
-							await htmlMinifierTerserMinify.minify(data, setting)
+						async (data) => await htmlMinifierTerser(data, setting)
 					);
 					break;
 
@@ -128,7 +122,7 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.{js,mjs,cjs}`,
 						debug,
 						files,
-						async (data) => (await terserMinify(data, setting)).code
+						async (data) => (await terser(data, setting)).code
 					);
 					break;
 
@@ -137,8 +131,9 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
 						debug,
 						files,
-						async (sharpFile) => await sharp(sharpFile, setting),
-						async (file) => await sharpMinify(file)
+						async (sharpFile) =>
+							await sharpRead(sharpFile, setting),
+						async (file) => sharp(file)
 					);
 					break;
 
@@ -147,7 +142,7 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.svg`,
 						debug,
 						files,
-						async (data) => svgoMinify.optimize(data, setting).data
+						async (data) => svgo(data, setting)
 					);
 					break;
 
@@ -161,19 +156,19 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 /**
  * It takes a glob, a debug level, a type, a write function, and a read function, and then it
  * compresses all the files that match the glob using the write function, and then it logs the results
- * to the console using the debug level, type, and read function
+ * to the console using the debug level
  * @param {string} glob - The glob pattern to search for files.
  * @param {number} [debug=2] - The level of debug output. 0 = none, 1 = summary, 2 = detailed.
  * @param {string} [type] - The type of file you're compressing. This is used for the console output.
- * @param write - (data: string) => Promise<string | undefined> = async (data) => data,
- * @param read - (file: string) => Promise<string> = async (file) =>
+ * @param write - (data: string) => any = async (data) => data,
+ * @param read - (file: string) => any = async (file) =>
  */
 const parse = async (
 	glob: string,
 	debug: number = 2,
 	type: string = "",
-	write: (data: string) => Promise<string | undefined> = async (data) => data,
-	read: (file: string) => Promise<string> = async (file) =>
+	write: (data: string) => any = async (data) => data,
+	read: (file: string) => any = async (file) =>
 		await fs.promises.readFile(file, "utf-8")
 ) => {
 	const files = await FastGlob(glob);

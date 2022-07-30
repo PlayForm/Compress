@@ -41,7 +41,7 @@
 	"devDependencies": {
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "6.1.0",
-		"@types/node": "18.6.2",
+		"@types/node": "18.6.3",
 		"@types/sharp": "0.30.4",
 		"@types/svgo": "2.6.3",
 		"@types/terser": "3.12.0",

@@ -3,7 +3,8 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-[csso] [html-minifier-terser] [terser] [sharp] [svgo]
+[CSS][csso] [HTML][html-minifier-terser] [JavaScript][terser] [Images][sharp]
+[SVG][svgo]
 
 ## Installation
 
@@ -48,7 +49,6 @@ import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
 export default defineConfig({
-	// ...
 	integrations: [compress()],
 });
 ```

@@ -5,8 +5,8 @@ import Options from "./options";
 import IMG from "./options/img";
 
 import { minify as csso } from "csso";
-import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import { minify as terser } from "terser";
+import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 

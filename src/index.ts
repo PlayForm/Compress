@@ -280,7 +280,7 @@ export default function createPlugin(
 			quoteCharacter: "",
 			removeAttributeQuotes: true,
 			removeComments: true,
-			removeEmptyAttributes: true,
+			removeEmptyAttributes: false,
 			removeEmptyElements: false,
 			removeOptionalTags: false,
 			removeRedundantAttributes: true,

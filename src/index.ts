@@ -1,6 +1,8 @@
 import type { AstroIntegration } from "astro";
 import FastGlob from "fast-glob";
 import fs from "fs";
+import { deepmerge } from "deepmerge-ts";
+
 import Options from "./options";
 import IMG from "./options/img";
 
@@ -279,7 +281,7 @@ export default function createPlugin(
 			processScripts: ["module"],
 			quoteCharacter: "",
 			removeAttributeQuotes: true,
-			removeComments: true,
+			removeComments: false,
 			removeEmptyAttributes: false,
 			removeEmptyElements: false,
 			removeOptionalTags: false,
@@ -343,7 +345,7 @@ export default function createPlugin(
 		logger: 2,
 	};
 
-	const _options = Object.assign(defaultOptions, integrationOptions);
+	const _options = deepmerge(defaultOptions, integrationOptions);
 
 	_options.path = _options.path?.endsWith("/")
 		? _options.path

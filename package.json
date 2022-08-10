@@ -31,7 +31,7 @@
 		"build": "esbuild --format=esm --platform=node --target=node14 --sources-content=false --minify --outdir=dist src/index.ts && tsc"
 	},
 	"dependencies": {
-		"csso": "5.0.4",
+		"csso": "5.0.5",
 		"fast-glob": "3.2.11",
 		"deepmerge-ts": "4.2.1",
 		"html-minifier-terser": "6.1.0",

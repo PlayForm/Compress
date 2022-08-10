@@ -46,7 +46,7 @@
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.3",
 		"astro": "1.0.0-rc.8",
-		"esbuild": "0.14.54",
+		"esbuild": "0.15.0",
 		"typescript": "4.7.4"
 	}
 }

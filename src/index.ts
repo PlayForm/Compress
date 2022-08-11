@@ -30,7 +30,6 @@ const formatBytes = async (bytes: number, decimals = 2) => {
 
 	return `${parseFloat((bytes / k ** i).toFixed(dm))} ${sizes[i]}`;
 };
-
 /**
  * It takes a sharp file and an options object, and returns a buffer of the file in the format
  * specified in the options object
@@ -144,7 +143,16 @@ const pipeAll = async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.svg`,
 						debug,
 						files,
-						async (data) => svgo(data, setting)
+						async (data) => {
+							const result = svgo(data, setting);
+
+							if (typeof result.error !== "undefined") {
+								console.log(result.error);
+							} else {
+								// @ts-ignore
+								return result.data;
+							}
+						}
 					);
 					break;
 

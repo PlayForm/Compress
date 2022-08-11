@@ -1,8 +1,8 @@
-import CSS from "./options/css";
-import HTML from "./options/html";
-import IMG from "./options/img";
-import JS from "./options/js";
-import SVG from "./options/svg";
+import CSS from "./css";
+import HTML from "./html";
+import IMG from "./img";
+import JS from "./js";
+import SVG from "./svg";
 
 export default interface Options {
 	[key: string]: any;

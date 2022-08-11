@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
@@ -28,7 +28,7 @@
 		"svg"
 	],
 	"scripts": {
-		"build": "esbuild --format=esm --platform=node --target=node14 --sources-content=false --minify --outdir=dist src/index.ts && tsc"
+		"build": "esbuild --format=esm --platform=node --target=node14 --minify --outdir=dist src/index.ts && tsc"
 	},
 	"dependencies": {
 		"csso": "5.0.5",
@@ -42,11 +42,11 @@
 	"devDependencies": {
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "6.1.0",
-		"@types/node": "18.6.5",
+		"@types/node": "18.7.1",
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.3",
-		"astro": "1.0.1",
-		"esbuild": "0.15.0",
+		"astro": "1.0.2",
+		"esbuild": "0.15.1",
 		"typescript": "4.7.4"
 	}
 }

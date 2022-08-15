@@ -32,9 +32,9 @@
 	},
 	"dependencies": {
 		"csso": "5.0.5",
-		"fast-glob": "3.2.11",
 		"deepmerge-ts": "4.2.1",
-		"html-minifier-terser": "6.1.0",
+		"fast-glob": "3.2.11",
+		"html-minifier-terser": "7.0.0",
 		"sharp": "0.30.7",
 		"svgo": "2.8.0",
 		"terser": "5.14.2"

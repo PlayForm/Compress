@@ -1,7 +1,7 @@
 import type { AstroIntegration } from "astro";
+import { deepmerge } from "deepmerge-ts";
 import FastGlob from "fast-glob";
 import fs from "fs";
-import { deepmerge } from "deepmerge-ts";
 
 import Options from "./options";
 import IMG from "./options/img";

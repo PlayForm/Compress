@@ -174,7 +174,7 @@ export default interface HTML {
 
 	/**
 	 * Strip HTML comments.
-	 * @default false
+	 * @default true
 	 */
 	removeComments?: Boolean;
 

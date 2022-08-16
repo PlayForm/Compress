@@ -1,5 +1,5 @@
 import type { AstroIntegration } from "astro";
-import Options from "./options";
+import { Options } from "./options";
 /**
  * It takes in an object of options, and returns an object that Astro can use to create a plugin
  * @param {Options} integrationOptions - Options = {}

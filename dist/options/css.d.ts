@@ -1,55 +1,48 @@
-export interface beforeCompressOptions {
-    ast?: {};
-    options?: {};
-}
-export interface afterCompressOptions {
-    compressResult?: String;
-    options?: {};
-}
-export default interface CSS {
+import { MinifyOptions, CompressOptions, BeforeCompressFn, AfterCompressFn, Usage } from "csso";
+export default interface CSS extends MinifyOptions, CompressOptions {
     [key: string]: any;
     /**
      * Generate a source map when true.
      * @default false
      */
-    sourceMap?: Boolean;
+    sourceMap?: boolean | undefined;
     /**
      * Filename of input CSS, uses for source map generation.
      * @default '<unknown>'
      */
-    filename?: String;
+    filename?: string | undefined;
     /**
      * Output debug information to stderr.
      * @default false
      */
-    debug?: Boolean;
+    debug?: boolean | undefined;
     /**
      * Called right after parse is run.
      * @default null
      */
-    beforeCompress?: ({}: beforeCompressOptions) => void | Array<({}: beforeCompressOptions) => void> | null;
+    beforeCompress?: BeforeCompressFn | BeforeCompressFn[] | undefined;
     /**
      * Called right after syntax.compress() is run.
      * @default null
      */
-    afterCompress?: ({}: afterCompressOptions) => void | Array<({}: afterCompressOptions) => void> | null;
+    afterCompress?: AfterCompressFn | AfterCompressFn[] | undefined;
     /**
      * Disable | enable a structure optimisations.
      * @default true
      */
-    restructure?: Boolean;
+    restructure?: boolean;
     /**
      * Enables merging of @media rules with the same media query by splitted by other rules.
      * The optimisation is unsafe in general, but should work fine in most cases. Use it on your own risk.
      * @default false
      * @default astro-compress: true
      */
-    forceMediaMerge?: Boolean;
+    forceMediaMerge?: boolean;
     /**
      * Transform a copy of input AST if true. Useful in case of AST reuse.
      * @default false
      */
-    clone?: Boolean;
+    clone?: boolean;
     /**
      * Specify what comments to leave:
      * 'exclamation' | true – leave all exclamation comments (i.e. /*! .. *\/)
@@ -57,12 +50,12 @@ export default interface CSS {
      * @default true
      * @default astro-compress: false
      */
-    comments?: String | Boolean;
+    comments?: string | boolean | undefined;
     /**
      * Usage data for advanced optimisations.
      * @default null
      */
-    usage?: {} | null;
+    usage?: Usage | undefined;
     /**
      * Function to track every step of transformation.
      * @default null

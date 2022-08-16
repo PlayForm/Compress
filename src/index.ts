@@ -289,7 +289,7 @@ export default function createPlugin(
 			processScripts: ["module"],
 			quoteCharacter: "",
 			removeAttributeQuotes: true,
-			removeComments: false,
+			removeComments: true,
 			removeEmptyAttributes: false,
 			removeEmptyElements: false,
 			removeOptionalTags: false,

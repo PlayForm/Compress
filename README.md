@@ -3,7 +3,10 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-[CSS][csso] [HTML][html-minifier-terser] [JavaScript][terser] [Images][sharp]
+[CSS][csso],
+[HTML][html-minifier-terser],
+[JavaScript][terser],
+[Images][sharp],
 [SVG][svgo]
 
 ## Installation
@@ -11,7 +14,7 @@ your Astro project.
 There are two ways to add integrations to your project. Let's try the most
 convenient option first!
 
-### (experimental) `astro add` command
+### `astro add` command
 
 Astro includes a CLI tool for adding first party integrations: `astro add`. This
 command will:
@@ -41,13 +44,13 @@ npm install astro-compress
 # Using Yarn
 yarn add astro-compress
 # Using PNPM
-pnpx install astro-compress
+pnpm install astro-compress
 ```
 
 Then, apply this integration to your `astro.config.*` file using the
 `integrations` property:
 
-**astro.config.mjs**
+#### astro.config.mjs
 
 ```js
 import { defineConfig } from "astro/config";
@@ -65,20 +68,11 @@ files in the dist folder.
 
 The following image file types will also be compressed.
 
-- avci
-- avcs
-- avif
-- avifs
+- avci, avcs, avif, avifs
 - gif
-- heic
-- heics
-- heif
-- heifs
-- jfif
-- jif
-- jpe
-- jpeg
-- jpg
+- heic, heics, heif, heifs
+- jfif, jif
+- jpe, jpeg, jpg
 - png
 - raw
 - tiff
@@ -116,15 +110,15 @@ import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
 export default defineConfig({
- integrations: [
-  compress({
-   css: false,
-   html: false,
-   js: false,
-   img: false,
-   svg: false,
-  }),
- ],
+  integrations: [
+    compress({
+      css: false,
+      html: false,
+      js: false,
+      img: false,
+      svg: false,
+    }),
+  ],
 });
 ```
 
@@ -135,12 +129,12 @@ import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
 export default defineConfig({
- outDir: "./build",
- integrations: [
-  compress({
-   path: "./build",
-  }),
- ],
+  outDir: "./build",
+  integrations: [
+    compress({
+      path: "./build",
+    }),
+  ],
 });
 ```
 
@@ -151,11 +145,11 @@ import { defineConfig } from "astro/config";
 import compress from "astro-compress";
 
 export default defineConfig({
- integrations: [
-  compress({
-   logger: 0,
-  }),
- ],
+  integrations: [
+    compress({
+      logger: 0,
+    }),
+  ],
 });
 ```
 

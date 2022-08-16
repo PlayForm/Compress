@@ -4,12 +4,14 @@ export default interface HTML {
 	/**
 	 * Treat attributes in case sensitive manner (useful for custom HTML tags).
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	caseSensitive?: Boolean;
 
 	/**
 	 * Omit attribute values from boolean attributes.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	collapseBooleanAttributes?: Boolean;
 
@@ -23,6 +25,7 @@ export default interface HTML {
 	/**
 	 * Collapse white space that contributes to text nodes in a document tree.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	collapseWhitespace?: Boolean;
 
@@ -47,8 +50,9 @@ export default interface HTML {
 
 	/**
 	 * Regex that specifies custom attribute to strip newlines from (e.g. `/ng-class/`).
+	 * @default astro-compress: new RegExp("", "i")
 	 */
-	customAttrCollapse?: String;
+	customAttrCollapse?: RegExp;
 
 	/**
 	 * Arrays of regex'es that allow to support custom attribute surround expressions (e.g. `<input {{#if value}}checked="checked"{{/if}}>`).
@@ -77,12 +81,14 @@ export default interface HTML {
 	/**
 	 * Array of regex'es that allow to ignore certain comments, when matched.
 	 * @default [/^!/, /^\s*#/]
+	 * @default astro-compress: []
 	 */
 	ignoreCustomComments?: RegExp[];
 
 	/**
 	 * Array of regex'es that allow to ignore certain fragments, when matched (e.g. `<?php ... ?>`, `{{ ... }}`, etc.).
 	 * @default [/<%[\s\S]*?%>/, /<\?[\s\S]*?\?>/]
+	 * @default astro-compress: []
 	 */
 	ignoreCustomFragments?: RegExp[];
 
@@ -95,6 +101,7 @@ export default interface HTML {
 	/**
 	 * Keep the trailing slash on singleton elements.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	keepClosingSlash?: Boolean;
 
@@ -108,6 +115,7 @@ export default interface HTML {
 	/**
 	 * Minify CSS in style elements and style attributes (uses clean-css).
 	 * @default false (could be `true`, `Object`, `Function(text, type)`
+	 * @default astro-compress: true
 	 */
 	minifyCSS?:
 		| Boolean
@@ -117,6 +125,7 @@ export default interface HTML {
 	/**
 	 * Minify JavaScript in script elements and event attributes (uses Terser).
 	 * @default false (could be `true`, `Object`, `Function(text, inline)`
+	 * @default astro-compress: true
 	 */
 	minifyJS?:
 		| Boolean
@@ -151,18 +160,21 @@ export default interface HTML {
 	/**
 	 * Process contents of conditional comments through minifier.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	processConditionalComments?: Boolean;
 
 	/**
 	 * Array of strings corresponding to types of script elements to process through minifier (e.g. `text/ng-template`, `text/x-handlebars-template`, etc.).
 	 * @default []
+	 * @default astro-compress: ["module"]
 	 */
 	processScripts?: String[];
 
 	/**
 	 * Type of quote to use for attribute values (' or ").
 	 * @default ""
+	 * @default astro-compress: '"'
 	 */
 	quoteCharacter?: String;
 
@@ -201,6 +213,7 @@ export default interface HTML {
 	/**
 	 * Remove attributes when value matches default.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	removeRedundantAttributes?: Boolean;
 
@@ -208,6 +221,7 @@ export default interface HTML {
 	 * Remove `type="text/javascript"` from `script` tags.
 	 * Other `type` attribute values are left intact
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	removeScriptTypeAttributes?: Boolean;
 
@@ -215,6 +229,7 @@ export default interface HTML {
 	 * Remove `type="text/css"` from `style` and `link` tags.
 	 * Other `type` attribute values are left intact
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	removeStyleLinkTypeAttributes?: Boolean;
 
@@ -222,18 +237,21 @@ export default interface HTML {
 	 * Remove space between attributes whenever possible.
 	 * Note that this will result in invalid HTML!
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	removeTagWhitespace?: Boolean;
 
 	/**
 	 * Sort attributes by frequency.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	sortAttributes?: Boolean;
 
 	/**
 	 * Sort style classes by frequency.
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	sortClassName?: Boolean;
 

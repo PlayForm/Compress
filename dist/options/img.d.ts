@@ -176,6 +176,7 @@ export default interface IMG {
         /**
          * Zlib compression level, 0 (fastest, largest) to 9 (slowest, smallest)
          * @default 6
+         * @default astro-compress: 9
          */
         compressionLevel?: number;
         /**
@@ -186,6 +187,7 @@ export default interface IMG {
         /**
          * Quantise to a palette-based image with alpha transparency support
          * @default false
+         * @default astro-compress: true
          */
         palette?: boolean;
         /**

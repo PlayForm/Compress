@@ -3,7 +3,7 @@ import HTML from "./html";
 import IMG from "./img";
 import JS from "./js";
 import SVG from "./svg";
-export default interface Options {
+export interface Options {
     [key: string]: any;
     /**
      * Astro build path.
@@ -36,3 +36,5 @@ export default interface Options {
      */
     logger?: number;
 }
+declare const _default: Options;
+export default _default;

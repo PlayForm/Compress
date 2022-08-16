@@ -1,21 +1,11 @@
-export interface js2svgOptions {
-	/**
-	 * String with spaces or number of spaces
-	 * @default 4
-	 */
-	indent?: string | number;
+import { Js2SvgOptions, OptimizeOptions } from "svgo";
 
-	/**
-	 * @default false
-	 */
-	pretty?: boolean;
-}
-
-export default interface SVG {
+export default interface SVG extends OptimizeOptions {
 	[key: string]: any;
 
 	/**
 	 * @default false
+	 * @default astro-compress: true
 	 */
 	multipass?: boolean;
 
@@ -23,12 +13,13 @@ export default interface SVG {
 	 * 'enc' or 'unenc'
 	 * @default "base64"
 	 */
-	datauri?: string;
+	datauri?: "enc" | "unenc" | "base64" | undefined;
 
 	/**
 	 * @default { indent: 4, pretty: false }
+	 * @default astro-compress: { indent: 0, pretty: false }
 	 */
-	js2svg?: js2svgOptions;
+	js2svg?: Js2SvgOptions;
 
 	/**
 	 * @default ["preset-default"]

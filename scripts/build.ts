@@ -1,5 +1,4 @@
 import fs from "fs";
-
 import esbuild, { BuildOptions, Plugin } from "esbuild";
 
 const outDir = "./dist";
@@ -16,10 +15,11 @@ const cleanDist: Plugin = {
 const options: BuildOptions = {
 	entryPoints: [
 		"src/index.ts",
-		"src/lib/pipe-all.ts",
-		"src/lib/parse.ts",
 		"src/lib/format-bytes.ts",
+		"src/lib/parse.ts",
+		"src/lib/pipe-all.ts",
 		"src/lib/sharp-read.ts",
+		"src/options/index.ts",
 	],
 	format: "esm",
 	minify: true,

@@ -4,9 +4,9 @@ import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 
-import { Options } from "src/options";
-import parse from "./parse";
-import sharpRead from "./sharp-read";
+import { Options } from "../options/index.js";
+import parse from "./parse.js";
+import sharpRead from "./sharp-read.js";
 
 /**
  * It takes a settings object, loops through each key, and calls the appropriate function for each key

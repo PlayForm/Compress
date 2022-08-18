@@ -1,7 +1,7 @@
 import FastGlob from "fast-glob";
 import fs from "fs";
 
-import formatBytes from "./format-bytes";
+import formatBytes from "./format-bytes.js";
 
 /**
  * It takes a glob, a debug level, a type, a write function, and a read function, and then it
@@ -72,7 +72,7 @@ export default async (
 		}
 	}
 
-	if (debug > 0) {
+	if (debug > 0 && savings.files > 0) {
 		console.info(
 			"\u001b[32mSuccessfully compressed a total of " +
 				savings.files +

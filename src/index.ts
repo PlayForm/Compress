@@ -1,8 +1,8 @@
 import type { AstroIntegration } from "astro";
 import { deepmerge } from "deepmerge-ts";
 
-import defaultOptions, { Options } from "./options";
-import pipeAll from "./lib/pipe-all";
+import defaultOptions, { Options } from "./options/index.js";
+import pipeAll from "./lib/pipe-all.js";
 
 /**
  * It takes in an object of options, and returns an object that Astro can use to create a plugin

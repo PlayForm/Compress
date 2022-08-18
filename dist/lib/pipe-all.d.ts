@@ -1,4 +1,4 @@
-import { Options } from "src/options";
+import { Options } from "../options/index.js";
 /**
  * It takes a settings object, loops through each key, and calls the appropriate function for each key
  * @param {Options} settings - Options - The settings object that you pass to the pipeAll function.

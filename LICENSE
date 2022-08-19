@@ -4,7 +4,7 @@ Copyright 2022 Nikola Hristov <nikola@playform.cloud> ("Licensor")
 
 **Version 3.0, October 2021**
 
-<https://firstdonoharm.dev/version/3/0/bds-eco-extr-ffd.md>
+<https://firstdonoharm.dev/version/3/0/cl-eco-extr-ffd-law-media-mil-soc-sup-sv.md>
 
 **TERMS AND CONDITIONS**
 
@@ -154,36 +154,61 @@ the Licensee’s ongoing compliance with the following conditions:
         or a representative, agent, affiliate, successor, attorney, or assign of
         an individual or entity, that engages in fossil fuel or mineral
         exploration, extraction, development, or sale;
-    -   [3.1.14.](#3.1.14) _Boycott / Divestment / Sanctions_: Be an individual
-        or entity, or a representative, agent, affiliate, successor, attorney,
-        or assign of an individual or entity, identified by the Boycott,
-        Divestment, Sanctions (“BDS”) movement on its website
-        (<https://bdsmovement.net/> and
-        <https://bdsmovement.net/get-involved/what-to-boycott>) as a target for
-        boycott;
-    -   [3.1.15.](#3.1.15) Interfere with Workers' free exercise of the right to
+    -   [3.1.14.](#3.1.14) _Mass Surveillance_: Be a government agency or
+        multinational corporation, or a representative, agent, affiliate,
+        successor, attorney, or assign of a government or multinational
+        corporation, which participates in mass surveillance programs;
+    -   [3.1.15.](#3.1.15) _Military Activities_: Be an entity or a
+        representative, agent, affiliate, successor, attorney, or assign of an
+        entity which conducts military activities;
+    -   [3.1.16.](#3.1.16) _Law Enforcement_: Be an individual or entity, or a
+        or a representative, agent, affiliate, successor, attorney, or assign of
+        an individual or entity, that provides good or services to, or otherwise
+        enters into any commercial contracts with, any local, state, or federal
+        law enforcement agency;
+    -   [3.1.17.](#3.1.17) _Media_: Be an individual or entity, or a or a
+        representative, agent, affiliate, successor, attorney, or assign of an
+        individual or entity, that broadcasts messages promoting killing,
+        torture, or other forms of extreme violence;
+    -   [3.1.18.](#3.1.18) Interfere with Workers' free exercise of the right to
         organize and associate (See Article 20, United Nations Universal
         Declaration of Human Rights; C087 - Freedom of Association and
         Protection of the Right to Organise Convention, 1948 (No. 87),
         International Labour Organization; Article 8, International Covenant on
         Economic, Social and Cultural Rights); and
-    -   [3.1.16.](#3.1.16) Harm the environment in a manner inconsistent with
+    -   [3.1.19.](#3.1.19) Harm the environment in a manner inconsistent with
         local, state, national, or international law.
 -   [3.2.](#3.2) The Licensee SHALL:
-    -   [3.2.1.](#3.2.1) Provide equal pay for equal work where the performance
+    -   [3.2.1.](#3.2.1) _Social Auditing_: Only use social auditing mechanisms
+        that adhere to Worker-Driven Social Responsibility Network’s Statement
+        of Principles
+        (<https://wsr-network.org/what-is-wsr/statement-of-principles/>) over
+        traditional social auditing mechanisms, to the extent the Licensee uses
+        any social auditing mechanisms at all;
+    -   [3.2.2.](#3.2.2) _Supply Chain_: Provide clear, accessible supply chain
+        data to the public in accordance with the following conditions: _
+        [3.2.2.1.](#3.2.2.1) All data will be on Licensee’s website and/or, to
+        the extent Licensee is a representative, agent, affiliate, successor,
+        attorney, subsidiary, or assign, on Licensee’s principal’s or parent’s
+        website or some other online platform accessible to the public via an
+        internet search on a common internet search engine; and _
+        [3.2.2.2.](#3.2.2.2) Data published will include, where applicable,
+        manufacturers, top tier suppliers, subcontractors, cooperatives,
+        component parts producers, and farms;
+    -   [3.2.3.](#3.2.3) Provide equal pay for equal work where the performance
         of such work requires equal skill, effort, and responsibility, and which
         are performed under similar working conditions, except where such
-        payment is made pursuant to: _ [3.2.1.1.](#3.2.1.1) A seniority system;
-        _ [3.2.1.2.](#3.2.1.2) A merit system; _ [3.2.1.3.](#3.2.1.3) A system
+        payment is made pursuant to: _ [3.2.3.1.](#3.2.3.1) A seniority system;
+        _ [3.2.3.2.](#3.2.3.2) A merit system; _ [3.2.3.3.](#3.2.3.3) A system
         which measures earnings by quantity or quality of production; or _
-        [3.2.1.4.](#3.2.1.4) A differential based on any other factor other than
+        [3.2.3.4.](#3.2.3.4) A differential based on any other factor other than
         sex, gender, sexual orientation, race, ethnicity, nationality, religion,
         caste, age, medical disability or impairment, and/or any other like
         circumstances (See 29 U.S.C.A. § 206(d)(1); Article 23, _United Nations
         Universal Declaration of Human Rights_; Article 7, _International
         Covenant on Economic, Social and Cultural Rights_; Article 26,
         _International Covenant on Civil and Political Rights_); and
-    -   [3.2.2.](#3.2.2) Allow for reasonable limitation of working hours and
+    -   [3.2.4.](#3.2.4) Allow for reasonable limitation of working hours and
         periodic holidays with pay (See Article 24, _United Nations Universal
         Declaration of Human Rights_; Article 7, _International Covenant on
         Economic, Social and Cultural Rights_).
@@ -301,7 +326,11 @@ shall be entitled to equitable relief, including injunctive relief or specific
 performance of the terms hereof, in addition to any other remedy to which they
 are entitled at law or in equity.
 
-[8.3.](#8.3) _Severability_: If any term or provision of this License is
+[8.3.](#8.3) _Copyleft_: Modified software, source code, or other derivative
+work must be licensed, in its entirety, under the exact same conditions as this
+License.
+
+[8.4.](#8.4) _Severability_: If any term or provision of this License is
 determined to be invalid, illegal, or unenforceable by a court of competent
 jurisdiction, any such determination of invalidity, illegality, or
 unenforceability shall not affect any other term or provision of this License or
@@ -312,24 +341,24 @@ provisions contained in the Ethical Standards section of this License, all
 rights in the Software granted to Licensee shall be deemed null and void as
 between Licensor and Licensee.
 
-[8.4.](#8.4) _Section Titles_: Section titles are solely written for
+[8.5.](#8.5) _Section Titles_: Section titles are solely written for
 organizational purposes and should not be used to interpret the language within
 each section.
 
-[8.5.](#8.5) _Citations_: Citations are solely written to provide context for
+[8.6.](#8.6) _Citations_: Citations are solely written to provide context for
 the source of the provisions in the Ethical Standards.
 
-[8.6.](#8.6) _Section Summaries_: Some sections have a brief _italicized
+[8.7.](#8.7) _Section Summaries_: Some sections have a brief _italicized
 description_ which is provided for the sole purpose of briefly describing the
 section and should not be used to interpret the terms of the License.
 
-[8.7.](#8.7) _Entire License_: This is the entire License between the Licensor
+[8.8.](#8.8) _Entire License_: This is the entire License between the Licensor
 and Licensee with respect to the claims released herein and that the
 consideration stated herein is the only consideration or compensation to be paid
 or exchanged between them for this License. This License cannot be modified or
 amended except in a writing signed by Licensor and Licensee.
 
-[8.8.](#8.8) _Successors and Assigns_: This License shall be binding upon and
+[8.9.](#8.9) _Successors and Assigns_: This License shall be binding upon and
 inure to the benefit of the Licensor’s and Licensee’s respective heirs,
 successors, and assigns.
 

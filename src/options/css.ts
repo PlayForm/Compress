@@ -1,9 +1,5 @@
 import {
-	MinifyOptions,
-	CompressOptions,
-	BeforeCompressFn,
-	AfterCompressFn,
-	Usage,
+	AfterCompressFn, BeforeCompressFn, CompressOptions, MinifyOptions, Usage
 } from "csso";
 
 export default interface CSS extends MinifyOptions, CompressOptions {

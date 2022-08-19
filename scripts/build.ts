@@ -1,5 +1,5 @@
-import fs from "fs";
 import esbuild, { BuildOptions, Plugin } from "esbuild";
+import fs from "fs";
 
 const outDir = "./dist";
 

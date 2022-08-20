@@ -76,7 +76,7 @@ export default {
 		preserveLineBreaks: false,
 		preventAttributesEscaping: false,
 		processConditionalComments: true,
-		processScripts: ["module"],
+		processScripts: [],
 		quoteCharacter: "",
 		removeAttributeQuotes: true,
 		removeComments: false,

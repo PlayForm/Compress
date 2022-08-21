@@ -1,4 +1,4 @@
-import { Js2SvgOptions, OptimizeOptions } from "svgo";
+import type { Js2SvgOptions, OptimizeOptions } from "svgo";
 export default interface SVG extends OptimizeOptions {
     [key: string]: any;
     /**

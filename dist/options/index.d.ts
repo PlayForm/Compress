@@ -1,8 +1,8 @@
-import CSS from "./css";
-import HTML from "./html";
-import IMG from "./img";
-import JS from "./js";
-import SVG from "./svg";
+import type CSS from "./css";
+import type HTML from "./html";
+import type IMG from "./img";
+import type JS from "./js";
+import type SVG from "./svg";
 export interface Options {
     [key: string]: any;
     /**

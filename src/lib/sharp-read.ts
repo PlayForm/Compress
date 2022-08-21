@@ -1,4 +1,4 @@
-import IMG from "../options/img";
+import type IMG from "../options/img";
 
 /**
  * It takes a sharp file and an options object, and returns a buffer of the file in the format

@@ -1,31 +1,9 @@
 {
-	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@playform/config/tsconfig.json",
 	"include": [
 		"src"
 	],
-	"ts-node": {
-		"esm": true
-	},
 	"compilerOptions": {
-		"allowJs": true,
-		"baseUrl": ".",
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"isolatedModules": true,
-		"lib": [
-			"es2015"
-		],
-		"target": "esnext",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"outDir": "dist",
-		"types": [
-			"node"
-		]
+		"outDir": "dist"
 	}
 }

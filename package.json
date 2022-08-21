@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
@@ -28,7 +28,7 @@
 		"svg"
 	],
 	"scripts": {
-		"build": "ts-node ./scripts/build.ts && tsc"
+		"build": "playform build src/index.ts src/lib/*.ts src/options/index.ts"
 	},
 	"dependencies": {
 		"csso": "5.0.5",
@@ -40,14 +40,13 @@
 		"terser": "5.14.2"
 	},
 	"devDependencies": {
+		"@playform/config": "0.0.1",
+		"@playform/scripts": "0.0.1",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/node": "18.7.8",
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.4",
-		"astro": "1.0.6",
-		"esbuild": "0.15.5",
-		"ts-node": "10.9.1",
-		"typescript": "4.7.4"
+		"astro": "1.0.6"
 	}
 }

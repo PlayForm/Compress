@@ -44,7 +44,6 @@
 		"@playform/scripts": "0.0.1",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
-		"@types/node": "18.7.9",
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.4",
 		"astro": "1.0.6"

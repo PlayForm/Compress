@@ -1,3 +1,7 @@
+## 1.0.5
+
+-   Updates terser
+
 ## 1.0.4
 
 -   Refactor

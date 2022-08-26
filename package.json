@@ -40,12 +40,12 @@
 		"terser": "5.15.0"
 	},
 	"devDependencies": {
-		"@playform/config": "0.0.1",
+		"@playform/config": "0.0.2",
 		"@playform/scripts": "0.0.3",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.4",
-		"astro": "1.0.9"
+		"astro": "1.1.0"
 	}
 }

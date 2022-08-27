@@ -5,7 +5,7 @@
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Playform/astro-compress.git"
+		"url": "https://github.com/Playform/astro-compress.git"
 	},
 	"homepage": "https://github.com/Playform/astro-compress#readme",
 	"bugs": {
@@ -40,8 +40,8 @@
 		"terser": "5.15.0"
 	},
 	"devDependencies": {
-		"@playform/config": "0.0.2",
-		"@playform/scripts": "0.0.4",
+		"@playform/config": "0.0.3",
+		"@playform/scripts": "0.0.5",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.30.5",

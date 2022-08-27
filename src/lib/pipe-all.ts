@@ -1,13 +1,13 @@
+import type { Options } from "../options/index";
+
+import parse from "./parse.js";
+import sharpRead from "./sharp-read.js";
+
 import { minify as csso } from "csso";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
-
-import parse from "./parse.js";
-import sharpRead from "./sharp-read.js";
-
-import type { Options } from "../options/index";
 
 /**
  * It takes a settings object, loops through each key, and calls the appropriate function for each key

@@ -36,21 +36,23 @@ pnpx astro add astro-compress
 First, install the `astro-compress` integration like so:
 
 ```
-npm install astro-compress
+npm install -D -E astro-compress
 ```
 
 Then, apply this integration to your `astro.config.*` file using the
 `integrations` property:
 
-**astro.config.mjs**
+**astro.config.ts**
 
-```js
-import { defineConfig } from "astro/config";
+```ts
+import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default defineConfig({
-	integrations: [compress()],
-});
+export default (): AstroUserConfig => {
+	return {
+		integrations: [compress()],
+	};
+};
 ```
 
 ## Getting started
@@ -91,9 +93,9 @@ You can override any of the default options from the configurations of:
 
 or disable them entirely:
 
-```js
-import { defineConfig } from "astro/config";
+```ts
 import compress from "astro-compress";
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
 	integrations: [
@@ -110,33 +112,37 @@ export default defineConfig({
 
 If your path is different than dist be sure to update it accordingly:
 
-```js
-import { defineConfig } from "astro/config";
+```ts
+import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default defineConfig({
-	outDir: "./build",
-	integrations: [
-		compress({
-			path: "./build",
-		}),
-	],
-});
+export default (): AstroUserConfig => {
+	return {
+		outDir: "./build",
+		integrations: [
+			compress({
+				path: "./build",
+			}),
+		],
+	};
+};
 ```
 
 Set logger to 0 if you do not want to see debug messages. Default is 2.
 
-```js
-import { defineConfig } from "astro/config";
+```ts
+import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default defineConfig({
-	integrations: [
-		compress({
-			logger: 0,
-		}),
-	],
-});
+export default (): AstroUserConfig => {
+	return {
+		integrations: [
+			compress({
+				logger: 0,
+			}),
+		],
+	};
+};
 ```
 
 [astro-compress]: https://npmjs.org/astro-compress

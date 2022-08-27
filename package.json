@@ -41,7 +41,7 @@
 	},
 	"devDependencies": {
 		"@playform/config": "0.0.2",
-		"@playform/scripts": "0.0.3",
+		"@playform/scripts": "0.0.4",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.30.5",

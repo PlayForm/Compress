@@ -6,7 +6,7 @@
  * @returns A function that takes two parameters, bytes and decimals.
  */
 
-export const formatBytes = async (bytes: number, decimals = 2) => {
+export default async (bytes: number, decimals = 2) => {
 	if (bytes === 0) return "0 Bytes";
 
 	const k = 1024;

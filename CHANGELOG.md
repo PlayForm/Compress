@@ -1,3 +1,7 @@
+## 1.0.6
+
+-   Cleanup
+
 ## 1.0.5
 
 -   Updates terser

@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {

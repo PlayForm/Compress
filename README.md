@@ -94,20 +94,22 @@ You can override any of the default options from the configurations of:
 or disable them entirely:
 
 ```ts
+import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
-import { defineConfig } from "astro/config";
 
-export default defineConfig({
-	integrations: [
-		compress({
-			css: false,
-			html: false,
-			js: false,
-			img: false,
-			svg: false,
-		}),
-	],
-});
+export default (): AstroUserConfig => {
+	return {
+		integrations: [
+			compress({
+				css: false,
+				html: false,
+				js: false,
+				img: false,
+				svg: false,
+			}),
+		],
+	};
+};
 ```
 
 If your path is different than dist be sure to update it accordingly:

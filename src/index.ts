@@ -12,7 +12,7 @@ import defaultOptions, { Options } from "./options/index.js";
 export default function createPlugin(
 	integrationOptions: Options = {}
 ): AstroIntegration {
-	const _options = deepmerge(defaultOptions, integrationOptions);
+	const _options = deepmerge(defaultOptions(), integrationOptions);
 
 	_options.path = _options.path?.endsWith("/")
 		? _options.path

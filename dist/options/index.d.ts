@@ -36,5 +36,5 @@ export interface Options {
      */
     logger?: number;
 }
-declare const _default: Options;
+declare const _default: () => Options;
 export default _default;

@@ -1,9 +1,9 @@
 {
+	"compilerOptions": {
+		"outDir": "dist"
+	},
 	"extends": "@playform/config/tsconfig.json",
 	"include": [
 		"src"
-	],
-	"compilerOptions": {
-		"outDir": "dist"
-	}
+	]
 }

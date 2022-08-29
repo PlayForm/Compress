@@ -3,7 +3,7 @@ import type {
 	BeforeCompressFn,
 	CompressOptions,
 	MinifyOptions,
-	Usage,
+	Usage
 } from "csso";
 
 export default interface CSS extends MinifyOptions, CompressOptions {

@@ -5,13 +5,13 @@
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Playform/astro-compress.git"
+		"url": "https://github.com/lightrix/astro-compress.git"
 	},
-	"homepage": "https://github.com/Playform/astro-compress#readme",
+	"homepage": "https://github.com/lightrix/astro-compress#readme",
 	"bugs": {
-		"url": "https://github.com/Playform/astro-compress/issues"
+		"url": "https://github.com/lightrix/astro-compress/issues"
 	},
-	"author": "Nikola Hristov <nikola@playform.cloud>",
+	"author": "Nikola Hristov <nikola@lightrix.dev>",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -28,7 +28,7 @@
 		"svg"
 	],
 	"scripts": {
-		"build": "playform build src/index.ts src/lib/*.ts src/options/index.ts"
+		"build": "lightrix build src/index.ts src/lib/*.ts src/options/index.ts"
 	},
 	"dependencies": {
 		"csso": "5.0.5",
@@ -40,8 +40,8 @@
 		"terser": "5.15.0"
 	},
 	"devDependencies": {
-		"@playform/config": "0.0.3",
-		"@playform/scripts": "0.0.5",
+		"@lightrix/config": "0.0.1",
+		"@lightrix/scripts": "0.0.1",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.30.5",

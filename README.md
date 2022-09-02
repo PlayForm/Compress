@@ -155,4 +155,4 @@ export default (): AstroUserConfig => {
 [svgo]: https://npmjs.org/svgo
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/
 
-[![Built with lightrix/npm](https://raw.githubusercontent.com/lightrix/npm/main/.github/img/favicon-16x16.png)](https://github.com/lightrix/npm)
+[![Built with nikolarhristov/npm](https://raw.githubusercontent.com/nikolarhristov/npm/main/.github/img/favicon-16x16.png)](https://github.com/NikolaRHristov/npm)

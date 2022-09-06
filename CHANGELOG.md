@@ -1,3 +1,7 @@
+## 1.0.7
+
+-   Enhancement
+
 ## 1.0.6
 
 -   Cleanup

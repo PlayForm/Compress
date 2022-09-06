@@ -78,7 +78,6 @@ export default (): Options => {
 			preventAttributesEscaping: false,
 			processConditionalComments: true,
 			processScripts: [],
-			quoteCharacter: "",
 			removeAttributeQuotes: true,
 			removeComments: false,
 			removeEmptyAttributes: false,

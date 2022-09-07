@@ -112,7 +112,7 @@ export default (): AstroUserConfig => {
 };
 ```
 
-If your path is different than dist be sure to update it accordingly:
+If your path is different than `dist` be sure to update it accordingly:
 
 ```ts
 import type { AstroUserConfig } from "astro";

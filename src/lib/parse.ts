@@ -31,7 +31,6 @@ export default async (
 	for (const file of files) {
 		try {
 			const fileSizeBefore = (await fs.promises.stat(file)).size;
-
 			const writeBuffer = await write(await read(file));
 
 			if (!writeBuffer) {

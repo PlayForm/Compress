@@ -24,7 +24,6 @@ export default async (
 	const files = await FastGlob(glob);
 
 	const savings = {
-		initial: 0,
 		files: 0,
 		total: 0,
 	};
@@ -32,7 +31,6 @@ export default async (
 	for (const file of files) {
 		try {
 			const fileSizeBefore = (await fs.promises.stat(file)).size;
-			savings.initial += fileSizeBefore;
 
 			const writeBuffer = await write(await read(file));
 

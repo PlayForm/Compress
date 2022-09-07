@@ -67,12 +67,15 @@ export default async (settings: Options, debug: number = 2) => {
 						debug,
 						files,
 						async (data) => {
-							const result = svgo(data, setting);
+							const result = svgo(data, setting) as {
+								[key: string]: any;
+							};
 
 							if (typeof result.error !== "undefined") {
 								console.log(result.error);
-							} else {
-								// @ts-ignore
+							}
+
+							if (typeof result.data !== "undefined") {
 								return result.data;
 							}
 						}

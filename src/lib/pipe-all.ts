@@ -8,11 +8,6 @@ import type { Options } from "../options/index";
 import parse from "./parse.js";
 import sharpRead from "./sharp-read.js";
 
-/**
- * It takes a settings object, loops through each key, and calls the appropriate function for each key
- * @param {Options} settings - Options - The settings object that you pass to the pipeAll function.
- * @param {number} [debug=2] - 0 = no output, 1 = output file names, 2 = output file names and sizes
- */
 export default async (settings: Options, debug: number = 2) => {
 	for (const files in settings) {
 		if (Object.prototype.hasOwnProperty.call(settings, files)) {
@@ -71,12 +66,12 @@ export default async (settings: Options, debug: number = 2) => {
 								[key: string]: any;
 							};
 
-							if (typeof result.error !== "undefined") {
-								console.log(result.error);
+							if (typeof result["error"] !== "undefined") {
+								console.log(result["error"]);
 							}
 
-							if (typeof result.data !== "undefined") {
-								return result.data;
+							if (typeof result["data"] !== "undefined") {
+								return result["data"];
 							}
 						}
 					);

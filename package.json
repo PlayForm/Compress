@@ -11,7 +11,11 @@
 	"bugs": {
 		"url": "https://github.com/NikolaRHristov/astro-compress/issues"
 	},
-	"author": "nikolarhristov",
+	"author": {
+		"name": "Nikola Hristov",
+		"email": "nikola@lightrix.dev",
+		"url": "https://nikolahristov.tech"
+	},
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -33,7 +37,7 @@
 	"dependencies": {
 		"csso": "5.0.5",
 		"deepmerge-ts": "4.2.1",
-		"fast-glob": "3.2.11",
+		"fast-glob": "3.2.12",
 		"html-minifier-terser": "7.0.0",
 		"sharp": "0.31.0",
 		"svgo": "2.8.0",
@@ -46,6 +50,6 @@
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.4",
-		"astro": "1.1.6"
+		"astro": "1.1.7"
 	}
 }

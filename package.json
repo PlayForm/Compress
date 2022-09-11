@@ -11,7 +11,7 @@
 	"bugs": {
 		"url": "https://github.com/NikolaRHristov/astro-compress/issues"
 	},
-	"author": "lightrix",
+	"author": "Nikola Hristov <nikola@lightrix.dev>",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",

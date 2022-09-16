@@ -46,6 +46,6 @@
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.30.5",
 		"@types/svgo": "2.6.4",
-		"astro": "1.2.4"
+		"astro": "1.2.5"
 	}
 }

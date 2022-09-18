@@ -28,7 +28,7 @@
 		"svg"
 	],
 	"scripts": {
-		"build": "nikola build src/index.ts src/lib/*.ts src/options/index.ts"
+		"build": "lightrix build src/index.ts src/lib/*.ts src/options/index.ts"
 	},
 	"dependencies": {
 		"csso": "5.0.5",
@@ -40,12 +40,13 @@
 		"terser": "5.15.0"
 	},
 	"devDependencies": {
-		"@nikolarhristov/config": "0.0.1",
-		"@nikolarhristov/scripts": "0.0.1",
+		"@lightrix/config": "0.0.1",
+		"@lightrix/scripts": "0.0.1",
+		"@squoosh/lib": "0.4.0",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
-		"@types/sharp": "0.30.5",
+		"@types/sharp": "0.31.0",
 		"@types/svgo": "2.6.4",
-		"astro": "1.2.3"
+		"astro": "1.2.6"
 	}
 }

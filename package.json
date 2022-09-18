@@ -40,8 +40,8 @@
 		"terser": "5.15.0"
 	},
 	"devDependencies": {
-		"@lightrix/config": "0.0.1",
-		"@lightrix/scripts": "0.0.1",
+		"@lightrix/config": "0.0.2",
+		"@lightrix/scripts": "0.0.2",
 		"@squoosh/lib": "0.4.0",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",

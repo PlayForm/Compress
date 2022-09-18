@@ -1,4 +1,4 @@
-export default interface IMG {
+export default interface SHARP {
 	[key: string]: any;
 
 	avif?: {

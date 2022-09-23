@@ -6,8 +6,6 @@ import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 
-import { ImagePool } from "@squoosh/lib";
-
 import type { Options } from "../options/index";
 import parse from "./parse.js";
 import sharpRead from "./sharp-read.js";
@@ -59,26 +57,6 @@ export default async (settings: Options, debug: number = 2) => {
 						async (sharpFile) =>
 							await sharpRead(sharpFile, setting),
 						async (file) => sharp(file)
-					);
-					break;
-
-				case "squoosh":
-					await parse(
-						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
-						debug,
-						files,
-						async (data) => {
-							console.log(data);
-						},
-						async (file) => {
-							const image = imagePool.ingestImage(
-								await fs.promises.readFile(file)
-							);
-
-							console.log(image);
-
-							return image;
-						}
 					);
 					break;
 

@@ -2,7 +2,6 @@ import type CSS from "./css";
 import type HTML from "./html";
 import type JS from "./js";
 import type SHARP from "./sharp";
-import type SQUOOSH from "./squoosh";
 import type SVG from "./svg";
 
 export interface Options {
@@ -15,8 +14,6 @@ export interface Options {
 	html?: boolean | HTML;
 
 	js?: boolean | JS;
-
-	squoosh?: boolean | SQUOOSH;
 
 	sharp?: boolean | SHARP;
 
@@ -81,7 +78,6 @@ export default (): Options => ({
 		safari10: false,
 		toplevel: false,
 	},
-	squoosh: { mozjpeg: {} },
 	sharp: {
 		avif: {
 			chromaSubsampling: "4:4:4",
@@ -89,9 +85,6 @@ export default (): Options => ({
 		},
 		gif: {
 			effort: 10,
-		},
-		heif: {
-			chromaSubsampling: "4:4:4",
 		},
 		jpeg: {
 			chromaSubsampling: "4:4:4",

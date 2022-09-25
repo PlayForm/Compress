@@ -1,5 +1,4 @@
 import { minify as csso } from "csso";
-import fs from "fs";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import { cpus } from "os";
 import sharp from "sharp";

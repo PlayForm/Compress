@@ -10,7 +10,6 @@ import parse from "./parse.js";
 import sharpRead from "./sharp-read.js";
 
 export default async (settings: Options, debug: number = 2) => {
-	const imagePool = new ImagePool(cpus().length);
 
 	for (const files in settings) {
 		if (Object.prototype.hasOwnProperty.call(settings, files)) {
@@ -86,5 +85,4 @@ export default async (settings: Options, debug: number = 2) => {
 		}
 	}
 
-	await imagePool.close();
 };

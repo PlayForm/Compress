@@ -1,6 +1,5 @@
 import { minify as csso } from "csso";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
-import { cpus } from "os";
 import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
@@ -10,7 +9,6 @@ import parse from "./parse.js";
 import sharpRead from "./sharp-read.js";
 
 export default async (settings: Options, debug: number = 2) => {
-
 	for (const files in settings) {
 		if (Object.prototype.hasOwnProperty.call(settings, files)) {
 			const setting = settings[files];
@@ -84,5 +82,4 @@ export default async (settings: Options, debug: number = 2) => {
 			}
 		}
 	}
-
 };

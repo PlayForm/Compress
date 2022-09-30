@@ -35,7 +35,7 @@
 		"deepmerge-ts": "4.2.2",
 		"fast-glob": "3.2.12",
 		"html-minifier-terser": "7.0.0",
-		"sharp": "0.31.0",
+		"sharp": "0.31.1",
 		"svgo": "2.8.0",
 		"terser": "5.15.0"
 	},

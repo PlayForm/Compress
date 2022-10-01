@@ -5,7 +5,7 @@ permissions:
     pull-requests: write
 
 jobs:
-    approve:
+    approve-and-merge:
         runs-on: ubuntu-latest
         if: ${{ github.actor == 'dependabot[bot]' }}
         steps:

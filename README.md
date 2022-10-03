@@ -48,7 +48,7 @@ Then, apply this integration to your `astro.config.*` file using the
 import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default (): AstroUserConfig => ({ integrations: [compress()] });
+export default { integrations: [compress()] } satisfies AstroUserConfig;
 ```
 
 ## Getting started
@@ -93,7 +93,7 @@ or disable them entirely:
 import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default (): AstroUserConfig => ({
+export default {
 	integrations: [
 		compress({
 			css: false,
@@ -103,7 +103,7 @@ export default (): AstroUserConfig => ({
 			svg: false,
 		}),
 	],
-});
+} satisfies AstroUserConfig;
 ```
 
 If your path is different than `dist` be sure to update it accordingly:
@@ -112,14 +112,14 @@ If your path is different than `dist` be sure to update it accordingly:
 import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default (): AstroUserConfig => ({
+export default {
 	outDir: "./build",
 	integrations: [
 		compress({
 			path: "./build",
 		}),
 	],
-});
+} satisfies AstroUserConfig;
 ```
 
 Set logger to 0 if you do not want to see debug messages. Default is 2.
@@ -128,13 +128,13 @@ Set logger to 0 if you do not want to see debug messages. Default is 2.
 import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
 
-export default (): AstroUserConfig => ({
+export default {
 	integrations: [
 		compress({
 			logger: 0,
 		}),
 	],
-});
+} satisfies AstroUserConfig;
 ```
 
 [astro-compress]: https://npmjs.org/astro-compress

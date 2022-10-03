@@ -22,7 +22,7 @@ export interface Options {
 	logger?: number;
 }
 
-export default (): Options => ({
+export default {
 	path: "./dist/",
 	css: {
 		clone: false,
@@ -88,4 +88,4 @@ export default (): Options => ({
 		plugins: ["preset-default"],
 	},
 	logger: 2,
-});
+} satisfies Options;

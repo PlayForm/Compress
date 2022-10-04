@@ -45,7 +45,7 @@ export default async (settings: Options, debug: number = 2) => {
 					);
 					break;
 
-				case "sharp":
+				case "img":
 					await parse(
 						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
 						debug,

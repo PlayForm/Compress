@@ -99,7 +99,7 @@ export default (): AstroUserConfig => ({
 			css: false,
 			html: false,
 			js: false,
-			sharp: false,
+			img: false,
 			svg: false,
 		}),
 	],

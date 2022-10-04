@@ -52,7 +52,7 @@ export default (): Options => ({
 		safari10: false,
 		toplevel: false,
 	},
-	sharp: {
+	img: {
 		avif: {
 			chromaSubsampling: "4:4:4",
 			effort: 9,

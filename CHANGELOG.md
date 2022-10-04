@@ -1,3 +1,7 @@
+## 1.0.10
+
+-   Cleanup
+
 ## 1.0.9
 
 -   Switches ownership

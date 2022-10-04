@@ -9,7 +9,7 @@ export interface Options {
     css?: boolean | CSS;
     html?: boolean | HTML;
     js?: boolean | JS;
-    sharp?: boolean | SHARP;
+    img?: boolean | SHARP;
     svg?: boolean | SVG;
     logger?: number;
 }

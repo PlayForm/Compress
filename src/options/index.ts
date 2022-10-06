@@ -31,7 +31,7 @@ export default (): Options => ({
 	},
 	html: {
 		caseSensitive: true,
-		collapseInlineTagWhitespace: true,
+		collapseInlineTagWhitespace: false,
 		collapseWhitespace: true,
 		continueOnParseError: true,
 		html5: true,

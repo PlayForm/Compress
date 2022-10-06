@@ -11,7 +11,7 @@
 	"bugs": {
 		"url": "https://github.com/astro-community/astro-compress/issues"
 	},
-	"author": "Nikola Hristov <nikola@nikolahristov.tech>",
+	"author": "nikolaxhristov",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -46,6 +46,6 @@
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",
 		"@types/svgo": "2.6.4",
-		"astro": "1.4.4"
+		"astro": "1.4.5"
 	}
 }

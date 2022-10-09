@@ -51,9 +51,11 @@ import compress from "astro-compress";
 export default (): AstroUserConfig => ({ integrations: [compress()] });
 ```
 
-> **Note**
->
-> Use `astro-compress` last in your integration list.
+---
+
+> **Note** Use `astro-compress` last in your integration list.
+
+---
 
 ## Getting started
 

@@ -42,6 +42,8 @@ npm install -D -E astro-compress
 Then, apply this integration to your `astro.config.*` file using the
 `integrations` property:
 
+> **Note** Use `astro-compress` last in your integration list.
+
 **`astro.config.ts`**
 
 ```ts
@@ -50,12 +52,6 @@ import compress from "astro-compress";
 
 export default (): AstroUserConfig => ({ integrations: [compress()] });
 ```
-
----
-
-> **Note** Use `astro-compress` last in your integration list.
-
----
 
 ## Getting started
 

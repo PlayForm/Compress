@@ -52,7 +52,7 @@ export default (): AstroUserConfig => ({ integrations: [compress()] });
 ```
 
 > **Note** Use `astro-compress` last in your integration list for the best
-> optimization.
+> optimizations.
 
 ## Getting started
 

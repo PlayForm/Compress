@@ -42,7 +42,7 @@ npm install -D -E astro-compress
 Then, apply this integration to your `astro.config.*` file using the
 `integrations` property:
 
-**astro.config.ts**
+**`astro.config.ts`**
 
 ```ts
 import type { AstroUserConfig } from "astro";
@@ -50,6 +50,12 @@ import compress from "astro-compress";
 
 export default (): AstroUserConfig => ({ integrations: [compress()] });
 ```
+
+---
+
+### **Important**: Use `astro-compress` last in your integration list.
+
+---
 
 ## Getting started
 
@@ -89,6 +95,8 @@ You can override any of the default options from the configurations of:
 
 or disable them entirely:
 
+**`astro.config.ts`**
+
 ```ts
 import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
@@ -108,6 +116,8 @@ export default (): AstroUserConfig => ({
 
 If your path is different than `dist` be sure to update it accordingly:
 
+**`astro.config.ts`**
+
 ```ts
 import type { AstroUserConfig } from "astro";
 import compress from "astro-compress";
@@ -123,6 +133,8 @@ export default (): AstroUserConfig => ({
 ```
 
 Set logger to 0 if you do not want to see debug messages. Default is 2.
+
+**`astro.config.ts`**
 
 ```ts
 import type { AstroUserConfig } from "astro";
@@ -144,5 +156,9 @@ export default (): AstroUserConfig => ({
 [sharp]: https://npmjs.org/sharp
 [svgo]: https://npmjs.org/svgo
 [astro-integration]: https://docs.astro.build/en/guides/integrations-guide/
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a history of changes to this integration.
 
 [![Built with Lightrix/npm](https://raw.githubusercontent.com/Lightrix/npm/main/.github/img/favicon-16x16.png)](https://github.com/Lightrix/npm)

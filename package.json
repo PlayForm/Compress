@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
@@ -11,8 +11,6 @@
 	"bugs": {
 		"url": "https://github.com/astro-community/astro-compress/issues"
 	},
-	"author": "nikolaxhristov",
-	"license": "MIT",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"keywords": [
@@ -46,6 +44,6 @@
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",
 		"@types/svgo": "2.6.4",
-		"astro": "1.4.5"
+		"astro": "1.4.6"
 	}
 }

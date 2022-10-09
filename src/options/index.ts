@@ -1,7 +1,7 @@
 import type CSS from "./css";
 import type HTML from "./html";
 import type JS from "./js";
-import type SHARP from "./sharp";
+import type IMG from "./img";
 import type SVG from "./svg";
 
 export interface Options {
@@ -15,7 +15,7 @@ export interface Options {
 
 	js?: boolean | JS;
 
-	img?: boolean | SHARP;
+	img?: boolean | IMG;
 
 	svg?: boolean | SVG;
 
@@ -43,7 +43,7 @@ export default (): Options => ({
 		preventAttributesEscaping: false,
 		processConditionalComments: true,
 		removeAttributeQuotes: true,
-		removeComments: true,
+		removeComments: false,
 		removeScriptTypeAttributes: true,
 		removeStyleLinkTypeAttributes: true,
 		removeTagWhitespace: false,

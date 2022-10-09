@@ -1,7 +1,7 @@
 import type CSS from "./css";
 import type HTML from "./html";
 import type JS from "./js";
-import type SHARP from "./sharp";
+import type IMG from "./img";
 import type SVG from "./svg";
 export interface Options {
     [key: string]: any;
@@ -9,7 +9,7 @@ export interface Options {
     css?: boolean | CSS;
     html?: boolean | HTML;
     js?: boolean | JS;
-    img?: boolean | SHARP;
+    img?: boolean | IMG;
     svg?: boolean | SVG;
     logger?: number;
 }

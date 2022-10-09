@@ -1,6 +1,6 @@
-import type SHARP from "../options/sharp";
+import type IMG from "../options/img";
 
-export default async (sharpFile: any, options: SHARP = {}) => {
+export default async (sharpFile: any, options: IMG = {}) => {
 	const fileType = sharpFile.options.input.file.split(".").pop();
 
 	if (!fileType) {

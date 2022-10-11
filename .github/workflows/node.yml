@@ -41,6 +41,6 @@ jobs:
 
             - name: Install dependencies
               run: pnpm install
-            - run: npm shrinkwrap
-            - run: npm ci
-            - run: pnpm run build --if-present
+
+            - name: Build
+              run: pnpm run build --if-present

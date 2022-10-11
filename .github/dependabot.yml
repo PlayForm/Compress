@@ -4,7 +4,6 @@ updates:
       directory: "/"
       schedule:
           interval: "daily"
-      versioning-strategy: increase
 
     - package-ecosystem: "npm"
       directory: "/"

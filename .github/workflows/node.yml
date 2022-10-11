@@ -8,20 +8,39 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: ["latest"]
-
         steps:
-            - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2.2.3
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Install Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+            - uses: pnpm/action-setup@v2.0.1
+              name: Install pnpm
+              id: pnpm-install
               with:
                   version: 7.13.4
-            - uses: actions/setup-node@v3
+                  run_install: false
+
+            - name: Get pnpm store directory
+              id: pnpm-cache
+              run: |
+                  echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
               with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: "pnpm"
-            - run: pnpm install
+                  path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+                  key:
+                      ${{ runner.os }}-pnpm-store-${{
+                      hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
+
+            - name: Install dependencies
+              run: pnpm install
             - run: npm shrinkwrap
             - run: npm ci
             - run: pnpm run build --if-present

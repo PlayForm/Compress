@@ -23,7 +23,6 @@ jobs:
                   run_install: false
             - run: |
                   echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
             - uses: actions/cache@v3
               with:
                   path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
@@ -36,6 +35,5 @@ jobs:
 
             - run: pnpm install
               working-directory: /
-
-            - run: pnpm run build
+            - run: pnpm run build --if-present
               working-directory: /

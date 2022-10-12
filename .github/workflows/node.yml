@@ -19,7 +19,15 @@ jobs:
                   version: 7.13.4
                   run_install: |
                       - recursive: true
-                        args: [ --frozen-lockfile, --network-concurrency=50, --strict-peer-dependencies=false, --child-concurrency=50, --shamefully-hoist=true, --shared-workspace-lockfile=true, --unsafe-perm=true ]
+                        args: [
+                          --child-concurrency=50,
+                          --network-concurrency=50,
+                          --prefer-frozen-lockfile=false,
+                          --shamefully-hoist=true,
+                          --shared-workspace-lockfile=true,
+                          --strict-peer-dependencies=false,
+                          --unsafe-perm=true
+                        ]
             - uses: actions/setup-node@v3.5.0
               with:
                   node-version: ${{ matrix.node-version }}

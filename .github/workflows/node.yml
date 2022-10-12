@@ -17,6 +17,7 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
+                  cache: "pnpm"
             - uses: pnpm/action-setup@v2.2.3
               with:
                   version: 7.13.4
@@ -32,7 +33,7 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-pnpm-store-
 
-            - run: pnpm install
+            - run: pnpm install --frozen-lockfile
               working-directory: /
             - run: pnpm run build --if-present
               working-directory: /

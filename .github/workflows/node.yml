@@ -14,13 +14,13 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3.1.0
+            - uses: pnpm/action-setup@v2.2.3
+              with:
+                  version: 7.13.4
             - uses: actions/setup-node@v3.5.0
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
-            - uses: pnpm/action-setup@v2.2.3
-              with:
-                  version: 7.13.4
 
 
             - run: pnpm install --frozen-lockfile

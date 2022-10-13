@@ -23,8 +23,6 @@ jobs:
                           --child-concurrency=50,
                           --network-concurrency=50,
                           --prefer-frozen-lockfile=false,
-                          --shamefully-hoist=true,
-                          --shared-workspace-lockfile=false,
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true,
                           --lockfile-only

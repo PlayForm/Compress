@@ -26,7 +26,8 @@ jobs:
                           --shamefully-hoist=true,
                           --shared-workspace-lockfile=false,
                           --strict-peer-dependencies=false,
-                          --unsafe-perm=true
+                          --unsafe-perm=true,
+                          --lockfile-only
                         ]
             - uses: actions/setup-node@v3.5.0
               with:

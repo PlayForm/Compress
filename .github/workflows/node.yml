@@ -27,12 +27,13 @@ jobs:
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true,
                           --lockfile-only,
-                          --shared-workspace-lockfile=false
+                          --shared-workspace-lockfile=true
                         ]
             - uses: actions/setup-node@v3.5.0
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
+                  cache-dependency-path: ~/pnpm-lock.yaml
 
 
             - run: pnpm install

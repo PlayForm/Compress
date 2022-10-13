@@ -33,7 +33,8 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
-                  cache-dependency-path: ~/pnpm-lock.yaml
+                  cache-dependency-path: |
+                      **/pnpm-lock.yaml
 
 
             - run: pnpm install

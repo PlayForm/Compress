@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.3",
-		"@lightrix/scripts": "0.0.3",
+		"@lightrix/scripts": "0.0.4",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",

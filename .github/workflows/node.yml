@@ -26,8 +26,6 @@ jobs:
                           --unsafe-perm=true,
                           --lockfile-only
                         ]
-
-
             - uses: actions/setup-node@v3.5.0
               with:
                   node-version: ${{ matrix.node-version }}
@@ -35,7 +33,5 @@ jobs:
                   cache-dependency-path: './pnpm-lock.yaml'
             - run: pnpm install
               working-directory: .
-
-
             - run: pnpm run build
               working-directory: .

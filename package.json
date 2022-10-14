@@ -29,7 +29,6 @@
 		"build": "lightrix build src/index.ts src/lib/*.ts src/options/index.ts"
 	},
 	"dependencies": {
-		"@lightrix/config": "workspace:0.0.3",
 		"csso": "5.0.5",
 		"deepmerge-ts": "4.2.2",
 		"fast-glob": "3.2.12",
@@ -39,6 +38,7 @@
 		"terser": "5.15.1"
 	},
 	"devDependencies": {
+		"@lightrix/config": "0.0.3",
 		"@lightrix/scripts": "0.0.5",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",

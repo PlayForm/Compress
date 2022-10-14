@@ -26,7 +26,7 @@ jobs:
                           --unsafe-perm=true,
                           --lockfile-only
                         ]
-            - uses: actions/setup-node@v3.5.0
+            - uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"

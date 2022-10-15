@@ -13,10 +13,28 @@ jobs:
                 node-version: [14, 16, 18]
         steps:
             - uses: actions/checkout@v3.1.0
+            - uses: pnpm/action-setup@v2.2.3
+              with:
+                  version: 7.13.4
+                  run_install: |
+                      - recursive: true
+                        args: [
+                          --child-concurrency=9999,
+                          --link-workspace-packages=true,
+                          --lockfile-only,
+                          --network-concurrency=9999,
+                          --prefer-frozen-lockfile=false,
+                          --shamefully-hoist=false,
+                          --shared-workspace-lockfile=true,
+                          --strict-peer-dependencies=false,
+                          --unsafe-perm=true
+                        ]
             - uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
-            - run: npm install
+                  cache: "pnpm"
+                  cache-dependency-path: ./pnpm-lock.yaml
+            - run: pnpm install
               working-directory: .
-            - run: npm run build
+            - run: pnpm run build
               working-directory: .

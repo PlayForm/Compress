@@ -2,6 +2,6 @@
 	"compilerOptions": {
 		"outDir": "dist"
 	},
-	"extends": "@lightrix/config/tsconfig.json",
+	"extends": "@lightrix/config/base/ts",
 	"include": ["src"]
 }

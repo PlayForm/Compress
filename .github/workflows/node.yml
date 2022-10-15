@@ -19,20 +19,22 @@ jobs:
                   run_install: |
                       - recursive: true
                         args: [
-                          --shamefully-hoist=true,
                           --child-concurrency=9999,
+                          --link-workspace-packages=true,
+                          --lockfile-only,
                           --network-concurrency=9999,
                           --prefer-frozen-lockfile=false,
+                          --prefer-workspace-packages=true,
+                          --shamefully-hoist=true,
+                          --shared-workspace-lockfile=true,
                           --strict-peer-dependencies=false,
-                          --unsafe-perm=true,
-                          --lockfile-only
+                          --unsafe-perm=true
                         ]
             - uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
-                  check-latest: true
                   cache: "pnpm"
-                  cache-dependency-path: './pnpm-lock.yaml'
+                  cache-dependency-path: ./pnpm-lock.yaml
             - run: pnpm install
               working-directory: .
             - run: pnpm run build

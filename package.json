@@ -38,8 +38,8 @@
 		"terser": "5.15.1"
 	},
 	"devDependencies": {
-		"@lightrix/config": "0.0.4",
-		"@lightrix/scripts": "0.0.7",
+		"@lightrix/config": "0.0.5",
+		"@lightrix/scripts": "0.0.8",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",

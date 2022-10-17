@@ -57,7 +57,7 @@ export default (): AstroUserConfig => ({ integrations: [compress()] });
 ## Getting started
 
 The utility should now automatically compress all your CSS, HTML and JavaScript
-files in the dist folder.
+files in the `dist` folder.
 
 The following image file types will also be compressed.
 

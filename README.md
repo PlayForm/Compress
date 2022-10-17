@@ -59,7 +59,7 @@ export default (): AstroUserConfig => ({ integrations: [compress()] });
 The utility should now automatically compress all your CSS, HTML and JavaScript
 files in the `dist` folder.
 
-The following image file types will also be compressed.
+The following image file types will also be compressed:
 
 -   avci
 -   avcs
@@ -86,9 +86,9 @@ You can override any of the default options from the configurations of:
 
 -   [csso](src/options/css.ts)
 -   [html-minifier-terser](src/options/html.ts)
--   [terser](src/options/js.ts)
 -   [sharp](src/options/img.ts)
 -   [svgo](src/options/svg.ts)
+-   [terser](src/options/js.ts)
 
 or disable them entirely:
 
@@ -103,8 +103,8 @@ export default (): AstroUserConfig => ({
 		compress({
 			css: false,
 			html: false,
-			js: false,
 			img: false,
+			js: false,
 			svg: false,
 		}),
 	],

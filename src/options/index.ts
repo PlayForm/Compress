@@ -1,7 +1,7 @@
 import type CSS from "./css";
 import type HTML from "./html";
-import type JS from "./js";
 import type IMG from "./img";
+import type JS from "./js";
 import type SVG from "./svg";
 
 export interface Options {

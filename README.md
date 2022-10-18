@@ -51,8 +51,9 @@ import compress from "astro-compress";
 export default (): AstroUserConfig => ({ integrations: [compress()] });
 ```
 
-> **Note** Use `astro-compress` last in your integration list for the best
-> optimizations.
+> **Note**
+>
+> Use `astro-compress` last in your integration list for the best optimizations.
 
 ## Getting started
 
@@ -159,3 +160,7 @@ export default (): AstroUserConfig => ({
 See [CHANGELOG.md](CHANGELOG.md) for a history of changes to this integration.
 
 [![Built with Lightrix/npm](https://raw.githubusercontent.com/Lightrix/npm/main/.github/img/favicon.png)](https://github.com/Lightrix/npm)
+
+```
+
+```

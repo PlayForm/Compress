@@ -13,7 +13,7 @@ jobs:
                 node-version: [14, 16, 18]
         steps:
             - uses: actions/checkout@v3.1.0
-            - uses: pnpm/action-setup@v2.2.3
+            - uses: pnpm/action-setup@v2.2.4
               with:
                   version: 7.13.4
                   run_install: |

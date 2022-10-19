@@ -1,3 +1,5 @@
+name: Node
+
 on:
     workflow_dispatch:
     push:

@@ -1,3 +1,5 @@
+name: Dependabot
+
 on:
     workflow_dispatch:
     pull_request:

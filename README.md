@@ -47,7 +47,7 @@ Then, apply this integration to your `astro.config.*` file using the
 ```ts
 import compress from "astro-compress";
 
-export default { integrations: [compress()] }
+export default { integrations: [compress()] };
 ```
 
 > **Note**
@@ -107,7 +107,7 @@ export default {
 			svg: false,
 		}),
 	],
-}
+};
 ```
 
 If your path is different than `dist` be sure to update it accordingly:
@@ -124,7 +124,7 @@ export default {
 			path: "./build",
 		}),
 	],
-}
+};
 ```
 
 Set logger to 0 if you do not want to see debug messages. Default is 2.
@@ -140,7 +140,7 @@ export default {
 			logger: 0,
 		}),
 	],
-}
+};
 ```
 
 [astro-compress]: https://npmjs.org/astro-compress

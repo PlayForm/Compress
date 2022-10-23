@@ -34,7 +34,7 @@
 		"fast-glob": "3.2.12",
 		"html-minifier-terser": "7.0.0",
 		"sharp": "0.31.1",
-		"svgo": "2.8.0",
+		"svgo": "3.0.0",
 		"terser": "5.15.1"
 	},
 	"devDependencies": {

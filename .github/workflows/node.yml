@@ -6,6 +6,7 @@ on:
         branches: [main]
     pull_request:
         branches: [main]
+    workflow_call:
 
 jobs:
     build:
@@ -42,3 +43,7 @@ jobs:
 
             - run: pnpm run build
               working-directory: .
+            - uses: actions/upload-artifact@v3.1.1
+              with:
+                  name: node-${{ matrix.node-version }}-dist-.
+                  path: ./dist

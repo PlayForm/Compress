@@ -1,3 +1,7 @@
+## 1.1.0
+
+-   Introduces filters
+
 ## 1.0.12
 
 -   Bug fix

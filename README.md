@@ -155,7 +155,7 @@ import compress from "astro-compress";
 export default {
 	integrations: [
 		compress({
-			filter: [
+			exclude: [
 				"my-awesome.png",
 				(file: string) =>
 					file === "./dist/img/favicon/safari-pinned-tab.svg",

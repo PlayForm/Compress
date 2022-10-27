@@ -8,7 +8,7 @@ export default async (
 	glob: string,
 	debug: number = 2,
 	type: string = "",
-	filter: Options["filter"],
+	exclude: Options["exclude"],
 	write: (data: string) => any = async (data) => data,
 	read: (file: string) => any = async (file) =>
 		await fs.promises.readFile(file, "utf-8")
@@ -20,30 +20,30 @@ export default async (
 		total: 0,
 	};
 
-	let excludes = new Set();
+	let filters = new Set();
 
-	if (typeof filter !== "undefined") {
-		if (filter instanceof Array) {
-			for (const filters of filter) {
-				excludes.add(filters);
+	if (typeof exclude !== "undefined") {
+		if (exclude instanceof Array) {
+			for (const excludes of exclude) {
+				filters.add(excludes);
 			}
 		} else {
-			excludes.add(filter);
+			filters.add(exclude);
 		}
 	}
 
-	for (const exclude of excludes) {
-		if (typeof exclude === "string") {
+	for (const filter of filters) {
+		if (typeof filter === "string") {
 			for (const file of files) {
-				if (file.match(exclude)) {
+				if (file.match(filter)) {
 					files.splice(files.indexOf(file), 1);
 				}
 			}
 		}
 
-		if (typeof exclude === "function") {
+		if (typeof filter === "function") {
 			for (const file of files) {
-				if (exclude(file)) {
+				if (filter(file)) {
 					files.splice(files.indexOf(file), 1);
 				}
 			}

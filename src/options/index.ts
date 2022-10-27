@@ -4,10 +4,20 @@ import type IMG from "./img";
 import type JS from "./js";
 import type SVG from "./svg";
 
+export type filterFunction = (file: string) => boolean;
+
 export interface Options {
 	[key: string]: any;
 
 	path?: string;
+
+	filter?:
+		| string
+		| RegExp
+		| filterFunction
+		| [string]
+		| [RegExp]
+		| [filterFunction];
 
 	css?: boolean | CSS;
 

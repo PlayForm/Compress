@@ -18,49 +18,58 @@ export default async (settings: Options, debug: number = 2) => {
 			}
 
 			switch (files) {
-				case "css":
+				case "css": {
 					await parse(
 						`${settings.path}**/*.css`,
 						debug,
 						files,
+						settings?.filter,
 						(data) => csso(data, setting).css
 					);
 					break;
+				}
 
-				case "html":
+				case "html": {
 					await parse(
 						`${settings.path}**/*.html`,
 						debug,
 						files,
+						settings?.filter,
 						async (data) => await htmlMinifierTerser(data, setting)
 					);
 					break;
+				}
 
-				case "js":
+				case "js": {
 					await parse(
 						`${settings.path}**/*.{js,mjs,cjs}`,
 						debug,
 						files,
+						settings?.filter,
 						async (data) => (await terser(data, setting)).code
 					);
 					break;
+				}
 
-				case "img":
+				case "img": {
 					await parse(
 						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
 						debug,
 						files,
+						settings?.filter,
 						async (sharpFile) =>
 							await sharpRead(sharpFile, setting),
 						async (file) => sharp(file)
 					);
 					break;
+				}
 
-				case "svg":
+				case "svg": {
 					await parse(
 						`${settings.path}**/*.svg`,
 						debug,
 						files,
+						settings?.filter,
 						async (data) => {
 							const result = svgo(data, setting) as {
 								[key: string]: any;
@@ -76,6 +85,7 @@ export default async (settings: Options, debug: number = 2) => {
 						}
 					);
 					break;
+				}
 
 				default:
 					break;

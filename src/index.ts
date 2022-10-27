@@ -24,9 +24,9 @@ export default (options: Options = {}): AstroIntegration => {
 		name: "astro-compress",
 		hooks: {
 			"astro:config:done": async (options) => {
-				_options.path = !_options.path
-					? options.config.outDir.toString()
-					: _options.path;
+				_options.path = _options.path
+					? _options.path
+					: options.config.outDir.toString();
 			},
 			"astro:build:done": async () => {
 				await pipeAll(_options, _options.logger);

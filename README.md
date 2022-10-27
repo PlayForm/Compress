@@ -143,6 +143,28 @@ export default {
 };
 ```
 
+You can provide a filter to exclude files in your build. A filter can be an
+array of regexes or a single match. You can use functions, as well to match on
+file names.
+
+**`astro.config.ts`**
+
+```ts
+import compress from "astro-compress";
+
+export default {
+	integrations: [
+		compress({
+			filter: [
+				"my-awesome.png",
+				(file: string) =>
+					file === "./dist/img/favicon/safari-pinned-tab.svg",
+			],
+		}),
+	],
+};
+```
+
 [astro-compress]: https://npmjs.org/astro-compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser

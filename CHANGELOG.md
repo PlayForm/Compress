@@ -1,3 +1,7 @@
+## 1.1.1
+
+-   Cleanup
+
 ## 1.1.0
 
 -   Introduces filters

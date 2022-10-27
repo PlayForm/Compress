@@ -11,7 +11,7 @@ export interface Options {
 
 	path?: string;
 
-	filter?:
+	exclude?:
 		| string
 		| RegExp
 		| filterFunction

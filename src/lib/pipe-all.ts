@@ -23,7 +23,7 @@ export default async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.css`,
 						debug,
 						files,
-						settings?.filter,
+						settings?.exclude,
 						(data) => csso(data, setting).css
 					);
 					break;
@@ -34,7 +34,7 @@ export default async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.html`,
 						debug,
 						files,
-						settings?.filter,
+						settings?.exclude,
 						async (data) => await htmlMinifierTerser(data, setting)
 					);
 					break;
@@ -45,7 +45,7 @@ export default async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.{js,mjs,cjs}`,
 						debug,
 						files,
-						settings?.filter,
+						settings?.exclude,
 						async (data) => (await terser(data, setting)).code
 					);
 					break;
@@ -56,7 +56,7 @@ export default async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
 						debug,
 						files,
-						settings?.filter,
+						settings?.exclude,
 						async (sharpFile) =>
 							await sharpRead(sharpFile, setting),
 						async (file) => sharp(file)
@@ -69,7 +69,7 @@ export default async (settings: Options, debug: number = 2) => {
 						`${settings.path}**/*.svg`,
 						debug,
 						files,
-						settings?.filter,
+						settings?.exclude,
 						async (data) => {
 							const result = svgo(data, setting) as {
 								[key: string]: any;

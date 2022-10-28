@@ -1,8 +1,8 @@
 import FastGlob from "fast-glob";
 import fs from "fs";
 
-import formatBytes from "./format-bytes.js";
 import type { Options } from "../options/index.js";
+import formatBytes from "./format-bytes.js";
 
 export default async (
 	glob: string,

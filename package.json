@@ -11,7 +11,11 @@
 	"bugs": {
 		"url": "https://github.com/astro-community/astro-compress/issues"
 	},
+	"engines": {
+		"node": ">=14.21.0"
+	},
 	"main": "./dist/index.js",
+	"exports": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"keywords": [
 		"astro-integration",
@@ -33,13 +37,13 @@
 		"deepmerge-ts": "4.2.2",
 		"fast-glob": "3.2.12",
 		"html-minifier-terser": "7.0.0",
-		"sharp": "0.31.1",
+		"sharp": "0.31.2",
 		"svgo": "3.0.0",
 		"terser": "5.15.1"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.6",
-		"@lightrix/scripts": "0.0.13",
+		"@lightrix/scripts": "0.0.14",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",

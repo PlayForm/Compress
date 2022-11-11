@@ -51,7 +51,7 @@ export default (): Options => ({
 		minifyJS: true,
 		minifyURLs: false,
 		preventAttributesEscaping: false,
-		processConditionalComments: true,
+		processConditionalComments: false,
 		removeAttributeQuotes: true,
 		removeComments: false,
 		removeScriptTypeAttributes: true,

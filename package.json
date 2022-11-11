@@ -11,6 +11,7 @@
 	"bugs": {
 		"url": "https://github.com/astro-community/astro-compress/issues"
 	},
+	"private": false,
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"keywords": [
@@ -45,5 +46,8 @@
 		"@types/sharp": "0.31.0",
 		"@types/svgo": "3.0.0",
 		"astro": "1.6.5"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }

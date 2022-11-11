@@ -45,7 +45,7 @@
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",
 		"@types/svgo": "3.0.0",
-		"astro": "1.6.5"
+		"astro": "1.6.7"
 	},
 	"publishConfig": {
 		"access": "public"

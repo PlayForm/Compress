@@ -1,5 +1,6 @@
 import type IMG from "../options/img";
 
+// rome-ignore lint:
 export default async (sharpFile: any, options: IMG = {}) => {
 	const fileType = sharpFile.options.input.file.split(".").pop();
 
@@ -8,7 +9,7 @@ export default async (sharpFile: any, options: IMG = {}) => {
 	}
 
 	const typeToOption: {
-		[key: string]: any;
+		[key: string]: string;
 	} = {
 		"avci": "avif",
 		"avcs": "avif",

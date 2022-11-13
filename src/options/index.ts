@@ -7,9 +7,10 @@ import type SVG from "./svg";
 export type filterFunction = (file: string) => boolean;
 
 export interface Options {
+	// rome-ignore lint:
 	[key: string]: any;
 
-	path?: string;
+	path?: string | [string];
 
 	exclude?:
 		| string

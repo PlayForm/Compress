@@ -1,2 +1,2 @@
-declare const _default: (settings: Options, debug?: number) => Promise<void>;
+declare const _default: (path: string, settings: Options, debug?: number) => Promise<void>;
 export default _default;

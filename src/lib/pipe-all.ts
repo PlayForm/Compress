@@ -8,7 +8,7 @@ import type { Options } from "../options/index";
 import parse from "./parse.js";
 import sharpRead from "./sharp-read.js";
 
-export default async (settings: Options, debug: number = 2) => {
+export default async (path: string, settings: Options, debug: number = 2) => {
 	for (const files in settings) {
 		if (Object.prototype.hasOwnProperty.call(settings, files)) {
 			const setting = settings[files];
@@ -20,40 +20,43 @@ export default async (settings: Options, debug: number = 2) => {
 			switch (files) {
 				case "css": {
 					await parse(
-						`${settings.path}**/*.css`,
+						`${path}**/*.css`,
 						debug,
 						files,
 						settings?.exclude,
 						(data) => csso(data, setting).css
 					);
+
 					break;
 				}
 
 				case "html": {
 					await parse(
-						`${settings.path}**/*.html`,
+						`${path}**/*.html`,
 						debug,
 						files,
 						settings?.exclude,
 						async (data) => await htmlMinifierTerser(data, setting)
 					);
+
 					break;
 				}
 
 				case "js": {
 					await parse(
-						`${settings.path}**/*.{js,mjs,cjs}`,
+						`${path}**/*.{js,mjs,cjs}`,
 						debug,
 						files,
 						settings?.exclude,
 						async (data) => (await terser(data, setting)).code
 					);
+
 					break;
 				}
 
 				case "img": {
 					await parse(
-						`${settings.path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
+						`${path}**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}`,
 						debug,
 						files,
 						settings?.exclude,
@@ -61,17 +64,19 @@ export default async (settings: Options, debug: number = 2) => {
 							await sharpRead(sharpFile, setting),
 						async (file) => sharp(file)
 					);
+
 					break;
 				}
 
 				case "svg": {
 					await parse(
-						`${settings.path}**/*.svg`,
+						`${path}**/*.svg`,
 						debug,
 						files,
 						settings?.exclude,
 						async (data) => {
 							const result = svgo(data, setting) as {
+								// rome-ignore lint:
 								[key: string]: any;
 							};
 
@@ -84,6 +89,7 @@ export default async (settings: Options, debug: number = 2) => {
 							}
 						}
 					);
+
 					break;
 				}
 

@@ -3,6 +3,7 @@ import { deepmerge } from "deepmerge-ts";
 
 import pipeAll from "./lib/pipe-all.js";
 import defaultOptions, { Options } from "./options/index.js";
+import forwardSlashIt from "./lib/forward-slash-it.js";
 
 export default (options: Options = {}): AstroIntegration => {
 	for (const option in options) {
@@ -16,10 +17,6 @@ export default (options: Options = {}): AstroIntegration => {
 
 	const _options = deepmerge(defaultOptions(), options);
 
-	_options.path = _options.path?.endsWith("/")
-		? _options.path
-		: `${_options.path}/`;
-
 	return {
 		name: "astro-compress",
 		hooks: {
@@ -29,7 +26,21 @@ export default (options: Options = {}): AstroIntegration => {
 					: options.config.outDir.toString();
 			},
 			"astro:build:done": async () => {
-				await pipeAll(_options, _options.logger);
+				let paths = new Set<string>();
+
+				if (typeof _options.path !== "undefined") {
+					if (_options.path instanceof Array) {
+						for (const path of _options.path) {
+							paths.add(forwardSlashIt(path));
+						}
+					} else {
+						paths.add(forwardSlashIt(_options.path));
+					}
+				}
+
+				for (const path of paths) {
+					await pipeAll(path, _options, _options.logger);
+				}
 			},
 		},
 	};

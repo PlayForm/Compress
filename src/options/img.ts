@@ -1,7 +1,14 @@
 import type sharp from "sharp";
 
 export default interface IMG {
-	[key: string]: any;
+	[key: string]:
+		| sharp.AvifOptions
+		| sharp.GifOptions
+		| sharp.HeifOptions
+		| sharp.JpegOptions
+		| sharp.PngOptions
+		| sharp.TiffOptions
+		| sharp.WebpOptions;
 
 	avif?: sharp.AvifOptions;
 

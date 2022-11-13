@@ -1,3 +1,7 @@
+## 1.1.5
+
+-   Adds multiple paths
+
 ## 1.1.4
 
 -   Bug fix

@@ -25,7 +25,7 @@ export default async (
 	let filters = new Set();
 
 	if (typeof exclude !== "undefined") {
-		if (exclude instanceof Array) {
+		if (exclude instanceof Array || exclude instanceof Set) {
 			for (const excludes of exclude) {
 				filters.add(excludes);
 			}

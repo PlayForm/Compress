@@ -10,7 +10,7 @@ export interface Options {
 	// rome-ignore lint:
 	[key: string]: any;
 
-	path?: string | [string];
+	path?: string | [string] | Set<string>;
 
 	exclude?:
 		| string

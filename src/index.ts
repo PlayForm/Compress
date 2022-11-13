@@ -29,7 +29,10 @@ export default (options: Options = {}): AstroIntegration => {
 				let paths = new Set<string>();
 
 				if (typeof _options.path !== "undefined") {
-					if (_options.path instanceof Array) {
+					if (
+						_options.path instanceof Array ||
+						_options.path instanceof Set
+					) {
 						for (const path of _options.path) {
 							paths.add(forwardSlashIt(path));
 						}

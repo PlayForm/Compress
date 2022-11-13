@@ -6,7 +6,7 @@ import type SVG from "./svg";
 export declare type filterFunction = (file: string) => boolean;
 export interface Options {
     [key: string]: any;
-    path?: string;
+    path?: string | [string];
     exclude?: string | RegExp | filterFunction | [string] | [RegExp] | [filterFunction];
     css?: boolean | CSS;
     html?: boolean | HTML;

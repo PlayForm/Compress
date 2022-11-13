@@ -127,6 +127,23 @@ export default {
 };
 ```
 
+You can add multiple paths to compress by specifying an array as the path
+variable.
+
+**`astro.config.ts`**
+
+```ts
+import compress from "astro-compress";
+
+export default {
+	integrations: [
+		compress({
+			path: ["./build", "./dist"],
+		}),
+	],
+};
+```
+
 Set logger to 0 if you do not want to see debug messages. Default is 2.
 
 **`astro.config.ts`**

@@ -1,3 +1,7 @@
+## 1.1.6
+
+-   Cleanup
+
 ## 1.1.5
 
 -   Adds multiple paths

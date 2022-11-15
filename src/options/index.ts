@@ -1,8 +1,8 @@
-import type CSS from "./css";
-import type HTML from "./html";
-import type IMG from "./img";
-import type JS from "./js";
-import type SVG from "./svg";
+import type CSS from "./css.js";
+import type HTML from "./html.js";
+import type IMG from "./img.js";
+import type JS from "./js.js";
+import type SVG from "./svg.js";
 
 export type filterFn = (file: string) => boolean;
 

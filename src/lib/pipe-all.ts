@@ -4,7 +4,7 @@ import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 
-import type { Options } from "../options/index";
+import type { Options } from "../options/index.js";
 import parse from "./parse.js";
 import sharpRead from "./sharp-read.js";
 

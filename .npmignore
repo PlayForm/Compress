@@ -2,3 +2,5 @@
 .turbo/
 .super/
 src/
+docs/
+public/

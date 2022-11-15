@@ -23,7 +23,8 @@ export default (options: Options = {}): AstroIntegration => {
 			"astro:config:done": async (options) => {
 				_options.path = _options.path
 					? _options.path
-					: options.config.outDir.toString();
+					: // @ts-ignore
+					  options.config.outDir.toString();
 			},
 			"astro:build:done": async () => {
 				let paths = new Set<string>();

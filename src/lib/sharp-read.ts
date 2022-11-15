@@ -1,4 +1,4 @@
-import type IMG from "../options/img";
+import type IMG from "../options/img.js";
 
 // rome-ignore lint:
 export default async (sharpFile: any, options: IMG = {}) => {

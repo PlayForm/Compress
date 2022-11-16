@@ -1,11 +1,11 @@
-import type sharp from "sharp";
+import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";
 export default interface IMG {
-    [key: string]: sharp.AvifOptions | sharp.GifOptions | sharp.HeifOptions | sharp.JpegOptions | sharp.PngOptions | sharp.TiffOptions | sharp.WebpOptions;
-    avif?: sharp.AvifOptions;
-    gif?: sharp.GifOptions;
-    heif?: sharp.HeifOptions;
-    jpeg?: sharp.JpegOptions;
-    png?: sharp.PngOptions;
-    tiff?: sharp.TiffOptions;
-    webp?: sharp.WebpOptions;
+    [key: string]: AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | TiffOptions | WebpOptions;
+    avif?: AvifOptions;
+    gif?: GifOptions;
+    heif?: HeifOptions;
+    jpeg?: JpegOptions;
+    png?: PngOptions;
+    tiff?: TiffOptions;
+    webp?: WebpOptions;
 }

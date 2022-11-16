@@ -3,7 +3,7 @@ import type HTML from "./html.js";
 import type IMG from "./img.js";
 import type JS from "./js.js";
 import type SVG from "./svg.js";
-export declare type filterFn = (file: string) => boolean;
+export type filterFn = (file: string) => boolean;
 export interface Options {
     [key: string]: any;
     path?: string | string[] | Set<string>;
@@ -15,5 +15,5 @@ export interface Options {
     svg?: boolean | SVG;
     logger?: number;
 }
-declare const _default: () => Options;
-export default _default;
+declare const options: Options;
+export default options;

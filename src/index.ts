@@ -2,7 +2,8 @@ import type { AstroIntegration } from "astro";
 import { deepmerge } from "deepmerge-ts";
 
 import pipeAll from "./lib/pipe-all.js";
-import defaultOptions, { Options } from "./options/index.js";
+import type { Options } from "./options/index.js";
+import defaultOptions from "./options/index.js";
 import forwardSlashIt from "./lib/forward-slash-it.js";
 
 export default (options: Options = {}): AstroIntegration => {

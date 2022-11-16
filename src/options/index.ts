@@ -36,7 +36,7 @@ export interface Options {
 	logger?: number;
 }
 
-export default (): Options => ({
+const options: Options = {
 	path: "./dist/",
 	css: {
 		clone: false,
@@ -114,4 +114,6 @@ export default (): Options => ({
 		plugins: ["preset-default"],
 	},
 	logger: 2,
-});
+};
+
+export default options;

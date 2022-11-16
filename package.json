@@ -45,7 +45,7 @@
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.0",
-		"astro": "1.6.8"
+		"astro": "1.6.9"
 	},
 	"publishConfig": {
 		"access": "public"

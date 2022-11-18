@@ -144,7 +144,7 @@ export default {
 };
 ```
 
-Set logger to 0 if you do not want to see debug messages. Default is 2.
+Set `logger` to `0` if you do not want to see debug messages. Default is `2`.
 
 **`astro.config.ts`**
 

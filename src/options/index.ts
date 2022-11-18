@@ -114,6 +114,6 @@ const options: Options = {
 		plugins: ["preset-default"],
 	},
 	logger: 2,
-} satisfies Options;
+};
 
 export default options;

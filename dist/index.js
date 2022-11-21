@@ -1,1 +1,1 @@
-import t from"@nikolarhristov/pipeline";var r=(o={})=>({name:"astro-compress",hooks:{"astro:config:done":async i=>{o.path=o.path?o.path:i.config.outDir.toString()},"astro:build:done":async()=>{await new t(o).compress()}}});export{r as default};
+import t from"@nikolarhristov/pipeline";var e=(o={})=>({name:"astro-compress",hooks:{"astro:config:done":async i=>{o.path=o.path?o.path:i.config.outDir},"astro:build:done":async()=>{await new t(o).compress()}}});export{e as default};

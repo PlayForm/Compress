@@ -84,11 +84,11 @@ SVG compression is supported, as well via [svgo].
 
 You can override any of the default options from the configurations of:
 
--   [csso]
+-   [csso]()
 -   [html-minifier-terser]
 -   [sharp]
 -   [svgo]
--   [terser]
+-   [terser](https://github.com/terser/terser#minify-options-structure)
 
 or disable them entirely:
 

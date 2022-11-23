@@ -144,6 +144,44 @@ export default {
 };
 ```
 
+You can also provide a map of paths for different input output directories.
+
+**`astro.config.ts`**
+
+```ts
+import compress from "astro-compress";
+
+export default {
+	integrations: [
+		compress({
+			path: new Map([["./input", "./output"]]),
+		}),
+	],
+};
+```
+
+Or an array of the two.
+
+**`astro.config.ts`**
+
+```ts
+import compress from "astro-compress";
+
+export default {
+	integrations: [
+		compress({
+			path: [
+				// compress dist
+				"./dist",
+
+				// compress dist one more time into another directory
+				new Map([["./dist", "./dist-compressed"]]),
+			],
+		}),
+	],
+};
+```
+
 Set `logger` to `0` if you do not want to see debug messages. Default is `2`.
 
 **`astro.config.ts`**

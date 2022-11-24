@@ -13,7 +13,7 @@ on:
     workflow_call:
 
 jobs:
-    install:
+    node:
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -45,15 +45,9 @@ jobs:
             - run: pnpm install
               working-directory: .
 
-    build:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [14, 16, 18]
-        needs: install
-        steps:
             - run: pnpm run build
               working-directory: .
+
             - uses: actions/upload-artifact@v3.1.1
               with:
                   name: .-node-${{ matrix.node-version }}-dist

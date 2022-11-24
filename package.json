@@ -31,12 +31,12 @@
 		"build": "lightrix build src/index.ts"
 	},
 	"dependencies": {
-		"@nikolarhristov/pipeline": "0.0.4"
+		"@nikolarhristov/pipeline": "0.0.5"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.6",
-		"@lightrix/scripts": "0.0.17",
-		"astro": "1.6.10"
+		"@lightrix/scripts": "0.0.18",
+		"astro": "1.6.11"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -31,7 +31,7 @@
 		"build": "lightrix build src/index.ts"
 	},
 	"dependencies": {
-		"@nikolarhristov/pipeline": "0.0.2"
+		"@nikolarhristov/pipeline": "0.0.4"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.6",

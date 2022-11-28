@@ -84,11 +84,11 @@ SVG compression is supported, as well via [svgo].
 
 You can override any of the default options from the configurations of:
 
--   [csso](src/options/css.ts)
--   [html-minifier-terser](src/options/html.ts)
--   [sharp](src/options/img.ts)
--   [svgo](src/options/svg.ts)
--   [terser](src/options/js.ts)
+-   [csso](https://github.com/css/csso#minifysource-options)
+-   [html-minifier-terser](https://github.com/terser/html-minifier-terser#options-quick-reference)
+-   [sharp](https://sharp.pixelplumbing.com/api-output#jpeg)
+-   [svgo](https://github.com/svg/svgo#configuration)
+-   [terser](https://github.com/terser/terser#minify-options-structure)
 
 or disable them entirely:
 
@@ -144,7 +144,7 @@ export default {
 };
 ```
 
-Set `logger` to `0` if you do not want to see debug messages. Default is `2`.
+You can also provide a map of paths for different input output directories.
 
 **`astro.config.ts`**
 
@@ -154,7 +154,29 @@ import compress from "astro-compress";
 export default {
 	integrations: [
 		compress({
-			logger: 0,
+			path: new Map([["./input", "./output"]]),
+		}),
+	],
+};
+```
+
+Or an array of the two.
+
+**`astro.config.ts`**
+
+```ts
+import compress from "astro-compress";
+
+export default {
+	integrations: [
+		compress({
+			path: [
+				// compress dist
+				"./dist",
+
+				// compress dist one more time into a different directory
+				new Map([["./dist", "./dist-compressed"]]),
+			],
 		}),
 	],
 };
@@ -177,6 +199,22 @@ export default {
 				(file: string) =>
 					file === "./dist/img/favicon/safari-pinned-tab.svg",
 			],
+		}),
+	],
+};
+```
+
+Set `logger` to `0` if you do not want to see debug messages. Default is `2`.
+
+**`astro.config.ts`**
+
+```ts
+import compress from "astro-compress";
+
+export default {
+	integrations: [
+		compress({
+			logger: 0,
 		}),
 	],
 };

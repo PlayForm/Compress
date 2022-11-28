@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "1.1.8",
+	"version": "1.1.12",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
@@ -35,8 +35,8 @@
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.6",
-		"@lightrix/scripts": "0.0.17",
-		"astro": "1.6.10"
+		"@lightrix/scripts": "0.0.19",
+		"astro": "1.6.11"
 	},
 	"publishConfig": {
 		"access": "public"

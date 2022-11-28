@@ -1,3 +1,19 @@
+## 1.1.12
+
+-   Cleanup
+
+## 1.1.11
+
+-   Bug fix
+
+## 1.1.10
+
+-   Cleanup
+
+## 1.1.9
+
+-   Bug fix
+
 ## 1.1.8
 
 -   Cleanup

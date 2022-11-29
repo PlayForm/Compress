@@ -6,18 +6,16 @@ import type { Options as CompressOptions } from "@nikolarhristov/pipeline/dist/o
 
 export default (
 	_options: PipelineOptions & CompressOptions = {}
-): AstroIntegration => {
-	return {
-		name: "astro-compress",
-		hooks: {
-			"astro:config:done": async (options) => {
-				_options.path = _options.path
-					? _options.path
-					: options.config.outDir;
-			},
-			"astro:build:done": async () => {
-				await new pipeline(_options).compress();
-			},
+): AstroIntegration => ({
+	name: "astro-compress",
+	hooks: {
+		"astro:config:done": async (options) => {
+			_options.path = _options.path
+				? _options.path
+				: options.config.outDir;
 		},
-	};
-};
+		"astro:build:done": async () => {
+			await new pipeline(_options).compress();
+		},
+	},
+});

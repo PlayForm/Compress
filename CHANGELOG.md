@@ -1,3 +1,7 @@
+## 1.1.15
+
+-   Adds missing types
+
 ## 1.1.14
 
 -   Adapt

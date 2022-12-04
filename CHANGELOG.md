@@ -1,3 +1,7 @@
+## 1.1.16
+
+-   Refactor
+
 ## 1.1.15
 
 -   Adds missing types

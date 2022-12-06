@@ -1,3 +1,7 @@
+## 1.1.18
+
+-   Updates pipeline
+
 ## 1.1.17
 
 -   Bug fix

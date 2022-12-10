@@ -1,6 +1,6 @@
 import type { AstroIntegration } from "astro";
 
-import pipeline from "@nikolarhristov/pipeline";
+import { pipeline } from "@nikolarhristov/pipeline";
 import type { Options as PipelineOptions } from "@nikolarhristov/pipeline/dist/options/index.js";
 import type { Options as CompressOptions } from "@nikolarhristov/pipeline/dist/options/lib/compress/index.js";
 

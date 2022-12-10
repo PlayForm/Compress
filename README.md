@@ -174,7 +174,7 @@ export default {
 				// compress dist
 				"./dist",
 
-				// compress dist one more time into another directory
+				// compress dist one more time into a different directory
 				new Map([["./dist", "./dist-compressed"]]),
 			],
 		}),

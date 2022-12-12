@@ -6,6 +6,15 @@ your Astro project.
 [CSS][csso] [HTML][html-minifier-terser] [JavaScript][terser] [Images][sharp]
 [SVG][svgo]
 
+> **Warning**
+>
+> `astro-compress` will not compress your requests only your statically
+> generated build.
+
+> **Note**
+>
+> Use `astro-compress` last in your integration list for the best optimizations.
+
 ## Installation
 
 There are two ways to add integrations to your project. Let's try the most
@@ -49,15 +58,6 @@ import compress from "astro-compress";
 
 export default { integrations: [compress()] };
 ```
-
-> **Note**
->
-> Use `astro-compress` last in your integration list for the best optimizations.
-
-> **Warning**
->
-> `astro-compress` will not compress your requests only your statically
-> generated build.
 
 ## Getting started
 

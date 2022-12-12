@@ -9,7 +9,7 @@ your Astro project.
 > **Warning**
 >
 > `astro-compress` will not compress your requests only your statically
-> generated build.
+> generated build and files served from the public folder.
 
 > **Note**
 >

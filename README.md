@@ -54,6 +54,11 @@ export default { integrations: [compress()] };
 >
 > Use `astro-compress` last in your integration list for the best optimizations.
 
+> **Warning**
+>
+> `astro-compress` will not compress your requests only your statically
+> generated build.
+
 ## Getting started
 
 The utility will now automatically compress all your CSS, HTML and JavaScript

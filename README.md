@@ -8,8 +8,8 @@ your Astro project.
 
 > **Note**
 >
-> `astro-compress` will not compress your requests only your statically
-> generated build and files served from the public folder.
+> `astro-compress` will not compress your requests, only your statically
+> generated build.
 
 > **Note**
 >

@@ -6,7 +6,7 @@ your Astro project.
 [CSS][csso] [HTML][html-minifier-terser] [JavaScript][terser] [Images][sharp]
 [SVG][svgo]
 
-> **Note**
+> **Warning**
 >
 > `astro-compress` will not compress your requests, only your statically
 > generated build.

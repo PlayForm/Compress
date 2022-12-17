@@ -9,7 +9,7 @@ your Astro project.
 > **Note**
 >
 > `astro-compress` will not compress your requests, only your statically
-> generated build and prerendered routes.
+> generated build and pre-rendered routes.
 
 > **Note**
 >

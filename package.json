@@ -34,8 +34,8 @@
 		"files-pipeline": "0.0.1"
 	},
 	"devDependencies": {
-		"@lightrix/config": "0.0.6",
-		"@lightrix/scripts": "0.1.1",
+		"@lightrix/config": "0.0.7",
+		"@lightrix/scripts": "0.1.2",
 		"astro": "1.7.1"
 	},
 	"publishConfig": {

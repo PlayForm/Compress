@@ -33,7 +33,7 @@
 	"dependencies": {
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
-		"@types/sharp": "0.31.0",
+		"@types/sharp": "0.31.1",
 		"csso": "5.0.5",
 		"files-pipeline": "0.0.2",
 		"html-minifier-terser": "7.1.0",

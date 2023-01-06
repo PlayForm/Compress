@@ -71,7 +71,7 @@ jobs:
                           --unsafe-perm=true
                         ]
 
-            - uses: actions/setup-node@v3.5.1
+            - uses: actions/setup-node@v3.6.0
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"

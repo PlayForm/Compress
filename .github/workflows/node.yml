@@ -41,7 +41,6 @@ jobs:
             NEXT_TELEMETRY_DEBUG: 1
             NEXT_TELEMETRY_DISABLED: 1
             NG_CLI_ANALYTICS: false
-            NODE_ENV: production
             NUXT_TELEMETRY_DISABLED: 1
             PIN_DO_NOT_TRACK: 1
             POWERSHELL_TELEMETRY_OPTOUT: 1

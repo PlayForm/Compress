@@ -1,3 +1,7 @@
+## 1.1.25
+
+-   Compress JSON
+
 ## 1.1.24
 
 -   Cleanup

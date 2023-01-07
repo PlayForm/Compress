@@ -24,6 +24,8 @@ export interface Options extends OptionsBase {
 	img?: boolean | IMG;
 
 	svg?: boolean | SVG;
+
+	json?: boolean;
 }
 
 export default deepmerge(defaults, {
@@ -108,6 +110,7 @@ export default deepmerge(defaults, {
 		},
 		plugins: ["preset-default"],
 	},
+	json: true,
 	pipeline: {
 		failed: async (current) =>
 			`Error: Cannot compress file ${current.inputPath}!`,

@@ -11,6 +11,7 @@ export interface Options extends OptionsBase {
     js?: boolean | JS;
     img?: boolean | IMG;
     svg?: boolean | SVG;
+    json?: boolean;
 }
 declare const _default: Options;
 export default _default;

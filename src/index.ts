@@ -1,5 +1,7 @@
 import type {
 	executions,
+	optionCallbacksFile,
+	optionCallbacksPipe,
 	optionPath,
 } from "files-pipeline/dist/options/index.js";
 
@@ -92,7 +94,7 @@ export default (options: Options = {}): AstroIntegration => {
 							).not(options["exclude"])
 						).pipeline(
 							deepmerge(defaultsCompress["pipeline"], {
-								wrote: async (current) => {
+								wrote: async (current: currentSharp) => {
 									switch (fileType) {
 										case "css": {
 											return csso(
@@ -147,22 +149,33 @@ export default (options: Options = {}): AstroIntegration => {
 											return current.buffer;
 									}
 								},
-								read: async (current) => {
+								read: async (current: optionCallbacksFile) => {
 									switch (fileType) {
-										case "img":
+										case "img": {
+											const { format } = await sharp(
+												current.inputPath
+											).metadata();
+
 											return sharp(current.inputPath, {
 												failOn: "none",
 												sequentialRead: true,
 												unlimited: true,
+												animated:
+													format === "webp" ||
+													format === "gif"
+														? true
+														: false,
 											});
+										}
 
-										default:
+										default: {
 											return await defaults.pipeline.read(
 												current
 											);
+										}
 									}
 								},
-								fulfilled: async (pipe) =>
+								fulfilled: async (pipe: optionCallbacksPipe) =>
 									pipe.files > 0
 										? `Successfully compressed a total of ${
 												pipe.files

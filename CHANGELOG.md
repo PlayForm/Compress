@@ -1,3 +1,7 @@
+## 1.1.26
+
+-   Bug fix
+
 ## 1.1.25
 
 -   Compress JSON

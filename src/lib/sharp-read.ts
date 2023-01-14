@@ -33,6 +33,7 @@ export default async (options: IMG, current: currentSharp) => {
 		"jfif": "jpeg",
 		"jif": "jpeg",
 		"jpe": "jpeg",
+		"apng": "png",
 		"jpg": "jpeg",
 	};
 

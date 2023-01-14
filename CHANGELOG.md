@@ -1,3 +1,8 @@
+## 1.1.27
+
+-   Bug fix
+-   Adds APNG compression
+
 ## 1.1.26
 
 -   Bug fix

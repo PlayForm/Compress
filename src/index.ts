@@ -60,6 +60,10 @@ export default (options: Options = {}): AstroIntegration => {
 		hooks: {
 			"astro:build:done": async () => {
 				for (const [fileType, setting] of Object.entries(options)) {
+					if (!setting) {
+						continue;
+					}
+
 					for (const path of paths) {
 						await (
 							await (
@@ -78,7 +82,7 @@ export default (options: Options = {}): AstroIntegration => {
 												return "**/*.{js,mjs,cjs}";
 
 											case "img":
-												return "**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}";
+												return "**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,apng,png,raw,tiff,webp}";
 
 											case "svg":
 												return "**/*.svg";
@@ -162,7 +166,8 @@ export default (options: Options = {}): AstroIntegration => {
 												unlimited: true,
 												animated:
 													format === "webp" ||
-													format === "gif"
+													format === "gif" ||
+													format === "apng"
 														? true
 														: false,
 											});

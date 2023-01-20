@@ -1,3 +1,8 @@
+## 1.1.28
+
+-   Cleanup
+-   Removes JSON compression
+
 ## 1.1.27
 
 -   Bug fix

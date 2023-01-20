@@ -1,13 +1,13 @@
 import formatBytes from "../lib/format-bytes.js";
 
-import defaults from "files-pipeline/dist/options/index.js";
 import deepmerge from "files-pipeline/dist/lib/deepmerge.js";
+import defaults from "files-pipeline/dist/options/index.js";
 
-import type SVG from "./svg.js";
+import type CSS from "./css.js";
+import type HTML from "./html.js";
 import type IMG from "./img.js";
 import type JS from "./js.js";
-import type HTML from "./html.js";
-import type CSS from "./css.js";
+import type SVG from "./svg.js";
 
 import type { Options as OptionsBase } from "files-pipeline/dist/options/index.js";
 

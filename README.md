@@ -6,7 +6,7 @@ This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
 [CSS][csso] [HTML][html-minifier-terser] [JavaScript][terser] [Images][sharp]
-[SVG][svgo] JSON
+[SVG][svgo]
 
 > **Note**
 >
@@ -90,8 +90,6 @@ The following image file types will also be compressed:
 
 SVG compression is supported, as well via [svgo].
 
-JSON files will also be compressed with JSON.stringify.
-
 You can override any of the default options from the configurations of:
 
 -   [csso](https://github.com/css/csso#minifysource-options)
@@ -120,7 +118,7 @@ export default {
 };
 ```
 
-If your path is different than `dist` be sure to update it accordingly:
+#### If your path is different than `dist` be sure to update it accordingly:
 
 **`astro.config.ts`**
 

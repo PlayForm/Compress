@@ -1,7 +1,5 @@
 import type {
 	executions,
-	optionCallbacksFile,
-	optionCallbacksPipe,
 	optionPath,
 } from "files-pipeline/dist/options/index.js";
 
@@ -87,9 +85,6 @@ export default (options: Options = {}): AstroIntegration => {
 											case "svg":
 												return "**/*.svg";
 
-											case "json":
-												return "**/*.json";
-
 											default:
 												return "";
 										}
@@ -141,12 +136,6 @@ export default (options: Options = {}): AstroIntegration => {
 											}
 
 											return current.buffer;
-										}
-
-										case "json": {
-											return JSON.stringify(
-												current.buffer.toString()
-											);
 										}
 
 										default: {

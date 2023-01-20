@@ -98,7 +98,7 @@ export default (options: Options = {}): AstroIntegration => {
 							).not(options["exclude"])
 						).pipeline(
 							deepmerge(defaultsCompress["pipeline"], {
-								wrote: async (current: currentSharp) => {
+								wrote: async (current) => {
 									switch (fileType) {
 										case "css": {
 											return csso(
@@ -149,11 +149,12 @@ export default (options: Options = {}): AstroIntegration => {
 											);
 										}
 
-										default:
+										default: {
 											return current.buffer;
+										}
 									}
 								},
-								read: async (current: optionCallbacksFile) => {
+								read: async (current) => {
 									switch (fileType) {
 										case "img": {
 											const { format } = await sharp(
@@ -166,8 +167,7 @@ export default (options: Options = {}): AstroIntegration => {
 												unlimited: true,
 												animated:
 													format === "webp" ||
-													format === "gif" ||
-													format === "apng"
+													format === "gif"
 														? true
 														: false,
 											});
@@ -180,7 +180,7 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 									}
 								},
-								fulfilled: async (pipe: optionCallbacksPipe) =>
+								fulfilled: async (pipe) =>
 									pipe.files > 0
 										? `Successfully compressed a total of ${
 												pipe.files

@@ -90,7 +90,7 @@ The following image file types will also be compressed:
 
 SVG compression is supported, as well via [svgo].
 
-JSON files will be compressed with JSON.stringify.
+JSON files will also be compressed with JSON.stringify.
 
 You can override any of the default options from the configurations of:
 

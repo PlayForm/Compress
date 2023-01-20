@@ -1,4 +1,4 @@
-import type { WebpOptions, TiffOptions, PngOptions, JpegOptions, HeifOptions, GifOptions, AvifOptions } from "sharp";
+import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";
 export default interface IMG {
     [key: string]: boolean | AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | TiffOptions | WebpOptions;
     avif?: boolean | AvifOptions;

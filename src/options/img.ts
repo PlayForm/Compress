@@ -1,11 +1,11 @@
 import type {
-	WebpOptions,
-	TiffOptions,
-	PngOptions,
-	JpegOptions,
-	HeifOptions,
-	GifOptions,
 	AvifOptions,
+	GifOptions,
+	HeifOptions,
+	JpegOptions,
+	PngOptions,
+	TiffOptions,
+	WebpOptions,
 } from "sharp";
 
 export default interface IMG {

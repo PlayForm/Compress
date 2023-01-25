@@ -44,7 +44,7 @@
 	"devDependencies": {
 		"@lightrix/config": "0.0.7",
 		"@lightrix/scripts": "0.1.2",
-		"astro": "2.0.0"
+		"astro": "2.0.1"
 	},
 	"publishConfig": {
 		"access": "public"

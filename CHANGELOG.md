@@ -1,3 +1,69 @@
+## 1.1.28
+
+-   Cleanup
+-   Removes JSON compression
+
+## 1.1.27
+
+-   Bug fix
+-   Adds APNG compression
+
+## 1.1.26
+
+-   Bug fix
+
+## 1.1.25
+
+-   Compress JSON
+
+## 1.1.24
+
+-   Cleanup
+
+## 1.1.23
+
+-   Switches ownership
+
+## 1.1.22
+
+-   Cleanup
+
+## 1.1.21
+
+-   Bug fix
+
+## 1.1.20
+
+-   Cleanup
+
+## 1.1.19
+
+-   Bug fix
+
+## 1.1.18
+
+-   Updates pipeline
+
+## 1.1.17
+
+-   Bug fix
+
+## 1.1.16
+
+-   Refactor
+
+## 1.1.15
+
+-   Adds missing types
+
+## 1.1.14
+
+-   Adapt
+
+## 1.1.13
+
+-   Bug fix
+
 ## 1.1.12
 
 -   Cleanup

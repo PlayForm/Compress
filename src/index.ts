@@ -84,6 +84,9 @@ export default (options: Options = {}): AstroIntegration => {
 
 											case "svg":
 												return "**/*.svg";
+
+											default:
+												return "";
 										}
 									})()
 								)

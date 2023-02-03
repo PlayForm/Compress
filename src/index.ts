@@ -6,7 +6,6 @@ import type {
 import formatBytes from "./lib/format-bytes.js";
 
 import deepmerge from "files-pipeline/dist/lib/deepmerge.js";
-import { optimize as svgo } from "svgo";
 
 import type { AstroIntegration } from "astro";
 
@@ -20,10 +19,12 @@ import { files } from "files-pipeline";
 import { minify as csso } from "csso";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
-import type { Output } from "svgo";
+import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 
+import type { Output } from "svgo";
 import type { currentSharp } from "./lib/sharp-read.js";
+
 import sharpRead from "./lib/sharp-read.js";
 
 export default (options: Options = {}): AstroIntegration => {

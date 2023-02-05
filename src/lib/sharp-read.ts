@@ -1,4 +1,4 @@
-import type IMG from "../options/img.js";
+import type { IMG } from "../options/img.js";
 
 import type { optionCallbacksFile } from "files-pipeline/dist/options/index.js";
 import type { Sharp } from "sharp";

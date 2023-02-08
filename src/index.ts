@@ -56,7 +56,6 @@ export default (options: Options = {}): AstroIntegration => {
 		name: "astro-compress",
 		hooks: {
 			"astro:build:done": async ({ dir }) => {
-
 				if (!paths.size) {
 					paths.add(dir);
 				}

@@ -1,3 +1,7 @@
+## 1.1.31
+
+-   Bug fix
+
 ## 1.1.30
 
 -   Enhancement

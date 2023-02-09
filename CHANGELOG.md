@@ -1,3 +1,7 @@
+## 1.1.32
+
+-   Revert bug fix
+
 ## 1.1.31
 
 -   Bug fix

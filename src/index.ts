@@ -71,31 +71,13 @@ export default (options: Options = {}): AstroIntegration => {
 								await (
 									await new files(options["logger"]).in(path)
 								).by(
-									(() => {
-										switch (fileType) {
-											case "css":
-												return "**/*.css";
-
-											case "html":
-												return "**/*.html";
-
-											case "js":
-												return "**/*.{js,mjs,cjs}";
-
-											case "img":
-												return "**/*.{avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,apng,png,raw,tiff,webp}";
-
-											case "svg":
-												return "**/*.svg";
-
-											default:
-												return "";
-										}
-									})()
+									typeof options["map"] === "object"
+										? options["map"][fileType]
+										: ""
 								)
 							).not(options["exclude"])
 						).pipeline(
-							deepmerge(defaultsCompress["pipeline"], {
+							deepmerge(options["pipeline"], {
 								wrote: async (current) => {
 									switch (fileType) {
 										case "css": {
@@ -166,9 +148,9 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 
 										default: {
-											return await defaults.pipeline.read(
-												current
-											);
+											return await defaults[
+												"pipeline"
+											].read(current);
 										}
 									}
 								},

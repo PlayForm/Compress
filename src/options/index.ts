@@ -8,12 +8,14 @@ import defaultsHTML from "./html.js";
 import defaultsIMG from "./img.js";
 import defaultsJS from "./js.js";
 import defaultsSVG from "./svg.js";
+import defaultsMAP from "./map.js";
 
 import type { CSS } from "./css.js";
 import type { HTML } from "./html.js";
 import type { IMG } from "./img.js";
 import type { JS } from "./js.js";
 import type { SVG } from "./svg.js";
+import type { MAP } from "./map.js";
 
 import type { Options as OptionsBase } from "files-pipeline/dist/options/index.js";
 
@@ -30,6 +32,8 @@ export interface Options extends OptionsBase {
 	img?: boolean | IMG;
 
 	svg?: boolean | SVG;
+
+	map?: boolean | MAP;
 }
 
 export default deepmerge(defaults, {
@@ -38,6 +42,7 @@ export default deepmerge(defaults, {
 	js: defaultsJS,
 	img: defaultsIMG,
 	svg: defaultsSVG,
+	map: defaultsMAP,
 	pipeline: {
 		failed: async (current) =>
 			`Error: Cannot compress file ${current.inputPath}!`,

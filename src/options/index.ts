@@ -7,15 +7,15 @@ import defaultsCSS from "./css.js";
 import defaultsHTML from "./html.js";
 import defaultsIMG from "./img.js";
 import defaultsJS from "./js.js";
-import defaultsSVG from "./svg.js";
 import defaultsMAP from "./map.js";
+import defaultsSVG from "./svg.js";
 
 import type { CSS } from "./css.js";
 import type { HTML } from "./html.js";
 import type { IMG } from "./img.js";
 import type { JS } from "./js.js";
-import type { SVG } from "./svg.js";
 import type { MAP } from "./map.js";
+import type { SVG } from "./svg.js";
 
 import type { Options as OptionsBase } from "files-pipeline/dist/options/index.js";
 

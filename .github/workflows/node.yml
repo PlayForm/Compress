@@ -17,7 +17,7 @@ on:
 
 jobs:
     node:
-        runs-on: [self-hosted, ubuntu-latest]
+        runs-on: ubuntu-latest
 
         env:
             ADBLOCK: true

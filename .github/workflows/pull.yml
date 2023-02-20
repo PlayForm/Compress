@@ -1,0 +1,25 @@
+name: Pull
+
+concurrency:
+    group: pull-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+on:
+    workflow_dispatch:
+    pull_request:
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    approve-and-merge:
+        runs-on: ubuntu-latest
+        if: ${{ github.actor == 'pull[bot]' }}
+        steps:
+            - run: gh pr review --approve "$PR_URL"
+              env:
+                  PR_URL: ${{github.event.pull_request.html_url}}
+            - run: gh pr merge --auto --merge "$PR_URL"
+              env:
+                  PR_URL: ${{github.event.pull_request.html_url}}

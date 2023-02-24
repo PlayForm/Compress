@@ -24,7 +24,6 @@ import { minify as terser } from "terser";
 
 import type { Output } from "svgo";
 import type { currentSharp } from "./lib/sharp-read.js";
-
 import sharpRead from "./lib/sharp-read.js";
 
 export default (options: Options = {}): AstroIntegration => {

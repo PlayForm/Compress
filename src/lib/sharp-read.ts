@@ -10,12 +10,12 @@ export interface sharpBuffer extends Sharp {
 	[key: string]: any;
 }
 
-export interface currentSharp extends Omit<optionExecutionsFile, "buffer"> {
+export interface ongoingSharp extends Omit<optionExecutionsFile, "buffer"> {
 	buffer: sharpBuffer;
 }
 
-export default async (options: IMG, current: currentSharp) => {
-	const fileType = current.inputPath.split(".").pop();
+export default async (options: IMG, ongoing: ongoingSharp) => {
+	const fileType = ongoing["inputPath"].split(".").pop();
 
 	if (!fileType) {
 		return;
@@ -61,8 +61,8 @@ export default async (options: IMG, current: currentSharp) => {
 		typeof options[optionType] !== "undefined" &&
 		options[optionType] !== false
 	) {
-		if (optionType in current.buffer) {
-			return await current.buffer[optionType](
+		if (optionType in ongoing.buffer) {
+			return await ongoing.buffer[optionType](
 				options[optionType] !== true
 					? options[optionType]
 					: defaults["img"]

@@ -23,7 +23,7 @@ import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 
 import type { Output } from "svgo";
-import type { currentSharp } from "./lib/sharp-read.js";
+import type { ongoingSharp } from "./lib/sharp-read.js";
 import sharpRead from "./lib/sharp-read.js";
 
 export default (options: Options = {}): AstroIntegration => {
@@ -105,7 +105,7 @@ export default (options: Options = {}): AstroIntegration => {
 										case "img": {
 											return sharpRead(
 												setting,
-												ongoing as currentSharp
+												ongoing as ongoingSharp
 											);
 										}
 

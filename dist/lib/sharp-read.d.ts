@@ -4,8 +4,8 @@ import type { Sharp } from "sharp";
 export interface sharpBuffer extends Sharp {
     [key: string]: any;
 }
-export interface currentSharp extends Omit<optionExecutionsFile, "buffer"> {
+export interface ongoingSharp extends Omit<optionExecutionsFile, "buffer"> {
     buffer: sharpBuffer;
 }
-declare const _default: (options: IMG, current: currentSharp) => Promise<any>;
+declare const _default: (options: IMG, ongoing: ongoingSharp) => Promise<any>;
 export default _default;

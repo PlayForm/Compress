@@ -1,3 +1,7 @@
+## 1.1.34
+
+-   Updates files-pipeline component
+
 ## 1.1.33
 
 -   Process scripts enhancement

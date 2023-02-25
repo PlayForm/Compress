@@ -44,26 +44,26 @@ export default deepmerge(defaults, {
 	svg: defaultsSVG,
 	map: defaultsMAP,
 	pipeline: {
-		failed: async (current) =>
-			`Error: Cannot compress file ${current.inputPath}!`,
-		passed: async (current) =>
-			current.fileSizeBefore >
-			Buffer.byteLength(current.buffer.toString()),
-		accomplished: async (current) =>
-			`Compressed ${current.inputPath} for ${await formatBytes(
-				current.fileSizeBefore - current.fileSizeAfter
+		failed: async (ongoing) =>
+			`Error: Cannot compress file ${ongoing.inputPath}!`,
+		passed: async (ongoing) =>
+			ongoing.fileSizeBefore >
+			Buffer.byteLength(ongoing.buffer.toString()),
+		accomplished: async (ongoing) =>
+			`Compressed ${ongoing.inputPath} for ${await formatBytes(
+				ongoing.fileSizeBefore - ongoing.fileSizeAfter
 			)} (${(
-				((current.fileSizeBefore - current.fileSizeAfter) /
-					current.fileSizeBefore) *
+				((ongoing.fileSizeBefore - ongoing.fileSizeAfter) /
+					ongoing.fileSizeBefore) *
 				100
 			)
 				// rome-ignore lint/nursery/noPrecisionLoss:
-				.toFixed(2)}% reduction) in ${current.outputPath}.`,
-		changed: async (pipe) => {
-			pipe.info.total =
-				(pipe.info.total ? pipe.info.total : 0) +
-				(pipe.current.fileSizeBefore - pipe.current.fileSizeAfter);
-			return pipe;
+				.toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
+		changed: async (plan) => {
+			plan.info.total =
+				(plan.info.total ? plan.info.total : 0) +
+				(plan.ongoing.fileSizeBefore - plan.ongoing.fileSizeAfter);
+			return plan;
 		},
 	},
 } satisfies Options) as Options;

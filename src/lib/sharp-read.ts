@@ -1,6 +1,6 @@
 import type { IMG } from "../options/img.js";
 
-import type { optionCallbacksFile } from "files-pipeline/dist/options/index.js";
+import type { optionExecutionsFile } from "files-pipeline/dist/options/index.js";
 import type { Sharp } from "sharp";
 
 import defaults from "../options/index.js";
@@ -10,7 +10,7 @@ export interface sharpBuffer extends Sharp {
 	[key: string]: any;
 }
 
-export interface currentSharp extends Omit<optionCallbacksFile, "buffer"> {
+export interface currentSharp extends Omit<optionExecutionsFile, "buffer"> {
 	buffer: sharpBuffer;
 }
 

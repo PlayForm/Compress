@@ -1,10 +1,10 @@
-import type { optionCallbacksFile } from "files-pipeline/dist/options/index.js";
-import type { Sharp } from "sharp";
 import type { IMG } from "../options/img.js";
+import type { optionExecutionsFile } from "files-pipeline/dist/options/index.js";
+import type { Sharp } from "sharp";
 export interface sharpBuffer extends Sharp {
     [key: string]: any;
 }
-export interface currentSharp extends Omit<optionCallbacksFile, "buffer"> {
+export interface currentSharp extends Omit<optionExecutionsFile, "buffer"> {
     buffer: sharpBuffer;
 }
 declare const _default: (options: IMG, current: currentSharp) => Promise<any>;

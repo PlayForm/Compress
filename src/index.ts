@@ -77,41 +77,41 @@ export default (options: Options = {}): AstroIntegration => {
 							).not(options["exclude"])
 						).pipeline(
 							deepmerge(options["pipeline"], {
-								wrote: async (current) => {
+								wrote: async (ongoing) => {
 									switch (fileType) {
 										case "css": {
 											return csso(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											).css;
 										}
 
 										case "html": {
 											return await htmlMinifierTerser(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											);
 										}
 
 										case "js": {
 											const { code } = await terser(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											);
 
-											return code ? code : current.buffer;
+											return code ? code : ongoing.buffer;
 										}
 
 										case "img": {
 											return sharpRead(
 												setting,
-												current as currentSharp
+												ongoing as currentSharp
 											);
 										}
 
 										case "svg": {
 											const { data } = svgo(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											) as Output;
 
@@ -119,22 +119,22 @@ export default (options: Options = {}): AstroIntegration => {
 												return data;
 											}
 
-											return current.buffer;
+											return ongoing.buffer;
 										}
 
 										default: {
-											return current.buffer;
+											return ongoing.buffer;
 										}
 									}
 								},
-								read: async (current) => {
+								read: async (ongoing) => {
 									switch (fileType) {
 										case "img": {
 											const { format } = await sharp(
-												current.inputPath
+												ongoing.inputPath
 											).metadata();
 
-											return sharp(current.inputPath, {
+											return sharp(ongoing.inputPath, {
 												failOn: "none",
 												sequentialRead: true,
 												unlimited: true,
@@ -147,23 +147,23 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 
 										default: {
-											return await defaults[
-												"pipeline"
-											].read(current);
+											return await defaults["pipeline"].read(
+												ongoing
+											);
 										}
 									}
 								},
-								fulfilled: async (pipe) =>
-									pipe.files > 0
+								fulfilled: async (plan) =>
+									plan.files > 0
 										? `Successfully compressed a total of ${
-												pipe.files
+												plan.files
 										  } ${fileType.toUpperCase()} ${
 												// rome-ignore lint/nursery/noPrecisionLoss:
-												pipe.files === 1
+												plan.files === 1
 													? "file"
 													: "files"
 										  } for ${await formatBytes(
-												pipe.info.total
+												plan.info.total
 										  )}.`
 										: false,
 							} satisfies executions)

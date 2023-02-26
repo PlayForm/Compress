@@ -1,20 +1,20 @@
 import type {
 	executions,
 	optionPath,
-} from "files-pipeline/dist/options/index.js";
+} from "files-pipe/dist/options/index.js";
 
 import formatBytes from "./lib/format-bytes.js";
 
-import deepmerge from "files-pipeline/dist/lib/deepmerge.js";
+import deepmerge from "files-pipe/dist/lib/deepmerge.js";
 
 import type { AstroIntegration } from "astro";
 
 import type { Options } from "./options/index.js";
 
-import defaults from "files-pipeline/dist/options/index.js";
+import defaults from "files-pipe/dist/options/index.js";
 import defaultsCompress from "./options/index.js";
 
-import { files } from "files-pipeline";
+import { files } from "files-pipe";
 
 import { minify as csso } from "csso";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
@@ -75,8 +75,8 @@ export default (options: Options = {}): AstroIntegration => {
 										: ""
 								)
 							).not(options["exclude"])
-						).pipeline(
-							deepmerge(options["pipeline"], {
+						).pipe(
+							deepmerge(options["pipe"], {
 								wrote: async (ongoing) => {
 									switch (fileType) {
 										case "css": {
@@ -147,7 +147,7 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 
 										default: {
-											return await defaults["pipeline"].read(
+											return await defaults["pipe"].read(
 												ongoing
 											);
 										}

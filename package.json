@@ -35,7 +35,7 @@
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.1",
 		"csso": "5.0.5",
-		"files-pipeline": "0.0.4",
+		"files-pipe": "0.0.1",
 		"html-minifier-terser": "7.1.0",
 		"sharp": "0.31.3",
 		"svgo": "3.0.2",
@@ -43,7 +43,7 @@
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.7",
-		"@lightrix/scripts": "0.1.3",
+		"@lightrix/scripts": "0.1.4",
 		"astro": "2.0.15"
 	},
 	"publishConfig": {

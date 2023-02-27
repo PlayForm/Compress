@@ -6,8 +6,7 @@ import type { Sharp } from "sharp";
 import defaults from "../options/index.js";
 
 export interface sharpBuffer extends Sharp {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
+	[key: string]: unknown;
 }
 
 export interface ongoingSharp extends Omit<optionExecutionsFile, "buffer"> {
@@ -22,7 +21,7 @@ export default async (options: IMG, ongoing: ongoingSharp) => {
 	}
 
 	const typeToOption: {
-		[key: string]: string;
+	[key: string]: string;
 	} = {
 		"avci": "avif",
 		"avcs": "avif",

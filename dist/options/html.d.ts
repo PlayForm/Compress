@@ -1,6 +1,6 @@
 import type { Options } from "html-minifier-terser";
 export interface HTML extends Options {
-    [key: string]: any;
+    [key: string]: unknown;
 }
 declare const _default: {
     caseSensitive: true;

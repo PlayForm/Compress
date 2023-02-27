@@ -1,6 +1,6 @@
 import type { MinifyOptions } from "terser";
 export interface JS extends MinifyOptions {
-    [key: string]: any;
+    [key: string]: unknown;
 }
 declare const _default: {
     ecma: 5;

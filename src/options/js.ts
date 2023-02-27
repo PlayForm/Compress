@@ -1,8 +1,7 @@
 import type { MinifyOptions } from "terser";
 
 export interface JS extends MinifyOptions {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
+	[key: string]: unknown;
 }
 
 export default {

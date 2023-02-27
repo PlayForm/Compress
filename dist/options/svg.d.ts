@@ -1,6 +1,6 @@
 import type { Config } from "svgo";
 export interface SVG extends Config {
-    [key: string]: any;
+    [key: string]: unknown;
 }
 declare const _default: {
     multipass: true;

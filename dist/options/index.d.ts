@@ -6,7 +6,7 @@ import type { MAP } from "./map.js";
 import type { SVG } from "./svg.js";
 import type { Options as OptionsBase } from "files-pipe/dist/options/index.js";
 export interface Options extends OptionsBase {
-    [key: string]: any;
+    [key: string]: unknown;
     css?: boolean | CSS;
     html?: boolean | HTML;
     js?: boolean | JS;

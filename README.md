@@ -63,10 +63,10 @@ export default { integrations: [compress()] };
 
 ## Getting started
 
-The utility will now automatically compress all your CSS, HTML and JavaScript
-files in the `dist` folder.
+The utility will now automatically compress all your CSS, HTML, SVG, JavaScript
+and image files in the `dist` folder.
 
-The following image file types will also be compressed:
+The following image file types will be compressed via [sharp]:
 
 -   avci
 -   avcs
@@ -88,7 +88,7 @@ The following image file types will also be compressed:
 -   tiff
 -   webp
 
-SVG compression is supported, as well via [svgo].
+SVG compression is supported via [svgo].
 
 You can override any of the default options from the configurations of:
 

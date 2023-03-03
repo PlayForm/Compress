@@ -90,7 +90,7 @@ The following image file types will be compressed via [sharp]:
 
 SVG compression is supported via [svgo].
 
-You can override any of the default options from the configurations of:
+#### You can override any of the default options from the configurations of:
 
 -   [csso](https://github.com/css/csso#minifysource-options)
 -   [html-minifier-terser](https://github.com/terser/html-minifier-terser#options-quick-reference)
@@ -135,7 +135,7 @@ export default {
 };
 ```
 
-You can add multiple paths to compress by specifying an array as the `path`
+#### You can add multiple paths to compress by specifying an array as the `path`
 variable.
 
 **`astro.config.ts`**
@@ -152,7 +152,7 @@ export default {
 };
 ```
 
-You can also provide a map of paths for different input output directories.
+#### You can also provide a map of paths for different input output directories.
 
 **`astro.config.ts`**
 
@@ -168,7 +168,7 @@ export default {
 };
 ```
 
-Or an array of the two.
+#### Or an array of the two.
 
 **`astro.config.ts`**
 
@@ -190,9 +190,7 @@ export default {
 };
 ```
 
-You can provide a filter to exclude files in your build. A filter can be an
-array of regexes or a single match. You can use functions, as well to match on
-file names.
+#### You can provide a filter to exclude files in your build. A filter can be an array of regexes or a single match. You can use functions, as well to match on file names.
 
 **`astro.config.ts`**
 
@@ -212,7 +210,7 @@ export default {
 };
 ```
 
-Set `logger` to `0` if you do not want to see debug messages. Default is `2`.
+#### Set `logger` to `0` if you do not want to see debug messages. Default is `2`.
 
 **`astro.config.ts`**
 

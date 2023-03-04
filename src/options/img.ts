@@ -42,7 +42,7 @@ export default {
 	},
 	gif: {
 		// rome-ignore lint/nursery/noPrecisionLoss:
-		effort: 10,
+		effort: 10.0,
 	},
 	jpeg: {
 		chromaSubsampling: "4:4:4",

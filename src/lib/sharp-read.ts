@@ -21,7 +21,7 @@ export default async (options: IMG, ongoing: ongoingSharp) => {
 	}
 
 	const typeToOption: {
-	[key: string]: string;
+		[key: string]: string;
 	} = {
 		"avci": "avif",
 		"avcs": "avif",

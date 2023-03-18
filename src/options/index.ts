@@ -1,7 +1,7 @@
 import formatBytes from "../lib/format-bytes.js";
 
-import deepmerge from "files-pipe/dist/lib/deepmerge.js";
-import defaults from "files-pipe/dist/options/index.js";
+import deepmerge from "files-pipe/lib/deepmerge.js";
+import defaults from "files-pipe/options/index.js";
 
 import defaultsCSS from "./css.js";
 import defaultsHTML from "./html.js";
@@ -17,7 +17,7 @@ import type { JS } from "./js.js";
 import type { MAP } from "./map.js";
 import type { SVG } from "./svg.js";
 
-import type { Options as OptionsBase } from "files-pipe/dist/options/index.js";
+import type { Options as OptionsBase } from "files-pipe/options/index.js";
 
 export interface Options extends OptionsBase {
 	[key: string]: unknown;

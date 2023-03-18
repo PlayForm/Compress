@@ -37,11 +37,9 @@ export interface IMG {
 export default {
 	avif: {
 		chromaSubsampling: "4:4:4",
-		// rome-ignore lint/nursery/noPrecisionLoss:
-		effort: 9,
+		effort: 9.0,
 	},
 	gif: {
-		// rome-ignore lint/nursery/noPrecisionLoss:
 		effort: 10.0,
 	},
 	jpeg: {
@@ -52,8 +50,7 @@ export default {
 		optimiseScans: true,
 	},
 	png: {
-		// rome-ignore lint/nursery/noPrecisionLoss:
-		compressionLevel: 9,
+		compressionLevel: 9.0,
 		palette: true,
 	},
 	raw: {},
@@ -61,7 +58,6 @@ export default {
 		compression: "lzw",
 	},
 	webp: {
-		// rome-ignore lint/nursery/noPrecisionLoss:
-		effort: 6,
+		effort: 6.0,
 	},
 } satisfies IMG;

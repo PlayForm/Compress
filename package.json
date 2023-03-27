@@ -47,7 +47,7 @@
 		"html-minifier-terser": "7.1.0",
 		"sharp": "0.31.3",
 		"svgo": "3.0.2",
-		"terser": "5.16.6"
+		"terser": "5.16.8"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.7",

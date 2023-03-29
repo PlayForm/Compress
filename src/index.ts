@@ -155,7 +155,7 @@ export default (options: Options = {}): AstroIntegration => {
 										? `Successfully compressed a total of ${
 												plan.files
 										  } ${fileType.toUpperCase()} ${
-												// rome-ignore lint/nursery/noPrecisionLoss:
+
 												plan.files === 1
 													? "file"
 													: "files"

@@ -56,7 +56,7 @@ export default deepmerge(defaults, {
 					ongoing.fileSizeBefore) *
 				100
 			)
-				// rome-ignore lint/nursery/noPrecisionLoss:
+
 				.toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
 		changed: async (plan) => {
 			plan.info.total =

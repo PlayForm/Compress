@@ -5,7 +5,7 @@ export interface JS extends MinifyOptions {
 }
 
 export default {
-	// rome-ignore lint/nursery/noPrecisionLoss:
+
 	ecma: 5,
 	enclose: false,
 	keep_classnames: false,

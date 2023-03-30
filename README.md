@@ -33,17 +33,20 @@ command will:
 To install `astro-compress`, run the following from your project directory and
 follow the prompts:
 
- Using NPM:
+Using NPM:
+
 ```sh
 npx astro add astro-compress
 ```
 
- Using Yarn:
+Using Yarn:
+
 ```sh
 yarn astro add astro-compress
 ```
 
- Using PNPM:
+Using PNPM:
+
 ```sh
 pnpx astro add astro-compress
 ```

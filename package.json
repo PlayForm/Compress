@@ -37,7 +37,7 @@
 		"@types/sharp": "0.31.1",
 		"csso": "5.0.5",
 		"files-pipe": "0.0.1",
-		"html-minifier-terser": "7.1.0",
+		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.0",
 		"svgo": "3.0.2",
 		"terser": "5.16.8"

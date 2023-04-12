@@ -1,27 +1,24 @@
-import type {
-	executions,
-	optionPath,
-} from "files-pipeline/dist/options/index.js";
+import type { executions, optionPath } from "files-pipe/options/index.js";
 
 import formatBytes from "./lib/format-bytes.js";
 
-import deepmerge from "files-pipeline/dist/lib/deepmerge.js";
-import { optimize as svgo } from "svgo";
+import deepmerge from "files-pipe/lib/deepmerge.js";
 
 import type { AstroIntegration } from "astro";
 
 import type { Options } from "./options/index.js";
 
-import defaults from "files-pipeline/dist/options/index.js";
+import defaults from "files-pipe/options/index.js";
 import defaultsCompress from "./options/index.js";
 
-import { files } from "files-pipeline";
+import { files } from "files-pipe";
 
 import { minify as csso } from "csso";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
-import type { Output } from "svgo";
+import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 
+import type { Output } from "svgo";
 
 export default (options: Options = {}): AstroIntegration => {
 	for (const option in options) {
@@ -45,15 +42,17 @@ export default (options: Options = {}): AstroIntegration => {
 			for (const path of options["path"]) {
 				paths.add(path);
 			}
-		} else {
-			paths.add(options["path"]);
 		}
 	}
 
 	return {
 		name: "astro-compress",
 		hooks: {
-			"astro:build:done": async () => {
+			"astro:build:done": async ({ dir }) => {
+				if (!paths.size) {
+					paths.add(dir);
+				}
+
 				for (const [fileType, setting] of Object.entries(options)) {
 					if (!setting) {
 						continue;
@@ -65,56 +64,41 @@ export default (options: Options = {}): AstroIntegration => {
 								await (
 									await new files(options["logger"]).in(path)
 								).by(
-									(() => {
-										switch (fileType) {
-											case "css":
-												return "**/*.css";
-
-											case "html":
-												return "**/*.html";
-
-											case "js":
-												return "**/*.{js,mjs,cjs}";
-
-											case "svg":
-												return "**/*.svg";
-
-											default:
-												return "";
-										}
-									})()
+									typeof options["map"] === "object"
+										? options["map"][fileType]
+										: ""
 								)
 							).not(options["exclude"])
-						).pipeline(
-							deepmerge(defaultsCompress["pipeline"], {
-								wrote: async (current) => {
+						).pipe(
+							deepmerge(options["pipe"], {
+								wrote: async (ongoing) => {
 									switch (fileType) {
 										case "css": {
 											return csso(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											).css;
 										}
 
 										case "html": {
 											return await htmlMinifierTerser(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											);
 										}
 
 										case "js": {
 											const { code } = await terser(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											);
 
-											return code ? code : current.buffer;
+											return code ? code : ongoing.buffer;
 										}
 
 										case "svg": {
 											const { data } = svgo(
-												current.buffer.toString(),
+												ongoing.buffer.toString(),
 												setting
 											) as Output;
 
@@ -122,25 +106,24 @@ export default (options: Options = {}): AstroIntegration => {
 												return data;
 											}
 
-											return current.buffer;
+											return ongoing.buffer;
 										}
 
 										default: {
-											return current.buffer;
+											return ongoing.buffer;
 										}
 									}
 								},
-								fulfilled: async (pipe) =>
-									pipe.files > 0
+								fulfilled: async (plan) =>
+									plan.files > 0
 										? `Successfully compressed a total of ${
-												pipe.files
+												plan.files
 										  } ${fileType.toUpperCase()} ${
-												// rome-ignore lint/nursery/noPrecisionLoss:
-												pipe.files === 1
+												plan.files === 1
 													? "file"
 													: "files"
 										  } for ${await formatBytes(
-												pipe.info.total
+												plan.info.total
 										  )}.`
 										: false,
 							} satisfies executions)

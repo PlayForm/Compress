@@ -1,3 +1,31 @@
+## 1.1.35
+
+-   Switches to the files-pipe component
+
+## 1.1.34
+
+-   Updates files-pipeline component
+
+## 1.1.33
+
+-   Process scripts enhancement
+
+## 1.1.32
+
+-   Revert bug fix
+
+## 1.1.31
+
+-   Bug fix
+
+## 1.1.30
+
+-   Enhancement
+
+## 1.1.29
+
+-   Cleanup
+
 ## 1.1.28
 
 -   Cleanup

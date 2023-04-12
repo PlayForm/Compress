@@ -1,23 +1,24 @@
 import formatBytes from "../lib/format-bytes.js";
 
-import deepmerge from "files-pipeline/dist/lib/deepmerge.js";
-import defaults from "files-pipeline/dist/options/index.js";
+import deepmerge from "files-pipe/lib/deepmerge.js";
+import defaults from "files-pipe/options/index.js";
 
 import defaultsCSS from "./css.js";
 import defaultsHTML from "./html.js";
 import defaultsJS from "./js.js";
+import defaultsMAP from "./map.js";
 import defaultsSVG from "./svg.js";
 
 import type { CSS } from "./css.js";
 import type { HTML } from "./html.js";
 import type { JS } from "./js.js";
+import type { MAP } from "./map.js";
 import type { SVG } from "./svg.js";
 
-import type { Options as OptionsBase } from "files-pipeline/dist/options/index.js";
+import type { Options as OptionsBase } from "files-pipe/options/index.js";
 
 export interface Options extends OptionsBase {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
+	[key: string]: unknown;
 
 	css?: boolean | CSS;
 
@@ -26,6 +27,8 @@ export interface Options extends OptionsBase {
 	js?: boolean | JS;
 
 	svg?: boolean | SVG;
+
+	map?: boolean | MAP;
 }
 
 export default deepmerge(defaults, {
@@ -33,27 +36,28 @@ export default deepmerge(defaults, {
 	html: defaultsHTML,
 	js: defaultsJS,
 	svg: defaultsSVG,
-	pipeline: {
-		failed: async (current) =>
-			`Error: Cannot compress file ${current.inputPath}!`,
-		passed: async (current) =>
-			current.fileSizeBefore >
-			Buffer.byteLength(current.buffer.toString()),
-		accomplished: async (current) =>
-			`Compressed ${current.inputPath} for ${await formatBytes(
-				current.fileSizeBefore - current.fileSizeAfter
+	map: defaultsMAP,
+	pipe: {
+		failed: async (ongoing) =>
+			`Error: Cannot compress file ${ongoing.inputPath}!`,
+		passed: async (ongoing) =>
+			ongoing.fileSizeBefore >
+			Buffer.byteLength(ongoing.buffer.toString()),
+		accomplished: async (ongoing) =>
+			`Compressed ${ongoing.inputPath} for ${await formatBytes(
+				ongoing.fileSizeBefore - ongoing.fileSizeAfter
 			)} (${(
-				((current.fileSizeBefore - current.fileSizeAfter) /
-					current.fileSizeBefore) *
+				((ongoing.fileSizeBefore - ongoing.fileSizeAfter) /
+					ongoing.fileSizeBefore) *
 				100
 			)
-				// rome-ignore lint/nursery/noPrecisionLoss:
-				.toFixed(2)}% reduction) in ${current.outputPath}.`,
-		changed: async (pipe) => {
-			pipe.info.total =
-				(pipe.info.total ? pipe.info.total : 0) +
-				(pipe.current.fileSizeBefore - pipe.current.fileSizeAfter);
-			return pipe;
+
+				.toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
+		changed: async (plan) => {
+			plan.info.total =
+				(plan.info.total ? plan.info.total : 0) +
+				(plan.ongoing.fileSizeBefore - plan.ongoing.fileSizeAfter);
+			return plan;
 		},
 	},
 } satisfies Options) as Options;

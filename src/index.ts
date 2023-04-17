@@ -1,24 +1,16 @@
-import type { executions, optionPath } from "files-pipe/options/index.js";
-
+import type { executions, optionPath } from "files-pipe/dist/options/index.js";
 import formatBytes from "./lib/format-bytes.js";
-
-import deepmerge from "files-pipe/lib/deepmerge.js";
-
+import deepmerge from "files-pipe/dist/lib/deepmerge.js";
 import type { AstroIntegration } from "astro";
-
 import type { Options } from "./options/index.js";
-
-import defaults from "files-pipe/options/index.js";
+import defaults from "files-pipe/dist/options/index.js";
 import defaultsCompress from "./options/index.js";
-
 import { files } from "files-pipe";
-
 import { minify as csso } from "csso";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
-
 import type { Output } from "svgo";
 import type { ongoingSharp } from "./lib/sharp-read.js";
 import sharpRead from "./lib/sharp-read.js";

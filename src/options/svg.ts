@@ -1,7 +1,7 @@
 import type { Config } from "svgo";
 
 export interface SVG extends Config {
-	[key: string]: unknown;
+	[key: string]: any;
 }
 
 export default {

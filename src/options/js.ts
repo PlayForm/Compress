@@ -1,7 +1,7 @@
 import type { MinifyOptions } from "terser";
 
 export interface JS extends MinifyOptions {
-	[key: string]: unknown;
+	[key: string]: any;
 }
 
 export default {

@@ -1,7 +1,7 @@
 import type { CompressOptions, MinifyOptions } from "csso";
 
 export interface CSS extends MinifyOptions, CompressOptions {
-	[key: string]: unknown;
+	[key: string]: any;
 }
 
 export default {

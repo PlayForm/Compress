@@ -27,6 +27,6 @@ jobs:
                   registry-url: "https://registry.npmjs.org"
             - run: npm install -g npm
             - run: npm install --legacy-peer-deps
-            - run: npm publish --provenance --access public --legacy-peer-deps
+            - run: npm publish --legacy-peer-deps
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

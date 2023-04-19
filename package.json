@@ -28,7 +28,8 @@
 		"svg"
 	],
 	"scripts": {
-		"prepare": "lightrix build src/**/*.ts"
+		"build": "lightrix build src/**/*.ts",
+		"prepare": "npm run build"
 	},
 	"dependencies": {
 		"@types/csso": "5.0.0",

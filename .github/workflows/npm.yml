@@ -26,7 +26,7 @@ jobs:
                   node-version: "18"
                   registry-url: "https://registry.npmjs.org"
             - run: npm install -g npm
-            - run: npm shrinkwrap
+            - run: npm shrinkwrap --legacy-peer-deps
             - run: npm ci
             - run: npm publish --provenance --access public
               env:

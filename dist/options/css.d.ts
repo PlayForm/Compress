@@ -1,6 +1,6 @@
 import type { CompressOptions, MinifyOptions } from "csso";
 export interface CSS extends MinifyOptions, CompressOptions {
-    [key: string]: unknown;
+    [key: string]: any;
 }
 declare const _default: {
     clone: false;

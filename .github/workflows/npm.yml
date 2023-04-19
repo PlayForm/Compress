@@ -26,8 +26,7 @@ jobs:
                   node-version: "18"
                   registry-url: "https://registry.npmjs.org"
             - run: npm install -g npm
-            - run: npm shrinkwrap --legacy-peer-deps
-            - run: npm ci --legacy-peer-deps
+            - run: npm install
             - run: npm publish --provenance --access public
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

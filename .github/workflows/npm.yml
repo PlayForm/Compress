@@ -52,6 +52,7 @@ jobs:
 
             - run: ls -lha
             - run: ls -lha dist/
+            - run: ls -lha dist/*
             # - run: npm publish --legacy-peer-deps
             #   env:
             #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

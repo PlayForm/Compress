@@ -1,7 +1,7 @@
 import type { Options } from "html-minifier-terser";
 
 export interface HTML extends Options {
-	[key: string]: unknown;
+	[key: string]: any;
 }
 
 export default {

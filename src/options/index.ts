@@ -16,7 +16,7 @@ import type { SVG } from "./svg.js";
 import defaultsSVG from "./svg.js";
 
 export interface Options extends OptionsBase {
-	[key: string]: unknown;
+	[key: string]: any;
 
 	css?: boolean | CSS;
 

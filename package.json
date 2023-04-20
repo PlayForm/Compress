@@ -44,11 +44,10 @@
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.9",
-		"@lightrix/scripts": "0.1.7",
+		"@lightrix/scripts": "1.0.0",
 		"astro": "2.3.0"
 	},
 	"publishConfig": {
-		"provenance": true,
 		"access": "public"
 	}
 }

@@ -26,7 +26,12 @@ jobs:
                   node-version: "18"
                   registry-url: "https://registry.npmjs.org"
             - run: npm install -g npm
-            - run: npm install --legacy-peer-deps
-            - run: npm publish --legacy-peer-deps
+
+            - name: Publish ./
+              continue-on-error: true
+              working-directory: ./
+              run: |
+                  npm install --legacy-peer-deps
+                  npm publish --legacy-peer-deps --provenance
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

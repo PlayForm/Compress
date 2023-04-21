@@ -10,6 +10,7 @@ import type {
 
 export interface IMG {
 	[key: string]:
+		| undefined
 		| boolean
 		| AvifOptions
 		| GifOptions

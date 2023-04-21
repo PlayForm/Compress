@@ -4,6 +4,7 @@ import type { IMG } from "../options/img.js";
 import defaults from "../options/index.js";
 
 export interface sharpBuffer extends Sharp {
+	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
 

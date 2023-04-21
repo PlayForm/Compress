@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "1.1.39",
+	"version": "1.1.40",
 	"type": "module",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more.",
 	"repository": {
@@ -28,23 +28,22 @@
 		"svg"
 	],
 	"scripts": {
-		"build": "lightrix build 'src/**/*.ts'",
-		"prepare": "npm run build"
+		"prepare": "lightrix build 'src/**/*.ts'"
 	},
 	"dependencies": {
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.1",
 		"csso": "5.0.5",
-		"files-pipe": "0.0.2",
+		"files-pipe": "0.0.3",
 		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.0",
 		"svgo": "3.0.2",
 		"terser": "5.17.1"
 	},
 	"devDependencies": {
-		"@lightrix/config": "0.0.9",
-		"@lightrix/scripts": "1.0.0",
+		"@lightrix/config": "0.0.11",
+		"@lightrix/scripts": "1.0.2",
 		"astro": "2.3.0"
 	},
 	"publishConfig": {

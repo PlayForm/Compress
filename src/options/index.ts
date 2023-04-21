@@ -16,6 +16,7 @@ import type { SVG } from "./svg.js";
 import defaultsSVG from "./svg.js";
 
 export interface Options extends OptionsBase {
+	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 
 	css?: boolean | CSS;
@@ -51,11 +52,11 @@ export default deepmerge(defaults, {
 				((ongoing.fileSizeBefore - ongoing.fileSizeAfter) /
 					ongoing.fileSizeBefore) *
 				100
-			)
-
-				.toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
+			).toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
 		changed: async (plan) => {
+			// @ts-expect-error
 			plan.info.total =
+				// @ts-expect-error
 				(plan.info.total ? plan.info.total : 0) +
 				(plan.ongoing.fileSizeBefore - plan.ongoing.fileSizeAfter);
 			return plan;

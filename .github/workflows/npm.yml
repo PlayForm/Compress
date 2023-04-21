@@ -1,0 +1,32 @@
+name: NPM
+
+concurrency:
+    group: npm-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    security-events: write
+
+on:
+    workflow_dispatch:
+    release:
+        types: [created]
+    workflow_call:
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - uses: actions/checkout@v3.5.2
+            - uses: actions/setup-node@v3.6.0
+              with:
+                  node-version: "18"
+                  registry-url: "https://registry.npmjs.org"
+            - run: npm install -g npm
+            - run: npm install --legacy-peer-deps
+            - run: npm publish --legacy-peer-deps
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

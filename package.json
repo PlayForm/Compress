@@ -28,7 +28,7 @@
 		"svg"
 	],
 	"scripts": {
-		"build": "lightrix build src/*.ts src/*/*.ts",
+		"build": "lightrix build 'src/**/*.ts'",
 		"prepare": "npm run build"
 	},
 	"dependencies": {

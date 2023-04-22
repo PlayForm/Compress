@@ -27,9 +27,9 @@ jobs:
                   registry-url: "https://registry.npmjs.org"
             - run: npm install -g npm
 
-            - name: Publish ./
+            - name: Publish .
               continue-on-error: true
-              working-directory: ./
+              working-directory: .
               run: |
                   npm install --legacy-peer-deps
                   npm publish --legacy-peer-deps --provenance

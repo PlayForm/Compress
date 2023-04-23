@@ -28,9 +28,11 @@
 		"svg"
 	],
 	"scripts": {
-		"prepare": "lightrix build 'src/**/*.ts'"
+		"prepublishOnly": "lightrix build 'src/**/*.ts'"
 	},
 	"dependencies": {
+		"@lightrix/config": "0.0.11",
+		"@lightrix/scripts": "1.0.2",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"@types/sharp": "0.31.1",
@@ -42,8 +44,6 @@
 		"terser": "5.17.1"
 	},
 	"devDependencies": {
-		"@lightrix/config": "0.0.11",
-		"@lightrix/scripts": "1.0.2",
 		"astro": "2.3.0"
 	},
 	"publishConfig": {

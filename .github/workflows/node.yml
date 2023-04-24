@@ -79,7 +79,7 @@ jobs:
             - run: pnpm install
               working-directory: .
 
-            - run: pnpm run build
+            - run: pnpm run prepublishOnly
               working-directory: .
 
             - uses: actions/upload-artifact@v3.1.2

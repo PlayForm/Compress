@@ -35,7 +35,7 @@
 		"@lightrix/scripts": "1.0.3",
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
-		"@types/sharp": "0.31.1",
+		"@types/sharp": "0.32.0",
 		"csso": "5.0.5",
 		"files-pipe": "0.0.4",
 		"html-minifier-terser": "7.2.0",

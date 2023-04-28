@@ -39,12 +39,12 @@
 		"csso": "5.0.5",
 		"files-pipe": "0.0.4",
 		"html-minifier-terser": "7.2.0",
-		"sharp": "0.32.0",
+		"sharp": "0.32.1",
 		"svgo": "3.0.2",
 		"terser": "5.17.1"
 	},
 	"devDependencies": {
-		"astro": "2.3.1"
+		"astro": "2.3.2"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -9,4 +9,5 @@ export default {
 	clone: false,
 	comments: false,
 	forceMediaMerge: true,
+	restructure: false,
 } satisfies CSS;

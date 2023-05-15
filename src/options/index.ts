@@ -54,9 +54,7 @@ export default deepmerge(defaults, {
 				100
 			).toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
 		changed: async (plan) => {
-			// @ts-expect-error
 			plan.info.total =
-				// @ts-expect-error
 				(plan.info.total ? plan.info.total : 0) +
 				(plan.ongoing.fileSizeBefore - plan.ongoing.fileSizeAfter);
 			return plan;

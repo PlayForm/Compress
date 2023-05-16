@@ -1,3 +1,1 @@
-export default async (context, next) => {
-    
-}
+export default async (context, next) => {};

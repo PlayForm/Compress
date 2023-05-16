@@ -41,7 +41,7 @@
 		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.1",
 		"svgo": "3.0.2",
-		"terser": "5.17.3"
+		"terser": "5.17.4"
 	},
 	"devDependencies": {
 		"astro": "2.4.5"

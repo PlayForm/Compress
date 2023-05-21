@@ -43,7 +43,7 @@
 		"terser": "5.17.4"
 	},
 	"devDependencies": {
-		"astro": "2.5.0"
+		"astro": "2.5.1"
 	},
 	"publishConfig": {
 		"access": "public"

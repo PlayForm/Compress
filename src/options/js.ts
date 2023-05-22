@@ -14,4 +14,7 @@ export default {
 	module: false,
 	safari10: false,
 	toplevel: false,
+	format: {
+		comments: false,
+	},
 } satisfies JS;

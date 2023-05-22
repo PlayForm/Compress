@@ -11,5 +11,8 @@ declare const _default: {
     module: false;
     safari10: false;
     toplevel: false;
+    format: {
+        comments: false;
+    };
 };
 export default _default;

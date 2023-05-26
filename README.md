@@ -187,10 +187,10 @@ export default {
 	integrations: [
 		compress({
 			path: [
-				// compress dist
+				// Compress dist
 				"./dist",
 
-				// compress dist one more time into a different directory
+				// Compress dist one more time into a different directory
 				new Map([["./dist", "./dist-compressed"]]),
 			],
 		}),

@@ -38,12 +38,12 @@
 		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.1",
 		"svgo": "3.0.2",
-		"terser": "5.18.1"
+		"terser": "5.18.2"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.11",
 		"@lightrix/scripts": "1.0.4",
-		"astro": "2.7.0"
+		"astro": "2.7.1"
 	},
 	"publishConfig": {
 		"access": "public"

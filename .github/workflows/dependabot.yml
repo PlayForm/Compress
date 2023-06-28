@@ -17,7 +17,7 @@ jobs:
         runs-on: ubuntu-latest
         if: ${{ github.actor == 'dependabot[bot]' }}
         steps:
-            - uses: dependabot/fetch-metadata@v1.5.1
+            - uses: dependabot/fetch-metadata@v1.6.0
               with:
                   github-token: "${{ secrets.GITHUB_TOKEN }}"
             - run: gh pr review --approve "$PR_URL"

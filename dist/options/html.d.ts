@@ -1,7 +1,3 @@
-import type { Options } from "html-minifier-terser";
-export interface HTML extends Options {
-    [key: string]: any;
-}
 declare const _default: {
     caseSensitive: true;
     collapseInlineTagWhitespace: false;

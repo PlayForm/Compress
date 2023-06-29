@@ -1,18 +1,18 @@
 import type { Options as OptionsBase } from "files-pipe/dist/options/index.js";
-import type { CSS } from "./css.js";
-import type { HTML } from "./html.js";
-import type { IMG } from "./img.js";
-import type { JS } from "./js.js";
-import type { MAP } from "./map.js";
-import type { SVG } from "./svg.js";
+import defaultsCSS from "./css.js";
+import defaultsHTML from "./html.js";
+import defaultsIMG from "./img.js";
+import defaultsJS from "./js.js";
+import defaultsMAP from "./map.js";
+import defaultsSVG from "./svg.js";
 export interface Options extends OptionsBase {
     [key: string]: any;
-    css?: boolean | CSS;
-    html?: boolean | HTML;
-    js?: boolean | JS;
-    img?: boolean | IMG;
-    svg?: boolean | SVG;
-    map?: boolean | MAP;
+    css?: boolean | typeof defaultsCSS;
+    html?: boolean | typeof defaultsHTML;
+    js?: boolean | typeof defaultsJS;
+    img?: boolean | typeof defaultsIMG;
+    svg?: boolean | typeof defaultsSVG;
+    map?: boolean | typeof defaultsMAP;
 }
 declare const _default: Options;
 export default _default;

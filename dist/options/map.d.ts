@@ -1,6 +1,3 @@
-export interface MAP {
-    [key: string]: string;
-}
 declare const _default: {
     css: string;
     html: string;

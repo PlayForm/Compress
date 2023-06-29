@@ -1,10 +1,5 @@
 import type { Options } from "html-minifier-terser";
 
-export interface HTML extends Options {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
-}
-
 export default {
 	caseSensitive: true,
 	collapseInlineTagWhitespace: false,
@@ -82,4 +77,7 @@ export default {
 	sortClassName: true,
 	trimCustomFragments: true,
 	useShortDoctype: false,
-} satisfies HTML;
+} satisfies Options & {
+	// rome-ignore lint/suspicious/noExplicitAny:
+	[key: string]: any;
+};

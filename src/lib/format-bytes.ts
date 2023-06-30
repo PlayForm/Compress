@@ -1,4 +1,4 @@
-export default async (bytes: number, decimals: number = 2.0) => {
+export default async (bytes: number, decimals = 2.0) => {
 	if (bytes === 0) {
 		return "0 Bytes";
 	}

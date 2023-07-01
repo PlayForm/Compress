@@ -1,5 +1,4 @@
 import deepmerge from "files-pipe/dist/lib/deepmerge.js";
-import type { Options as OptionsBase } from "files-pipe/dist/options/index.js";
 import defaults from "files-pipe/dist/options/index.js";
 import formatBytes from "../lib/format-bytes.js";
 import defaultsCSS from "./css.js";
@@ -8,23 +7,6 @@ import defaultsIMG from "./img.js";
 import defaultsJS from "./js.js";
 import defaultsMAP from "./map.js";
 import defaultsSVG from "./svg.js";
-
-export interface Options extends OptionsBase {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
-
-	css?: boolean | typeof defaultsCSS;
-
-	html?: boolean | typeof defaultsHTML;
-
-	js?: boolean | typeof defaultsJS;
-
-	img?: boolean | typeof defaultsIMG;
-
-	svg?: boolean | typeof defaultsSVG;
-
-	map?: boolean | typeof defaultsMAP;
-}
 
 export default deepmerge(defaults, {
 	css: defaultsCSS,
@@ -54,4 +36,19 @@ export default deepmerge(defaults, {
 			return plan;
 		},
 	},
-} satisfies Options) as Options;
+} satisfies typeof defaults & {
+	// rome-ignore lint/suspicious/noExplicitAny:
+	[key: string]: any;
+
+	css?: boolean | typeof defaultsCSS;
+
+	html?: boolean | typeof defaultsHTML;
+
+	js?: boolean | typeof defaultsJS;
+
+	img?: boolean | typeof defaultsIMG;
+
+	svg?: boolean | typeof defaultsSVG;
+
+	map?: boolean | typeof defaultsMAP;
+});

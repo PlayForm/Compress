@@ -1,5 +1,10 @@
 import type { MinifyOptions } from "terser";
 
+export interface JS extends MinifyOptions {
+	// rome-ignore lint/suspicious/noExplicitAny:
+	[key: string]: any;
+}
+
 export default {
 	ecma: 5,
 	enclose: false,
@@ -12,7 +17,4 @@ export default {
 	format: {
 		comments: false,
 	},
-} satisfies MinifyOptions & {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
-};
+} satisfies JS;

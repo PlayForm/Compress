@@ -60,12 +60,7 @@ export default (options: Options = {}): AstroIntegration => {
 									await new files(_options["logger"]).in(path)
 								).by(
 									typeof _options["map"] === "object"
-										? (
-												_options["map"] as {
-													// rome-ignore lint/suspicious/noExplicitAny:
-													[key: string]: any;
-												}
-										  )[fileType]
+										? _options["map"][fileType]
 										: ""
 								)
 							).not(_options["exclude"])

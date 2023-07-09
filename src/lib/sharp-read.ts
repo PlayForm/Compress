@@ -22,17 +22,17 @@ export default async (options: IMG, ongoing: ongoingSharp) => {
 	const typeToOption: {
 		[key: string]: string;
 	} = {
-		"avci": "avif",
-		"avcs": "avif",
-		"avifs": "avif",
-		"heic": "heif",
-		"heics": "heif",
-		"heifs": "heif",
-		"jfif": "jpeg",
-		"jif": "jpeg",
-		"jpe": "jpeg",
-		"apng": "png",
-		"jpg": "jpeg",
+		avci: "avif",
+		avcs: "avif",
+		avifs: "avif",
+		heic: "heif",
+		heics: "heif",
+		heifs: "heif",
+		jfif: "jpeg",
+		jif: "jpeg",
+		jpe: "jpeg",
+		apng: "png",
+		jpg: "jpeg",
 	};
 
 	const optionType =
@@ -61,9 +61,7 @@ export default async (options: IMG, ongoing: ongoingSharp) => {
 	) {
 		if (optionType in ongoing.buffer) {
 			return await ongoing.buffer[optionType](
-				options[optionType] !== true
-					? options[optionType]
-					: defaults["img"]
+				options[optionType] !== true ? options[optionType] : defaults["img"],
 			).toBuffer();
 		}
 	}

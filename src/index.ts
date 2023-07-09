@@ -30,7 +30,10 @@ export default (options: Options = {}): AstroIntegration => {
 	const paths = new Set<optionPath>();
 
 	if (typeof _options["path"] !== "undefined") {
-		if (_options["path"] instanceof Array || _options["path"] instanceof Set) {
+		if (
+			_options["path"] instanceof Array ||
+			_options["path"] instanceof Set
+		) {
 			for (const path of _options["path"]) {
 				paths.add(path);
 			}
@@ -58,7 +61,7 @@ export default (options: Options = {}): AstroIntegration => {
 								).by(
 									typeof _options["map"] === "object"
 										? _options["map"][fileType]
-										: "",
+										: ""
 								)
 							).not(_options["exclude"])
 						).pipe(
@@ -66,33 +69,39 @@ export default (options: Options = {}): AstroIntegration => {
 								wrote: async (ongoing) => {
 									switch (fileType) {
 										case "css": {
-											return csso(ongoing.buffer.toString(), setting).css;
+											return csso(
+												ongoing.buffer.toString(),
+												setting
+											).css;
 										}
 
 										case "html": {
 											return await htmlMinifierTerser(
 												ongoing.buffer.toString(),
-												setting,
+												setting
 											);
 										}
 
 										case "js": {
 											const { code } = await terser(
 												ongoing.buffer.toString(),
-												setting,
+												setting
 											);
 
 											return code ? code : ongoing.buffer;
 										}
 
 										case "img": {
-											return sharpRead(setting, ongoing as ongoingSharp);
+											return sharpRead(
+												setting,
+												ongoing as ongoingSharp
+											);
 										}
 
 										case "svg": {
 											const { data } = svgo(
 												ongoing.buffer.toString(),
-												setting,
+												setting
 											) as Output;
 
 											if (typeof data !== "undefined") {
@@ -111,7 +120,7 @@ export default (options: Options = {}): AstroIntegration => {
 									switch (fileType) {
 										case "img": {
 											const { format } = await sharp(
-												ongoing.inputPath,
+												ongoing.inputPath
 											).metadata();
 
 											return sharp(ongoing.inputPath, {
@@ -119,12 +128,17 @@ export default (options: Options = {}): AstroIntegration => {
 												sequentialRead: true,
 												unlimited: true,
 												animated:
-													format === "webp" || format === "gif" ? true : false,
+													format === "webp" ||
+													format === "gif"
+														? true
+														: false,
 											});
 										}
 
 										default: {
-											return await defaults["pipe"].read(ongoing);
+											return await defaults["pipe"].read(
+												ongoing
+											);
 										}
 									}
 								},
@@ -133,10 +147,14 @@ export default (options: Options = {}): AstroIntegration => {
 										? `Successfully compressed a total of ${
 												plan.files
 										  } ${fileType.toUpperCase()} ${
-												plan.files === 1 ? "file" : "files"
-										  } for ${await formatBytes(plan.info.total)}.`
+												plan.files === 1
+													? "file"
+													: "files"
+										  } for ${await formatBytes(
+												plan.info.total
+										  )}.`
 										: false,
-							} satisfies executions),
+							} satisfies executions)
 						);
 					}
 				}

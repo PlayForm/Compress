@@ -36,14 +36,14 @@
 		"csso": "5.0.5",
 		"files-pipe": "0.0.7",
 		"html-minifier-terser": "7.2.0",
-		"sharp": "0.32.1",
+		"sharp": "0.32.2",
 		"svgo": "3.0.2",
-		"terser": "5.18.2"
+		"terser": "5.19.0"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.11",
 		"@lightrix/scripts": "1.0.6",
-		"astro": "2.8.0"
+		"astro": "2.8.1"
 	},
 	"publishConfig": {
 		"access": "public"

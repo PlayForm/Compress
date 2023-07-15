@@ -7,6 +7,6 @@ export default async (bytes: number, decimals = 2.0) => {
 	const i = Math.floor(Math.log(bytes) / Math.log(k));
 
 	return `${parseFloat(
-		(bytes / k ** i).toFixed(decimals < 0 ? 0 : decimals),
+		(bytes / k ** i).toFixed(decimals < 0 ? 0 : decimals)
 	)} ${["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"][i]}`;
 };

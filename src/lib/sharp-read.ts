@@ -61,7 +61,9 @@ export default async (options: IMG, ongoing: ongoingSharp) => {
 	) {
 		if (optionType in ongoing.buffer) {
 			return await ongoing.buffer[optionType](
-				options[optionType] !== true ? options[optionType] : defaults["img"],
+				options[optionType] !== true
+					? options[optionType]
+					: defaults["img"]
 			).toBuffer();
 		}
 	}

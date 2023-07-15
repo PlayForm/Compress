@@ -43,10 +43,11 @@ export default deepmerge(defaults, {
 		failed: async (ongoing) =>
 			`Error: Cannot compress file ${ongoing.inputPath}!`,
 		passed: async (ongoing) =>
-			ongoing.fileSizeBefore > Buffer.byteLength(ongoing.buffer.toString()),
+			ongoing.fileSizeBefore >
+			Buffer.byteLength(ongoing.buffer.toString()),
 		accomplished: async (ongoing) =>
 			`Compressed ${ongoing.inputPath} for ${await formatBytes(
-				ongoing.fileSizeBefore - ongoing.fileSizeAfter,
+				ongoing.fileSizeBefore - ongoing.fileSizeAfter
 			)} (${(
 				((ongoing.fileSizeBefore - ongoing.fileSizeAfter) /
 					ongoing.fileSizeBefore) *

@@ -1,19 +1,19 @@
-import type { executions, optionPath } from "files-pipe/dist/options/index.js";
-import { minify as htmlMinifierTerser } from "html-minifier-terser";
-import deepmerge from "files-pipe/dist/lib/deepmerge.js";
-import defaults from "files-pipe/dist/options/index.js";
-import type { ongoingSharp } from "./lib/sharp-read.js";
-import type { Options } from "./options/index.js";
-import defaultsCompress from "./options/index.js";
-import formatBytes from "./lib/format-bytes.js";
 import type { AstroIntegration } from "astro";
-import sharpRead from "./lib/sharp-read.js";
-import { minify as terser } from "terser";
-import { optimize as svgo } from "svgo";
 import { minify as csso } from "csso";
 import { files } from "files-pipe";
-import type { Output } from "svgo";
+import deepmerge from "files-pipe/dist/lib/deepmerge.js";
+import type { executions, optionPath } from "files-pipe/dist/options/index.js";
+import defaults from "files-pipe/dist/options/index.js";
+import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
+import type { Output } from "svgo";
+import { optimize as svgo } from "svgo";
+import { minify as terser } from "terser";
+import formatBytes from "./lib/format-bytes.js";
+import type { ongoingSharp } from "./lib/sharp-read.js";
+import sharpRead from "./lib/sharp-read.js";
+import type { Options } from "./options/index.js";
+import defaultsCompress from "./options/index.js";
 
 export default (options: Options = {}): AstroIntegration => {
 	for (const option in options) {

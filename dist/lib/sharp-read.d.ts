@@ -1,6 +1,6 @@
 import type { optionExecutionsFile } from "files-pipe/dist/options/index.js";
-import type { IMG } from "../options/img.js";
 import type { Sharp } from "sharp";
+import type { IMG } from "../options/img.js";
 export interface sharpBuffer extends Sharp {
     [key: string]: any;
 }

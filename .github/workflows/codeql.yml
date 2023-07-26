@@ -1,44 +1,39 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  schedule:
-    - cron: '17 19 * * 5'
+    push:
+        branches: ["main"]
+    pull_request:
+        # The branches below must be a subset of the branches above
+        branches: ["main"]
+    schedule:
+        - cron: "17 19 * * 5"
 
 jobs:
-  analyze:
-    name: Analyze
-    # Runner size impacts CodeQL analysis time. To learn more, please see:
-    #   - https://gh.io/recommended-hardware-resources-for-running-codeql
-    #   - https://gh.io/supported-runners-and-hardware-resources
-    #   - https://gh.io/using-larger-runners
-    # Consider using larger runners for possible analysis time improvements.
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+    analyze:
+        name: Analyze
+        runs-on: "ubuntu-latest"
+        timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+        permissions:
+            actions: read
+            contents: read
+            security-events: write
 
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'javascript' ]
-        
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+        strategy:
+            fail-fast: false
+            matrix:
+                language: ["javascript"]
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-        
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:${{matrix.language}}"
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Initialize CodeQL
+              uses: github/codeql-action/init@v2
+              with:
+                  languages: ${{ matrix.language }}
+
+            - name: Perform CodeQL Analysis
+              uses: github/codeql-action/analyze@v2
+              with:
+                  category: "/language:${{matrix.language}}"

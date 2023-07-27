@@ -1,39 +1,62 @@
 name: "CodeQL"
 
+concurrency:
+    group: codeql-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    security-events: write
+
 on:
+    workflow_dispatch:
     push:
-        branches: ["main"]
+        branches: [main]
     pull_request:
-        # The branches below must be a subset of the branches above
-        branches: ["main"]
-    schedule:
-        - cron: "17 19 * * 5"
+        branches: [main]
+    workflow_call:
 
 jobs:
-    analyze:
-        name: Analyze
-        runs-on: "ubuntu-latest"
-        timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
-        permissions:
-            actions: read
-            contents: read
-            security-events: write
+    codeql:
+        runs-on: ubuntu-latest
 
-        strategy:
-            fail-fast: false
-            matrix:
-                language: ["javascript"]
+        env:
+            ADBLOCK: true
+            TELEMETRY_DISABLED: 1
+            ASTRO_TELEMETRY_DISABLED: 1
+            AUTOMATEDLAB_TELEMETRY_OPTOUT: 1
+            AZURE_CORE_COLLECT_TELEMETRY: 0
+            CHOOSENIM_NO_ANALYTICS: 1
+            DIEZ_DO_NOT_TRACK: 1
+            DO_NOT_TRACK: 1
+            DOTNET_CLI_TELEMETRY_OPTOUT: 1
+            DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT: 1
+            ET_NO_TELEMETRY: 1
+            GATSBY_TELEMETRY_DISABLED: 1
+            GATSBY_TELEMETRY_OPT_OUT: 1
+            GATSBY_TELEMETRY_OPTOUT: 1
+            HASURA_GRAPHQL_ENABLE_TELEMETRY: false
+            HINT_TELEMETRY: off
+            HOMEBREW_NO_ANALYTICS: 1
+            INFLUXD_REPORTING_DISABLED: true
+            ITERATIVE_DO_NOT_TRACK: 1
+            NEXT_TELEMETRY_DEBUG: 1
+            NEXT_TELEMETRY_DISABLED: 1
+            NG_CLI_ANALYTICS: false
+            NUXT_TELEMETRY_DISABLED: 1
+            PIN_DO_NOT_TRACK: 1
+            POWERSHELL_TELEMETRY_OPTOUT: 1
+            SAM_CLI_TELEMETRY: 0
+            STNOUPGRADE: 1
+            STRIPE_CLI_TELEMETRY_OPTOUT: 1
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
+            - uses: actions/checkout@v3.5.3
 
-            - name: Initialize CodeQL
-              uses: github/codeql-action/init@v2
+            - uses: github/codeql-action/init@v2.21.1
               with:
-                  languages: ${{ matrix.language }}
+                  languages: javascript
 
             - name: Perform CodeQL Analysis
-              uses: github/codeql-action/analyze@v2
+              uses: github/codeql-action/analyze@v2.21.1
               with:
-                  category: "/language:${{matrix.language}}"
+                  category: "/language:javascript"

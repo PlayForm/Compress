@@ -9,6 +9,7 @@ import sharp from "sharp";
 import type { Output } from "svgo";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
+
 import formatBytes from "./lib/format-bytes.js";
 import type { ongoingSharp } from "./lib/sharp-read.js";
 import sharpRead from "./lib/sharp-read.js";

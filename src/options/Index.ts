@@ -1,6 +1,6 @@
 import deepmerge from "files-pipe/dist/lib/deepmerge.js";
-import type { Options as OptionsBase } from "files-pipe/dist/options/index.js";
-import defaults from "files-pipe/dist/options/index.js";
+import type { Options as OptionsBase } from "files-pipe/dist/options/Index.js";
+import defaults from "files-pipe/dist/options/Index.js";
 import formatBytes from "../lib/format-bytes.js";
 import type { CSS } from "./css.js";
 import defaultsCSS from "./css.js";

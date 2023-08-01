@@ -1,4 +1,4 @@
-import type { Options as OptionsBase } from "files-pipe/dist/options/index.js";
+import type { Options as OptionsBase } from "files-pipe/dist/options/Index.js";
 import type { CSS } from "./css.js";
 import type { HTML } from "./html.js";
 import type { IMG } from "./img.js";

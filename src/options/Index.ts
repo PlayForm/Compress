@@ -1,19 +1,19 @@
 import deepmerge from "files-pipe/dist/lib/deepmerge.js";
 import type { Options as OptionsBase } from "files-pipe/dist/options/Index.js";
 import defaults from "files-pipe/dist/options/Index.js";
-import formatBytes from "../lib/format-bytes.js";
-import type { CSS } from "./css.js";
-import defaultsCSS from "./css.js";
-import type { HTML } from "./html.js";
-import defaultsHTML from "./html.js";
-import type { IMG } from "./img.js";
-import defaultsIMG from "./img.js";
-import type { JS } from "./js.js";
-import defaultsJS from "./js.js";
-import type { MAP } from "./map.js";
-import defaultsMAP from "./map.js";
-import type { SVG } from "./svg.js";
-import defaultsSVG from "./svg.js";
+import formatBytes from "../lib/FormatBytes.js";
+import type { CSS } from "./CSS.js";
+import defaultsCSS from "./CSS.js";
+import type { HTML } from "./HTML.js";
+import defaultsHTML from "./HTML.js";
+import type { IMG } from "./IMG.js";
+import defaultsIMG from "./IMG.js";
+import type { JS } from "./JS.js";
+import defaultsJS from "./JS.js";
+import type { MAP } from "./Map.js";
+import defaultsMAP from "./Map.js";
+import type { SVG } from "./SVG.js";
+import defaultsSVG from "./SVG.js";
 
 export interface Options extends OptionsBase {
 	// rome-ignore lint/suspicious/noExplicitAny:

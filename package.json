@@ -26,7 +26,7 @@
 	"license": "MIT",
 	"type": "module",
 	"main": "./dist/Index.js",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/Index.d.ts",
 	"scripts": {
 		"prepublishOnly": "lightrix build 'src/**/*.ts'"
 	},

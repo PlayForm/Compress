@@ -39,7 +39,7 @@ export default deepmerge(defaults, {
 	img: defaultsIMG,
 	svg: defaultsSVG,
 	map: defaultsMAP,
-	pipe: {
+	Pipe: {
 		failed: async (ongoing) =>
 			`Error: Cannot compress file ${ongoing.inputPath}!`,
 		passed: async (ongoing) =>

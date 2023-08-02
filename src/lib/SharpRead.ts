@@ -3,16 +3,16 @@ import type { Sharp } from "sharp";
 import type { IMG } from "../options/IMG.js";
 import defaults from "../options/Index.js";
 
-export interface sharpBuffer extends Sharp {
+export interface BufferSharp extends Sharp {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
 
-export interface ongoingSharp extends Omit<optionExecutionsFile, "buffer"> {
-	buffer: sharpBuffer;
+export interface OnSharp extends Omit<optionExecutionsFile, "buffer"> {
+	Buffer: BufferSharp;
 }
 
-export default async (options: IMG, ongoing: ongoingSharp) => {
+export default async (options: IMG, ongoing: OnSharp) => {
 	const fileType = ongoing["inputPath"].split(".").pop();
 
 	if (!fileType) {
@@ -59,8 +59,8 @@ export default async (options: IMG, ongoing: ongoingSharp) => {
 		typeof options[optionType] !== "undefined" &&
 		options[optionType] !== false
 	) {
-		if (optionType in ongoing.buffer) {
-			return await ongoing.buffer[optionType](
+		if (optionType in ongoing.Buffer) {
+			return await ongoing.Buffer[optionType](
 				options[optionType] !== true
 					? options[optionType]
 					: defaults["img"]

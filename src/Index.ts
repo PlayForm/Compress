@@ -10,8 +10,8 @@ import type { Output } from "svgo";
 import { optimize as svgo } from "svgo";
 import { minify as terser } from "terser";
 import formatBytes from "./lib/FormatBytes.js";
-import type { ongoingSharp } from "./lib/SharpRead.js";
-import sharpRead from "./lib/SharpRead.js";
+import type { OnSharp } from "./lib/SharpRead.js";
+import SharpRead from "./lib/SharpRead.js";
 import type { Options } from "./options/Index.js";
 import defaultsCompress from "./options/Index.js";
 
@@ -64,9 +64,9 @@ export default (options: Options = {}): AstroIntegration => {
 										: ""
 								)
 							).not(_options["exclude"])
-						).pipe(
-							deepmerge(_options["pipe"], {
-								wrote: async (ongoing) => {
+						).Pipe(
+							deepmerge(_options["Pipe"], {
+								Wrote: async (ongoing) => {
 									switch (fileType) {
 										case "css": {
 											return csso(
@@ -92,9 +92,9 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 
 										case "img": {
-											return sharpRead(
+											return SharpRead(
 												setting,
-												ongoing as ongoingSharp
+												ongoing as OnSharp
 											);
 										}
 

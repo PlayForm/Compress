@@ -1,4 +1,4 @@
-import type { File } from "files-pipe/dist/options/Index.js";
+import type { File } from "files-pipe/Target/Options/Index.js";
 import type { Sharp } from "sharp";
 import type { IMG } from "../options/IMG.js";
 import Defaults from "../options/Index.js";

@@ -1,25 +1,25 @@
-import type { optionExecutionsFile } from "files-pipe/dist/options/Index.js";
+import type { File } from "files-pipe/dist/options/Index.js";
 import type { Sharp } from "sharp";
 import type { IMG } from "../options/IMG.js";
-import defaults from "../options/Index.js";
+import Defaults from "../options/Index.js";
 
 export interface BufferSharp extends Sharp {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
 
-export interface OnSharp extends Omit<optionExecutionsFile, "buffer"> {
+export interface OnSharp extends Omit<File, "buffer"> {
 	Buffer: BufferSharp;
 }
 
-export default async (options: IMG, ongoing: OnSharp) => {
-	const fileType = ongoing["inputPath"].split(".").pop();
+export default async (Options: IMG, On: OnSharp) => {
+	const File = On["Input"].split(".").pop();
 
-	if (!fileType) {
+	if (!File) {
 		return;
 	}
 
-	const typeToOption: {
+	const Option: {
 		[key: string]: string;
 	} = {
 		avci: "avif",
@@ -35,36 +35,26 @@ export default async (options: IMG, ongoing: OnSharp) => {
 		jpg: "jpeg",
 	};
 
-	const optionType =
-		typeof typeToOption[fileType] !== "undefined"
-			? typeToOption[fileType]
-			: typeof options[fileType] !== "undefined"
-			? fileType
+	const Type =
+		typeof Option[File] !== "undefined"
+			? Option[File]
+			: typeof Options[File] !== "undefined"
+			? File
 			: false;
 
-	const validOptionCalls = [
-		"avif",
-		"gif",
-		"heif",
-		"jpeg",
-		"png",
-		"raw",
-		"tiff",
-		"webp",
-	];
-
 	if (
-		optionType &&
-		validOptionCalls.includes(optionType) &&
-		typeof options[optionType] !== "undefined" &&
-		options[optionType] !== false
+		Type &&
+		["avif", "gif", "heif", "jpeg", "png", "raw", "tiff", "webp"].includes(
+			Type
+		) &&
+		typeof Options[Type] !== "undefined" &&
+		Options[Type] !== false
 	) {
-		if (optionType in ongoing.Buffer) {
-			return await ongoing.Buffer[optionType](
-				options[optionType] !== true
-					? options[optionType]
-					: defaults["img"]
-			).toBuffer();
-		}
+		return (
+			Type in On.Buffer &&
+			(await On.Buffer[Type](
+				Options[Type] !== true ? Options[Type] : Defaults["img"]
+			).toBuffer())
+		);
 	}
 };

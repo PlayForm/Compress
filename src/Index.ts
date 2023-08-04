@@ -1,15 +1,15 @@
 import type { AstroIntegration } from "astro";
 import { minify as csso } from "csso";
 import { files } from "files-pipe";
-import deepmerge from "files-pipe/dist/lib/deepmerge.js";
+import Merge from "files-pipe/dist/lib/Merge.js";
 import type { executions, optionPath } from "files-pipe/dist/options/Index.js";
 import defaults from "files-pipe/dist/options/Index.js";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import type { Output } from "svgo";
-import { optimize as svgo } from "svgo";
-import { minify as terser } from "terser";
-import formatBytes from "./lib/FormatBytes.js";
+import { optimize as SVG } from "svgo";
+import { minify as TERSER } from "terser";
+import Bytes from "files-pipe/dist/";
 import type { OnSharp } from "./lib/SharpRead.js";
 import SharpRead from "./lib/SharpRead.js";
 import type { Options } from "./options/Index.js";
@@ -25,7 +25,7 @@ export default (options: Options = {}): AstroIntegration => {
 		}
 	}
 
-	const _options = deepmerge(defaultsCompress, options);
+	const _options = Merge(defaultsCompress, options);
 
 	const paths = new Set<optionPath>();
 
@@ -57,15 +57,15 @@ export default (options: Options = {}): AstroIntegration => {
 						await (
 							await (
 								await (
-									await new files(_options["logger"]).in(path)
-								).by(
+									await new Files(_options["logger"]).in(path)
+								).By(
 									typeof _options["map"] === "object"
 										? _options["map"][fileType]
 										: ""
 								)
-							).not(_options["exclude"])
+							).not(_options["Exclude"])
 						).Pipe(
-							deepmerge(_options["Pipe"], {
+							Merge(_options["Pipe"], {
 								Wrote: async (ongoing) => {
 									switch (fileType) {
 										case "css": {
@@ -83,7 +83,7 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 
 										case "js": {
-											const { code } = await terser(
+											const { code } = await TERSER(
 												ongoing.buffer.toString(),
 												setting
 											);
@@ -99,7 +99,7 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 
 										case "svg": {
-											const { data } = svgo(
+											const { data } = SVG(
 												ongoing.buffer.toString(),
 												setting
 											) as Output;
@@ -120,10 +120,10 @@ export default (options: Options = {}): AstroIntegration => {
 									switch (fileType) {
 										case "img": {
 											const { format } = await sharp(
-												ongoing.inputPath
+												ongoing.Input
 											).metadata();
 
-											return sharp(ongoing.inputPath, {
+											return sharp(ongoing.Input, {
 												failOn: "none",
 												sequentialRead: true,
 												unlimited: true,
@@ -142,15 +142,15 @@ export default (options: Options = {}): AstroIntegration => {
 										}
 									}
 								},
-								fulfilled: async (plan) =>
-									plan.files > 0
+								Fulfilled: async (plan) =>
+									plan.Files > 0
 										? `Successfully compressed a total of ${
-												plan.files
+												plan.Files
 										  } ${fileType.toUpperCase()} ${
-												plan.files === 1
+												plan.Files === 1
 													? "file"
 													: "files"
-										  } for ${await formatBytes(
+										  } for ${await Bytes(
 												plan.info.total
 										  )}.`
 										: false,

@@ -65,9 +65,9 @@ Then, apply this integration to your `astro.config.*` file using the
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
-export default { integrations: [compress()] };
+export default { integrations: [Compress()] };
 ```
 
 ## Getting started

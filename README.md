@@ -73,7 +73,7 @@ export default { integrations: [Compress()] };
 ## Getting started
 
 The utility will now automatically compress all your CSS, HTML, SVG, JavaScript
-and image files in the `dist` folder.
+and image files in the Astro `outDir` folder.
 
 The following image file types will be compressed via [sharp]:
 
@@ -154,7 +154,7 @@ import Compress from "astro-compress";
 export default {
 	integrations: [
 		Compress({
-			path: ["./build", "./dist"],
+			path: ["./Target", "./Build", "./dist"],
 		}),
 	],
 };
@@ -187,10 +187,10 @@ export default {
 	integrations: [
 		Compress({
 			path: [
-				// Compress dist
-				"./dist",
-				// Compress dist one more time into a different directory
-				new Map([["./dist", "./dist-compressed"]]),
+				// Compress Target
+				"./Target",
+				// Compress Target one more time into a different directory
+				new Map([["./Target", "./TargetCompress"]]),
 			],
 		}),
 	],
@@ -210,7 +210,7 @@ export default {
 			exclude: [
 				"my-awesome.png",
 				(file: string) =>
-					file === "./dist/Images/favicon/safari-pinned-tab.svg",
+					file === "./Target/Images/favicon/safari-pinned-tab.svg",
 			],
 		}),
 	],

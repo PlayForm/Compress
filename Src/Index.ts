@@ -1,17 +1,17 @@
 import type { AstroIntegration } from "astro";
 import { minify as csso } from "csso";
-import { files } from "files-pipe";
-import Merge from "files-pipe/dist/lib/Merge.js";
-import type { executions, optionPath } from "files-pipe/dist/options/Index.js";
+import { Files } from "files-pipe";
+import Merge from "files-pipe/dist/Lib/Merge.js";
+import type { Executions, Path } from "files-pipe/dist/options/Index.js";
 import defaults from "files-pipe/dist/options/Index.js";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import type { Output } from "svgo";
 import { optimize as SVG } from "svgo";
 import { minify as TERSER } from "terser";
-import Bytes from "files-pipe/dist/";
-import type { OnSharp } from "./lib/SharpRead.js";
-import SharpRead from "./lib/SharpRead.js";
+import Bytes from "files-pipe/dist/Lib/Bytes.js";
+import type { OnSharp } from "./Lib/SharpRead.js";
+import SharpRead from "./Lib/SharpRead.js";
 import type { Options } from "./options/Index.js";
 import defaultsCompress from "./options/Index.js";
 
@@ -27,7 +27,7 @@ export default (options: Options = {}): AstroIntegration => {
 
 	const _options = Merge(defaultsCompress, options);
 
-	const paths = new Set<optionPath>();
+	const paths = new Set<Path>();
 
 	if (typeof _options["path"] !== "undefined") {
 		if (
@@ -154,7 +154,7 @@ export default (options: Options = {}): AstroIntegration => {
 												plan.info.total
 										  )}.`
 										: false,
-							} satisfies executions)
+							} satisfies Executions)
 						);
 					}
 				}

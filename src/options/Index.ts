@@ -1,7 +1,7 @@
-import deepmerge from "files-pipe/dist/lib/deepmerge.js";
+import Merge from "files-pipe/dist/lib/Merge.js";
 import type { Options as OptionsBase } from "files-pipe/dist/options/Index.js";
 import defaults from "files-pipe/dist/options/Index.js";
-import formatBytes from "../lib/FormatBytes.js";
+import Bytes from "files-pipe/dist/lib/Bytes.js";
 import type { CSS } from "./CSS.js";
 import defaultsCSS from "./CSS.js";
 import type { HTML } from "./HTML.js";
@@ -32,7 +32,7 @@ export interface Options extends OptionsBase {
 	map?: boolean | MAP;
 }
 
-export default deepmerge(defaults, {
+export default Merge(defaults, {
 	css: defaultsCSS,
 	html: defaultsHTML,
 	js: defaultsJS,
@@ -40,13 +40,13 @@ export default deepmerge(defaults, {
 	svg: defaultsSVG,
 	map: defaultsMAP,
 	Pipe: {
-		failed: async (ongoing) =>
-			`Error: Cannot compress file ${ongoing.inputPath}!`,
+		Failed: async (ongoing) =>
+			`Error: Cannot compress file ${ongoing.Input}!`,
 		passed: async (ongoing) =>
 			ongoing.fileSizeBefore >
 			Buffer.byteLength(ongoing.buffer.toString()),
 		accomplished: async (ongoing) =>
-			`Compressed ${ongoing.inputPath} for ${await formatBytes(
+			`Compressed ${ongoing.Input} for ${await Bytes(
 				ongoing.fileSizeBefore - ongoing.fileSizeAfter
 			)} (${(
 				((ongoing.fileSizeBefore - ongoing.fileSizeAfter) /

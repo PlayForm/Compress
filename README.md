@@ -189,7 +189,6 @@ export default {
 			path: [
 				// Compress dist
 				"./dist",
-
 				// Compress dist one more time into a different directory
 				new Map([["./dist", "./dist-compressed"]]),
 			],

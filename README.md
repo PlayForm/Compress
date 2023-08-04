@@ -112,11 +112,11 @@ or disable them entirely:
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
 	integrations: [
-		compress({
+		Compress({
 			css: false,
 			html: false,
 			img: false,
@@ -132,13 +132,13 @@ export default {
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
-	outDir: "./build",
+	outDir: "./Target",
 	integrations: [
-		compress({
-			path: "./build",
+		Compress({
+			path: "./Target",
 		}),
 	],
 };
@@ -149,11 +149,11 @@ export default {
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
 	integrations: [
-		compress({
+		Compress({
 			path: ["./build", "./dist"],
 		}),
 	],
@@ -165,11 +165,11 @@ export default {
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
 	integrations: [
-		compress({
+		Compress({
 			path: new Map([["./input", "./output"]]),
 		}),
 	],
@@ -181,11 +181,11 @@ export default {
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
 	integrations: [
-		compress({
+		Compress({
 			path: [
 				// Compress dist
 				"./dist",
@@ -202,11 +202,11 @@ export default {
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
 	integrations: [
-		compress({
+		Compress({
 			exclude: [
 				"my-awesome.png",
 				(file: string) =>
@@ -222,11 +222,11 @@ export default {
 **`astro.config.ts`**
 
 ```ts
-import compress from "astro-compress";
+import Compress from "astro-compress";
 
 export default {
 	integrations: [
-		compress({
+		Compress({
 			logger: 0,
 		}),
 	],

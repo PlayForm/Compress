@@ -13,19 +13,19 @@ import Bytes from "files-pipe/dist/Lib/Bytes.js";
 import type { OnSharp } from "./Lib/SharpRead.js";
 import SharpRead from "./Lib/SharpRead.js";
 import type { Options } from "./options/Index.js";
-import defaultsCompress from "./options/Index.js";
+import Defaults from "./options/Index.js";
 
-export default (options: Options = {}): AstroIntegration => {
-	for (const option in options) {
+export default (Options: Options = {}): AstroIntegration => {
+	for (const Option in Options) {
 		if (
-			Object.prototype.hasOwnProperty.call(options, option) &&
-			options[option] === true
+			Object.prototype.hasOwnProperty.call(Options, Option) &&
+			Options[Option] === true
 		) {
-			options[option] = defaultsCompress[option];
+			Options[Option] = Defaults[Option];
 		}
 	}
 
-	const _options = Merge(defaultsCompress, options);
+	const _options = Merge(Defaults, Options);
 
 	const paths = new Set<Path>();
 

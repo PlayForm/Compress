@@ -1,7 +1,7 @@
 import type { AstroIntegration } from "astro";
 import { minify as csso } from "csso";
 import { Files } from "files-pipe";
-import Merge from "files-pipe/Target/Library//Merge.js";
+import Merge from "files-pipe/Target/Library/Merge.js";
 import type { Executions, Path } from "files-pipe/Target/Options/Index.js";
 import defaults from "files-pipe/Target/Options/Index.js";
 import { minify as htmlMinifierTerser } from "html-minifier-terser";
@@ -9,7 +9,7 @@ import sharp from "sharp";
 import type { Output } from "svgo";
 import { optimize as SVG } from "svgo";
 import { minify as TERSER } from "terser";
-import Bytes from "files-pipe/Target/Library//Bytes.js";
+import Bytes from "files-pipe/Target/Library/Bytes.js";
 import type { OnSharp } from "./Library/SharpRead.js";
 import SharpRead from "./Library/SharpRead.js";
 import type { Options } from "./options/Index.js";

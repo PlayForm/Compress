@@ -127,7 +127,7 @@ export default {
 };
 ```
 
-#### If your path is different than `dist` be sure to update it accordingly:
+#### If your path is different than the Astro `outDir` be sure to update it accordingly:
 
 **`astro.config.ts`**
 
@@ -154,7 +154,7 @@ import Compress from "astro-compress";
 export default {
 	integrations: [
 		Compress({
-			path: ["./Target", "./Build", "./dist"],
+			path: ["./Target", "./Build"],
 		}),
 	],
 };

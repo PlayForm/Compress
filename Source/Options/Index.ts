@@ -1,7 +1,7 @@
-import Merge from "files-pipe/Target/Library//Merge.js";
+import Merge from "files-pipe/Target/Library/Merge.js";
 import type { Options as OptionsBase } from "files-pipe/Target/Options/Index.js";
 import defaults from "files-pipe/Target/Options/Index.js";
-import Bytes from "files-pipe/Target/Library//Bytes.js";
+import Bytes from "files-pipe/Target/Library/Bytes.js";
 import type { CSS } from "./CSS.js";
 import defaultsCSS from "./CSS.js";
 import type { HTML } from "./HTML.js";

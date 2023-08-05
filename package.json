@@ -41,7 +41,7 @@
 		"terser": "5.19.2"
 	},
 	"devDependencies": {
-		"@lightrix/configuration": "0.0.11",
+		"@lightrix/configuration": "0.0.1",
 		"@lightrix/script": "1.0.7",
 		"astro": "2.10.1"
 	},

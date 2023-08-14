@@ -16,10 +16,10 @@ import { minify as Terser } from "terser";
 import type { OnSharp } from "./Library/SharpRead.js";
 import SharpRead from "./Library/SharpRead.js";
 
-import type { Options } from "./Option/Index.js";
+import type { Option } from "./Option/Index.js";
 import _Default from "./Option/Index.js";
 
-export default (Options: Options = {}): AstroIntegration => {
+export default (Options: Option = {}): AstroIntegration => {
 	for (const Option in Options) {
 		if (
 			Object.prototype.hasOwnProperty.call(Options, Option) &&

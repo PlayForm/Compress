@@ -1,0 +1,7 @@
+{
+	"compilerOptions": {
+		"outDir": "Target"
+	},
+	"extends": "./Source/Configuration/TypeScript",
+	"include": ["Source"]
+}

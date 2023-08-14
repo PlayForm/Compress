@@ -99,3 +99,10 @@ jobs:
             - uses: github/codeql-action/analyze@v2.21.3
               with:
                   category: "/language:${{matrix.language}}"
+
+            - run: |
+                  git add results
+                  git config --global user.name 'CodeQL'
+                  git config --global user.email 'codeql@lightrix.help'
+                  git commit -m "CodeQL Results: $(git log -1 --pretty=%h) $(git log -1 --pretty=%B)"
+                  git pull && git push

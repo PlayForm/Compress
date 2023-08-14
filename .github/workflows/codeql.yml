@@ -63,6 +63,10 @@ jobs:
         steps:
             - uses: actions/checkout@v3.5.3
 
+            - uses: github/codeql-action/init@v2.21.3
+              with:
+                  languages: ${{ matrix.language }}
+
             - uses: pnpm/action-setup@v2.4.0
               with:
                   version: 8.6.12
@@ -92,20 +96,6 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: github/codeql-action/init@v2.21.3
-              with:
-                  languages: ${{ matrix.language }}
-
             - uses: github/codeql-action/analyze@v2.21.3
               with:
                   category: "/language:${{matrix.language}}"
-
-            - run: |
-                  ls .
-                  mv /home/runner/work/AstroCompress/results/javascript.sarif ./CodeQL.sarif
-                  rm node_modules
-                  git add CodeQL.sarif
-                  git config --global user.name 'CodeQL'
-                  git config --global user.email 'codeql@lightrix.help'
-                  git commit -m "CodeQL Results: $(git log -1 --pretty=%h) $(git log -1 --pretty=%B)"
-                  git pull && git push

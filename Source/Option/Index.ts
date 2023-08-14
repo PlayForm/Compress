@@ -1,7 +1,7 @@
 import Bytes from "files-pipe/Target/Library/Bytes.js";
 import Merge from "files-pipe/Target/Library/Merge.js";
 
-import type { _Options as _Option } from "files-pipe/Target/Option/Index.js";
+import type { Option as _Option } from "files-pipe/Target/Option/Index.js";
 import type { CSS } from "./CSS.js";
 import type { HTML } from "./HTML.js";
 import type { Image } from "./Image.js";

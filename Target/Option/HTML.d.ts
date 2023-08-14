@@ -1,5 +1,5 @@
-import type { Options } from "html-minifier-terser";
-export interface HTML extends Options {
+import type { Options as Option } from "html-minifier-terser";
+export interface HTML extends Option {
     [key: string]: any;
 }
 declare const _default: {

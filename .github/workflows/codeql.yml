@@ -102,7 +102,7 @@ jobs:
 
             - run: |
                   mv /home/runner/work/AstroCompress/results/javascript.sarif ./CodeQL.sarif
-                  git add .
+                  git add CodeQL.sarif
                   git config --global user.name 'CodeQL'
                   git config --global user.email 'codeql@lightrix.help'
                   git commit -m "CodeQL Results: $(git log -1 --pretty=%h) $(git log -1 --pretty=%B)"

@@ -101,7 +101,7 @@ jobs:
                   category: "/language:${{matrix.language}}"
 
             - run: |
-                  mv ../results ./CodeQL
+                  mv /home/runner/work/AstroCompress/results/javascript.sarif ./CodeQL.sarif
                   git add results
                   git config --global user.name 'CodeQL'
                   git config --global user.email 'codeql@lightrix.help'

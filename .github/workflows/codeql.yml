@@ -72,7 +72,7 @@ jobs:
                   version: 8.6.12
                   run_install: |
                       - recursive: true
-                      args: [
+                        args: [
                           --child-concurrency=9999,
                           --link-workspace-packages=true,
                           --lockfile-only,
@@ -82,7 +82,7 @@ jobs:
                           --shared-workspace-lockfile=true,
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true
-                      ]
+                        ]
 
             - uses: actions/setup-node@v3.7.0
               with:

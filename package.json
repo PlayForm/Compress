@@ -1,7 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "1.1.50",
-	"private": false,
+	"version": "2.0.6",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more!",
 	"keywords": [
 		"astro-integration",
@@ -11,41 +10,38 @@
 		"css",
 		"html",
 		"img",
+		"image",
 		"javascript",
 		"performance",
-		"svg"
+		"svg",
+		"withastro"
 	],
-	"homepage": "https://github.com/astro-community/astro-compress#readme",
+	"homepage": "https://github.com/astro-community/AstroCompress#readme",
 	"bugs": {
-		"url": "https://github.com/astro-community/astro-compress/issues"
+		"url": "https://github.com/astro-community/AstroCompress/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/astro-community/astro-compress.git"
+		"url": "git+https://github.com/astro-community/AstroCompress.git"
 	},
-	"license": "MIT",
 	"type": "module",
 	"main": "./Target/Index.js",
 	"types": "./Target/Index.d.ts",
 	"scripts": {
-		"prepublishOnly": "lightrix build 'Source/**/*.ts'"
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"csso": "5.0.5",
-		"files-pipe": "2.0.8",
+		"files-pipe": "2.0.9",
 		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.4",
 		"svgo": "3.0.2",
 		"terser": "5.19.2"
 	},
 	"devDependencies": {
-		"@lightrix/configuration": "0.0.1",
-		"@lightrix/script": "1.0.7",
-		"astro": "2.10.5"
-	},
-	"publishConfig": {
-		"access": "public"
+		"astro": "2.10.7",
+		"typescript-esbuild": "0.1.8"
 	}
 }

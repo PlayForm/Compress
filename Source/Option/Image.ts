@@ -8,7 +8,7 @@ import type {
 	WebpOptions,
 } from "sharp";
 
-export interface IMG {
+export interface Image {
 	[key: string]:
 		| undefined
 		| boolean
@@ -61,4 +61,4 @@ export default {
 	webp: {
 		effort: 6.0,
 	},
-} satisfies IMG;
+} satisfies Image;

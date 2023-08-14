@@ -1,11 +1,13 @@
 name: Node
 
 concurrency:
-    group: node-${{ github.workflow }}-${{ github.ref }}
+    group: Node-${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: true
 
 permissions:
     security-events: write
+    contents: write
+    pull-requests: write
 
 on:
     workflow_dispatch:
@@ -16,7 +18,7 @@ on:
     workflow_call:
 
 jobs:
-    node:
+    Pre-Publish:
         runs-on: ubuntu-latest
 
         env:
@@ -55,9 +57,10 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3.5.3
+
             - uses: pnpm/action-setup@v2.4.0
               with:
-                  version: 8.6.6
+                  version: 8.6.12
                   run_install: |
                       - recursive: true
                         args: [
@@ -77,6 +80,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
                   cache-dependency-path: ./pnpm-lock.yaml
+
             - run: pnpm install
               working-directory: .
 
@@ -85,5 +89,5 @@ jobs:
 
             - uses: actions/upload-artifact@v3.1.2
               with:
-                  name: .-node-${{ matrix.node-version }}-Target
+                  name: .-Node-${{ matrix.node-version }}-Target
                   path: ./Target

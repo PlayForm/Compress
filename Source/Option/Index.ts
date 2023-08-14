@@ -1,63 +1,56 @@
-import Merge from "files-pipe/Target/Library/Merge.js";
-import type { Options as OptionsBase } from "files-pipe/Target/Options/Index.js";
-import defaults from "files-pipe/Target/Options/Index.js";
 import Bytes from "files-pipe/Target/Library/Bytes.js";
-import type { CSS } from "./CSS.js";
-import defaultsCSS from "./CSS.js";
-import type { HTML } from "./HTML.js";
-import defaultsHTML from "./HTML.js";
-import type { IMG } from "./IMG.js";
-import defaultsIMG from "./IMG.js";
-import type { JS } from "./JS.js";
-import defaultsJS from "./JS.js";
-import type { MAP } from "./Map.js";
-import defaultsMAP from "./Map.js";
-import type { SVG } from "./SVG.js";
-import defaultsSVG from "./SVG.js";
+import Merge from "files-pipe/Target/Library/Merge.js";
 
-export interface Options extends OptionsBase {
+import type { Options as _Options } from "files-pipe/Target/Option/Index.js";
+import type { CSS } from "./CSS.js";
+import type { HTML } from "./HTML.js";
+import type { Image } from "./Image.js";
+import type { JavaScript } from "./JavaScript.js";
+import type { MAP } from "./Map.js";
+import type { SVG } from "./SVG.js";
+
+export interface Options extends _Options {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 
-	css?: boolean | CSS;
+	CSS?: boolean | CSS;
 
-	html?: boolean | HTML;
+	HTML?: boolean | HTML;
 
-	js?: boolean | JS;
+	JavaScript?: boolean | JavaScript;
 
-	img?: boolean | IMG;
+	Image?: boolean | Image;
 
-	svg?: boolean | SVG;
+	SVG?: boolean | SVG;
 
-	map?: boolean | MAP;
+	Map?: boolean | MAP;
 }
 
-export default Merge(defaults, {
-	css: defaultsCSS,
-	html: defaultsHTML,
-	js: defaultsJS,
-	img: defaultsIMG,
-	svg: defaultsSVG,
-	map: defaultsMAP,
-	Pipe: {
-		Failed: async (ongoing) =>
-			`Error: Cannot compress file ${ongoing.Input}!`,
-		passed: async (ongoing) =>
-			ongoing.fileSizeBefore >
-			Buffer.byteLength(ongoing.buffer.toString()),
-		accomplished: async (ongoing) =>
-			`Compressed ${ongoing.Input} for ${await Bytes(
-				ongoing.fileSizeBefore - ongoing.fileSizeAfter
-			)} (${(
-				((ongoing.fileSizeBefore - ongoing.fileSizeAfter) /
-					ongoing.fileSizeBefore) *
-				100
-			).toFixed(2)}% reduction) in ${ongoing.outputPath}.`,
-		changed: async (plan) => {
-			plan.info.total =
-				(plan.info.total ? plan.info.total : 0) +
-				(plan.ongoing.fileSizeBefore - plan.ongoing.fileSizeAfter);
-			return plan;
+export default Merge(
+	(await import("files-pipe/Target/Option/Index.js")).default,
+	{
+		CSS: (await import("./CSS.js")).default,
+		HTML: (await import("./HTML.js")).default,
+		JavaScript: (await import("./JavaScript.js")).default,
+		Image: (await import("./Image.js")).default,
+		SVG: (await import("./SVG.js")).default,
+		Map: (await import("./Map.js")).default,
+		Pipe: {
+			Failed: async (On) => `Error: Cannot compress file ${On.Input}!`,
+			Passed: async (On) =>
+				On.Before > Buffer.byteLength(On.Buffer.toString()),
+			Accomplished: async (On) =>
+				`Compressed ${On.Input} for ${await Bytes(
+					On.Before - On.After
+				)} (${(((On.Before - On.After) / On.Before) * 100).toFixed(
+					2
+				)}% reduction) in ${On.Output}.`,
+			Changed: async (Plan) => {
+				Plan.Info.Total =
+					(Plan.Info.Total ? Plan.Info.Total : 0) +
+					(Plan.On.Before - Plan.On.After);
+				return Plan;
+			},
 		},
-	},
-} satisfies Options) as Options;
+	} satisfies Options
+) as Options;

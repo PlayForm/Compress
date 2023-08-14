@@ -1,11 +1,13 @@
-name: "CodeQL"
+name: CodeQL
 
 concurrency:
-    group: codeql-${{ github.workflow }}-${{ github.ref }}
+    group: CodeQL-${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: true
 
 permissions:
     security-events: write
+    contents: write
+    pull-requests: write
 
 on:
     workflow_dispatch:
@@ -16,7 +18,7 @@ on:
     workflow_call:
 
 jobs:
-    codeql:
+    CodeQL:
         runs-on: ubuntu-latest
 
         env:

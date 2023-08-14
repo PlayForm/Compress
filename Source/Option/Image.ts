@@ -1,38 +1,38 @@
 import type {
-	AvifOptions,
-	GifOptions,
-	HeifOptions,
-	JpegOptions,
-	PngOptions,
-	TiffOptions,
-	WebpOptions,
+	AvifOptions as AVIF,
+	GifOptions as GIF,
+	HeifOptions as HEIF,
+	JpegOptions as JPEG,
+	PngOptions as PNG,
+	TiffOptions as TIFF,
+	WebpOptions as WEBP,
 } from "sharp";
 
 export interface Image {
 	[key: string]:
 		| undefined
 		| boolean
-		| AvifOptions
-		| GifOptions
-		| HeifOptions
-		| JpegOptions
-		| PngOptions
-		| TiffOptions
-		| WebpOptions;
+		| AVIF
+		| GIF
+		| HEIF
+		| JPEG
+		| PNG
+		| TIFF
+		| WEBP;
 
-	avif?: boolean | AvifOptions;
+	avif?: boolean | AVIF;
 
-	gif?: boolean | GifOptions;
+	gif?: boolean | GIF;
 
-	heif?: boolean | HeifOptions;
+	heif?: boolean | HEIF;
 
-	jpeg?: boolean | JpegOptions;
+	jpeg?: boolean | JPEG;
 
-	png?: boolean | PngOptions;
+	png?: boolean | PNG;
 
-	tiff?: boolean | TiffOptions;
+	tiff?: boolean | TIFF;
 
-	webp?: boolean | WebpOptions;
+	webp?: boolean | WEBP;
 }
 
 export default {

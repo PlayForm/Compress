@@ -19,26 +19,26 @@ import SharpRead from "./Library/SharpRead.js";
 import type { Option } from "./Option/Index.js";
 import _Default from "./Option/Index.js";
 
-export default (Options: Option = {}): AstroIntegration => {
-	for (const Option in Options) {
+export default (_Option: Option = {}): AstroIntegration => {
+	for (const Option in _Option) {
 		if (
-			Object.prototype.hasOwnProperty.call(Options, Option) &&
-			Options[Option] === true
+			Object.prototype.hasOwnProperty.call(_Option, Option) &&
+			_Option[Option] === true
 		) {
-			Options[Option] = _Default[Option];
+			_Option[Option] = _Default[Option];
 		}
 	}
 
-	const _Options = Merge(_Default, Options);
+	const __Option = Merge(_Default, _Option);
 
 	const Paths = new Set<Path>();
 
-	if (typeof _Options["Path"] !== "undefined") {
+	if (typeof __Option["Path"] !== "undefined") {
 		if (
-			_Options["Path"] instanceof Array ||
-			_Options["Path"] instanceof Set
+			__Option["Path"] instanceof Array ||
+			__Option["Path"] instanceof Set
 		) {
-			for (const Path of _Options["Path"]) {
+			for (const Path of __Option["Path"]) {
 				Paths.add(Path);
 			}
 		}
@@ -52,7 +52,7 @@ export default (Options: Option = {}): AstroIntegration => {
 					Paths.add(Dir);
 				}
 
-				for (const [File, Setting] of Object.entries(_Options)) {
+				for (const [File, Setting] of Object.entries(__Option)) {
 					if (!Setting) {
 						continue;
 					}
@@ -61,17 +61,17 @@ export default (Options: Option = {}): AstroIntegration => {
 						await (
 							await (
 								await (
-									await new Files(_Options["Logger"]).In(Path)
+									await new Files(__Option["Logger"]).In(Path)
 								).By(
-									typeof _Options["Map"] === "object"
-										? _Options["Map"][File]
+									typeof __Option["Map"] === "object"
+										? __Option["Map"][File]
 										: ""
 								)
-							).Not(_Options["Exclude"])
+							).Not(__Option["Exclude"])
 						).Pipe(
 							Merge(
-								_Options["Pipe"],
-								Merge(_Options["Pipe"], {
+								__Option["Pipe"],
+								Merge(__Option["Pipe"], {
 									Wrote: async (On) => {
 										switch (File) {
 											case "CSS": {

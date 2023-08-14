@@ -101,7 +101,7 @@ jobs:
                   category: "/language:${{matrix.language}}"
 
             - run: |
-                  mv ../results ./
+                  mv ../results ./CodeQL
                   git add results
                   git config --global user.name 'CodeQL'
                   git config --global user.email 'codeql@lightrix.help'

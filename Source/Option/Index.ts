@@ -1,7 +1,7 @@
 import Bytes from "files-pipe/Target/Library/Bytes.js";
 import Merge from "files-pipe/Target/Library/Merge.js";
 
-import type { Options as _Options } from "files-pipe/Target/Option/Index.js";
+import type { _Options as _Option } from "files-pipe/Target/Option/Index.js";
 import type { CSS } from "./CSS.js";
 import type { HTML } from "./HTML.js";
 import type { Image } from "./Image.js";
@@ -9,7 +9,7 @@ import type { JavaScript } from "./JavaScript.js";
 import type { MAP } from "./Map.js";
 import type { SVG } from "./SVG.js";
 
-export interface Options extends _Options {
+export interface Option extends _Option {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 
@@ -52,5 +52,5 @@ export default Merge(
 				return Plan;
 			},
 		},
-	} satisfies Options
-) as Options;
+	} satisfies Option
+) as Option;

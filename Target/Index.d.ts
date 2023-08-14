@@ -1,4 +1,4 @@
 import type { AstroIntegration } from "astro";
-import type { Options } from "./Option/Index.js";
-declare const _default: (Options?: Options) => AstroIntegration;
+import type { Option } from "./Option/Index.js";
+declare const _default: (Options?: Option) => AstroIntegration;
 export default _default;

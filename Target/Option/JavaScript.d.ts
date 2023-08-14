@@ -1,5 +1,5 @@
-import type { MinifyOptions } from "terser";
-export interface JavaScript extends MinifyOptions {
+import type { MinifyOptions as Minify } from "terser";
+export interface JavaScript extends Minify {
     [key: string]: any;
 }
 declare const _default: {

@@ -1,18 +1,19 @@
-import type { File } from "files-pipe/Target/Options/Index.js";
+import type { File } from "files-pipe/Target/Option/Index.js";
 import type { Sharp } from "sharp";
-import type { IMG } from "../options/IMG.js";
-import Defaults from "../options/Index.js";
+import type { Image } from "../Option/Image.js";
+
+import Default from "../Option/Index.js";
 
 export interface BufferSharp extends Sharp {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
 
-export interface OnSharp extends Omit<File, "buffer"> {
+export interface OnSharp extends Omit<File, "Buffer"> {
 	Buffer: BufferSharp;
 }
 
-export default async (Options: IMG, On: OnSharp) => {
+export default async (Options: Image, On: OnSharp) => {
 	const File = On["Input"].split(".").pop();
 
 	if (!File) {
@@ -53,7 +54,7 @@ export default async (Options: IMG, On: OnSharp) => {
 		return (
 			Type in On.Buffer &&
 			(await On.Buffer[Type](
-				Options[Type] !== true ? Options[Type] : Defaults["img"]
+				Options[Type] !== true ? Options[Type] : Default["Image"]
 			).toBuffer())
 		);
 	}

@@ -1,11 +1,13 @@
 name: NPM
 
 concurrency:
-    group: npm-${{ github.workflow }}-${{ github.ref }}
+    group: NPM-${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: true
 
 permissions:
     security-events: write
+    contents: write
+    pull-requests: write
 
 on:
     workflow_dispatch:
@@ -14,17 +16,19 @@ on:
     workflow_call:
 
 jobs:
-    publish:
+    Publish:
         runs-on: ubuntu-latest
         permissions:
             contents: read
             id-token: write
         steps:
             - uses: actions/checkout@v3.5.3
+
             - uses: actions/setup-node@v3.7.0
               with:
                   node-version: "18"
                   registry-url: "https://registry.npmjs.org"
+
             - run: npm install -g npm
 
             - name: Publish .

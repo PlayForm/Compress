@@ -5,8 +5,8 @@ concurrency:
     cancel-in-progress: true
 
 permissions:
-    security-events: write
-    contents: write
+    actions: read
+    contents: read
     pull-requests: write
 
 on:
@@ -51,14 +51,51 @@ jobs:
             STNOUPGRADE: 1
             STRIPE_CLI_TELEMETRY_OPTOUT: 1
 
+        timeout-minutes: 360
+
+        strategy:
+            fail-fast: false
+
+            matrix:
+                language: ["javascript"]
+                node-version: [16, 18, 19]
+
         steps:
             - uses: actions/checkout@v3.5.3
 
             - uses: github/codeql-action/init@v2.21.3
               with:
-                  languages: javascript
+                  languages: ${{ matrix.language }}
 
-            - name: Perform CodeQL Analysis
-              uses: github/codeql-action/analyze@v2.21.3
+            - uses: pnpm/action-setup@v2.4.0
               with:
-                  category: "/language:javascript"
+                  version: 8.6.12
+                  run_install: |
+                      - recursive: true
+                      args: [
+                          --child-concurrency=9999,
+                          --link-workspace-packages=true,
+                          --lockfile-only,
+                          --network-concurrency=9999,
+                          --prefer-frozen-lockfile=false,
+                          --shamefully-hoist=false,
+                          --shared-workspace-lockfile=true,
+                          --strict-peer-dependencies=false,
+                          --unsafe-perm=true
+                      ]
+
+            - uses: actions/setup-node@v3.7.0
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: "pnpm"
+                  cache-dependency-path: ./pnpm-lock.yaml
+
+            - run: pnpm install
+              working-directory: .
+
+            - run: pnpm run prepublishOnly
+              working-directory: .
+
+            - uses: github/codeql-action/analyze@v2.21.3
+              with:
+                  category: "/language:${{matrix.language}}"

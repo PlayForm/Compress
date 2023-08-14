@@ -1,6 +1,6 @@
-import type { MinifyOptions } from "terser";
+import type { MinifyOptions as Minify } from "terser";
 
-export interface JavaScript extends MinifyOptions {
+export interface JavaScript extends Minify {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }

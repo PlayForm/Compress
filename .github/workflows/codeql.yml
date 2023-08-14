@@ -6,8 +6,8 @@ concurrency:
 
 permissions:
     actions: read
-    contents: write
-    pull-requests: write
+    contents: read
+    security-events: write
 
 on:
     workflow_dispatch:

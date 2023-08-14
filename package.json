@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more!",
 	"keywords": [
 		"astro-integration",
@@ -43,6 +43,6 @@
 	},
 	"devDependencies": {
 		"astro": "2.10.7",
-		"typescript-esbuild": "0.1.11"
+		"typescript-esbuild": "0.1.12"
 	}
 }

@@ -13,7 +13,7 @@ your Astro project.
 > AstroCompress will not compress your requests, only your statically generated
 > build and pre-rendered routes.
 
-> **Note**
+> **Tip**
 >
 > Use AstroCompress last in your integration list for the best optimizations.
 

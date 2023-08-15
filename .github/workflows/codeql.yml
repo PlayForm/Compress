@@ -63,7 +63,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3.5.3
 
-            - uses: github/codeql-action/init@v2.21.3
+            - uses: github/codeql-action/init@v2.21.4
               with:
                   languages: ${{ matrix.language }}
 
@@ -96,6 +96,6 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: github/codeql-action/analyze@v2.21.3
+            - uses: github/codeql-action/analyze@v2.21.4
               with:
                   category: "/language:${{matrix.language}}"

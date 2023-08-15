@@ -8,14 +8,14 @@ your Astro project.
 [CSS][csso] / [HTML][html-minifier-terser] / [JavaScript][terser] /
 [Image][sharp] / [SVG][svgo]
 
+> [!IMPORTANT]
+>
+> Use AstroCompress last in your integration list for the best optimizations.
+
 > **Note**
 >
 > AstroCompress will not compress your requests, only your statically generated
 > build and pre-rendered routes.
-
-> [!IMPORTANT]
->
-> Use AstroCompress last in your integration list for the best optimizations.
 
 ## Installation
 

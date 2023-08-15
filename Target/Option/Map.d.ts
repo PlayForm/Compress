@@ -1,4 +1,4 @@
-export interface MAP {
+export interface Map {
     [key: string]: string;
 }
 declare const _default: {

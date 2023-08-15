@@ -1,1 +1,0 @@
-const e=async(t,o=2)=>{if(t===0)return"0 Bytes";const B=1024,r=Math.floor(Math.log(t)/Math.log(B));return`${parseFloat((t/B**r).toFixed(o<0?0:o))} ${["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"][r]}`};var n=e;export{n as default};

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Nikola Hristov
+Copyright (c) 2023 Nikola R. Hristov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -19,8 +19,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-""" This license applies to the `README.md` and parts of the `src` directory of
-`astro-compress` originating from the https://github.com/withastro/astro
+""" This license applies to the `README.md` and parts of the `Source` directory
+of AstroCompress originating from the https://github.com/withastro/astro
 repository:
 
 MIT License

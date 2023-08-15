@@ -15,7 +15,7 @@ your Astro project.
 
 > [!IMPORTANT]
 >
-> Use AstroCompress last in your integration list for the best optimizations.
+> Use AstroCompress last in your integration list for the best optimization.
 
 ## Installation
 

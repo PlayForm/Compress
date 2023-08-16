@@ -1,4 +1,7 @@
-import type { CompressOptions as Compress, MinifyOptions as Minify } from "csso";
+import type {
+	CompressOptions as Compress,
+	MinifyOptions as Minify,
+} from "csso";
 
 export interface CSS extends Minify, Compress {
 	// rome-ignore lint/suspicious/noExplicitAny:

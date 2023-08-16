@@ -1,10 +1,7 @@
 import type { AstroIntegration } from "astro";
 
-import { Files } from "files-pipe";
-import Bytes from "files-pipe/Target/Library/Bytes.js";
-import Merge from "files-pipe/Target/Library/Merge.js";
-import type { Execution, Path } from "files-pipe/Target/Option/Index.js";
-import Default from "files-pipe/Target/Option/Index.js";
+import type { Execution, Path, Option } from "files-pipe";
+import { Bytes, Files, Merge } from "files-pipe";
 
 import { minify as CSSO } from "csso";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
@@ -16,8 +13,7 @@ import { minify as Terser } from "terser";
 import type { OnSharp } from "./Library/SharpRead.js";
 import SharpRead from "./Library/SharpRead.js";
 
-import type { Option } from "./Option/Index.js";
-import _Default from "./Option/Index.js";
+import Default from "./Option/Index.js";
 
 export default (_Option: Option = {}): AstroIntegration => {
 	for (const Option in _Option) {
@@ -25,11 +21,11 @@ export default (_Option: Option = {}): AstroIntegration => {
 			Object.prototype.hasOwnProperty.call(_Option, Option) &&
 			_Option[Option] === true
 		) {
-			_Option[Option] = _Default[Option];
+			_Option[Option] = Default[Option];
 		}
 	}
 
-	const __Option = Merge(_Default, _Option);
+	const __Option = Merge(Default, _Option);
 
 	const Paths = new Set<Path>();
 

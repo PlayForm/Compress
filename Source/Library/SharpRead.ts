@@ -1,4 +1,4 @@
-import type { File } from "files-pipe/Target/Option/Index.js";
+import type { File } from "files-pipe";
 import type { Sharp } from "sharp";
 import type { Image } from "../Option/Image.js";
 

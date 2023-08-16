@@ -1,7 +1,6 @@
-import Bytes from "files-pipe/Target/Library/Bytes.js";
-import Merge from "files-pipe/Target/Library/Merge.js";
+import { Bytes, Default, Merge } from "files-pipe";
 
-import type { Option as _Option } from "files-pipe/Target/Option/Index.js";
+import type { Option as _Option } from "files-pipe";
 import type { CSS } from "./CSS.js";
 import type { HTML } from "./HTML.js";
 import type { Image } from "./Image.js";
@@ -27,7 +26,7 @@ export interface Option extends _Option {
 }
 
 export default Merge(
-	(await import("files-pipe/Target/Option/Index.js")).default,
+	Default,
 	{
 		CSS: (await import("./CSS.js")).default,
 		HTML: (await import("./HTML.js")).default,

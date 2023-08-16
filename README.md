@@ -10,12 +10,12 @@ your Astro project.
 
 > **Note**
 >
-> AstroCompress will not compress your requests, only your statically generated
+> `AstroCompress` will not compress your requests, only your statically generated
 > build and pre-rendered routes.
 
 > [!IMPORTANT]
 >
-> Use AstroCompress last in your integration list for the best optimization.
+> Use `AstroCompress` last in your integration list for the best optimization.
 
 ## Installation
 
@@ -30,7 +30,7 @@ command will:
 1. (Optionally) Install all necessary dependencies and peer dependencies
 2. (Also optionally) Update your `astro.config.*` file to apply this integration
 
-To install AstroCompress, run the following from your project directory and
+To install `AstroCompress`, run the following from your project directory and
 follow the prompts:
 
 Using NPM:
@@ -53,7 +53,7 @@ pnpx astro add astro-compress
 
 ### Install dependencies manually
 
-First, install the AstroCompress integration like so:
+First, install the `AstroCompress` integration like so:
 
 ```
 npm install -D -E astro-compress

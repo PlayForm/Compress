@@ -25,31 +25,28 @@ export interface Option extends _Option {
 	Map?: boolean | _Map;
 }
 
-export default Merge(
-	Default,
-	{
-		CSS: (await import("./CSS.js")).default,
-		HTML: (await import("./HTML.js")).default,
-		JavaScript: (await import("./JavaScript.js")).default,
-		Image: (await import("./Image.js")).default,
-		SVG: (await import("./SVG.js")).default,
-		Map: (await import("./Map.js")).default,
-		Pipe: {
-			Failed: async (On) => `Error: Cannot compress file ${On.Input}!`,
-			Passed: async (On) =>
-				On.Before > Buffer.byteLength(On.Buffer.toString()),
-			Accomplished: async (On) =>
-				`Compressed ${On.Input} for ${await Bytes(
-					On.Before - On.After
-				)} (${(((On.Before - On.After) / On.Before) * 100).toFixed(
-					2
-				)}% reduction) in ${On.Output}.`,
-			Changed: async (Plan) => {
-				Plan.Info.Total =
-					(Plan.Info.Total ? Plan.Info.Total : 0) +
-					(Plan.On.Before - Plan.On.After);
-				return Plan;
-			},
+export default Merge(Default, {
+	CSS: (await import("./CSS.js")).default,
+	HTML: (await import("./HTML.js")).default,
+	JavaScript: (await import("./JavaScript.js")).default,
+	Image: (await import("./Image.js")).default,
+	SVG: (await import("./SVG.js")).default,
+	Map: (await import("./Map.js")).default,
+	Pipe: {
+		Failed: async (On) => `Error: Cannot compress file ${On.Input}!`,
+		Passed: async (On) =>
+			On.Before > Buffer.byteLength(On.Buffer.toString()),
+		Accomplished: async (On) =>
+			`Compressed ${On.Input} for ${await Bytes(
+				On.Before - On.After
+			)} (${(((On.Before - On.After) / On.Before) * 100).toFixed(
+				2
+			)}% reduction) in ${On.Output}.`,
+		Changed: async (Plan) => {
+			Plan.Info.Total =
+				(Plan.Info.Total ? Plan.Info.Total : 0) +
+				(Plan.On.Before - Plan.On.After);
+			return Plan;
 		},
-	} satisfies Option
-) as Option;
+	},
+} satisfies Option) as Option;

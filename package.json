@@ -1,6 +1,7 @@
 {
 	"name": "astro-compress",
 	"version": "2.0.12",
+	"private": "false",
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more!",
 	"keywords": [
 		"astro-integration",
@@ -25,6 +26,11 @@
 		"url": "git+https://github.com/astro-community/AstroCompress.git"
 	},
 	"license": "MIT",
+	"author": {
+		"name": "Nikola Hristov",
+		"email": "nikola@nikolahristov.tech",
+		"url": "https://nikolahristov.tech"
+	},
 	"type": "module",
 	"main": "./Target/Index.js",
 	"types": "./Target/Index.d.ts",
@@ -44,5 +50,8 @@
 	"devDependencies": {
 		"astro": "2.10.9",
 		"typescript-esbuild": "0.1.13"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }

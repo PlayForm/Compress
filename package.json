@@ -41,7 +41,7 @@
 		"@types/csso": "5.0.0",
 		"@types/html-minifier-terser": "7.0.0",
 		"csso": "5.0.5",
-		"files-pipe": "2.0.15",
+		"files-pipe": "2.0.16",
 		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.5",
 		"svgo": "3.0.2",
@@ -49,7 +49,7 @@
 	},
 	"devDependencies": {
 		"astro": "2.10.9",
-		"typescript-esbuild": "0.1.13"
+		"typescript-esbuild": "0.1.14"
 	},
 	"publishConfig": {
 		"access": "public"

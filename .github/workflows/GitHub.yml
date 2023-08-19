@@ -1,0 +1,60 @@
+name: GitHub
+
+concurrency:
+    group: GitHub-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    issues: write
+    pull-requests: write
+
+on:
+    issues:
+        types: [opened]
+    workflow_dispatch:
+    push:
+        branches: [main]
+    pull_request:
+        types: [opened]
+    workflow_call:
+
+jobs:
+    Assign:
+        runs-on: ubuntu-latest
+
+        env:
+            ADBLOCK: true
+            TELEMETRY_DISABLED: 1
+            ASTRO_TELEMETRY_DISABLED: 1
+            AUTOMATEDLAB_TELEMETRY_OPTOUT: 1
+            AZURE_CORE_COLLECT_TELEMETRY: 0
+            CHOOSENIM_NO_ANALYTICS: 1
+            DIEZ_DO_NOT_TRACK: 1
+            DO_NOT_TRACK: 1
+            DOTNET_CLI_TELEMETRY_OPTOUT: 1
+            DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT: 1
+            ET_NO_TELEMETRY: 1
+            GATSBY_TELEMETRY_DISABLED: 1
+            GATSBY_TELEMETRY_OPT_OUT: 1
+            GATSBY_TELEMETRY_OPTOUT: 1
+            HASURA_GRAPHQL_ENABLE_TELEMETRY: false
+            HINT_TELEMETRY: off
+            HOMEBREW_NO_ANALYTICS: 1
+            INFLUXD_REPORTING_DISABLED: true
+            ITERATIVE_DO_NOT_TRACK: 1
+            NEXT_TELEMETRY_DEBUG: 1
+            NEXT_TELEMETRY_DISABLED: 1
+            NG_CLI_ANALYTICS: false
+            NUXT_TELEMETRY_DISABLED: 1
+            PIN_DO_NOT_TRACK: 1
+            POWERSHELL_TELEMETRY_OPTOUT: 1
+            SAM_CLI_TELEMETRY: 0
+            STNOUPGRADE: 1
+            STRIPE_CLI_TELEMETRY_OPTOUT: 1
+
+        steps:
+            - uses: pozil/auto-assign-issue@v1.12.0
+              with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+                  assignees: NikolaRHristov
+                  numOfAssignee: 1

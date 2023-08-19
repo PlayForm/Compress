@@ -1,7 +1,7 @@
 import type { AstroIntegration } from "astro";
 
 import type { Execution, Path, Option } from "files-pipe";
-import { Bytes, Files, Merge } from "files-pipe";
+import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 
 import { minify as CSSO } from "csso";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
@@ -140,7 +140,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 											}
 
 											default: {
-												return await Default[
+												return await _Default[
 													"Pipe"
 												].Read(On);
 											}

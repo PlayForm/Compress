@@ -1,6 +1,6 @@
 import type { AstroIntegration } from "astro";
 
-import type { Execution, Path, Option } from "files-pipe";
+import type { Execution, Path } from "files-pipe";
 import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 
 import { minify as CSSO } from "csso";
@@ -13,6 +13,7 @@ import { minify as Terser } from "terser";
 import type { OnSharp } from "./Library/SharpRead.js";
 import SharpRead from "./Library/SharpRead.js";
 
+import type { Option } from "./Option/Index.js";
 import Default from "./Option/Index.js";
 
 export default (_Option: Option = {}): AstroIntegration => {

@@ -1,6 +1,6 @@
 import type { AstroIntegration } from "astro";
 
-import type { Execution, Path } from "files-pipe";
+import type { Action, Path } from "files-pipe";
 import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 
 import { minify as CSSO } from "csso";
@@ -159,7 +159,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													Plan.Info.Total
 											  )}.`
 											: false,
-								} satisfies Execution)
+								} satisfies Action)
 							)
 						);
 					}

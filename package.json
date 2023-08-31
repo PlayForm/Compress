@@ -48,11 +48,7 @@
 		"terser": "5.19.3"
 	},
 	"devDependencies": {
-<<<<<<< HEAD
-		"astro": "3.0.0",
-=======
-		"astro": "2.10.15",
->>>>>>> e1e2c45041428c5a1e8b71c8543f4fb85bc2387f
+		"astro": "3.0.3",
 		"typescript-esbuild": "0.1.15"
 	},
 	"publishConfig": {

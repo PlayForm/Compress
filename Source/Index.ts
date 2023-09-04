@@ -5,7 +5,7 @@ import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 
 import { minify as CSSO } from "csso";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
-import Sharp from "sharp";
+import sharp from "sharp";
 import type { Output } from "svgo";
 import { optimize as SVG } from "svgo";
 import { minify as Terser } from "terser";
@@ -124,11 +124,11 @@ export default (_Option: Option = {}): AstroIntegration => {
 									Read: async (On) => {
 										switch (File) {
 											case "Image": {
-												const { format } = await Sharp(
+												const { format } = await sharp(
 													On.Input
 												).metadata();
 
-												return Sharp(On.Input, {
+												return sharp(On.Input, {
 													failOn: "none",
 													sequentialRead: true,
 													unlimited: true,

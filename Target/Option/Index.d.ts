@@ -7,10 +7,25 @@ import type { Map as _Map } from "./Map.js";
 import type { SVG } from "./SVG.js";
 export interface Option extends _Option {
     [key: string]: any;
+    /**
+     * csss option properties
+     */
     CSS?: boolean | CSS;
+    /**
+     * html-minifier-terser option properties
+     */
     HTML?: boolean | HTML;
+    /**
+     * terser option properties
+     */
     JavaScript?: boolean | JavaScript;
+    /**
+     * sharp option properties
+     */
     Image?: boolean | Image;
+    /**
+     * svgo option properties
+     */
     SVG?: boolean | SVG;
     Map?: boolean | _Map;
 }

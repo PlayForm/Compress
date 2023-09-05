@@ -12,14 +12,29 @@ export interface Option extends _Option {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 
+	/**
+	 * csss option properties
+	 */
 	CSS?: boolean | CSS;
 
+	/**
+	 * html-minifier-terser option properties
+	 */
 	HTML?: boolean | HTML;
 
+	/**
+	 * terser option properties
+	 */
 	JavaScript?: boolean | JavaScript;
 
+	/**
+	 * sharp option properties
+	 */
 	Image?: boolean | Image;
 
+	/**
+	 * svgo option properties
+	 */
 	SVG?: boolean | SVG;
 
 	Map?: boolean | _Map;

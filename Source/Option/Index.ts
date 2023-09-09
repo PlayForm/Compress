@@ -13,7 +13,7 @@ export interface Option extends _Option {
 	[key: string]: any;
 
 	/**
-	 * csss option properties
+	 * csso option properties
 	 */
 	CSS?: boolean | CSS;
 

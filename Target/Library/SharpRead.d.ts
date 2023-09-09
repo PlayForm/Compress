@@ -7,5 +7,8 @@ export interface BufferSharp extends Sharp {
 export interface OnSharp extends Omit<File, "Buffer"> {
     Buffer: BufferSharp;
 }
+export declare const Show: {
+    [key: string]: string;
+};
 declare const _default: (_Option: Image, On: OnSharp) => Promise<any>;
 export default _default;

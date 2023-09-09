@@ -13,6 +13,22 @@ export interface OnSharp extends Omit<File, "Buffer"> {
 	Buffer: BufferSharp;
 }
 
+export const Show: {
+	[key: string]: string;
+} = {
+	avci: "avif",
+	avcs: "avif",
+	avifs: "avif",
+	heic: "heif",
+	heics: "heif",
+	heifs: "heif",
+	jfif: "jpeg",
+	jif: "jpeg",
+	jpe: "jpeg",
+	apng: "png",
+	jpg: "jpeg",
+};
+
 export default async (_Option: Image, On: OnSharp) => {
 	const File = On.Input.split(".").pop();
 
@@ -20,25 +36,9 @@ export default async (_Option: Image, On: OnSharp) => {
 		return;
 	}
 
-	const Option: {
-		[key: string]: string;
-	} = {
-		avci: "avif",
-		avcs: "avif",
-		avifs: "avif",
-		heic: "heif",
-		heics: "heif",
-		heifs: "heif",
-		jfif: "jpeg",
-		jif: "jpeg",
-		jpe: "jpeg",
-		apng: "png",
-		jpg: "jpeg",
-	};
-
 	const Type =
-		typeof Option[File] !== "undefined"
-			? Option[File]
+		typeof Show[File] !== "undefined"
+			? Show[File]
 			: typeof _Option[File] !== "undefined"
 			? File
 			: false;

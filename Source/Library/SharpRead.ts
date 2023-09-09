@@ -14,7 +14,7 @@ export interface OnSharp extends Omit<File, "Buffer"> {
 }
 
 export default async (_Option: Image, On: OnSharp) => {
-	const File = On["Input"].split(".").pop();
+	const File = On.Input.split(".").pop();
 
 	if (!File) {
 		return;
@@ -54,7 +54,7 @@ export default async (_Option: Image, On: OnSharp) => {
 		return (
 			Type in On.Buffer &&
 			(await On.Buffer[Type](
-				_Option[Type] !== true ? _Option[Type] : Default["Image"]
+				_Option[Type] !== true ? _Option[Type] : Default.Image
 			).toBuffer())
 		);
 	}

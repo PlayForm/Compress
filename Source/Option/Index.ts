@@ -57,11 +57,12 @@ export default Merge(Default, {
 			)} (${(((On.Before - On.After) / On.Before) * 100).toFixed(
 				2
 			)}% reduction) in ${On.Output}.`,
-		Changed: async (Plan) => {
-			Plan.Info.Total =
-				(Plan.Info.Total ? Plan.Info.Total : 0) +
-				(Plan.On.Before - Plan.On.After);
-			return Plan;
-		},
+		Changed: async (Plan) =>
+			Object.defineProperty(Plan.Info, "Total", {
+				value:
+					(Plan.Info.Total ? Plan.Info.Total : 0) +
+					(Plan.On.Before - Plan.On.After),
+				configurable: true,
+			}) && Plan,
 	},
 } satisfies Option) as Option;

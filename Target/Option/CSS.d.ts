@@ -9,20 +9,20 @@ export interface CSS extends Minify, Compress {
      * @default AstroCompress false
      * @default csso true
      */
-    comments: boolean;
+    comments?: boolean;
     /**
      * Enables merging of @media rules with the same media query by splitted by other rules.
      * The optimisation is unsafe in general, but should work fine in most cases. Use it on your own risk.
      * @default AstroCompress true
      * @default csso false
      */
-    forceMediaMerge: boolean;
+    forceMediaMerge?: boolean;
     /**
      * Disable or enable a structure optimisations.
      * @default AstroCompress false
      * @default csso true
      */
-    restructure: boolean;
+    restructure?: boolean;
 }
 declare const _default: {
     comments: false;

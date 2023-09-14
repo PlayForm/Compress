@@ -1,19 +1,18 @@
-import type { AstroIntegration } from "astro";
+import type { OnSharp } from "./Library/SharpRead.js";
+import type { Option } from "./Option/Index.js";
 
+import type { AstroIntegration } from "astro";
 import type { Action, Path } from "files-pipe";
-import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 
 import { minify as CSSO } from "csso";
+import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import type { Output } from "svgo";
 import { optimize as SVG } from "svgo";
 import { minify as Terser } from "terser";
 
-import type { OnSharp } from "./Library/SharpRead.js";
 import SharpRead from "./Library/SharpRead.js";
-
-import type { Option } from "./Option/Index.js";
 import Default from "./Option/Index.js";
 
 export default (_Option: Option = {}): AstroIntegration => {

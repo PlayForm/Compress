@@ -12,6 +12,7 @@ export interface CSS extends Minify, Compress {
 	 * - 'exclamation' or true – leave all exclamation comments
 	 * - 'first-exclamation' – remove every comment except first one
 	 * - false – remove all comments
+	 * 
 	 * @default AstroCompress false
 	 * @default csso true
 	 */
@@ -20,6 +21,7 @@ export interface CSS extends Minify, Compress {
 	/**
 	 * Enables merging of @media rules with the same media query by splitted by other rules.
 	 * The optimisation is unsafe in general, but should work fine in most cases. Use it on your own risk.
+	 * 
 	 * @default AstroCompress true
 	 * @default csso false
 	 */
@@ -27,6 +29,7 @@ export interface CSS extends Minify, Compress {
 
 	/**
 	 * Disable or enable a structure optimisations.
+	 * 
 	 * @default AstroCompress false
 	 * @default csso true
 	 */

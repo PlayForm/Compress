@@ -40,10 +40,6 @@ export interface Option extends _Option {
 	Map?: boolean | _Map;
 }
 
-// I'm currently waiting on the amazing File Explorer to delete
-// 120,000 items of node_modules which show up as 0 bytes :)
-// 🤷🏻 4 minutes left F
-
 export default Merge(Default, {
 	CSS: (await import("./CSS.js")).default,
 	HTML: (await import("./HTML.js")).default,

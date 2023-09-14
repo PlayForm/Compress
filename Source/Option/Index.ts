@@ -47,7 +47,7 @@ export default Merge(Default, {
 	Image: (await import("./Image.js")).default,
 	SVG: (await import("./SVG.js")).default,
 	Map: (await import("./Map.js")).default,
-	Pipe: {
+	Action: {
 		Failed: async (On) => `Error: Cannot compress file ${On.Input}!`,
 		Passed: async (On) =>
 			On.Before > Buffer.byteLength(On.Buffer.toString()),

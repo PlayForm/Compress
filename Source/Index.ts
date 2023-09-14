@@ -67,8 +67,8 @@ export default (_Option: Option = {}): AstroIntegration => {
 							).Not(__Option["Exclude"])
 						).Pipe(
 							Merge(
-								__Option["Pipe"],
-								Merge(__Option["Pipe"], {
+								__Option["Action"],
+								Merge(__Option["Action"], {
 									Wrote: async (On) => {
 										switch (File) {
 											case "CSS": {
@@ -142,7 +142,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 
 											default: {
 												return await _Default[
-													"Pipe"
+													"Action"
 												].Read(On);
 											}
 										}

@@ -1,4 +1,4 @@
-export interface MAP {
+export interface Map {
 	[key: string]: string;
 }
 
@@ -7,4 +7,4 @@ export default {
 	HTML: "**/*.html",
 	JavaScript: "**/*.{js,mjs,cjs,jsm}",
 	SVG: "**/*.svg",
-} satisfies MAP;
+} satisfies Map;

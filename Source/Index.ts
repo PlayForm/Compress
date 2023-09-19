@@ -1,19 +1,16 @@
-import type { AstroIntegration } from "astro";
+import type { Option } from "./Option/Index.js";
 
-import { Files } from "files-pipe";
-import Bytes from "files-pipe/Target/Library/Bytes.js";
-import Merge from "files-pipe/Target/Library/Merge.js";
-import type { Execution, Path } from "files-pipe/Target/Option/Index.js";
+import type { AstroIntegration } from "astro";
+import type { Action, Path } from "files-pipe";
 
 import { minify as CSSO } from "csso";
+import { Bytes, Files, Merge, Default as _Default } from "files-pipe";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
 import type { Output } from "svgo";
 import { optimize as SVG } from "svgo";
 import { minify as Terser } from "terser";
 
-
-import type { Option } from "./Option/Index.js";
-import _Default from "./Option/Index.js";
+import Default from "./Option/Index.js";
 
 export default (_Option: Option = {}): AstroIntegration => {
 	for (const Option in _Option) {
@@ -21,11 +18,11 @@ export default (_Option: Option = {}): AstroIntegration => {
 			Object.prototype.hasOwnProperty.call(_Option, Option) &&
 			_Option[Option] === true
 		) {
-			_Option[Option] = _Default[Option];
+			_Option[Option] = Default[Option];
 		}
 	}
 
-	const __Option = Merge(_Default, _Option);
+	const __Option = Merge(Default, _Option);
 
 	const Paths = new Set<Path>();
 
@@ -57,7 +54,10 @@ export default (_Option: Option = {}): AstroIntegration => {
 						await (
 							await (
 								await (
-									await new Files(__Option["Logger"]).In(Path)
+									await new Files(
+										__Option["Cache"],
+										__Option["Logger"]
+									).In(Path)
 								).By(
 									typeof __Option["Map"] === "object"
 										? __Option["Map"][File]
@@ -66,8 +66,8 @@ export default (_Option: Option = {}): AstroIntegration => {
 							).Not(__Option["Exclude"])
 						).Pipe(
 							Merge(
-								__Option["Pipe"],
-								Merge(__Option["Pipe"], {
+								__Option["Action"],
+								Merge(__Option["Action"], {
 									Wrote: async (On) => {
 										switch (File) {
 											case "CSS": {
@@ -125,7 +125,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													Plan.Info.Total
 											  )}.`
 											: false,
-								} satisfies Execution)
+								} satisfies Action)
 							)
 						);
 					}

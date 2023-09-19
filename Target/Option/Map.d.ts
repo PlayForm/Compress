@@ -4,7 +4,6 @@ export interface Map {
 declare const _default: {
     CSS: string;
     HTML: string;
-    Image: string;
     JavaScript: string;
     SVG: string;
 };

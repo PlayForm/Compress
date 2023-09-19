@@ -1,1 +1,8 @@
-var s={CSS:"**/*.css",HTML:"**/*.html",JavaScript:"**/*.{js,mjs,cjs,jsm}",SVG:"**/*.svg"};export{s as default};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    CSS: "**/*.css",
+    HTML: "**/*.html",
+    JavaScript: "**/*.{js,mjs,cjs,jsm}",
+    SVG: "**/*.svg",
+};

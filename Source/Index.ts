@@ -72,7 +72,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 							Merge(
 								__Option["Action"],
 								Merge(__Option["Action"], {
-									Wrote: async (_Cache, On) => {
+									Wrote: async (On) => {
 										switch (File) {
 											case "CSS": {
 												return CSSO(

@@ -50,7 +50,7 @@ export default Merge(Default, {
 	Image: (await import("./Image.js")).default,
 
 	SVG: (await import("./SVG.js")).default,
-	
+
 	Map: (await import("./Map.js")).default,
 
 	Action: {

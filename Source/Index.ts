@@ -40,7 +40,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 			}
 		}
 	}
-
+	
 	return {
 		name: "astro-compress",
 		hooks: {
@@ -48,6 +48,10 @@ export default (_Option: Option = {}): AstroIntegration => {
 				if (!Paths.size) {
 					Paths.add(Dir);
 				}
+
+				console.log('--- ASTRO COMPRESS ---')
+				console.log(__Option['Cache'])
+				console.log('--- END ASTRO COMPRESS ---')
 
 				for (const [File, Setting] of Object.entries(__Option)) {
 					if (!Setting) {

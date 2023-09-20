@@ -9,9 +9,8 @@ import type { Output } from "svgo";
 import SharpRead from "./Library/SharpRead.js";
 import Default from "./Option/Index.js";
 
-import Files, { Bytes, Merge, Default as _Default } from "files-pipe";
-
 import { minify as CSSO } from "csso";
+import Files, { Bytes, Merge, Default as _Default } from "files-pipe";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import { optimize as SVG } from "svgo";
@@ -73,7 +72,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 							Merge(
 								__Option["Action"],
 								Merge(__Option["Action"], {
-									Wrote: async (Cache, On) => {
+									Wrote: async (_Cache, On) => {
 										switch (File) {
 											case "CSS": {
 												return CSSO(

@@ -1,28 +1,35 @@
-import type { Option as _Option } from "files-pipe";
-import type { Type } from "./CSS.js";
+import type { Type as CSS } from "./CSS.js";
+import type { Type as HTML } from "./HTML.js";
+import type { Type as Image } from "./Image.js";
+import type { Type as JavaScript } from "./JavaScript.js";
 import type { Type as _Map } from "./Map.js";
+import type { Type as SVG } from "./SVG.js";
+import type { Option as _Option } from "files-pipe";
 export interface Type extends _Option {
     [key: string]: any;
     /**
      * csso option properties
      */
-    CSS?: boolean | Type;
+    CSS?: boolean | CSS;
     /**
      * html-minifier-terser option properties
      */
-    HTML?: boolean | Type;
-    /**
-     * terser option properties
-     */
-    JavaScript?: boolean | Type;
+    HTML?: boolean | HTML;
     /**
      * sharp option properties
      */
-    Image?: boolean | Type;
+    Image?: boolean | Image;
+    /**
+     * terser option properties
+     */
+    JavaScript?: boolean | JavaScript;
     /**
      * svgo option properties
      */
-    SVG?: boolean | Type;
+    SVG?: boolean | SVG;
+    /**
+     * Map to different file paths
+     */
     Map?: boolean | _Map;
 }
 declare const _default: Type;

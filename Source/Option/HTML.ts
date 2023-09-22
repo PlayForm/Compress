@@ -1,6 +1,6 @@
 import type { Options as Option } from "html-minifier-terser";
 
-export interface HTML extends Option {
+export interface Type extends Option {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
@@ -82,4 +82,4 @@ export default {
 	sortClassName: true,
 	trimCustomFragments: true,
 	useShortDoctype: false,
-} satisfies HTML;
+} satisfies Type as Type;

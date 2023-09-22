@@ -1,5 +1,5 @@
 import type { CompressOptions as Compress, MinifyOptions as Minify } from "csso";
-export interface CSS extends Minify, Compress {
+export interface Type extends Minify, Compress {
     [key: string]: any;
     /**
      * Specify what comments to leave:
@@ -27,9 +27,5 @@ export interface CSS extends Minify, Compress {
      */
     restructure?: boolean;
 }
-declare const _default: {
-    comments: false;
-    forceMediaMerge: true;
-    restructure: false;
-};
+declare const _default: Type;
 export default _default;

@@ -10,11 +10,17 @@ import SharpRead from "./Library/SharpRead.js";
 import Default from "./Option/Index.js";
 
 import { minify as CSSO } from "csso";
-import Files, { Bytes, Merge, Default as _Default } from "files-pipe";
+import Files, {
+	Bytes,
+	Merge,
+	WalkUntilGit,
+	Default as _Default,
+} from "files-pipe";
 import { minify as HTMLMinifierTerser } from "html-minifier-terser";
 import sharp from "sharp";
 import { optimize as SVG } from "svgo";
 import { minify as Terser } from "terser";
+import { fileURLToPath as _Path } from "url";
 
 export default (_Option: Option = {}): AstroIntegration => {
 	for (const Option in _Option) {
@@ -49,9 +55,14 @@ export default (_Option: Option = {}): AstroIntegration => {
 					Paths.add(Dir);
 				}
 
-				console.log("--- ASTRO COMPRESS ---");
-				console.log(__Option["Cache"]);
-				console.log("--- END ASTRO COMPRESS ---");
+				if (
+					__Option["Cache"] &&
+					__Option["Cache"]["Search"] === _Default["Cache"]["Search"]
+				) {
+					__Option["Cache"]["Search"] = await WalkUntilGit(
+						_Path(Dir)
+					);
+				}
 
 				for (const [File, Setting] of Object.entries(__Option)) {
 					if (!Setting) {

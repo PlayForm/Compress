@@ -51,6 +51,7 @@ export default (_Option: Type = {}): AstroIntegration => {
 				}
 
 				if (
+					_Default["Cache"] &&
 					__Option["Cache"] &&
 					__Option["Cache"]["Search"] === _Default["Cache"]["Search"]
 				) {

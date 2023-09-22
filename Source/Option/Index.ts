@@ -1,41 +1,41 @@
 import { Bytes, Default, Merge } from "files-pipe";
 
 import type { Option as _Option } from "files-pipe";
-import type { CSS } from "./CSS.js";
-import type { HTML } from "./HTML.js";
-import type { Image } from "./Image.js";
-import type { JavaScript } from "./JavaScript.js";
-import type { Map as _Map } from "./Map.js";
-import type { SVG } from "./SVG.js";
+import type { Type } from "./CSS.js";
+import type { Type } from "./HTML.js";
+import type { Type } from "./Image.js";
+import type { Type } from "./JavaScript.js";
+import type { Type as _Map } from "./Map.js";
+import type { Type } from "./SVG.js";
 
-export interface Option extends _Option {
+export interface Type extends _Option {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 
 	/**
 	 * csso option properties
 	 */
-	CSS?: boolean | CSS;
+	CSS?: boolean | Type;
 
 	/**
 	 * html-minifier-terser option properties
 	 */
-	HTML?: boolean | HTML;
+	HTML?: boolean | Type;
 
 	/**
 	 * terser option properties
 	 */
-	JavaScript?: boolean | JavaScript;
+	JavaScript?: boolean | Type;
 
 	/**
 	 * sharp option properties
 	 */
-	Image?: boolean | Image;
+	Image?: boolean | Type;
 
 	/**
 	 * svgo option properties
 	 */
-	SVG?: boolean | SVG;
+	SVG?: boolean | Type;
 
 	Map?: boolean | _Map;
 }
@@ -71,4 +71,4 @@ export default Merge(Default, {
 				configurable: true,
 			}) && Plan,
 	},
-} satisfies Option) as Option;
+} satisfies Type) as Type;

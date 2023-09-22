@@ -1,6 +1,6 @@
 import type { Config } from "svgo";
 
-export interface SVG extends Config {
+export interface Type extends Config {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
@@ -12,4 +12,4 @@ export default {
 		pretty: false,
 	},
 	plugins: ["preset-default"],
-} satisfies SVG;
+} satisfies Type as Type;

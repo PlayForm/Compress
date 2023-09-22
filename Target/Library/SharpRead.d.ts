@@ -1,6 +1,6 @@
 import type { File } from "files-pipe";
 import type { Sharp } from "sharp";
-import type { Image } from "../Option/Image.js";
+import type { Type } from "../Option/Image.js";
 export interface BufferSharp extends Sharp {
     [key: string]: any;
 }
@@ -10,5 +10,5 @@ export interface OnSharp extends Omit<File, "Buffer"> {
 export declare const Show: {
     [key: string]: string;
 };
-declare const _default: (_Option: Image, On: OnSharp) => Promise<any>;
+declare const _default: (_Option: Type, On: OnSharp) => Promise<any>;
 export default _default;

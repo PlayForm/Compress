@@ -1,6 +1,6 @@
 import type { File } from "files-pipe";
 import type { Sharp } from "sharp";
-import type { Image } from "../Option/Image.js";
+import type { Type } from "../Option/Image.js";
 
 import Default from "../Option/Index.js";
 
@@ -29,7 +29,7 @@ export const Show: {
 	jpg: "jpeg",
 };
 
-export default async (_Option: Image, On: OnSharp) => {
+export default async (_Option: Type, On: OnSharp) => {
 	const File = On.Input.split(".").pop();
 
 	if (!File) {

@@ -1,5 +1,5 @@
 import type { OnSharp } from "./Library/SharpRead.js";
-import type { Option } from "./Option/Index.js";
+import type { Type } from "./Option/Index.js";
 
 import type { Action, Path } from "files-pipe";
 
@@ -17,7 +17,7 @@ import { optimize as SVG } from "svgo";
 import { minify as Terser } from "terser";
 import { fileURLToPath as _Path } from "url";
 
-export default (_Option: Option = {}): AstroIntegration => {
+export default (_Option: Type = {}): AstroIntegration => {
 	for (const Option in _Option) {
 		if (
 			Object.prototype.hasOwnProperty.call(_Option, Option) &&
@@ -170,7 +170,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													Plan.Info.Total
 											  )}.`
 											: false,
-								} satisfies Action)
+								} satisfies Action) as Action
 							)
 						);
 					}

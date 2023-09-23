@@ -4,11 +4,11 @@ import type { Type } from "../Option/Image.js";
 export interface BufferSharp extends Sharp {
     [key: string]: any;
 }
-export interface OnSharp extends Omit<File, "Buffer"> {
+export interface Image extends Omit<File, "Buffer"> {
     Buffer: BufferSharp;
 }
 export declare const Show: {
     [key: string]: string;
 };
-declare const _default: (_Option: Type, On: OnSharp) => Promise<any>;
+declare const _default: (_Option: Type, On: Image) => Promise<any>;
 export default _default;

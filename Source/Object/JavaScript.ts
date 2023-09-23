@@ -12,4 +12,4 @@ export default {
 	format: {
 		comments: false,
 	},
-} satisfies Type;
+} satisfies Type as Type;

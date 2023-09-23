@@ -9,8 +9,10 @@ import type { Output } from "svgo";
 
 export const { default: Default } = await import("./Object/Option.js");
 
-export const { Default: _Default } = await import("files-pipe");
-export const Merge = (await import("files-pipe/Target/Fn/Merge.js")).default;
+export const { default: _Default } = await import(
+	"files-pipe/Target/Object/Option.js"
+);
+export const { default: Merge } = await import("files-pipe/Target/Fn/Merge.js");
 
 export const { default: sharp } = await import("sharp");
 
@@ -116,7 +118,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 											case "Image": {
 												return (
 													await import(
-														"./Fn/Sharp.js"
+														"./Fn/Image.js"
 													)
 												).default(Setting, On as On);
 											}

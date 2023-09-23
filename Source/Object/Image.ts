@@ -1,4 +1,4 @@
-import type { Type } from "../Interface/Image/Option";
+import type Type from "../Interface/Image/Option.js";
 
 export default {
 	avif: {
@@ -26,4 +26,4 @@ export default {
 	webp: {
 		effort: 6.0,
 	},
-} satisfies Type;
+} satisfies Type as Type;

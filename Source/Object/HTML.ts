@@ -1,4 +1,4 @@
-import type { Type } from "../Interface/HTML.js";
+import type Type from "../Interface/HTML.js";
 
 export default {
 	caseSensitive: true,
@@ -77,4 +77,4 @@ export default {
 	sortClassName: true,
 	trimCustomFragments: true,
 	useShortDoctype: false,
-} satisfies Type;
+} satisfies Type as Type;

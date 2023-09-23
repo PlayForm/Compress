@@ -1,6 +1,6 @@
-import type { Options as Option } from "html-minifier-terser";
+import type { Options } from "html-minifier-terser";
 
-export default interface Type extends Option {
+export default interface Type extends Options {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }

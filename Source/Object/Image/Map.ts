@@ -1,4 +1,4 @@
-import Type from "../../Interface/Map";
+import type Type from "../../Interface/Map.js";
 
 export default {
 	avci: "avif",

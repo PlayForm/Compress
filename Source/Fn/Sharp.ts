@@ -9,7 +9,7 @@ export interface BufferSharp extends Sharp {
 	[key: string]: any;
 }
 
-export interface OnSharp extends Omit<File, "Buffer"> {
+export interface Image extends Omit<File, "Buffer"> {
 	Buffer: BufferSharp;
 }
 
@@ -29,7 +29,7 @@ export const Show: {
 	jpg: "jpeg",
 };
 
-export default async (_Option: Type, On: OnSharp) => {
+export default async (_Option: Type, On: Image) => {
 	const File = On.Input.split(".").pop();
 
 	if (!File) {

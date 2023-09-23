@@ -1,4 +1,4 @@
-import type { OnSharp } from "@Library/SharpRead";
+import type { Image } from "./Fn/Sharp.js";
 import type { Type } from "./Option/Index.js";
 
 import type { Action, Path } from "files-pipe";
@@ -6,16 +6,17 @@ import type { Action, Path } from "files-pipe";
 import type { AstroIntegration } from "astro";
 import type { Output } from "svgo";
 
-import SharpRead from "./Library/SharpRead.js";
-import Default from "./Option/Index.js";
+export const { default: Default } = await import("./Option/Index.js");
 
-import { minify as CSSO } from "csso";
-import Files, { Bytes, Merge, Default as _Default } from "files-pipe";
-import { minify as HTMLMinifierTerser } from "html-minifier-terser";
-import sharp from "sharp";
-import { optimize as SVG } from "svgo";
-import { minify as Terser } from "terser";
-import { fileURLToPath as _Path } from "url";
+export const { minify: CSSO } = await import("csso");
+
+export const { Bytes, Merge, Default: _Default } = await import("files-pipe");
+
+export const { minify: HTMLMinifierTerser } = await import(
+	"html-minifier-terser"
+);
+
+export const { default: sharp } = await import("sharp");
 
 export default (_Option: Type = {}): AstroIntegration => {
 	for (const Option in _Option) {
@@ -67,7 +68,9 @@ export default (_Option: Type = {}): AstroIntegration => {
 						await (
 							await (
 								await (
-									await new Files(
+									await new (
+										await import("files-pipe")
+									).default(
 										__Option["Cache"],
 										__Option["Logger"]
 									).In(Path)
@@ -98,7 +101,9 @@ export default (_Option: Type = {}): AstroIntegration => {
 											}
 
 											case "JavaScript": {
-												const { code } = await Terser(
+												const { code } = await (
+													await import("terser")
+												).minify(
 													On.Buffer.toString(),
 													Setting
 												);
@@ -107,14 +112,17 @@ export default (_Option: Type = {}): AstroIntegration => {
 											}
 
 											case "Image": {
-												return SharpRead(
-													Setting,
-													On as OnSharp
-												);
+												return (
+													await import(
+														"./Fn/Sharp.js"
+													)
+												).default(Setting, On as Image);
 											}
 
 											case "SVG": {
-												const { data: Data } = SVG(
+												const { data: Data } = (
+													await import("svgo")
+												).optimize(
 													On.Buffer.toString(),
 													Setting
 												) as Output;

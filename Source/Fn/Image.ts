@@ -1,17 +1,6 @@
-import type { File } from "files-pipe";
-import type { Sharp } from "sharp";
-import type { Type } from "../Option/Image.js";
+import type { Type as Image } from "../Interface/Image.js";
 
 import Default from "../Option/Index.js";
-
-export interface BufferSharp extends Sharp {
-	// rome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
-}
-
-export interface Image extends Omit<File, "Buffer"> {
-	Buffer: BufferSharp;
-}
 
 export const Show: {
 	[key: string]: string;

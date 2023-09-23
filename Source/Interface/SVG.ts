@@ -5,11 +5,4 @@ export interface Type extends Config {
 	[key: string]: any;
 }
 
-export default {
-	multipass: true,
-	js2svg: {
-		indent: 0,
-		pretty: false,
-	},
-	plugins: ["preset-default"],
-} satisfies Type;
+export type { Type as default };

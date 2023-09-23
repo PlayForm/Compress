@@ -1,18 +1,19 @@
-import type { Image } from "./Fn/Image.js";
-import type { Type } from "./Option/Index.js";
+import type { Type as Image } from "./Interface/Image/On.js";
+import type { Type as Option } from "./Interface/Option.js";
 
 import type { Action, Path } from "files-pipe";
 
 import type { AstroIntegration } from "astro";
+
 import type { Output } from "svgo";
 
-export const { default: Default } = await import("./Option/Index.js");
+export const { default: Default } = await import("./Object/Option.js");
 
 export const { Merge, Default: _Default } = await import("files-pipe");
 
 export const { default: sharp } = await import("sharp");
 
-export default (_Option: Type = {}): AstroIntegration => {
+export default (_Option: Option = {}): AstroIntegration => {
 	for (const Option in _Option) {
 		if (
 			Object.prototype.hasOwnProperty.call(_Option, Option) &&
@@ -114,7 +115,7 @@ export default (_Option: Type = {}): AstroIntegration => {
 											case "Image": {
 												return (
 													await import(
-														"./Fn/Image.js"
+														"./Fn/Sharp.js"
 													)
 												).default(Setting, On as Image);
 											}

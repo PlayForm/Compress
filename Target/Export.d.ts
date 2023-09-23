@@ -1,6 +1,6 @@
-import type { Type } from "./Option/Index.js";
+import type { Type as Option } from "./Interface/Option.js";
 import type { AstroIntegration } from "astro";
-export declare const Default: Type;
+export declare const Default: Option;
 export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => import("deepmerge-ts").DeepMergeHKT<Ts, Readonly<{
     DeepMergeRecordsURI: "DeepMergeRecordsDefaultURI";
     DeepMergeArraysURI: "DeepMergeLeafURI";
@@ -28,5 +28,5 @@ export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => i
     };
 };
 export declare const sharp: typeof import("sharp");
-declare const _default: (_Option?: Type) => AstroIntegration;
+declare const _default: (_Option?: Option) => AstroIntegration;
 export default _default;

@@ -63,8 +63,8 @@ export default (await import("files-pipe")).Merge(
 				On.Before > Buffer.byteLength(On.Buffer.toString()),
 			Accomplished: async (On) =>
 				`Compressed ${On.Input} for ${await (
-					await import("files-pipe")
-				).Bytes(On.Before - On.After)} (${(
+					await import("files-pipe/Target/Fn/Bytes.js")
+				).default(On.Before - On.After)} (${(
 					((On.Before - On.After) / On.Before) *
 					100
 				).toFixed(2)}% reduction) in ${On.Output}.`,

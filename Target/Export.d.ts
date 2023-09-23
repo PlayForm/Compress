@@ -1,8 +1,7 @@
 import type { Type } from "./Option/Index.js";
 import type { AstroIntegration } from "astro";
 export declare const Default: Type;
-export declare const CSSO: typeof import("csso").minify;
-export declare const Bytes: (Bytes: number, Decimals?: number | undefined) => Promise<string>, Merge: <Ts extends readonly unknown[]>(...objects: Ts) => import("deepmerge-ts").DeepMergeHKT<Ts, Readonly<{
+export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => import("deepmerge-ts").DeepMergeHKT<Ts, Readonly<{
     DeepMergeRecordsURI: "DeepMergeRecordsDefaultURI";
     DeepMergeArraysURI: "DeepMergeLeafURI";
     DeepMergeSetsURI: "DeepMergeSetsDefaultURI";
@@ -28,7 +27,6 @@ export declare const Bytes: (Bytes: number, Decimals?: number | undefined) => Pr
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").Type) => Promise<import("files-pipe/Target/Interface/Plan.js").Type>;
     };
 };
-export declare const HTMLMinifierTerser: typeof import("html-minifier-terser").minify;
 export declare const sharp: typeof import("sharp");
 declare const _default: (_Option?: Type) => AstroIntegration;
 export default _default;

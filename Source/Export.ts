@@ -8,13 +8,7 @@ import type { Output } from "svgo";
 
 export const { default: Default } = await import("./Option/Index.js");
 
-export const { minify: CSSO } = await import("csso");
-
-export const { Bytes, Merge, Default: _Default } = await import("files-pipe");
-
-export const { minify: HTMLMinifierTerser } = await import(
-	"html-minifier-terser"
-);
+export const { Merge, Default: _Default } = await import("files-pipe");
 
 export const { default: sharp } = await import("sharp");
 
@@ -87,14 +81,20 @@ export default (_Option: Type = {}): AstroIntegration => {
 									Wrote: async (On) => {
 										switch (File) {
 											case "CSS": {
-												return CSSO(
+												return (
+													await import("csso")
+												).minify(
 													On.Buffer.toString(),
 													Setting
 												).css;
 											}
 
 											case "HTML": {
-												return await HTMLMinifierTerser(
+												return await (
+													await import(
+														"html-minifier-terser"
+													)
+												).minify(
 													On.Buffer.toString(),
 													Setting
 												);
@@ -175,9 +175,11 @@ export default (_Option: Type = {}): AstroIntegration => {
 													Plan.Files === 1
 														? "file"
 														: "files"
-											  } for ${await Bytes(
-													Plan.Info.Total
-											  )}.`
+											  } for ${await (
+													await import(
+														"files-pipe/Target/Fn/Bytes.js"
+													)
+											  ).default(Plan.Info.Total)}.`
 											: false,
 								} satisfies Action) as Action
 							)

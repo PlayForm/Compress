@@ -1,21 +1,7 @@
-import type { Type as On } from "../Interface/Image/On.js";
-import type { Type as Option } from "../Interface/Image/Option.js";
+import type On from "../Interface/Image/On.js";
+import type Option from "../Interface/Image/Option.js";
 
-export const Show: {
-	[key: string]: string;
-} = {
-	avci: "avif",
-	avcs: "avif",
-	avifs: "avif",
-	heic: "heif",
-	heics: "heif",
-	heifs: "heif",
-	jfif: "jpeg",
-	jif: "jpeg",
-	jpe: "jpeg",
-	apng: "png",
-	jpg: "jpeg",
-};
+import _Map from "../Object/Sharp/Map.js";
 
 export default async (Option: Option, On: On) => {
 	const File = On.Input.split(".").pop();
@@ -25,8 +11,8 @@ export default async (Option: Option, On: On) => {
 	}
 
 	const Type =
-		typeof Show[File] !== "undefined"
-			? Show[File]
+		typeof _Map[File] !== "undefined"
+			? _Map[File]
 			: typeof Option[File] !== "undefined"
 			? File
 			: false;

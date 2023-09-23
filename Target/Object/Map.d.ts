@@ -1,3 +1,8 @@
-import type Type from "../Interface/Map.js";
-declare const _default: Type;
+declare const _default: {
+    CSS: string;
+    HTML: string;
+    Image: string;
+    JavaScript: string;
+    SVG: string;
+};
 export default _default;

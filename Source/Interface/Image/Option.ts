@@ -8,7 +8,7 @@ import type {
 	WebpOptions as WEBP,
 } from "sharp";
 
-export interface Type {
+export default interface Type {
 	[key: string]:
 		| undefined
 		| boolean

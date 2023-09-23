@@ -1,14 +1,2 @@
-declare const _default: {
-    ecma: 5;
-    enclose: false;
-    keep_classnames: false;
-    keep_fnames: false;
-    ie8: false;
-    module: false;
-    safari10: false;
-    toplevel: false;
-    format: {
-        comments: false;
-    };
-};
+declare const _default: Type;
 export default _default;

@@ -1,11 +1,11 @@
-import type { Type as CSS } from "./CSS.js";
-import type { Type as HTML } from "./HTML.js";
-import type { Type as Image } from "./Image/Option.js";
-import type { Type as JavaScript } from "./JavaScript.js";
+import type CSS from "./CSS.js";
+import type HTML from "./HTML.js";
+import type Image from "./Image/Option.js";
+import type JavaScript from "./JavaScript.js";
 import type _Map from "./Map.js";
-import type { Type as SVG } from "./SVG.js";
+import type SVG from "./SVG.js";
 import type { Option as _Option } from "files-pipe";
-export interface Type extends _Option {
+export default interface Type extends _Option {
     [key: string]: any;
     /**
      * csso option properties

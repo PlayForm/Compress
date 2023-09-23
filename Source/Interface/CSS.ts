@@ -3,7 +3,7 @@ import type {
 	MinifyOptions as Minify,
 } from "csso";
 
-export interface Type extends Minify, Compress {
+export default interface Type extends Minify, Compress {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 

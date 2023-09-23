@@ -1,15 +1,16 @@
-import type { Type as Image } from "./Interface/Image/On.js";
-import type { Type as Option } from "./Interface/Option.js";
+import type On from "./Interface/Image/On.js";
+import type Option from "./Interface/Option.js";
 
-import type { Action, Path } from "files-pipe";
+import type Action from "files-pipe/Target/Interface/Action.js";
+import type Path from "files-pipe/Target/Interface/Path.js";
 
 import type { AstroIntegration } from "astro";
-
 import type { Output } from "svgo";
 
 export const { default: Default } = await import("./Object/Option.js");
 
-export const { Merge, Default: _Default } = await import("files-pipe");
+export const { Default: _Default } = await import("files-pipe");
+export const Merge = (await import("files-pipe/Target/Fn/Merge.js")).default;
 
 export const { default: sharp } = await import("sharp");
 
@@ -117,7 +118,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													await import(
 														"./Fn/Sharp.js"
 													)
-												).default(Setting, On as Image);
+												).default(Setting, On as On);
 											}
 
 											case "SVG": {
@@ -182,7 +183,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													)
 											  ).default(Plan.Info.Total)}.`
 											: false,
-								} satisfies Action) as Action
+								} satisfies Action)
 							)
 						);
 					}

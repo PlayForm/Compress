@@ -82,4 +82,4 @@ export default {
 	sortClassName: true,
 	trimCustomFragments: true,
 	useShortDoctype: false,
-} satisfies Type as Type;
+} satisfies Type;

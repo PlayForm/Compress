@@ -1,4 +1,4 @@
-import type { OnSharp } from "./Library/SharpRead.js";
+import type { OnSharp } from "@Library/SharpRead";
 import type { Type } from "./Option/Index.js";
 
 import type { Action, Path } from "files-pipe";

@@ -12,4 +12,4 @@ export default {
 		pretty: false,
 	},
 	plugins: ["preset-default"],
-} satisfies Type as Type;
+} satisfies Type;

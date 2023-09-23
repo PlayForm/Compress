@@ -40,4 +40,4 @@ export default {
 	comments: false,
 	forceMediaMerge: true,
 	restructure: false,
-} satisfies Type as Type;
+} satisfies Type;

@@ -1,4 +1,4 @@
-import type { Image } from "./Fn/Sharp.js";
+import type { Image } from "./Fn/Image.js";
 import type { Type } from "./Option/Index.js";
 
 import type { Action, Path } from "files-pipe";
@@ -114,7 +114,7 @@ export default (_Option: Type = {}): AstroIntegration => {
 											case "Image": {
 												return (
 													await import(
-														"./Fn/Sharp.js"
+														"./Fn/Image.js"
 													)
 												).default(Setting, On as Image);
 											}

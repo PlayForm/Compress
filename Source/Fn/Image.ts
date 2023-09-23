@@ -1,7 +1,7 @@
 import type On from "../Interface/Image/On.js";
 import type Option from "../Interface/Image/Option.js";
 
-import _Map from "../Object/Sharp/Map.js";
+import _Map from "../Object/Image/Map.js";
 
 export default async (Option: Option, On: On) => {
 	const File = On.Input.split(".").pop();

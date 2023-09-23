@@ -1,4 +1,4 @@
-import type { Type } from "../Interface/JavaScript";
+import type Type from "../Interface/JavaScript.js";
 
 export default {
 	ecma: 5,

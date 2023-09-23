@@ -1,6 +1,6 @@
-import type { Type } from "../Interface/Option.js";
+import type Type from "../Interface/Option.js";
 
-export default (await import("files-pipe")).Merge(
+export default (await import("files-pipe/Target/Fn/Merge.js")).default(
 	(await import("files-pipe")).Default,
 	{
 		CSS: (await import("./CSS.js")).default,

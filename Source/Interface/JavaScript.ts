@@ -1,6 +1,6 @@
-import type { MinifyOptions as Minify } from "terser";
+import type { MinifyOptions } from "terser";
 
-export default interface Type extends Minify {
+export default interface Type extends MinifyOptions {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }

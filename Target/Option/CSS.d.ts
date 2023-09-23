@@ -27,5 +27,9 @@ export interface Type extends Minify, Compress {
      */
     restructure?: boolean;
 }
-declare const _default: Type;
+declare const _default: {
+    comments: false;
+    forceMediaMerge: true;
+    restructure: false;
+};
 export default _default;

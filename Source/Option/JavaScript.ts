@@ -17,4 +17,4 @@ export default {
 	format: {
 		comments: false,
 	},
-} satisfies Type as Type;
+} satisfies Type;

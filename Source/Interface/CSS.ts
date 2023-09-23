@@ -35,9 +35,3 @@ export interface Type extends Minify, Compress {
 	 */
 	restructure?: boolean;
 }
-
-export default {
-	comments: false,
-	forceMediaMerge: true,
-	restructure: false,
-} satisfies Type;

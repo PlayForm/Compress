@@ -1,6 +1,5 @@
-import type { Type as Image } from "../Interface/Image.js";
-
-import Default from "../Option/Index.js";
+import type { Type as On } from "../Interface/Image/On.js";
+import type { Type as Option } from "../Interface/Image/Option.js";
 
 export const Show: {
 	[key: string]: string;
@@ -18,7 +17,7 @@ export const Show: {
 	jpg: "jpeg",
 };
 
-export default async (_Option: Type, On: Image) => {
+export default async (Option: Option, On: On) => {
 	const File = On.Input.split(".").pop();
 
 	if (!File) {
@@ -28,7 +27,7 @@ export default async (_Option: Type, On: Image) => {
 	const Type =
 		typeof Show[File] !== "undefined"
 			? Show[File]
-			: typeof _Option[File] !== "undefined"
+			: typeof Option[File] !== "undefined"
 			? File
 			: false;
 
@@ -37,13 +36,15 @@ export default async (_Option: Type, On: Image) => {
 		["avif", "gif", "heif", "jpeg", "png", "raw", "tiff", "webp"].includes(
 			Type
 		) &&
-		typeof _Option[Type] !== "undefined" &&
-		_Option[Type] !== false
+		typeof Option[Type] !== "undefined" &&
+		Option[Type] !== false
 	) {
 		return (
 			Type in On.Buffer &&
 			(await On.Buffer[Type](
-				_Option[Type] !== true ? _Option[Type] : Default.Image
+				Option[Type] !== true
+					? Option[Type]
+					: (await import("../Object/Option.js")).default.Image
 			).toBuffer())
 		);
 	}

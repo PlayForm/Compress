@@ -5,7 +5,6 @@ import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Interface/Path.js";
 
 import type { AstroIntegration } from "astro";
-import type { Output } from "svgo";
 
 export const { default: Default } = await import("./Object/Option.js");
 
@@ -129,15 +128,9 @@ export default (_Option: Option = {}): AstroIntegration => {
 												).optimize(
 													On.Buffer.toString(),
 													Setting
-												) as Output;
+												);
 
-												if (
-													typeof Data !== "undefined"
-												) {
-													return Data;
-												}
-
-												return On.Buffer;
+												return Data ? Data : On.Buffer;
 											}
 
 											default: {

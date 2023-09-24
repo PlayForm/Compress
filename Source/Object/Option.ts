@@ -1,7 +1,7 @@
 import type Type from "../Interface/Option.js";
 
 export default (await import("files-pipe/Target/Fn/Merge.js")).default(
-	(await import("files-pipe")).Default,
+	(await import("files-pipe/Target/Object/Option.js")).default,
 	{
 		CSS: (await import("./CSS.js")).default,
 
@@ -35,4 +35,4 @@ export default (await import("files-pipe/Target/Fn/Merge.js")).default(
 				}) && Plan,
 		},
 	} satisfies Type
-) as Type;
+);

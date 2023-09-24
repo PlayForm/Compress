@@ -26,4 +26,4 @@ export default {
 	webp: {
 		effort: 6.0,
 	},
-} satisfies Type as Type;
+} satisfies Type;

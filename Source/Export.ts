@@ -11,6 +11,7 @@ export const { default: Default } = await import("./Object/Option.js");
 export const { default: _Default } = await import(
 	"files-pipe/Target/Object/Option.js"
 );
+
 export const { default: Merge } = await import("files-pipe/Target/Fn/Merge.js");
 
 export const { default: sharp } = await import("sharp");
@@ -21,7 +22,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 			Object.prototype.hasOwnProperty.call(_Option, Option) &&
 			_Option[Option] === true
 		) {
-			_Option[Option] = Default[Option];
+			_Option[Option] = Default[Option as keyof typeof Default];
 		}
 	}
 

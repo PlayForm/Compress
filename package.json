@@ -32,8 +32,8 @@
 		"url": "https://nikolahristov.tech"
 	},
 	"type": "module",
-	"main": "./Target/Export.js",
-	"types": "./Target/Export.d.ts",
+	"main": "./Target/Fn/Integration.js",
+	"types": "./Target/Fn/Integration.d.ts",
 	"scripts": {
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},

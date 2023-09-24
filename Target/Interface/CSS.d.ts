@@ -1,5 +1,5 @@
-import type { CompressOptions as Compress, MinifyOptions as Minify } from "csso";
-export default interface Type extends Minify, Compress {
+import type { CompressOptions, MinifyOptions } from "csso";
+export default interface Type extends MinifyOptions, CompressOptions {
     [key: string]: any;
     /**
      * Specify what comments to leave:

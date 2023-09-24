@@ -1,6 +1,6 @@
 import type Type from "../Interface/Option.js";
 
-export default (await import("files-pipe/Target/Fn/Merge.js")).default(
+export default (await import("files-pipe/Target/Function/Merge.js")).default(
 	(await import("files-pipe/Target/Object/Option.js")).default,
 	{
 		CSS: (await import("./CSS.js")).default,
@@ -21,7 +21,7 @@ export default (await import("files-pipe/Target/Fn/Merge.js")).default(
 				On.Before > Buffer.byteLength(On.Buffer.toString()),
 			Accomplished: async (On) =>
 				`Compressed ${On.Input} for ${await (
-					await import("files-pipe/Target/Fn/Bytes.js")
+					await import("files-pipe/Target/Function/Bytes.js")
 				).default(On.Before - On.After)} (${(
 					((On.Before - On.After) / On.Before) *
 					100

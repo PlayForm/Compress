@@ -12,7 +12,7 @@ export const { default: _Default } = await import(
 	"files-pipe/Target/Object/Option.js"
 );
 
-export const { default: Merge } = await import("files-pipe/Target/Fn/Merge.js");
+export const { default: Merge } = await import("files-pipe/Target/Function/Merge.js");
 
 export const { default: sharp } = await import("sharp");
 
@@ -118,7 +118,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 											case "Image": {
 												return (
 													await import(
-														"./Fn/Image.js"
+														"./Function/Image.js"
 													)
 												).default(Setting, On as On);
 											}
@@ -175,7 +175,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 														: "files"
 											  } for ${await (
 													await import(
-														"files-pipe/Target/Fn/Bytes.js"
+														"files-pipe/Target/Function/Bytes.js"
 													)
 											  ).default(Plan.Info.Total)}.`
 											: false,

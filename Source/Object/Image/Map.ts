@@ -12,4 +12,4 @@ export default {
 	jpe: "jpeg",
 	apng: "png",
 	jpg: "jpeg",
-} satisfies Type as Type;
+} satisfies Type;

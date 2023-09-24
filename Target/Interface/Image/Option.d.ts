@@ -1,11 +1,11 @@
-import type { AvifOptions as AVIF, GifOptions as GIF, HeifOptions as HEIF, JpegOptions as JPEG, PngOptions as PNG, TiffOptions as TIFF, WebpOptions as WEBP } from "sharp";
+import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";
 export default interface Type {
-    [key: string]: undefined | boolean | AVIF | GIF | HEIF | JPEG | PNG | TIFF | WEBP;
-    avif?: boolean | AVIF;
-    gif?: boolean | GIF;
-    heif?: boolean | HEIF;
-    jpeg?: boolean | JPEG;
-    png?: boolean | PNG;
-    tiff?: boolean | TIFF;
-    webp?: boolean | WEBP;
+    [key: string]: undefined | boolean | AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | TiffOptions | WebpOptions;
+    avif?: boolean | AvifOptions;
+    gif?: boolean | GifOptions;
+    heif?: boolean | HeifOptions;
+    jpeg?: boolean | JpegOptions;
+    png?: boolean | PngOptions;
+    tiff?: boolean | TiffOptions;
+    webp?: boolean | WebpOptions;
 }

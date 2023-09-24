@@ -1,4 +1,4 @@
-declare const _default: {
+export declare const _Map: {
     avci: string;
     avcs: string;
     avifs: string;
@@ -11,4 +11,5 @@ declare const _default: {
     apng: string;
     jpg: string;
 };
-export default _default;
+export type Type = keyof typeof _Map;
+export type { Type as default };

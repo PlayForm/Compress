@@ -1,7 +1,8 @@
 import type On from "../Interface/Image/On.js";
 import type Option from "../Interface/Image/Option.js";
+import type File from "../Interface/File.js";
 
-import _Map from "../Object/Image/Map.js";
+export const { default: _Map } = await import("../Object/Image/Map.js");
 
 export default async (Option: Option, On: On) => {
 	const File = On.Input.split(".").pop();
@@ -11,8 +12,8 @@ export default async (Option: Option, On: On) => {
 	}
 
 	const Type =
-		typeof _Map[File] !== "undefined"
-			? _Map[File]
+		typeof _Map[File as File] !== "undefined"
+			? _Map[File as File]
 			: typeof Option[File] !== "undefined"
 			? File
 			: false;
@@ -30,7 +31,7 @@ export default async (Option: Option, On: On) => {
 			(await On.Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (await import("../Object/Option.js")).default.Image
+					: (await import("../Object/Image.js")).default
 			).toBuffer())
 		);
 	}

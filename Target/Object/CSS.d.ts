@@ -1,3 +1,6 @@
-import type Type from "../Interface/CSS.js";
-declare const _default: Type;
+declare const _default: {
+    comments: false;
+    forceMediaMerge: true;
+    restructure: false;
+};
 export default _default;

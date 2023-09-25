@@ -60,6 +60,10 @@ export default (_Option: Option = {}): AstroIntegration => {
 		name: "astro-compress",
 		hooks: {
 			"astro:build:done": async ({ dir: Dir }) => {
+				if (typeof _Map !== "object") {
+					return;
+				}
+
 				if (!Paths.size) {
 					Paths.add(Dir);
 				}
@@ -79,8 +83,104 @@ export default (_Option: Option = {}): AstroIntegration => {
 					JavaScript,
 					SVG,
 				})) {
-					if (typeof Setting === "undefined" || !Setting) {
+					if (!Setting || !_Map[File]) {
 						continue;
+					}
+
+					let _Action = Merge(
+						Action,
+						Merge(Action, {
+							Wrote: async ({ Buffer, Input }) => {
+								switch (File) {
+									case "CSS": {
+										return (await import("csso")).minify(
+											Buffer.toString(),
+											Setting as CSS
+										).css;
+									}
+
+									case "HTML": {
+										return await (
+											await import("html-minifier-terser")
+										).minify(
+											Buffer.toString(),
+											Setting as HTML
+										);
+									}
+
+									case "JavaScript": {
+										return (
+											(
+												await (
+													await import("terser")
+												).minify(
+													Buffer.toString(),
+													Setting as JavaScript
+												)
+											).code ?? Buffer
+										);
+									}
+
+									case "Image": {
+										return (
+											await import("../Function/Image.js")
+										).default(
+											Setting as Option,
+											{
+												Buffer,
+												Input,
+											} as On
+										);
+									}
+
+									case "SVG": {
+										const { data: Data } = (
+											await import("svgo")
+										).optimize(
+											Buffer.toString(),
+											Setting as SVG
+										);
+
+										return Data ? Data : Buffer;
+									}
+
+									default: {
+										return Buffer;
+									}
+								}
+							},
+							Fulfilled: async (Plan) =>
+								Plan.Files > 0
+									? `Successfully compressed a total of ${
+											Plan.Files
+									  } ${File} ${
+											Plan.Files === 1 ? "file" : "files"
+									  } for ${await (
+											await import(
+												"files-pipe/Target/Function/Bytes.js"
+											)
+									  ).default(Plan.Info.Total)}.`
+									: false,
+						} satisfies Action)
+					);
+
+					if (File === "Image") {
+						_Action = Merge(_Action, {
+							Read: async ({ Input }) => {
+								const { format } =
+									await sharp(Input).metadata();
+
+								return sharp(Input, {
+									failOn: "none",
+									sequentialRead: true,
+									unlimited: true,
+									animated:
+										format === "webp" || format === "gif"
+											? true
+											: false,
+								});
+							},
+						} satisfies Action);
 					}
 
 					for (const Path of Paths) {
@@ -90,119 +190,9 @@ export default (_Option: Option = {}): AstroIntegration => {
 									await new (
 										await import("files-pipe")
 									).default(Cache, Logger).In(Path)
-								).By(typeof _Map === "object" ? _Map[File] : "")
+								).By(_Map[File])
 							).Not(Exclude)
-						).Pipe(
-							Merge(
-								Action,
-								Merge(Action, {
-									Wrote: async (On) => {
-										switch (File) {
-											case "CSS": {
-												return (
-													await import("csso")
-												).minify(
-													On.Buffer.toString(),
-													Setting as CSS
-												).css;
-											}
-
-											case "HTML": {
-												return await (
-													await import(
-														"html-minifier-terser"
-													)
-												).minify(
-													On.Buffer.toString(),
-													Setting as HTML
-												);
-											}
-
-											case "JavaScript": {
-												return (
-													(
-														await (
-															await import(
-																"terser"
-															)
-														).minify(
-															On.Buffer.toString(),
-															Setting as JavaScript
-														)
-													).code ?? On.Buffer
-												);
-											}
-
-											case "Image": {
-												return (
-													await import(
-														"../Function/Image.js"
-													)
-												).default(
-													Setting as Option,
-													On as On
-												);
-											}
-
-											case "SVG": {
-												const { data: Data } = (
-													await import("svgo")
-												).optimize(
-													On.Buffer.toString(),
-													Setting as SVG
-												);
-
-												return Data ? Data : On.Buffer;
-											}
-
-											default: {
-												return On.Buffer;
-											}
-										}
-									},
-									Read: async (On) => {
-										switch (File) {
-											case "Image": {
-												const { format } = await sharp(
-													On.Input
-												).metadata();
-
-												return sharp(On.Input, {
-													failOn: "none",
-													sequentialRead: true,
-													unlimited: true,
-													animated:
-														format === "webp" ||
-														format === "gif"
-															? true
-															: false,
-												});
-											}
-
-											default: {
-												return await _Default[
-													"Action"
-												].Read(On);
-											}
-										}
-									},
-									Fulfilled: async (Plan) =>
-										Plan.Files > 0
-											? `Successfully compressed a total of ${
-													Plan.Files
-											  } ${File} ${
-													Plan.Files === 1
-														? "file"
-														: "files"
-											  } for ${await (
-													await import(
-														"files-pipe/Target/Function/Bytes.js"
-													)
-											  ).default(Plan.Info.Total)}.`
-											: false,
-								} satisfies Action)
-							)
-						);
+						).Pipe(_Action);
 					}
 				}
 			},

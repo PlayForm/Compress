@@ -13,5 +13,5 @@ export declare const _Map: {
     apng: string;
     jpg: string;
 };
-declare const _default: (Option: Option, On: On) => Promise<any>;
+declare const _default: (Option: Option, { Buffer, Input }: On) => Promise<any>;
 export default _default;

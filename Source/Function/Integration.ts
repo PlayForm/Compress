@@ -1,5 +1,9 @@
+import type CSS from "../Interface/CSS.js";
+import type HTML from "../Interface/HTML.js";
 import type On from "../Interface/Image/On.js";
+import type JavaScript from "../Interface/JavaScript.js";
 import type Option from "../Interface/Option.js";
+import type SVG from "../Interface/SVG.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Interface/Path.js";
@@ -28,17 +32,26 @@ export default (_Option: Option = {}): AstroIntegration => {
 		}
 	}
 
-	const __Option = Merge(Default, _Option);
+	const {
+		Path,
+		Cache,
+		Logger,
+		Map: _Map,
+		Exclude,
+		Action,
+		CSS,
+		HTML,
+		Image,
+		JavaScript,
+		SVG,
+	} = Merge(Default, _Option);
 
 	const Paths = new Set<Path>();
 
-	if (typeof __Option["Path"] !== "undefined") {
-		if (
-			__Option["Path"] instanceof Array ||
-			__Option["Path"] instanceof Set
-		) {
-			for (const Path of __Option["Path"]) {
-				Paths.add(Path);
+	if (typeof Path !== "undefined") {
+		if (Path instanceof Array || Path instanceof Set) {
+			for (const _Path of Path) {
+				Paths.add(_Path);
 			}
 		}
 	}
@@ -53,14 +66,20 @@ export default (_Option: Option = {}): AstroIntegration => {
 
 				if (
 					_Default["Cache"] &&
-					__Option["Cache"] &&
-					__Option["Cache"]["Search"] === _Default["Cache"]["Search"]
+					Cache &&
+					Cache["Search"] === _Default["Cache"]["Search"]
 				) {
-					__Option["Cache"]["Search"] = Dir;
+					Cache["Search"] = Dir;
 				}
 
-				for (const [File, Setting] of Object.entries(__Option)) {
-					if (!Setting) {
+				for (const [File, Setting] of Object.entries({
+					CSS,
+					HTML,
+					Image,
+					JavaScript,
+					SVG,
+				})) {
+					if (typeof Setting === "undefined" || !Setting) {
 						continue;
 					}
 
@@ -70,20 +89,13 @@ export default (_Option: Option = {}): AstroIntegration => {
 								await (
 									await new (
 										await import("files-pipe")
-									).default(
-										__Option["Cache"],
-										__Option["Logger"]
-									).In(Path)
-								).By(
-									typeof __Option["Map"] === "object"
-										? __Option["Map"][File]
-										: ""
-								)
-							).Not(__Option["Exclude"])
+									).default(Cache, Logger).In(Path)
+								).By(typeof _Map === "object" ? _Map[File] : "")
+							).Not(Exclude)
 						).Pipe(
 							Merge(
-								__Option["Action"],
-								Merge(__Option["Action"], {
+								Action,
+								Merge(Action, {
 									Wrote: async (On) => {
 										switch (File) {
 											case "CSS": {
@@ -91,7 +103,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													await import("csso")
 												).minify(
 													On.Buffer.toString(),
-													Setting
+													Setting as CSS
 												).css;
 											}
 
@@ -102,27 +114,34 @@ export default (_Option: Option = {}): AstroIntegration => {
 													)
 												).minify(
 													On.Buffer.toString(),
-													Setting
+													Setting as HTML
 												);
 											}
 
 											case "JavaScript": {
-												const { code } = await (
-													await import("terser")
-												).minify(
-													On.Buffer.toString(),
-													Setting
+												return (
+													(
+														await (
+															await import(
+																"terser"
+															)
+														).minify(
+															On.Buffer.toString(),
+															Setting as JavaScript
+														)
+													).code ?? On.Buffer
 												);
-
-												return code ? code : On.Buffer;
 											}
 
 											case "Image": {
 												return (
 													await import(
-														"./Function/Image.js"
+														"../Function/Image.js"
 													)
-												).default(Setting, On as On);
+												).default(
+													Setting as Option,
+													On as On
+												);
 											}
 
 											case "SVG": {
@@ -130,7 +149,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 													await import("svgo")
 												).optimize(
 													On.Buffer.toString(),
-													Setting
+													Setting as SVG
 												);
 
 												return Data ? Data : On.Buffer;

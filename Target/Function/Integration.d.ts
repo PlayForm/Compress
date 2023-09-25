@@ -1,4 +1,4 @@
-import type Option from "./Interface/Option.js";
+import type Option from "../Interface/Option.js";
 import type { AstroIntegration } from "astro";
 export declare const Default: Omit<{} & {
     CSS: {

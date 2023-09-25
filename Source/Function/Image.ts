@@ -1,11 +1,11 @@
+import type File from "../Interface/File.js";
 import type On from "../Interface/Image/On.js";
 import type Option from "../Interface/Image/Option.js";
-import type File from "../Interface/File.js";
 
 export const { default: _Map } = await import("../Object/Image/Map.js");
 
-export default async (Option: Option, On: On) => {
-	const File = On.Input.split(".").pop();
+export default async (Option: Option, { Buffer, Input }: On) => {
+	const File = Input.split(".").pop();
 
 	if (!File) {
 		return;
@@ -27,8 +27,8 @@ export default async (Option: Option, On: On) => {
 		Option[Type] !== false
 	) {
 		return (
-			Type in On.Buffer &&
-			(await On.Buffer[Type](
+			Type in Buffer &&
+			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
 					: (await import("../Object/Image.js")).default

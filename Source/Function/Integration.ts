@@ -12,7 +12,9 @@ export const { default: _Default } = await import(
 	"files-pipe/Target/Object/Option.js"
 );
 
-export const { default: Merge } = await import("files-pipe/Target/Function/Merge.js");
+export const { default: Merge } = await import(
+	"files-pipe/Target/Function/Merge.js"
+);
 
 export const { default: sharp } = await import("sharp");
 

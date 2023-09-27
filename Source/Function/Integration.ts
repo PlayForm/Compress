@@ -76,15 +76,15 @@ export default (_Option: Option = {}): AstroIntegration => {
 					Cache["Search"] = Dir;
 				}
 
-				for (const [File, Setting] of Object.entries({
+				Object.entries({
 					CSS,
 					HTML,
 					Image,
 					JavaScript,
 					SVG,
-				})) {
+				}).forEach(async ([File, Setting]) => {
 					if (!Setting || !_Map[File]) {
-						continue;
+						return;
 					}
 
 					let _Action = Merge(
@@ -183,18 +183,19 @@ export default (_Option: Option = {}): AstroIntegration => {
 						} satisfies Action);
 					}
 
-					for (const Path of Paths) {
-						await (
+					Paths.forEach(
+						async (Path) =>
 							await (
 								await (
-									await new (
-										await import("files-pipe")
-									).default(Cache, Logger).In(Path)
-								).By(_Map[File])
-							).Not(Exclude)
-						).Pipe(_Action);
-					}
-				}
+									await (
+										await new (
+											await import("files-pipe")
+										).default(Cache, Logger).In(Path)
+									).By(_Map[File])
+								).Not(Exclude)
+							).Pipe(_Action)
+					);
+				});
 			},
 		},
 	};

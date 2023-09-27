@@ -9,6 +9,7 @@ import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Interface/Path.js";
 
 import type { AstroIntegration } from "astro";
+import { Cache } from "files-pipe";
 
 export const { default: Default } = await import("../Object/Option.js");
 
@@ -69,9 +70,8 @@ export default (_Option: Option = {}): AstroIntegration => {
 				}
 
 				if (
-					_Default["Cache"] &&
-					Cache &&
-					Cache["Search"] === _Default["Cache"]["Search"]
+					typeof Cache === "object" &&
+					Cache["Search"] === _Default.Cache.Search
 				) {
 					Cache["Search"] = Dir;
 				}

@@ -1,28 +1,3 @@
-import type CSS from "../Interface/CSS.js";
-import type HTML from "../Interface/HTML.js";
-import type On from "../Interface/Image/On.js";
-import type JavaScript from "../Interface/JavaScript.js";
-import type Option from "../Interface/Option.js";
-import type SVG from "../Interface/SVG.js";
-
-import type Action from "files-pipe/Target/Interface/Action.js";
-import type Path from "files-pipe/Target/Interface/Path.js";
-
-import type { AstroIntegration } from "astro";
-import { Cache } from "files-pipe";
-
-export const { default: Default } = await import("../Object/Option.js");
-
-export const { default: _Default } = await import(
-	"files-pipe/Target/Object/Option.js"
-);
-
-export const { default: Merge } = await import(
-	"files-pipe/Target/Function/Merge.js"
-);
-
-export const { default: sharp } = await import("sharp");
-
 export default (_Option: Option = {}): AstroIntegration => {
 	for (const Option in _Option) {
 		if (
@@ -195,3 +170,27 @@ export default (_Option: Option = {}): AstroIntegration => {
 		},
 	};
 };
+
+import type CSS from "../Interface/CSS.js";
+import type HTML from "../Interface/HTML.js";
+import type On from "../Interface/Image/On.js";
+import type JavaScript from "../Interface/JavaScript.js";
+import type Option from "../Interface/Option.js";
+import type SVG from "../Interface/SVG.js";
+
+import type Action from "files-pipe/Target/Interface/Action.js";
+import type Path from "files-pipe/Target/Interface/Path.js";
+
+import type { AstroIntegration } from "astro";
+
+export const { default: Default } = await import("../Object/Option.js");
+
+export const { default: _Default } = await import(
+	"files-pipe/Target/Object/Option.js"
+);
+
+export const { default: Merge } = await import(
+	"files-pipe/Target/Function/Merge.js"
+);
+
+export const { default: sharp } = await import("sharp");

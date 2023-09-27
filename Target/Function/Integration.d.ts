@@ -1,3 +1,5 @@
+declare const _default: (_Option?: Option) => AstroIntegration;
+export default _default;
 import type Option from "../Interface/Option.js";
 import type { AstroIntegration } from "astro";
 export declare const Default: Omit<{} & {
@@ -136,5 +138,3 @@ export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => i
     parents: readonly Readonly<Record<PropertyKey, unknown>>[];
 }>>;
 export declare const sharp: typeof import("sharp");
-declare const _default: (_Option?: Option) => AstroIntegration;
-export default _default;

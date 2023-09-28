@@ -1,7 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
-    comments: false,
-    forceMediaMerge: true,
-    restructure: false,
-};
+var e={comments:!1,forceMediaMerge:!0,restructure:!1};export{e as default};

@@ -1,5 +1,7 @@
-import type Type from "../../Interface/Map.js";
-
+/**
+ * @module Map
+ *
+ */
 export default {
 	avci: "avif",
 	avcs: "avif",
@@ -13,3 +15,5 @@ export default {
 	apng: "png",
 	jpg: "jpeg",
 } satisfies Type;
+
+import type Type from "../../Interface/Map.js";

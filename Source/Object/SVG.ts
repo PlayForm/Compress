@@ -1,5 +1,7 @@
-import type Type from "../Interface/SVG.js";
-
+/**
+ * @module SVG
+ *
+ */
 export default {
 	multipass: true,
 	js2svg: {
@@ -8,3 +10,5 @@ export default {
 	},
 	plugins: ["preset-default"],
 } satisfies Type;
+
+import type Type from "../Interface/SVG.js";

@@ -1,3 +1,7 @@
+/**
+ * @module CSS
+ *
+ */
 declare const _default: {
     comments: false;
     forceMediaMerge: true;

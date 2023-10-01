@@ -1,5 +1,7 @@
-import type Type from "../Interface/Map.js";
-
+/**
+ * @module Map
+ *
+ */
 export default {
 	CSS: "**/*.css",
 	HTML: "**/*.html",
@@ -7,3 +9,5 @@ export default {
 	JavaScript: "**/*.{js,mjs,cjs,jsm}",
 	SVG: "**/*.svg",
 } satisfies Type;
+
+import type Type from "../Interface/Map.js";

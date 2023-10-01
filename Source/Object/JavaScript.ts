@@ -1,5 +1,7 @@
-import type Type from "../Interface/JavaScript.js";
-
+/**
+ * @module JavaScript
+ *
+ */
 export default {
 	ecma: 5,
 	enclose: false,
@@ -13,3 +15,5 @@ export default {
 		comments: false,
 	},
 } satisfies Type;
+
+import type Type from "../Interface/JavaScript.js";

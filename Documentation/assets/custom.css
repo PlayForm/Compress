@@ -40,7 +40,9 @@ body .tsd-page-navigation a {
 }
 
 .tsd-signature,
-.tsd-signatures .tsd-signature {
+.tsd-signatures .tsd-signature,
+.tsd-typography td,
+.tsd-typography th {
 	border-radius: 12px;
 	border-width: 2px;
 }

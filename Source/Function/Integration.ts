@@ -1,3 +1,7 @@
+/**
+ * @module Integration
+ *
+ */
 export default (_Option: Option = {}): AstroIntegration => {
 	for (const Option in _Option) {
 		if (
@@ -160,7 +164,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 											await new (
 												await import("files-pipe")
 											).default(Cache, Logger).In(Path)
-										).By(_Map[File])
+										).By(_Map[File] ?? "**/*")
 									).Not(Exclude)
 								).Pipe(_Action)
 						);

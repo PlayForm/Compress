@@ -1,5 +1,7 @@
-import type { CompressOptions, MinifyOptions } from "csso";
-
+/**
+ * @module CSS
+ *
+ */
 export default interface Type extends MinifyOptions, CompressOptions {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
@@ -32,3 +34,5 @@ export default interface Type extends MinifyOptions, CompressOptions {
 	 */
 	restructure?: boolean;
 }
+
+import type { CompressOptions, MinifyOptions } from "csso";

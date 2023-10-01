@@ -1,9 +1,7 @@
-import type File from "../Interface/File.js";
-import type On from "../Interface/Image/On.js";
-import type Option from "../Interface/Image/Option.js";
-
-export const { default: _Map } = await import("../Object/Image/Map.js");
-
+/**
+ * @module Image
+ *
+ */
 export default async (Option: Option, { Buffer, Input }: On) => {
 	const File = Input.split(".").pop();
 
@@ -36,3 +34,9 @@ export default async (Option: Option, { Buffer, Input }: On) => {
 		);
 	}
 };
+
+import type File from "../Interface/File.js";
+import type On from "../Interface/Image/On.js";
+import type Option from "../Interface/Image/Option.js";
+
+export const { default: _Map } = await import("../Object/Image/Map.js");

@@ -1,3 +1,7 @@
+/**
+ * @module Integration
+ *
+ */
 declare const _default: (_Option?: Option) => AstroIntegration;
 export default _default;
 import type Option from "../Interface/Option.js";

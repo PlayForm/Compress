@@ -1,5 +1,5 @@
 /**
- * @module Map
+ * @module Image
  *
  */
 export default {

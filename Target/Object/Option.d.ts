@@ -1,3 +1,7 @@
+/**
+ * @module Option
+ *
+ */
 declare const _default: Omit<{} & {
     CSS: {
         comments: false;

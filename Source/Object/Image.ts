@@ -1,5 +1,7 @@
-import type Type from "../Interface/Image/Option.js";
-
+/**
+ * @module Image
+ *
+ */
 export default {
 	avif: {
 		chromaSubsampling: "4:4:4",
@@ -27,3 +29,5 @@ export default {
 		effort: 6.0,
 	},
 } satisfies Type;
+
+import type Type from "../Interface/Image/Option.js";

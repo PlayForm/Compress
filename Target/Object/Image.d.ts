@@ -1,3 +1,7 @@
+/**
+ * @module Image
+ *
+ */
 declare const _default: {
     avif: {
         chromaSubsampling: string;

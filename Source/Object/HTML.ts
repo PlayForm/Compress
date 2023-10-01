@@ -1,5 +1,7 @@
-import type Type from "../Interface/HTML.js";
-
+/**
+ * @module HTML
+ *
+ */
 export default {
 	caseSensitive: true,
 	collapseInlineTagWhitespace: false,
@@ -78,3 +80,5 @@ export default {
 	trimCustomFragments: true,
 	useShortDoctype: false,
 } satisfies Type;
+
+import type Type from "../Interface/HTML.js";

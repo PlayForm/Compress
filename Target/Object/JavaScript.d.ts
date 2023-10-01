@@ -1,3 +1,7 @@
+/**
+ * @module JavaScript
+ *
+ */
 declare const _default: {
     ecma: 5;
     enclose: false;

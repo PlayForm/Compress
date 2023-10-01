@@ -1,3 +1,7 @@
+/**
+ * @module Map
+ *
+ */
 declare const _default: {
     CSS: string;
     HTML: string;

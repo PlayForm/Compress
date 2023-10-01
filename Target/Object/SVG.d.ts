@@ -1,3 +1,7 @@
+/**
+ * @module SVG
+ *
+ */
 declare const _default: {
     multipass: true;
     js2svg: {

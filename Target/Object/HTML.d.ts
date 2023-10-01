@@ -1,3 +1,7 @@
+/**
+ * @module HTML
+ *
+ */
 declare const _default: {
     caseSensitive: true;
     collapseInlineTagWhitespace: false;

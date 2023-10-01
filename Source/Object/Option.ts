@@ -1,5 +1,7 @@
-import type Type from "../Interface/Option.js";
-
+/**
+ * @module Option
+ *
+ */
 export default (await import("files-pipe/Target/Function/Merge.js")).default(
 	(await import("files-pipe/Target/Object/Option.js")).default,
 	{
@@ -36,3 +38,5 @@ export default (await import("files-pipe/Target/Function/Merge.js")).default(
 		},
 	} satisfies Type
 );
+
+import type Type from "../Interface/Option.js";

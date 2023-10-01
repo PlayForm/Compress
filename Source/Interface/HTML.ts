@@ -1,5 +1,5 @@
 /**
- * @module HTMl
+ * @module HTML
  *
  */
 export default interface Type extends Options {

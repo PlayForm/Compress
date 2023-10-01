@@ -1,3 +1,9 @@
+/**
+ * @module Image
+ *
+ */
+declare const _default: (Option: Option, { Buffer, Input }: On) => Promise<any>;
+export default _default;
 import type On from "../Interface/Image/On.js";
 import type Option from "../Interface/Image/Option.js";
 export declare const _Map: {
@@ -13,5 +19,3 @@ export declare const _Map: {
     apng: string;
     jpg: string;
 };
-declare const _default: (Option: Option, { Buffer, Input }: On) => Promise<any>;
-export default _default;

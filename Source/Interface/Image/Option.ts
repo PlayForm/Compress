@@ -8,6 +8,10 @@ import type {
 	WebpOptions,
 } from "sharp";
 
+/**
+ * @module Image
+ *
+ */
 export default interface Type {
 	[key: string]:
 		| undefined

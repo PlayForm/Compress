@@ -1,4 +1,8 @@
 import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";
+/**
+ * @module Image
+ *
+ */
 export default interface Type {
     [key: string]: undefined | boolean | AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | TiffOptions | WebpOptions;
     avif?: boolean | AvifOptions;

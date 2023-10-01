@@ -1,12 +1,7 @@
-import type CSS from "./CSS.js";
-import type HTML from "./HTML.js";
-import type Image from "./Image/Option.js";
-import type JavaScript from "./JavaScript.js";
-import type _Map from "./Map.js";
-import type SVG from "./SVG.js";
-
-import type _Option from "files-pipe/Target/Interface/Option.js";
-
+/**
+ * @module Option
+ *
+ */
 export default interface Type extends _Option {
 	// rome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
@@ -41,3 +36,12 @@ export default interface Type extends _Option {
 	 */
 	Map?: boolean | _Map;
 }
+
+import type CSS from "./CSS.js";
+import type HTML from "./HTML.js";
+import type Image from "./Image/Option.js";
+import type JavaScript from "./JavaScript.js";
+import type _Map from "./Map.js";
+import type SVG from "./SVG.js";
+
+import type _Option from "files-pipe/Target/Interface/Option.js";

@@ -3,7 +3,6 @@
 	--dark-color-background-secondary: #000;
 	--dark-code-background: #040404;
 	--color-accent: #2463eb;
-
 	--dark-hl-0: #ffdd00;
 	--dark-hl-1: #ff66ff;
 	--dark-hl-2: #ff4444;
@@ -39,10 +38,10 @@ body .tsd-page-navigation a {
 	border-radius: 8px;
 }
 
-.tsd-signature,
-.tsd-signatures .tsd-signature,
-.tsd-typography td,
-.tsd-typography th {
+body .tsd-signature,
+body .tsd-signatures .tsd-signature,
+body .tsd-typography td,
+body .tsd-typography th {
 	border-radius: 12px;
 	border-width: 2px;
 }

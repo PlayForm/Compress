@@ -2,7 +2,7 @@
  * @module Option
  *
  */
-export default interface Type extends _Option {
+export default interface Type extends Option {
     [key: string]: any;
     /**
      * csso option properties
@@ -35,4 +35,4 @@ import type Image from "./Image/Option.js";
 import type JavaScript from "./JavaScript.js";
 import type _Map from "./Map.js";
 import type SVG from "./SVG.js";
-import type _Option from "files-pipe/Target/Interface/Option.js";
+import type Option from "files-pipe/Target/Interface/Option.js";

@@ -64,10 +64,8 @@ jobs:
                   run_install: |
                       - recursive: true
                         args: [
-                          --child-concurrency=9999,
                           --link-workspace-packages=true,
                           --lockfile-only,
-                          --network-concurrency=9999,
                           --prefer-frozen-lockfile=false,
                           --shamefully-hoist=false,
                           --shared-workspace-lockfile=true,

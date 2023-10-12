@@ -48,10 +48,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 					Paths.add(Dir);
 				}
 
-				if (
-					typeof Cache === "object" &&
-					Cache["Search"] === _Default.Cache.Search
-				) {
+				if (typeof Cache === "object" && Cache["Search"] === Search) {
 					Cache["Search"] = Dir;
 				}
 
@@ -156,18 +153,17 @@ export default (_Option: Option = {}): AstroIntegration => {
 							} satisfies Action);
 						}
 
-						Paths.forEach(
-							async (Path) =>
+						for (const Path of Paths) {
+							await (
 								await (
 									await (
-										await (
-											await new Files(Cache, Logger).In(
-												Path
-											)
-										).By(_Map[File] ?? "**/*")
-									).Not(Exclude)
-								).Pipe(_Action)
-						);
+										await new (
+											await import("files-pipe")
+										).default(Cache, Logger).In(Path)
+									).By(_Map[File] ?? "**/*")
+								).Not(Exclude)
+							).Pipe(_Action);
+						}
 					}
 				);
 			},
@@ -189,14 +185,14 @@ import type { AstroIntegration } from "astro";
 
 export const { default: Default } = await import("../Object/Option.js");
 
-export const { default: _Default } = await import(
-	"files-pipe/Target/Object/Option.js"
-);
+export const {
+	default: {
+		Cache: { Search },
+	},
+} = await import("files-pipe/Target/Object/Option.js");
 
 export const { default: Merge } = await import(
 	"typescript-esbuild/Target/Function/Merge.js"
 );
 
 export const { default: sharp } = await import("sharp");
-
-export const { default: Files } = await import("files-pipe");

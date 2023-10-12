@@ -161,9 +161,9 @@ export default (_Option: Option = {}): AstroIntegration => {
 								await (
 									await (
 										await (
-											await new (
-												await import("files-pipe")
-											).default(Cache, Logger).In(Path)
+											await new Files(Cache, Logger).In(
+												Path
+											)
 										).By(_Map[File] ?? "**/*")
 									).Not(Exclude)
 								).Pipe(_Action)
@@ -194,7 +194,9 @@ export const { default: _Default } = await import(
 );
 
 export const { default: Merge } = await import(
-	"files-pipe/Target/Function/Merge.js"
+	"typescript-esbuild/Target/Function/Merge.js"
 );
 
 export const { default: sharp } = await import("sharp");
+
+export const { default: Files } = await import("files-pipe");

@@ -131,5 +131,6 @@ export declare const _Default: {
     Files: string;
     Exclude: false;
 };
-export declare const Merge: import("files-pipe/Target/Interface/Merge.js").default<import("files-pipe/Target/Function/Merge.js").PMF>;
+export declare const Merge: import("typescript-esbuild/Target/Interface/Merge.js").default<import("typescript-esbuild/Target/Interface/Merge.js").Generic>;
 export declare const sharp: typeof import("sharp");
+export declare const Files: typeof import("files-pipe").default;

@@ -85,16 +85,22 @@ export default (_Option: Option = {}): AstroIntegration => {
 									}
 
 									case "JavaScript": {
-										return (
-											(
-												await (
-													await import("terser")
-												).minify(
-													Buffer.toString(),
-													Setting as JavaScript
-												)
-											).code ?? Buffer
-										);
+										try {
+											return (
+												(
+													await (
+														await import("terser")
+													).minify(
+														Buffer.toString(),
+														Setting as JavaScript
+													)
+												).code ?? Buffer
+											);
+										} catch (_Error) {
+											console.log(Input);
+											console.log(_Error);
+											return Buffer;
+										}
 									}
 
 									case "Image": {

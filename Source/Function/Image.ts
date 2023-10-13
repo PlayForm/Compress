@@ -29,7 +29,7 @@ export default async (Option: Option, { Buffer, Input }: On) => {
 			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (await import("../Object/Image.js")).default
+					: (await import("../Variable/Image.js")).default
 			).toBuffer())
 		);
 	}
@@ -39,4 +39,4 @@ import type File from "../Interface/File.js";
 import type On from "../Interface/Image/On.js";
 import type Option from "../Interface/Image/Option.js";
 
-export const { default: _Map } = await import("../Object/Image/Map.js");
+export const { default: _Map } = await import("../Variable/Image/Map.js");

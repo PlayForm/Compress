@@ -182,13 +182,13 @@ import type Path from "files-pipe/Target/Interface/Path.js";
 
 import type { AstroIntegration } from "astro";
 
-export const { default: Default } = await import("../Object/Option.js");
+export const { default: Default } = await import("../Variable/Option.js");
 
 export const {
 	default: {
 		Cache: { Search },
 	},
-} = await import("files-pipe/Target/Object/Option.js");
+} = await import("files-pipe/Target/Variable/Option.js");
 
 export const { default: Merge } = await import(
 	"typescript-esbuild/Target/Function/Merge.js"

@@ -38,6 +38,7 @@ body .tsd-page-navigation a {
 	border-radius: 8px;
 }
 
+body .tsd-description .tsd-signatures .tsd-signature,
 body .tsd-signature,
 body .tsd-signatures .tsd-signature,
 body .tsd-typography td,

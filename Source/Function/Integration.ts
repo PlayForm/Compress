@@ -29,7 +29,7 @@ export default (_Option: Option = {}): AstroIntegration => {
 	const Paths = new Set<Path>();
 
 	if (typeof Path !== "undefined") {
-		if (Path instanceof Array || Path instanceof Set) {
+		if (Array.isArray(Path) || Path instanceof Set) {
 			for (const _Path of Path) {
 				Paths.add(_Path);
 			}

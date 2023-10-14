@@ -3,7 +3,7 @@
  *
  */
 export default interface Type extends MinifyOptions {
-	// rome-ignore lint/suspicious/noExplicitAny:
+	// biome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
 

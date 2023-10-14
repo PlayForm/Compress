@@ -3,7 +3,7 @@
  *
  */
 export default interface Type extends Config {
-	// rome-ignore lint/suspicious/noExplicitAny:
+	// biome-ignore lint/suspicious/noExplicitAny:
 	[key: string]: any;
 }
 

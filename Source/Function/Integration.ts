@@ -161,8 +161,6 @@ export default (_Option: Option = {}): AstroIntegration => {
 						} satisfies Action);
 					}
 
-					Merge2({}, {})
-
 					for (const Path of Paths) {
 						await (
 							await (
@@ -201,12 +199,6 @@ export const {
 export const { default: Merge } = await import(
 	"typescript-esbuild/Target/Function/Merge.js"
 );
-
-
-
-import Merge2 from "typescript-esbuild/Target/Function/Merge.js";
-
-
 
 export const { default: sharp } = await import("sharp");
 

@@ -39,17 +39,17 @@ export default (_Option: Option = {}): AstroIntegration => {
 	return {
 		name: "astro-compress",
 		hooks: {
-			"astro:build:done": async ({ dir: Dir }) => {
+			"astro:build:done": async ({ dir }) => {
 				if (typeof _Map !== "object") {
 					return;
 				}
 
 				if (!Paths.size) {
-					Paths.add(Dir);
+					Paths.add(dir);
 				}
 
 				if (typeof Cache === "object" && Cache.Search === Search) {
-					Cache.Search = Dir;
+					Cache.Search = dir;
 				}
 
 				for (const [File, Setting] of Object.entries({
@@ -85,22 +85,16 @@ export default (_Option: Option = {}): AstroIntegration => {
 									}
 
 									case "JavaScript": {
-										try {
-											return (
-												(
-													await (
-														await import("terser")
-													).minify(
-														Buffer.toString(),
-														Setting as JavaScript
-													)
-												).code ?? Buffer
-											);
-										} catch (_Error) {
-											console.log(Input);
-											console.log(_Error);
-											return Buffer;
-										}
+										return (
+											(
+												await (
+													await import("terser")
+												).minify(
+													Buffer.toString(),
+													Setting as JavaScript
+												)
+											).code ?? Buffer
+										);
 									}
 
 									case "Image": {

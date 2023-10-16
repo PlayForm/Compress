@@ -42,7 +42,8 @@ body .tsd-description .tsd-signatures .tsd-signature,
 body .tsd-signature,
 body .tsd-signatures .tsd-signature,
 body .tsd-typography td,
-body .tsd-typography th {
+body .tsd-typography th,
+body code.tsd-tag {
 	border-radius: 12px;
 	border-width: 2px;
 }

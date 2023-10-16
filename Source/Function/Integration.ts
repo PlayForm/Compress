@@ -67,59 +67,70 @@ export default (_Option: Option = {}): AstroIntegration => {
 						Action,
 						Merge(Action, {
 							Wrote: async ({ Buffer, Input }) => {
-								switch (File) {
-									case "CSS": {
-										return (await import("csso")).minify(
-											Buffer.toString(),
-											Setting as CSS
-										).css;
-									}
+								try {
+									switch (File) {
+										case "CSS": {
+											return (
+												await import("csso")
+											).minify(
+												Buffer.toString(),
+												Setting as CSS
+											).css;
+										}
 
-									case "HTML": {
-										return await (
-											await import("html-minifier-terser")
-										).minify(
-											Buffer.toString(),
-											Setting as HTML
-										);
-									}
-
-									case "JavaScript": {
-										return (
-											(
-												await (
-													await import("terser")
-												).minify(
-													Buffer.toString(),
-													Setting as JavaScript
+										case "HTML": {
+											return await (
+												await import(
+													"html-minifier-terser"
 												)
-											).code ?? Buffer
-										);
-									}
+											).minify(
+												Buffer.toString(),
+												Setting as HTML
+											);
+										}
 
-									case "Image": {
-										return (
-											await import("../Function/Image.js")
-										).default(
-											Setting as Option,
-											{ Buffer, Input } as On
-										);
-									}
+										case "JavaScript": {
+											return (
+												(
+													await (
+														await import("terser")
+													).minify(
+														Buffer.toString(),
+														Setting as JavaScript
+													)
+												).code ?? Buffer
+											);
+										}
 
-									case "SVG": {
-										const { data: Data } = (
-											await import("svgo")
-										).optimize(
-											Buffer.toString(),
-											Setting as SVG
-										);
+										case "Image": {
+											return (
+												await import(
+													"../Function/Image.js"
+												)
+											).default(
+												Setting as Option,
+												{ Buffer, Input } as On
+											);
+										}
 
-										return Data ?? Buffer;
-									}
+										case "SVG": {
+											const { data: Data } = (
+												await import("svgo")
+											).optimize(
+												Buffer.toString(),
+												Setting as SVG
+											);
 
-									default: {
-										return Buffer;
+											return Data ?? Buffer;
+										}
+
+										default: {
+											return Buffer;
+										}
 									}
+								} catch (_Error) {
+									console.log(Input);
+									console.log(_Error);
 								}
 							},
 							Fulfilled: async (Plan) =>

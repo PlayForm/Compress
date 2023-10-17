@@ -107,9 +107,9 @@ export declare const Default: Omit<{} & {
         Passed: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
         Accomplished: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Interface/Buffer.js").Type>;
-        Fulfilled: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Interface/Buffer.js").Type>;
+        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     }, "__proto__">;
     Logger: 2;
 }, "__proto__">;

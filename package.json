@@ -48,7 +48,7 @@
 		"terser": "5.22.0"
 	},
 	"devDependencies": {
-		"astro": "3.3.0",
+		"astro": "3.3.1",
 		"typescript-esbuild": "0.2.17"
 	},
 	"publishConfig": {

@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /**
  * @module Integration
  *
@@ -108,7 +109,7 @@ export declare const Default: Omit<{} & {
         Accomplished: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
         Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Interface/Buffer.js").Type>;
+        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<Buffer>;
         Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     }, "__proto__">;
     Logger: 2;

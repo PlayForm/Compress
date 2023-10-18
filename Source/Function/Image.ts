@@ -35,7 +35,7 @@ export default async (Option: Option, { Buffer, Input }: On) => {
 	}
 };
 
-import type File from "../Interface/File.js";
+import type File from "../Type/File.js";
 import type On from "../Interface/Image/On.js";
 import type Option from "../Interface/Image/Option.js";
 

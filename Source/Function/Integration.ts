@@ -178,7 +178,7 @@ import type Option from "../Interface/Option.js";
 import type SVG from "../Interface/SVG.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";
-import type Path from "files-pipe/Target/Interface/Path.js";
+import type Path from "files-pipe/Target/Type/Path.js";
 
 import type { AstroIntegration } from "astro";
 

@@ -55,7 +55,7 @@ pnpx astro add astro-compress
 
 First, install the `AstroCompress` integration like so:
 
-```
+```sh
 npm install -D -E astro-compress
 ```
 

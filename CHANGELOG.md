@@ -1,3 +1,8 @@
+## 2.1.0
+
+-   Refactor
+-   Documentation
+
 ## 2.0.15
 
 -   Cleanup

@@ -2,10 +2,9 @@
  * @module Image
  *
  */
-declare const _default: (Option: Option, { Buffer, Input }: On) => Promise<any>;
+declare const _default: Type;
 export default _default;
-import type On from "../Interface/Image/On.js";
-import type Option from "../Interface/Image/Option.js";
+import type Type from "../Interface/Image.js";
 export declare const _Map: {
     avci: string;
     avcs: string;

@@ -2,7 +2,7 @@
  * @module Integration
  *
  */
-export default (_Option: Option = {}): AstroIntegration => {
+export default ((...[_Option = {}]: Parameters<Type>) => {
 	for (const Option in _Option) {
 		if (
 			Object.prototype.hasOwnProperty.call(_Option, Option) &&
@@ -168,7 +168,9 @@ export default (_Option: Option = {}): AstroIntegration => {
 			},
 		},
 	};
-};
+}) satisfies Type as Type;
+
+import type Type from "../Interface/Integration.js";
 
 import type CSS from "../Interface/CSS.js";
 import type HTML from "../Interface/HTML.js";
@@ -179,8 +181,6 @@ import type SVG from "../Interface/SVG.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Type/Path.js";
-
-import type { AstroIntegration } from "astro";
 
 export const { default: Default } = await import("../Variable/Option.js");
 

@@ -159,7 +159,9 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						await (
 							await (
 								await (
-									await new Files(Cache, Logger).In(Path)
+									await new (
+										await import("files-pipe")
+									).default(Cache, Logger).In(Path)
 								).By(_Map[File] ?? "**/*")
 							).Not(Exclude)
 						).Pipe(_Action);
@@ -198,4 +200,3 @@ export const { default: sharp } = await import("sharp");
 
 export let _Action: Action;
 
-export const { default: Files } = await import("files-pipe");

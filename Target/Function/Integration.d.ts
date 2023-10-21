@@ -15,9 +15,9 @@ export declare const Default: Omit<{} & {
     Exclude: false;
     Files: string;
     Action: Omit<{} & {
-        Failed: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: (On: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After, Output }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
         Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
@@ -116,4 +116,3 @@ export declare const Search: string;
 export declare const Merge: import("typescript-esbuild/Target/Interface/Merge.js").default<import("typescript-esbuild/Target/Interface/Merge.js").Generic>;
 export declare const sharp: typeof import("sharp");
 export declare let _Action: Action;
-export declare const Files: typeof import("files-pipe").default;

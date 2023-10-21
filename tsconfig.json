@@ -1,10 +1,7 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./",
-		"outDir": "Target",
-		"paths": {
-			"@Library/*": ["Source/Library/*"]
-		}
+		"outDir": "Target"
 	},
 	"extends": "typescript-esbuild/Target/Notation/TypeScript",
 	"include": ["Source"]

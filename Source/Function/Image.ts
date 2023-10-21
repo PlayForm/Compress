@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default async (Option: Option, { Buffer, Input }: On) => {
+export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 	const File = Input.split(".").pop();
 
 	if (!File) {
@@ -33,10 +33,9 @@ export default async (Option: Option, { Buffer, Input }: On) => {
 			).toBuffer())
 		);
 	}
-};
+}) satisfies Type as Type;
 
+import type Type from "../Interface/Image.js";
 import type File from "../Type/File.js";
-import type On from "../Interface/Image/On.js";
-import type Option from "../Interface/Image/Option.js";
 
 export const { default: _Map } = await import("../Variable/Image/Map.js");

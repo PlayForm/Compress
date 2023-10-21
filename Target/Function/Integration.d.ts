@@ -2,11 +2,10 @@
  * @module Integration
  *
  */
-declare const _default: (_Option?: Option) => AstroIntegration;
+declare const _default: Type;
 export default _default;
-import type Option from "../Interface/Option.js";
+import type Type from "../Interface/Integration.js";
 import type Action from "files-pipe/Target/Interface/Action.js";
-import type { AstroIntegration } from "astro";
 export declare const Default: Omit<{} & {
     Cache: {
         Search: string;

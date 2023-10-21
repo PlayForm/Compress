@@ -12,16 +12,16 @@ export default (
 	SVG: (await import("./SVG.js")).default,
 	Map: (await import("./Map.js")).default,
 	Action: {
-		Failed: async (On) => `Error: Cannot compress file ${On.Input}!`,
-		Passed: async (On) =>
-			On.Before > Buffer.byteLength(On.Buffer.toString()),
-		Accomplished: async (On) =>
-			`Compressed ${On.Input} for ${await (
+		Failed: async ({ Input }) => `Error: Cannot compress file ${Input}!`,
+		Passed: async ({ Before, Buffer: _Buffer }) =>
+			Before > Buffer.byteLength(_Buffer.toString()),
+		Accomplished: async ({ Input, Before, After, Output }) =>
+			`Compressed ${Input} for ${await (
 				await import("files-pipe/Target/Function/Bytes.js")
-			).default(On.Before - On.After)} (${(
-				((On.Before - On.After) / On.Before) *
+			).default(Before - After)} (${(
+				((Before - After) / Before) *
 				100
-			).toFixed(2)}% reduction) in ${On.Output}.`,
+			).toFixed(2)}% reduction) in ${Output}.`,
 		Changed: async (Plan) =>
 			Object.defineProperty(Plan.Info, "Total", {
 				value:

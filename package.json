@@ -46,7 +46,7 @@
 		"sharp": "0.32.6",
 		"svgo": "3.0.2",
 		"terser": "5.22.0",
-		"typescript-esbuild": "0.2.22"
+		"typescript-esbuild": "0.2.24"
 	},
 	"devDependencies": {
 		"astro": "3.3.2"

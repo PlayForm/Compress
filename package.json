@@ -41,7 +41,7 @@
 		"@types/csso": "5.0.2",
 		"@types/html-minifier-terser": "7.0.1",
 		"csso": "5.0.5",
-		"files-pipe": "NikolaRHristov/FilesPipe#main",
+		"files-pipe": "2.1.1",
 		"html-minifier-terser": "7.2.0",
 		"sharp": "0.32.6",
 		"svgo": "3.0.2",

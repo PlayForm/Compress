@@ -2,7 +2,24 @@
  * @module Option
  *
  */
-declare const _default: {
+declare const _default: Omit<{} & {
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Path: string;
+    Exclude: false;
+    Files: string;
+    Action: Omit<{} & {
+        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After, Output }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+    }, "__proto__">;
+    Logger: 2;
     CSS: {
         comments: false;
         forceMediaMerge: true;
@@ -35,19 +52,6 @@ declare const _default: {
         trimCustomFragments: true;
         useShortDoctype: false;
     };
-    JavaScript: {
-        ecma: 5;
-        enclose: false;
-        keep_classnames: false;
-        keep_fnames: false;
-        ie8: false;
-        module: false;
-        safari10: false;
-        toplevel: false;
-        format: {
-            comments: false;
-        };
-    };
     Image: {
         avif: {
             chromaSubsampling: string;
@@ -75,6 +79,19 @@ declare const _default: {
             effort: number;
         };
     };
+    JavaScript: {
+        ecma: 5;
+        enclose: false;
+        keep_classnames: false;
+        keep_fnames: false;
+        ie8: false;
+        module: false;
+        safari10: false;
+        toplevel: false;
+        format: {
+            comments: false;
+        };
+    };
     SVG: {
         multipass: true;
         js2svg: {
@@ -90,21 +107,5 @@ declare const _default: {
         JavaScript: string;
         SVG: string;
     };
-    Action: {
-        Failed: ({ Input }: {
-            Input: any;
-        }) => Promise<string>;
-        Passed: ({ Before, Buffer: _Buffer }: {
-            Before: any;
-            Buffer: any;
-        }) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After, Output }: {
-            Input: any;
-            Before: any;
-            After: any;
-            Output: any;
-        }) => Promise<string>;
-        Changed: (Plan: any) => Promise<any>;
-    };
-};
+}, "__proto__">;
 export default _default;

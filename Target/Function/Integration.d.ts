@@ -6,7 +6,24 @@ declare const _default: Type;
 export default _default;
 import type Type from "../Interface/Integration.js";
 import type Action from "files-pipe/Target/Interface/Action.js";
-export declare const Default: {
+export declare const Default: Omit<{} & {
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Path: string;
+    Exclude: false;
+    Files: string;
+    Action: Omit<{} & {
+        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After, Output }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+    }, "__proto__">;
+    Logger: 2;
     CSS: {
         comments: false;
         forceMediaMerge: true;
@@ -39,19 +56,6 @@ export declare const Default: {
         trimCustomFragments: true;
         useShortDoctype: false;
     };
-    JavaScript: {
-        ecma: 5;
-        enclose: false;
-        keep_classnames: false;
-        keep_fnames: false;
-        ie8: false;
-        module: false;
-        safari10: false;
-        toplevel: false;
-        format: {
-            comments: false;
-        };
-    };
     Image: {
         avif: {
             chromaSubsampling: string;
@@ -79,6 +83,19 @@ export declare const Default: {
             effort: number;
         };
     };
+    JavaScript: {
+        ecma: 5;
+        enclose: false;
+        keep_classnames: false;
+        keep_fnames: false;
+        ie8: false;
+        module: false;
+        safari10: false;
+        toplevel: false;
+        format: {
+            comments: false;
+        };
+    };
     SVG: {
         multipass: true;
         js2svg: {
@@ -94,24 +111,8 @@ export declare const Default: {
         JavaScript: string;
         SVG: string;
     };
-    Action: {
-        Failed: ({ Input }: {
-            Input: any;
-        }) => Promise<string>;
-        Passed: ({ Before, Buffer: _Buffer }: {
-            Before: any;
-            Buffer: any;
-        }) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After, Output }: {
-            Input: any;
-            Before: any;
-            After: any;
-            Output: any;
-        }) => Promise<string>;
-        Changed: (Plan: any) => Promise<any>;
-    };
-};
-export declare const Search: any;
+}, "__proto__">;
+export declare const Search: string;
 export declare const Merge: import("typescript-esbuild/Target/Interface/Merge.js").default<import("typescript-esbuild/Target/Interface/Merge.js").Generic>;
 export declare const sharp: typeof import("sharp");
 export declare let _Action: Action;

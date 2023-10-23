@@ -49,7 +49,7 @@
 		"typescript-esbuild": "0.2.25"
 	},
 	"devDependencies": {
-		"astro": "3.3.2"
+		"astro": "3.3.3"
 	},
 	"publishConfig": {
 		"access": "public"

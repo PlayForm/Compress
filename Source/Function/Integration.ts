@@ -50,13 +50,13 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					Cache.Search = dir;
 				}
 
-				Object.entries({
+				for (const [File, Setting] of Object.entries({
 					CSS,
 					HTML,
 					Image,
 					JavaScript,
 					SVG,
-				}).forEach(async ([File, Setting]) => {
+				})) {
 					if (!(Setting && _Map[File])) {
 						return;
 					}
@@ -156,8 +156,8 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						} satisfies Action);
 					}
 
-					Paths.forEach(
-						async (Path) =>
+					await Promise.allSettled(
+						Array.from(Paths).map(async (Path) => {
 							await (
 								await (
 									await (
@@ -166,9 +166,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										).default(Cache, Logger).In(Path)
 									).By(_Map[File] ?? "**/*")
 								).Not(Exclude)
-							).Pipe(_Action)
+							).Pipe(_Action);
+						})
 					);
-				});
+				}
 			},
 		},
 	};
@@ -177,10 +178,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 import type Type from "../Interface/Integration.js";
 
 import type CSS from "../Interface/CSS.js";
-import type HTML from "../Type/HTML.js";
 import type On from "../Interface/Image/On.js";
-import type JavaScript from "../Type/JavaScript.js";
 import type Image from "../Interface/Image/Option.js";
+import type HTML from "../Type/HTML.js";
+import type JavaScript from "../Type/JavaScript.js";
 import type SVG from "../Type/SVG.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";

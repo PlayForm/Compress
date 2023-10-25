@@ -3,23 +3,6 @@
  *
  */
 declare const _default: Omit<{} & {
-    Cache: {
-        Search: string;
-        Folder: string;
-    };
-    Path: string;
-    Exclude: false;
-    Files: string;
-    Action: Omit<{} & {
-        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After, Output }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
-        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
-    }, "__proto__">;
-    Logger: 2;
     CSS: {
         comments: false;
         forceMediaMerge: true;
@@ -107,5 +90,22 @@ declare const _default: Omit<{} & {
         JavaScript: string;
         SVG: string;
     };
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Path: string;
+    Logger: 2;
+    Action: Omit<{} & {
+        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After, Output }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+    }, "__proto__">;
+    Files: string;
+    Exclude: false;
 }, "__proto__">;
 export default _default;

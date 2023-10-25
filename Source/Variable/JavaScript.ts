@@ -16,4 +16,4 @@ export default {
 	},
 } satisfies Type;
 
-import type Type from "../Interface/JavaScript.js";
+import type Type from "../Type/JavaScript.js";

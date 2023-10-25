@@ -2,7 +2,6 @@
  * @module HTML
  *
  */
-export default interface Type extends Options {
-    [key: string]: any;
-}
+export type Type = Options;
+export type { Type as default };
 import type { Options } from "html-minifier-terser";

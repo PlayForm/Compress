@@ -3,7 +3,6 @@
  *
  */
 export default interface Type extends Option {
-    [key: string]: any;
     /**
      * csso option properties
      */
@@ -30,9 +29,9 @@ export default interface Type extends Option {
     Map?: boolean | _Map;
 }
 import type CSS from "./CSS.js";
-import type HTML from "./HTML.js";
+import type HTML from "../Type/HTML.js";
 import type Image from "./Image/Option.js";
-import type JavaScript from "./JavaScript.js";
+import type JavaScript from "../Type/JavaScript.js";
 import type _Map from "./Map.js";
-import type SVG from "./SVG.js";
+import type SVG from "../Type/SVG.js";
 import type Option from "files-pipe/Target/Interface/Option.js";

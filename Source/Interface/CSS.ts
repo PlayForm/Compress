@@ -3,9 +3,6 @@
  *
  */
 export default interface Type extends MinifyOptions, CompressOptions {
-	// biome-ignore lint/suspicious/noExplicitAny:
-	[key: string]: any;
-
 	/**
 	 * Specify what comments to leave:
 	 * - 'exclamation' or true – leave all exclamation comments

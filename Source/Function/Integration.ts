@@ -3,14 +3,14 @@
  *
  */
 export default ((...[_Option = {}]: Parameters<Type>) => {
-	for (const Option in _Option) {
-		if (
-			Object.prototype.hasOwnProperty.call(_Option, Option) &&
-			_Option[Option] === true
-		) {
-			_Option[Option] = Default[Option as keyof typeof Default];
-		}
-	}
+	Object.entries(_Option).forEach(([Key, Value]) =>
+		Object.defineProperty(_Option, Key, {
+			value:
+				Value === true
+					? Default[Key as keyof typeof Default]
+					: _Option[Key as keyof typeof _Option],
+		})
+	);
 
 	const {
 		Path,
@@ -30,9 +30,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 
 	if (typeof Path !== "undefined") {
 		if (Array.isArray(Path) || Path instanceof Set) {
-			for (const _Path of Path) {
-				Paths.add(_Path);
-			}
+			Path.forEach((Path) => Paths.add(Path));
 		}
 	}
 
@@ -52,13 +50,13 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					Cache.Search = dir;
 				}
 
-				for (const [File, Setting] of Object.entries({
+				Object.entries({
 					CSS,
 					HTML,
 					Image,
 					JavaScript,
 					SVG,
-				})) {
+				}).forEach(async ([File, Setting]) => {
 					if (!(Setting && _Map[File])) {
 						return;
 					}
@@ -101,8 +99,11 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										return (
 											await import("../Function/Image.js")
 										).default(
-											Setting as Option,
-											{ Buffer, Input } as On
+											Setting as Image,
+											{
+												Buffer,
+												Input,
+											} as On
 										);
 									}
 
@@ -155,18 +156,19 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						} satisfies Action);
 					}
 
-					for (const Path of Paths) {
-						await (
+					Paths.forEach(
+						async (Path) =>
 							await (
 								await (
-									await new (
-										await import("files-pipe")
-									).default(Cache, Logger).In(Path)
-								).By(_Map[File] ?? "**/*")
-							).Not(Exclude)
-						).Pipe(_Action);
-					}
-				}
+									await (
+										await new (
+											await import("files-pipe")
+										).default(Cache, Logger).In(Path)
+									).By(_Map[File] ?? "**/*")
+								).Not(Exclude)
+							).Pipe(_Action)
+					);
+				});
 			},
 		},
 	};
@@ -175,11 +177,11 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 import type Type from "../Interface/Integration.js";
 
 import type CSS from "../Interface/CSS.js";
-import type HTML from "../Interface/HTML.js";
+import type HTML from "../Type/HTML.js";
 import type On from "../Interface/Image/On.js";
-import type JavaScript from "../Interface/JavaScript.js";
-import type Option from "../Interface/Option.js";
-import type SVG from "../Interface/SVG.js";
+import type JavaScript from "../Type/JavaScript.js";
+import type Image from "../Interface/Image/Option.js";
+import type SVG from "../Type/SVG.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Type/Path.js";

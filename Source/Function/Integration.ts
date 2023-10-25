@@ -199,4 +199,3 @@ export const { default: Merge } = await import(
 export const { default: sharp } = await import("sharp");
 
 export let _Action: Action;
-

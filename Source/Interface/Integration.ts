@@ -1,6 +1,6 @@
 /**
  * @module Integration
- * 
+ *
  */
 export default interface Type {
 	(Option: Option): AstroIntegration;

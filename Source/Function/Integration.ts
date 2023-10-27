@@ -66,142 +66,133 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					JavaScript,
 					SVG,
 				})) {
-					if (!(Setting && _Map[File])) {
+					if (
+						!(Setting && _Map[File]) ||
+						typeof Setting !== "object"
+					) {
 						return;
 					}
 
-					if (typeof Setting === "object") {
-						_Action = Merge(
-							Action,
-							Merge(Action, {
-								Wrote: async ({ Buffer, Input }) => {
-									switch (File) {
-										case "CSS": {
-											// console.log(
-											// 	(await import("lightningcss"))
-											// 		.transform({
-											// 			code: (
-											// 				await import("buffer")
-											// 			).Buffer.from(
-											// 				Buffer.toString()
-											// 			),
-											// 			filename: Input,
-											// 			// minify: true,
-											// 			sourceMap: false,
-											// 		})
-											// 		.code.toString()
-											// );
+					_Action = Merge(
+						Action,
+						Merge(Action, {
+							Wrote: async ({ Buffer, Input }) => {
+								switch (File) {
+									case "CSS": {
+										// console.log(
+										// 	(await import("lightningcss"))
+										// 		.transform({
+										// 			code: (
+										// 				await import("buffer")
+										// 			).Buffer.from(
+										// 				Buffer.toString()
+										// 			),
+										// 			filename: Input,
+										// 			// minify: true,
+										// 			sourceMap: false,
+										// 		})
+										// 		.code.toString()
+										// );
 
-											return (
-												await import("csso")
-											).minify(
-												Buffer.toString(),
-												Setting as csso
-											).css;
-										}
-
-										case "HTML": {
-											return await (
-												await import(
-													"html-minifier-terser"
-												)
-											).minify(
-												Buffer.toString(),
-												Setting as html_minifier_terser
-											);
-										}
-
-										case "JavaScript": {
-											return (
-												(
-													await (
-														await import("terser")
-													).minify(
-														Buffer.toString(),
-														Setting as terser
-													)
-												).code ?? Buffer
-											);
-										}
-
-										case "Image": {
-											return await (
-												await import(
-													"../Function/Image/Writesharp.js"
-												)
-											).default(
-												Setting as sharp,
-												{
-													Buffer,
-													Input,
-												} as Onsharp
-											);
-										}
-
-										case "SVG": {
-											const { data: Data } = (
-												await import("svgo")
-											).optimize(
-												Buffer.toString(),
-												Setting as svgo
-											);
-
-											return Data ?? Buffer;
-										}
-
-										default: {
-											return Buffer;
-										}
+										return (await import("csso")).minify(
+											Buffer.toString(),
+											Setting["csso"]
+										).css;
 									}
-								},
-								Fulfilled: async (Plan) =>
-									Plan.Files > 0
-										? `Successfully compressed a total of ${
-												Plan.Files
-										  } ${File} ${
-												Plan.Files === 1
-													? "file"
-													: "files"
-										  } for ${await (
-												await import(
-													"files-pipe/Target/Function/Bytes.js"
+
+									case "HTML": {
+										return await (
+											await import("html-minifier-terser")
+										).minify(
+											Buffer.toString(),
+											Setting["html-minifier-terser"]
+										);
+									}
+
+									case "JavaScript": {
+										return (
+											(
+												await (
+													await import("terser")
+												).minify(
+													Buffer.toString(),
+													Setting["terser"]
 												)
-										  ).default(Plan.Info.Total)}.`
-										: false,
-							} satisfies Action)
-						);
+											).code ?? Buffer
+										);
+									}
 
-						if (File === "Image") {
-							_Action = Merge(_Action, {
-								Read: async ({ Input }) => {
-									const { format } =
-										await Defaultsharp(Input).metadata();
+									case "Image": {
+										return await (
+											await import(
+												"../Function/Image/Writesharp.js"
+											)
+										).default(Setting["sharp"], {
+											Buffer,
+											Input,
+										});
+									}
 
-									return Defaultsharp(Input, {
-										failOn: "none",
-										sequentialRead: true,
-										unlimited: true,
-										animated:
-											format === "webp" ||
-											format === "gif"
-												? true
-												: false,
-									});
-								},
-							} satisfies Action);
-						}
+									case "SVG": {
+										const { data: Data } = (
+											await import("svgo")
+										).optimize(
+											Buffer.toString(),
+											Setting["svgo"]
+										);
 
-						for (const Path of Paths) {
+										return Data ?? Buffer;
+									}
+
+									default: {
+										return Buffer;
+									}
+								}
+							},
+							Fulfilled: async (Plan) =>
+								Plan.Files > 0
+									? `Successfully compressed a total of ${
+											Plan.Files
+									  } ${File} ${
+											Plan.Files === 1 ? "file" : "files"
+									  } for ${await (
+											await import(
+												"files-pipe/Target/Function/Bytes.js"
+											)
+									  ).default(Plan.Info.Total)}.`
+									: false,
+						} satisfies Action)
+					);
+
+					if (File === "Image") {
+						_Action = Merge(_Action, {
+							Read: async ({ Input }) => {
+								const { format } =
+									await Defaultsharp(Input).metadata();
+
+								return Defaultsharp(Input, {
+									failOn: "none",
+									sequentialRead: true,
+									unlimited: true,
+									animated:
+										format === "webp" || format === "gif"
+											? true
+											: false,
+								});
+							},
+						} satisfies Action);
+					}
+
+					for (const Path of Paths) {
+						await (
 							await (
 								await (
-									await (
-										await new (
-											await import("files-pipe")
-										).default(Cache, Logger).In(Path)
-									).By(_Map[File] ?? "**/*")
-								).Not(Exclude)
-							).Pipe(_Action);
-						}
+									await new (
+										await import("files-pipe")
+									).default(Cache, Logger).In(Path)
+								).By(_Map[File] ?? "**/*")
+							).Not(Exclude)
+						).Pipe(_Action);
 					}
 				}
 			},
@@ -210,14 +201,6 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 }) satisfies Type as Type;
 
 import type Type from "../Interface/Integration.js";
-
-import type csso from "../Interface/CSS/csso.js";
-// import type lightningcss from "../Interface/CSS/lightningcss.js";
-import type Onsharp from "../Interface/Image/Onsharp.js";
-import type sharp from "../Interface/Image/sharp.js";
-import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
-import type terser from "../Type/JavaScript/terser.js";
-import type svgo from "../Type/SVG/svgo.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Type/Path.js";

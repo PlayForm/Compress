@@ -5,12 +5,16 @@
 export default (
 	await import("typescript-esbuild/Target/Function/Merge.js")
 ).default((await import("files-pipe/Target/Variable/Option.js")).default, {
-	CSS: (await import("./CSS.js")).default,
+	CSS: {
+		csso: (await import("./CSS/csso.js")).default,
+		lightningcss: (await import("./CSS/lightningcss.js")).default,
+	},
 	HTML: (await import("./HTML.js")).default,
 	JavaScript: (await import("./JavaScript.js")).default,
 	Image: (await import("./Image.js")).default,
 	SVG: (await import("./SVG.js")).default,
 	Map: (await import("./Map.js")).default,
+	Parser: (await import("./Parser.js")).default,
 	Action: {
 		Failed: async ({ Input }) => `Error: Cannot compress file ${Input}!`,
 		Passed: async ({ Before, Buffer: _Buffer }) =>

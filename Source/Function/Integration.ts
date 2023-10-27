@@ -120,9 +120,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 
 									case "Image": {
-										console.log(Input);
-
-										return (
+										return await (
 											await import(
 												"../Function/Image/Writesharp.js"
 											)

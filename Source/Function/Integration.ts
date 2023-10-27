@@ -113,7 +113,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 													await import("terser")
 												).minify(
 													Buffer.toString(),
-													Setting as JavaScript
+													Setting as terser
 												)
 											).code ?? Buffer
 										);
@@ -136,7 +136,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 											await import("svgo")
 										).optimize(
 											Buffer.toString(),
-											Setting as SVG
+											Setting as svgo
 										);
 
 										return Data ?? Buffer;
@@ -204,8 +204,8 @@ import type csso from "../Interface/CSS/csso.js";
 import type On from "../Interface/Image/On.js";
 import type Image from "../Interface/Image/sharp.js";
 import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
-import type JavaScript from "../Type/JavaScript.js";
-import type SVG from "../Type/SVG.js";
+import type terser from "../Type/JavaScript/terser.js";
+import type svgo from "../Type/SVG/svgo.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";
 import type Path from "files-pipe/Target/Type/Path.js";

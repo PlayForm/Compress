@@ -8,4 +8,4 @@ export default interface Type {
 }
 
 import type On from "../Interface/Image/On.js";
-import type Option from "../Interface/Image/Option.js";
+import type Option from "./Image/sharp.js";

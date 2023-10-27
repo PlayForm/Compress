@@ -24,6 +24,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 		Image,
 		JavaScript,
 		SVG,
+		Parser,
 	} = Merge(Default, _Option);
 
 	const Paths = new Set<Path>();
@@ -32,6 +33,14 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 		if (Array.isArray(Path) || Path instanceof Set) {
 			Path.forEach((Path) => Paths.add(Path));
 		}
+	}
+
+	if (typeof Parser === "object") {
+		Object.entries(Parser).forEach(([Key, Value]) =>
+			Object.defineProperty(Parser, Key, {
+				value: Array.isArray(Value) ? Value : [Value],
+			})
+		);
 	}
 
 	return {
@@ -67,9 +76,24 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							Wrote: async ({ Buffer, Input }) => {
 								switch (File) {
 									case "CSS": {
+										// console.log(
+										// 	(await import("lightningcss"))
+										// 		.transform({
+										// 			code: (
+										// 				await import("buffer")
+										// 			).Buffer.from(
+										// 				Buffer.toString()
+										// 			),
+										// 			filename: Input,
+										// 			// minify: true,
+										// 			sourceMap: false,
+										// 		})
+										// 		.code.toString()
+										// );
+
 										return (await import("csso")).minify(
 											Buffer.toString(),
-											Setting as CSS
+											Setting as csso
 										).css;
 									}
 
@@ -175,9 +199,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 
 import type Type from "../Interface/Integration.js";
 
-import type CSS from "../Interface/CSS.js";
+import type csso from "../Interface/CSS/csso.js";
+import type lightningcss from "../Interface/CSS/lightningcss.js";
 import type On from "../Interface/Image/On.js";
-import type Image from "../Interface/Image/Option.js";
+import type Image from "../Interface/Image/sharp.js";
 import type HTML from "../Type/HTML.js";
 import type JavaScript from "../Type/JavaScript.js";
 import type SVG from "../Type/SVG.js";

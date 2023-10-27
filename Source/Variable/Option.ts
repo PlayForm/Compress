@@ -9,10 +9,19 @@ export default (
 		csso: (await import("./CSS/csso.js")).default,
 		lightningcss: (await import("./CSS/lightningcss.js")).default,
 	},
-	HTML: (await import("./HTML.js")).default,
-	JavaScript: (await import("./JavaScript.js")).default,
-	Image: (await import("./Image.js")).default,
-	SVG: (await import("./SVG.js")).default,
+	HTML: {
+		"html-minifier-terser": (await import("./HTML/html-minifier-terser.js"))
+			.default,
+	},
+	JavaScript: {
+		terser: (await import("./JavaScript/terser.js")).default,
+	},
+	Image: {
+		sharp: (await import("./Image/sharp.js")).default,
+	},
+	SVG: {
+		svgo: (await import("./SVG/svgo.js")).default,
+	},
 	Map: (await import("./Map.js")).default,
 	Parser: (await import("./Parser.js")).default,
 	Action: {

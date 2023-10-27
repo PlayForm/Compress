@@ -59,7 +59,14 @@ export default interface Type extends Option {
 	 * svgo option properties
 	 *
 	 */
-	SVG?: boolean | SVG;
+	SVG?:
+		| boolean
+		| {
+				[KeySVG in SVG]: KeySVG extends "svgo"
+					? svgo
+					: // biome-ignore lint/complexity/noBannedTypes:
+					  {};
+		  };
 
 	/**
 	 * Map to different file paths
@@ -78,10 +85,11 @@ import type CSS from "../Type/Parser/CSS.js";
 import type HTML from "../Type/Parser/HTML.js";
 import type Image from "../Type/Parser/Image.js";
 import type JavaScript from "../Type/Parser/JavaScript.js";
-import type SVG from "../Type/SVG.js";
+import type SVG from "../Type/Parser/SVG.js";
 
 import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
 import type terser from "../Type/JavaScript/terser.js";
+import type svgo from "../Type/SVG.js";
 import type csso from "./CSS/csso.js";
 import type lightningcss from "./CSS/lightningcss.js";
 import type sharp from "./Image/sharp.js";

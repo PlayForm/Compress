@@ -102,7 +102,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 											await import("html-minifier-terser")
 										).minify(
 											Buffer.toString(),
-											Setting as HTML
+											Setting as html_minifier_terser
 										);
 									}
 
@@ -200,10 +200,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 import type Type from "../Interface/Integration.js";
 
 import type csso from "../Interface/CSS/csso.js";
-import type lightningcss from "../Interface/CSS/lightningcss.js";
+// import type lightningcss from "../Interface/CSS/lightningcss.js";
 import type On from "../Interface/Image/On.js";
 import type Image from "../Interface/Image/sharp.js";
-import type HTML from "../Type/HTML.js";
+import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
 import type JavaScript from "../Type/JavaScript.js";
 import type SVG from "../Type/SVG.js";
 

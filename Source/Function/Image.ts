@@ -29,7 +29,7 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (await import("../Variable/Image.js")).default
+					: (await import("../Variable/Image/sharp.js")).default
 			).toBuffer())
 		);
 	}

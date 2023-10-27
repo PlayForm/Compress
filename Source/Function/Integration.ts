@@ -167,6 +167,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							Read: async ({ Input }) => {
 								const { format } =
 									await sharp(Input).metadata();
+
 								return sharp(Input, {
 									failOn: "none",
 									sequentialRead: true,

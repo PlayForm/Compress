@@ -127,7 +127,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 											{
 												Buffer,
 												Input,
-											} as On
+											} as Onsharp
 										);
 									}
 
@@ -202,7 +202,7 @@ import type Type from "../Interface/Integration.js";
 
 import type csso from "../Interface/CSS/csso.js";
 // import type lightningcss from "../Interface/CSS/lightningcss.js";
-import type On from "../Interface/Image/On.js";
+import type Onsharp from "../Interface/Image/Onsharp.js";
 import type Image from "../Interface/Image/sharp.js";
 import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
 import type terser from "../Type/JavaScript/terser.js";

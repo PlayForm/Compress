@@ -121,9 +121,11 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 
 									case "Image": {
 										return (
-											await import("../Function/Image.js")
+											await import(
+												"../Function/Image/Writesharp.js"
+											)
 										).default(
-											Setting as Image,
+											Setting as sharp,
 											{
 												Buffer,
 												Input,
@@ -166,9 +168,9 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						_Action = Merge(_Action, {
 							Read: async ({ Input }) => {
 								const { format } =
-									await sharp(Input).metadata();
+									await Defaultsharp(Input).metadata();
 
-								return sharp(Input, {
+								return Defaultsharp(Input, {
 									failOn: "none",
 									sequentialRead: true,
 									unlimited: true,
@@ -203,7 +205,7 @@ import type Type from "../Interface/Integration.js";
 import type csso from "../Interface/CSS/csso.js";
 // import type lightningcss from "../Interface/CSS/lightningcss.js";
 import type Onsharp from "../Interface/Image/Onsharp.js";
-import type Image from "../Interface/Image/sharp.js";
+import type sharp from "../Interface/Image/sharp.js";
 import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
 import type terser from "../Type/JavaScript/terser.js";
 import type svgo from "../Type/SVG/svgo.js";
@@ -223,6 +225,6 @@ export const { default: Merge } = await import(
 	"typescript-esbuild/Target/Function/Merge.js"
 );
 
-export const { default: sharp } = await import("sharp");
+export const { default: Defaultsharp } = await import("sharp");
 
 export let _Action: Action;

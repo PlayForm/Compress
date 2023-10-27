@@ -156,19 +156,17 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						} satisfies Action);
 					}
 
-					await Promise.allSettled(
-						Array.from(Paths).map(async (Path) => {
+					for (const Path of Paths) {
+						await (
 							await (
 								await (
-									await (
-										await new (
-											await import("files-pipe")
-										).default(Cache, Logger).In(Path)
-									).By(_Map[File] ?? "**/*")
-								).Not(Exclude)
-							).Pipe(_Action);
-						})
-					);
+									await new (
+										await import("files-pipe")
+									).default(Cache, Logger).In(Path)
+								).By(_Map[File] ?? "**/*")
+							).Not(Exclude)
+						).Pipe(_Action);
+					}
 				}
 			},
 		},

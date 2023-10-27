@@ -70,129 +70,138 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						return;
 					}
 
-					_Action = Merge(
-						Action,
-						Merge(Action, {
-							Wrote: async ({ Buffer, Input }) => {
-								switch (File) {
-									case "CSS": {
-										// console.log(
-										// 	(await import("lightningcss"))
-										// 		.transform({
-										// 			code: (
-										// 				await import("buffer")
-										// 			).Buffer.from(
-										// 				Buffer.toString()
-										// 			),
-										// 			filename: Input,
-										// 			// minify: true,
-										// 			sourceMap: false,
-										// 		})
-										// 		.code.toString()
-										// );
+					if (typeof Setting === "object") {
+						_Action = Merge(
+							Action,
+							Merge(Action, {
+								Wrote: async ({ Buffer, Input }) => {
+									switch (File) {
+										case "CSS": {
+											// console.log(
+											// 	(await import("lightningcss"))
+											// 		.transform({
+											// 			code: (
+											// 				await import("buffer")
+											// 			).Buffer.from(
+											// 				Buffer.toString()
+											// 			),
+											// 			filename: Input,
+											// 			// minify: true,
+											// 			sourceMap: false,
+											// 		})
+											// 		.code.toString()
+											// );
 
-										return (await import("csso")).minify(
-											Buffer.toString(),
-											Setting as csso
-										).css;
-									}
+											return (
+												await import("csso")
+											).minify(
+												Buffer.toString(),
+												Setting as csso
+											).css;
+										}
 
-									case "HTML": {
-										return await (
-											await import("html-minifier-terser")
-										).minify(
-											Buffer.toString(),
-											Setting as html_minifier_terser
-										);
-									}
-
-									case "JavaScript": {
-										return (
-											(
-												await (
-													await import("terser")
-												).minify(
-													Buffer.toString(),
-													Setting as terser
+										case "HTML": {
+											return await (
+												await import(
+													"html-minifier-terser"
 												)
-											).code ?? Buffer
-										);
+											).minify(
+												Buffer.toString(),
+												Setting as html_minifier_terser
+											);
+										}
+
+										case "JavaScript": {
+											return (
+												(
+													await (
+														await import("terser")
+													).minify(
+														Buffer.toString(),
+														Setting as terser
+													)
+												).code ?? Buffer
+											);
+										}
+
+										case "Image": {
+											return await (
+												await import(
+													"../Function/Image/Writesharp.js"
+												)
+											).default(
+												Setting as sharp,
+												{
+													Buffer,
+													Input,
+												} as Onsharp
+											);
+										}
+
+										case "SVG": {
+											const { data: Data } = (
+												await import("svgo")
+											).optimize(
+												Buffer.toString(),
+												Setting as svgo
+											);
+
+											return Data ?? Buffer;
+										}
+
+										default: {
+											return Buffer;
+										}
 									}
+								},
+								Fulfilled: async (Plan) =>
+									Plan.Files > 0
+										? `Successfully compressed a total of ${
+												Plan.Files
+										  } ${File} ${
+												Plan.Files === 1
+													? "file"
+													: "files"
+										  } for ${await (
+												await import(
+													"files-pipe/Target/Function/Bytes.js"
+												)
+										  ).default(Plan.Info.Total)}.`
+										: false,
+							} satisfies Action)
+						);
 
-									case "Image": {
-										return await (
-											await import(
-												"../Function/Image/Writesharp.js"
-											)
-										).default(
-											Setting as sharp,
-											{
-												Buffer,
-												Input,
-											} as Onsharp
-										);
-									}
+						if (File === "Image") {
+							_Action = Merge(_Action, {
+								Read: async ({ Input }) => {
+									const { format } =
+										await Defaultsharp(Input).metadata();
 
-									case "SVG": {
-										const { data: Data } = (
-											await import("svgo")
-										).optimize(
-											Buffer.toString(),
-											Setting as svgo
-										);
+									return Defaultsharp(Input, {
+										failOn: "none",
+										sequentialRead: true,
+										unlimited: true,
+										animated:
+											format === "webp" ||
+											format === "gif"
+												? true
+												: false,
+									});
+								},
+							} satisfies Action);
+						}
 
-										return Data ?? Buffer;
-									}
-
-									default: {
-										return Buffer;
-									}
-								}
-							},
-							Fulfilled: async (Plan) =>
-								Plan.Files > 0
-									? `Successfully compressed a total of ${
-											Plan.Files
-									  } ${File} ${
-											Plan.Files === 1 ? "file" : "files"
-									  } for ${await (
-											await import(
-												"files-pipe/Target/Function/Bytes.js"
-											)
-									  ).default(Plan.Info.Total)}.`
-									: false,
-						} satisfies Action)
-					);
-
-					if (File === "Image") {
-						_Action = Merge(_Action, {
-							Read: async ({ Input }) => {
-								const { format } =
-									await Defaultsharp(Input).metadata();
-
-								return Defaultsharp(Input, {
-									failOn: "none",
-									sequentialRead: true,
-									unlimited: true,
-									animated:
-										format === "webp" || format === "gif"
-											? true
-											: false,
-								});
-							},
-						} satisfies Action);
-					}
-
-					for (const Path of Paths) {
-						await (
+						for (const Path of Paths) {
 							await (
 								await (
-									await new (
-										await import("files-pipe")
-									).default(Cache, Logger).In(Path)
-								).By(_Map[File] ?? "**/*")
-							).Not(Exclude)
-						).Pipe(_Action);
+									await (
+										await new (
+											await import("files-pipe")
+										).default(Cache, Logger).In(Path)
+									).By(_Map[File] ?? "**/*")
+								).Not(Exclude)
+							).Pipe(_Action);
+						}
 					}
 				}
 			},

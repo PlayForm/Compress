@@ -17,43 +17,10 @@ export declare const Default: Omit<{} & {
             minify: true;
         };
     };
-    HTML: Type;
-    Image: {
-        avif: {
-            chromaSubsampling: string;
-            effort: number;
-        };
-        gif: {
-            effort: number;
-        };
-        jpeg: {
-            chromaSubsampling: string;
-            mozjpeg: true;
-            trellisQuantisation: true;
-            overshootDeringing: true;
-            optimiseScans: true;
-        };
-        png: {
-            compressionLevel: number;
-            palette: true;
-        };
-        raw: {};
-        tiff: {
-            compression: string;
-        };
-        webp: {
-            effort: number;
-        };
-    };
-    JavaScript: Type;
-    SVG: {
-        multipass: true;
-        js2svg: {
-            indent: number;
-            pretty: false;
-        };
-        plugins: "preset-default"[];
-    };
+    HTML: any;
+    Image: any;
+    JavaScript: any;
+    SVG: any;
     Map: {
         CSS: string;
         HTML: string;
@@ -68,6 +35,12 @@ export declare const Default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Path: string;
+    Logger: 2;
     Action: Omit<{} & {
         Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
@@ -77,12 +50,6 @@ export declare const Default: Omit<{} & {
         Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
         Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     }, "__proto__">;
-    Cache: {
-        Search: string;
-        Folder: string;
-    };
-    Path: string;
-    Logger: 2;
     Files: string;
     Exclude: false;
 }, "__proto__">;

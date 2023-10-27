@@ -1,5 +1,5 @@
 /**
- * @module HTML
+ * @module Image
  *
  */
 declare const _default: Type;

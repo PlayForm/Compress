@@ -36,6 +36,6 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 }) satisfies Type as Type;
 
 import type Type from "../Interface/Image.js";
-import type File from "../Type/File.js";
+import type File from "../Type/Image/Filesharp.js";
 
-export const { default: _Map } = await import("../Variable/Image/Map.js");
+export const { default: _Map } = await import("../Variable/Image/Mapsharp.js");

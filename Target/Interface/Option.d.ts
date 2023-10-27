@@ -56,7 +56,7 @@ import type JavaScript from "../Type/Parser/JavaScript.js";
 import type SVG from "../Type/Parser/SVG.js";
 import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
 import type terser from "../Type/JavaScript/terser.js";
-import type svgo from "../Type/SVG.js";
+import type svgo from "../Type/SVG/svgo.js";
 import type csso from "./CSS/csso.js";
 import type lightningcss from "./CSS/lightningcss.js";
 import type sharp from "./Image/sharp.js";

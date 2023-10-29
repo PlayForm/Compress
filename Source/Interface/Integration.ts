@@ -3,7 +3,7 @@
  *
  */
 export default interface Type {
-	(Option: Option): AstroIntegration;
+	(Option?: Option): AstroIntegration;
 }
 
 import type { AstroIntegration } from "astro";

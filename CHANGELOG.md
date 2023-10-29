@@ -1,3 +1,8 @@
+## 2.2.0
+
+-   Bug fix
+-   Refactor allowing multiple parsers
+
 ## 2.1.6
 
 -   Cleanup

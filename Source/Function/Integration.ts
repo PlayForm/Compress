@@ -79,6 +79,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							Wrote: async ({ Buffer, Input }) => {
 								switch (File) {
 									case "CSS": {
+										// TODO: Implement lightningcss
 										// console.log(
 										// 	(await import("lightningcss"))
 										// 		.transform({
@@ -96,6 +97,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 
 										return (await import("csso")).minify(
 											Buffer.toString(),
+											// @ts-expect-error
 											Setting["csso"]
 										).css;
 									}
@@ -105,6 +107,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 											await import("html-minifier-terser")
 										).minify(
 											Buffer.toString(),
+											// @ts-expect-error
 											Setting["html-minifier-terser"]
 										);
 									}
@@ -116,6 +119,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 													await import("terser")
 												).minify(
 													Buffer.toString(),
+													// @ts-expect-error
 													Setting["terser"]
 												)
 											).code ?? Buffer
@@ -127,10 +131,12 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 											await import(
 												"../Function/Image/Writesharp.js"
 											)
-										).default(Setting["sharp"], {
-											Buffer,
-											Input,
-										});
+										)
+											// @ts-expect-error
+											.default(Setting["sharp"], {
+												Buffer,
+												Input,
+											} as Onsharp);
 									}
 
 									case "SVG": {
@@ -138,6 +144,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 											await import("svgo")
 										).optimize(
 											Buffer.toString(),
+											// @ts-expect-error
 											Setting["svgo"]
 										);
 
@@ -200,6 +207,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	};
 }) satisfies Type as Type;
 
+import type Onsharp from "../Interface/Image/Onsharp.js";
 import type Type from "../Interface/Integration.js";
 
 import type Action from "files-pipe/Target/Interface/Action.js";

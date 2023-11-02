@@ -4,18 +4,14 @@
  */
 export default interface Type extends Option {
 	/**
-	 * csso & lightningcss option properties
+	 * csso, lightningcss option properties
 	 *
 	 */
 	CSS?:
 		| boolean
 		| {
-				[KeyCSS in CSS]: KeyCSS extends "csso"
-					? csso
-					: KeyCSS extends "lightningcss"
-					? lightningcss
-					: // biome-ignore lint/complexity/noBannedTypes:
-					  {};
+				csso?: csso;
+				lightningcss?: lightningcss;
 		  };
 
 	/**
@@ -25,10 +21,7 @@ export default interface Type extends Option {
 	HTML?:
 		| boolean
 		| {
-				[KeyHTML in HTML]: KeyHTML extends "html-minifier-terser"
-					? html_minifier_terser
-					: // biome-ignore lint/complexity/noBannedTypes:
-					  {};
+				"html-minifier-terser"?: html_minifier_terser;
 		  };
 
 	/**
@@ -38,8 +31,7 @@ export default interface Type extends Option {
 	Image?:
 		| boolean
 		| {
-				// biome-ignore lint/complexity/noBannedTypes:
-				[KeyImage in Image]: KeyImage extends "sharp" ? sharp : {};
+				"sharp"?: sharp;
 		  };
 
 	/**
@@ -49,10 +41,7 @@ export default interface Type extends Option {
 	JavaScript?:
 		| boolean
 		| {
-				[KeyJavaScript in JavaScript]: KeyJavaScript extends "terser"
-					? terser
-					: // biome-ignore lint/complexity/noBannedTypes:
-					  {};
+				"terser"?: terser;
 		  };
 
 	/**
@@ -62,10 +51,7 @@ export default interface Type extends Option {
 	SVG?:
 		| boolean
 		| {
-				[KeySVG in SVG]: KeySVG extends "svgo"
-					? svgo
-					: // biome-ignore lint/complexity/noBannedTypes:
-					  {};
+				"svgo"?: svgo;
 		  };
 
 	/**

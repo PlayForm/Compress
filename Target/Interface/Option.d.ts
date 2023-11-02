@@ -4,39 +4,40 @@
  */
 export default interface Type extends Option {
     /**
-     * csso & lightningcss option properties
+     * csso, lightningcss option properties
      *
      */
     CSS?: boolean | {
-        [KeyCSS in CSS]: KeyCSS extends "csso" ? csso : KeyCSS extends "lightningcss" ? lightningcss : {};
+        csso?: csso;
+        lightningcss?: lightningcss;
     };
     /**
      * html-minifier-terser option properties
      *
      */
     HTML?: boolean | {
-        [KeyHTML in HTML]: KeyHTML extends "html-minifier-terser" ? html_minifier_terser : {};
+        "html-minifier-terser"?: html_minifier_terser;
     };
     /**
      * sharp option properties
      *
      */
     Image?: boolean | {
-        [KeyImage in Image]: KeyImage extends "sharp" ? sharp : {};
+        "sharp"?: sharp;
     };
     /**
      * terser option properties
      *
      */
     JavaScript?: boolean | {
-        [KeyJavaScript in JavaScript]: KeyJavaScript extends "terser" ? terser : {};
+        "terser"?: terser;
     };
     /**
      * svgo option properties
      *
      */
     SVG?: boolean | {
-        [KeySVG in SVG]: KeySVG extends "svgo" ? svgo : {};
+        "svgo"?: svgo;
     };
     /**
      * Map to different file paths
@@ -49,11 +50,6 @@ export default interface Type extends Option {
      */
     Parser?: Parser;
 }
-import type CSS from "../Type/Parser/CSS.js";
-import type HTML from "../Type/Parser/HTML.js";
-import type Image from "../Type/Parser/Image.js";
-import type JavaScript from "../Type/Parser/JavaScript.js";
-import type SVG from "../Type/Parser/SVG.js";
 import type html_minifier_terser from "../Type/HTML/html-minifier-terser.js";
 import type terser from "../Type/JavaScript/terser.js";
 import type svgo from "../Type/SVG/svgo.js";

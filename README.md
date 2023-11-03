@@ -129,6 +129,9 @@ export default {
 };
 ```
 
+to see the full option map visit:
+https://github.com/astro-community/AstroCompress/blob/main/Source/Interface/Option.ts
+
 ### Adding Multiple Paths
 
 You can add multiple paths to compress by specifying an array as the `Path`

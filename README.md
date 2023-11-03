@@ -130,7 +130,7 @@ export default {
 ```
 
 to see the full option map visit:
-[Source/Interface/Option.ts](https://github.com/astro-community/AstroCompress/blob/main/)
+[Source/Interface/Option.ts](https://github.com/astro-community/AstroCompress/blob/main/Source/Interface/Option.ts)
 
 ### Adding Multiple Paths
 

@@ -45,7 +45,7 @@
 		"html-minifier-terser": "7.2.0",
 		"lightningcss": "1.22.1",
 		"sharp": "0.32.6",
-		"svgo": "3.0.3",
+		"svgo": "3.0.4",
 		"terser": "5.24.0",
 		"typescript-esbuild": "0.3.1"
 	},

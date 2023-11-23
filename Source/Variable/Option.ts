@@ -44,7 +44,6 @@ export default (
 			const dir = Input.slice(0, idx + 1);
 			process.stderr.write("├─ ");
 			const msg = `${gray(size)}	${green(percent)} reduction in ${gray(dir)}${blue(file)}`;
-			return `${red("Error:")} Cannot compress file ${gray(dir)}${red(file)}`
 			return msg;
 		},
 		Changed: async (Plan) => {

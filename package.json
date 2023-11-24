@@ -43,6 +43,7 @@
 		"csso": "5.0.5",
 		"files-pipe": "2.1.2",
 		"html-minifier-terser": "7.2.0",
+		"kleur": "^4.1.5",
 		"lightningcss": "1.22.1",
 		"sharp": "0.32.6",
 		"svgo": "3.0.4",

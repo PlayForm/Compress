@@ -2,6 +2,8 @@
  * @module Integration
  *
  */
+import { bgGreen, cyan } from 'kleur/colors'
+
 export default ((...[_Option = {}]: Parameters<Type>) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
@@ -47,6 +49,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 		name: "astro-compress",
 		hooks: {
 			"astro:build:done": async ({ dir }) => {
+				process.stdout.write(`${bgGreen(" astro-compress processing ")}\n`);
 				if (typeof _Map !== "object") {
 					return;
 				}
@@ -158,15 +161,13 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							},
 							Fulfilled: async (Plan) =>
 								Plan.Files > 0
-									? `Successfully compressed a total of ${
-											Plan.Files
-									  } ${File} ${
-											Plan.Files === 1 ? "file" : "files"
-									  } for ${await (
+									? "└▶ " + cyan(`Successfully compressed a total of ${Plan.Files
+										} ${File} ${Plan.Files === 1 ? "file" : "files"
+										} for ${await (
 											await import(
 												"files-pipe/Target/Function/Bytes.js"
 											)
-									  ).default(Plan.Info.Total)}.`
+										).default(Plan.Info.Total)}.\n`)
 									: false,
 						} satisfies Action)
 					);

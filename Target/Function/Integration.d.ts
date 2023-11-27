@@ -1,7 +1,3 @@
-/**
- * @module Integration
- *
- */
 declare const _default: Type;
 export default _default;
 import type Type from "../Interface/Integration.js";
@@ -123,7 +119,7 @@ export declare const Default: Omit<{} & {
     Action: Omit<{} & {
         Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After, Output }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Accomplished: ({ Input, Before, After }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
         Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;

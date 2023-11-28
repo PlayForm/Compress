@@ -2,6 +2,8 @@
  * @module Integration
  *
  */
+export let systemDir: string;
+
 export default ((...[_Option = {}]: Parameters<Type>) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
@@ -46,6 +48,12 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	return {
 		name: "astro-compress",
 		hooks: {
+			"astro:config:done": async (options) => {
+				const { dir } = (await import("node:path")).parse(options.config.outDir.pathname);
+				// normalize slash and remove leading slash that always appears (conditional just in case)
+				systemDir = dir.replace(/\\/g, '/');
+				if (systemDir.startsWith("/")) { systemDir = systemDir.substring(1) }
+			},
 			"astro:build:done": async ({ dir }) => {
 				console.log(
 					`\n${(await import("kleur")).bgGreen(

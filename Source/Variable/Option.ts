@@ -4,6 +4,19 @@
  */
 import { blue, green } from "kleur/colors";
 
+import { systemDir } from "../Function/Integration";
+import path from "node:path";
+function sanitizePath(inputPath: string): { base: string, dir: string } {
+	let { base, dir } = path.parse(inputPath);
+	dir = path.normalize(dir)
+	dir = dir.replace(/\\/g, '/');
+	dir = dir.replace(systemDir, '');
+	if (!dir.endsWith("/")) {
+		dir = dir + '/'
+	}
+	return { base, dir };
+}
+
 export default (
 	await import("typescript-esbuild/Target/Function/Merge.js")
 ).default((await import("files-pipe/Target/Variable/Option.js")).default, {
@@ -28,17 +41,17 @@ export default (
 	Parser: (await import("./Parser.js")).default,
 	Action: {
 		Failed: async ({ Input }) => {
-			const idx = Input.lastIndexOf("/");
-
+			const { base, dir } = sanitizePath(Input);
 			return `${red("Error:")} Cannot compress file ${gray(
-				Input.slice(0, idx + 1)
-			)}${red(Input.slice(idx + 1))}`;
+				dir
+			)}${red(base)}`;
 		},
 		Passed: async ({ Before, Buffer: _Buffer }) =>
 			Before > Buffer.byteLength(_Buffer.toString()),
 		Accomplished: async ({ Input, Before, After }) => {
+			const { base, dir } = sanitizePath(Input);
+
 			const compressed = Before - After;
-			const idx = Input.lastIndexOf("/");
 
 			console.log("├─ ");
 
@@ -48,8 +61,8 @@ export default (
 				).default(compressed)})`
 			)}	${green(
 				`${((compressed / Before) * 100).toFixed(2)}%`
-			)} reduction in ${gray(Input.slice(0, idx + 1))}${blue(
-				Input.slice(idx + 1)
+			)} reduction in ${gray(dir)}${blue(
+				base
 			)}`;
 
 			return msg;

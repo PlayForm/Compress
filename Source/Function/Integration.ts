@@ -52,7 +52,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						(await import("kleur")).black(
 							" astro-compress processing "
 						)
-					)}\n`
+					)}`
 				);
 
 				if (typeof _Map !== "object") {
@@ -166,7 +166,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							},
 							Fulfilled: async (Plan) =>
 								Plan.Files > 0
-									? `└▶ ${cyan(
+									? `└▶ ${(await import("kleur")).cyan(
 											`Successfully compressed a total of ${
 												Plan.Files
 											} ${File} ${

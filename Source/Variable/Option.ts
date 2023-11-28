@@ -2,7 +2,7 @@
  * @module Option
  *
  */
-import { gray, blue, green, cyan, red } from "kleur/colors";
+import { blue, green } from "kleur/colors";
 
 export default (
 	await import("typescript-esbuild/Target/Function/Merge.js")
@@ -29,40 +29,42 @@ export default (
 	Action: {
 		Failed: async ({ Input }) => {
 			const idx = Input.lastIndexOf("/");
-			const file = Input.slice(idx + 1);
-			const dir = Input.slice(0, idx + 1);
-			return `${red("Error:")} Cannot compress file ${gray(dir)}${red(
-				file
-			)}`;
+
+			return `${red("Error:")} Cannot compress file ${gray(
+				Input.slice(0, idx + 1)
+			)}${red(Input.slice(idx + 1))}`;
 		},
 		Passed: async ({ Before, Buffer: _Buffer }) =>
 			Before > Buffer.byteLength(_Buffer.toString()),
 		Accomplished: async ({ Input, Before, After }) => {
 			const compressed = Before - After;
-			const percent = `${((compressed / Before) * 100).toFixed(2)}%`;
-			const size = `(-${await (
-				await import("files-pipe/Target/Function/Bytes.js")
-			).default(compressed)})`;
 			const idx = Input.lastIndexOf("/");
-			const file = Input.slice(idx + 1);
-			const dir = Input.slice(0, idx + 1);
-			process.stderr.write("├─ ");
-			const msg = `${gray(size)}	${green(percent)} reduction in ${gray(
-				dir
-			)}${blue(file)}`;
+
+			console.log("├─ ");
+
+			const msg = `${gray(
+				`(-${await (
+					await import("files-pipe/Target/Function/Bytes.js")
+				).default(compressed)})`
+			)}	${green(
+				`${((compressed / Before) * 100).toFixed(2)}%`
+			)} reduction in ${gray(Input.slice(0, idx + 1))}${blue(
+				Input.slice(idx + 1)
+			)}`;
+
 			return msg;
 		},
-		Changed: async (Plan) => {
-			return (
-				Object.defineProperty(Plan.Info, "Total", {
-					value:
-						(Plan.Info.Total ? Plan.Info.Total : 0) +
-						(Plan.On.Before - Plan.On.After),
-					configurable: true,
-				}) && Plan
-			);
-		},
+		Changed: async (Plan) =>
+			Object.defineProperty(Plan.Info, "Total", {
+				value:
+					(Plan.Info.Total ? Plan.Info.Total : 0) +
+					(Plan.On.Before - Plan.On.After),
+				configurable: true,
+				writable: true,
+			}) && Plan,
 	},
 } satisfies Type);
 
 import type Type from "../Interface/Option.js";
+
+const { gray, red } = await import("kleur");

@@ -2,7 +2,7 @@
  * @module Integration
  *
  */
-export declare let systemDir: string;
+export declare let System: string;
 declare const _default: Type;
 export default _default;
 import type Type from "../Interface/Integration.js";
@@ -115,11 +115,11 @@ export declare const Default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
+    Path: string;
     Cache: {
         Search: string;
         Folder: string;
     };
-    Path: string;
     Logger: 2;
     Action: Omit<{} & {
         Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;

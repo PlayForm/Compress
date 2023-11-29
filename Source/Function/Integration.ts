@@ -2,7 +2,7 @@
  * @module Integration
  *
  */
-export let systemDir: string;
+export let System: string;
 
 export default ((...[_Option = {}]: Parameters<Type>) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
@@ -48,11 +48,18 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	return {
 		name: "astro-compress",
 		hooks: {
-			"astro:config:done": async (options) => {
-				const { dir } = (await import("node:path")).parse(options.config.outDir.pathname);
-				// normalize slash and remove leading slash that always appears (conditional just in case)
-				systemDir = dir.replace(/\\/g, '/');
-				if (systemDir.startsWith("/")) { systemDir = systemDir.substring(1) }
+			"astro:config:done": async ({
+				config: {
+					outDir: { pathname },
+				},
+			}) => {
+				System = (await import("node:path"))
+					.parse(pathname)
+					.dir.replace(/\\/g, "/");
+
+				if (System.startsWith("/")) {
+					System = System.substring(1);
+				}
 			},
 			"astro:build:done": async ({ dir }) => {
 				console.log(
@@ -174,8 +181,8 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							},
 							Fulfilled: async (Plan) =>
 								Plan.Files > 0
-									? `└▶ ${(await import("kleur")).cyan(
-											`Successfully compressed a total of ${
+									? `${(await import("kleur")).green(
+											`✓ Successfully compressed a total of ${
 												Plan.Files
 											} ${File} ${
 												Plan.Files === 1

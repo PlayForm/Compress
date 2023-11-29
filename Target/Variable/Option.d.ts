@@ -1,3 +1,7 @@
+/**
+ * @module Option
+ *
+ */
 declare const _default: Omit<{} & {
     CSS: {
         csso: {
@@ -106,11 +110,11 @@ declare const _default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
+    Path: string;
     Cache: {
         Search: string;
         Folder: string;
     };
-    Path: string;
     Logger: 2;
     Action: Omit<{} & {
         Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;

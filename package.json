@@ -25,7 +25,7 @@
 		"type": "git",
 		"url": "git+https://github.com/astro-community/AstroCompress.git"
 	},
-	"license": "MIT",
+	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Nikola Hristov",
 		"email": "nikola@nikolahristov.tech",

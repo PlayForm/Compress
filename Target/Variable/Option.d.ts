@@ -118,7 +118,7 @@ declare const _default: Omit<{} & {
     Logger: 2;
     Action: Omit<{} & {
         Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: ({ Before, Buffer: _Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Passed: ({ Before, Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
         Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;

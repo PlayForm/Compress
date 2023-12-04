@@ -183,7 +183,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							},
 							Fulfilled: async (Plan) =>
 								Plan.Files > 0
-									? `${(await import("kleur")).green(
+									? `${(await import("kleur/colors")).green(
 											`✓ Successfully compressed a total of ${
 												Plan.Files
 											} ${File} ${

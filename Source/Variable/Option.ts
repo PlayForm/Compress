@@ -38,10 +38,10 @@ export default (
 				`(-${await (
 					await import("files-pipe/Target/Function/Bytes.js")
 				).default(Saving)})`
-			)}	${(await import("kleur")).green(
+			)}	${(await import("kleur/colors")).green(
 				`${((Saving / Before) * 100).toFixed(2)}%`
 			)} reduction in ${gray(await Directory(Input))}${(
-				await import("kleur")
+				await import("kleur/colors")
 			).cyan((await import("path")).parse(Input).base)}`;
 		},
 		Changed: async (Plan) =>
@@ -57,8 +57,8 @@ export default (
 
 import type Type from "../Interface/Option.js";
 
-const { gray, red } = await import("kleur");
+const { gray, red } = await import("kleur/colors");
 
 const { default: Directory } = await import("../Function/Directory.js");
 
-const { Buffer: _Buffer } = await import("node:buffer");
+const { Buffer: _Buffer } = await import("buffer");

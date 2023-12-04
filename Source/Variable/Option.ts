@@ -29,17 +29,17 @@ export default (
 			`${red("Error:")} Cannot compress file ${gray(
 				await Directory(Input)
 			)}${red((await import("path")).parse(Input).base)}`,
-		Passed: async ({ Before, Buffer: _Buffer }) =>
-			Before > Buffer.byteLength(_Buffer.toString()),
+		Passed: async ({ Before, Buffer }) =>
+			Before > _Buffer.byteLength(Buffer.toString()),
 		Accomplished: async ({ Input, Before, After }) => {
-			const Final = Before - After;
+			const Saving = Before - After;
 
 			return `${gray(
 				`(-${await (
 					await import("files-pipe/Target/Function/Bytes.js")
-				).default(Final)})`
+				).default(Saving)})`
 			)}	${(await import("kleur")).green(
-				`${((Final / Before) * 100).toFixed(2)}%`
+				`${((Saving / Before) * 100).toFixed(2)}%`
 			)} reduction in ${gray(await Directory(Input))}${(
 				await import("kleur")
 			).cyan((await import("path")).parse(Input).base)}`;
@@ -60,3 +60,5 @@ import type Type from "../Interface/Option.js";
 const { gray, red } = await import("kleur");
 
 const { default: Directory } = await import("../Function/Directory.js");
+
+const { Buffer: _Buffer } = await import("node:buffer");

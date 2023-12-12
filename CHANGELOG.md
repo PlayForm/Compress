@@ -1,6 +1,57 @@
-## 2.0.16
+## 2.2.5
 
 -   Cleanup
+
+## 2.2.4
+
+-   Cleanup
+-   Colorizes output
+
+## 2.2.3
+
+-   Cleanup
+
+## 2.2.2
+
+-   Cleanup
+
+## 2.2.1
+
+-   Bug fix
+
+## 2.2.0
+
+-   Bug fix
+-   Refactor allowing multiple parsers
+
+## 2.1.6
+
+-   Cleanup
+
+## 2.1.5
+
+-   Cleanup
+
+## 2.1.4
+
+-   Bug fix
+
+## 2.1.3
+
+-   Bug fix
+
+## 2.1.2
+
+-   Bug fix
+
+## 2.1.1
+
+-   Cleanup
+
+## 2.1.0
+
+-   Refactor
+-   Documentation
 
 ## 2.0.15
 

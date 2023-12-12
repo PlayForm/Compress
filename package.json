@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "2.0.16",
+	"version": "2.2.5",
 	"private": false,
 	"description": "🗜️ AstroJS compression utilities. Compress HTML, CSS, JavaScript and more!",
 	"keywords": [
@@ -23,30 +23,32 @@
 		"type": "git",
 		"url": "git+https://github.com/astro-community/AstroCompress.git"
 	},
-	"license": "MIT",
+	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Nikola Hristov",
 		"email": "nikola@nikolahristov.tech",
 		"url": "https://nikolahristov.tech"
 	},
 	"type": "module",
-	"main": "./Target/Index.js",
-	"types": "./Target/Index.d.ts",
+	"main": "./Target/Function/Integration.js",
+	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@types/csso": "5.0.1",
-		"@types/html-minifier-terser": "7.0.0",
+		"@types/csso": "5.0.3",
+		"@types/html-minifier-terser": "7.0.2",
 		"csso": "5.0.5",
-		"files-pipe": "2.0.19",
+		"files-pipe": "2.1.3",
 		"html-minifier-terser": "7.2.0",
-		"svgo": "3.0.2",
-		"terser": "5.19.4"
+		"kleur": "4.1.5",
+		"lightningcss": "1.22.1",
+		"svgo": "3.1.0",
+		"terser": "5.26.0",
+		"typescript-esbuild": "0.3.2"
 	},
 	"devDependencies": {
-		"astro": "3.1.1",
-		"typescript-esbuild": "0.1.16"
+		"astro": "4.0.4"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -67,7 +67,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
 						(await import("kleur/colors")).black(
-							" astro-compress processing "
+							" AstroCompress processing "
 						)
 					)}`
 				);
@@ -95,7 +95,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						!(Setting && _Map[File]) ||
 						typeof Setting !== "object"
 					) {
-						return;
+						continue;
 					}
 
 					_Action = Merge(
@@ -195,7 +195,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 													"files-pipe/Target/Function/Bytes.js"
 												)
 											).default(Plan.Info.Total)}.`
-									  )}`
+										)}`
 									: false,
 						} satisfies Action)
 					);

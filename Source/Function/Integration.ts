@@ -232,6 +232,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					}
 				}
 			},
+			// @TODO: Finish this
+			// "astro:config:setup": ({ addMiddleware }) => {
+			// 	addMiddleware();
+			// },
 		},
 	};
 }) satisfies Type as Type;

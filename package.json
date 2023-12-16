@@ -47,10 +47,10 @@
 		"lightningcss": "1.22.1",
 		"sharp": "0.33.0",
 		"svgo": "3.1.0",
-		"terser": "5.26.0",
-		"typescript-esbuild": "0.3.3"
+		"terser": "5.26.0"
 	},
 	"devDependencies": {
+		"typescript-esbuild": "0.3.3",
 		"astro": "4.0.5"
 	},
 	"publishConfig": {

@@ -4,6 +4,6 @@
  *
  */
 export default interface Type {
-    (Path: string): Promise<ParsedPath["dir"]>;
+	(Path: string): Promise<ParsedPath["dir"]>;
 }
 import type { ParsedPath } from "path";

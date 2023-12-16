@@ -254,7 +254,9 @@ export const {
 	},
 } = await import("files-pipe/Target/Variable/Option.js");
 
-export const { default: Merge } = await import("../Function/Merge.js");
+export const { default: Merge } = await import(
+	"typescript-esbuild/Target/Function/Merge.js"
+);
 
 export const { default: Defaultsharp } = await import("sharp");
 

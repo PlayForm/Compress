@@ -13,8 +13,8 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 		typeof _Map[File as File] !== "undefined"
 			? _Map[File as File]
 			: typeof Option[File] !== "undefined"
-			  ? File
-			  : false;
+				? File
+				: false;
 
 	if (
 		Type &&

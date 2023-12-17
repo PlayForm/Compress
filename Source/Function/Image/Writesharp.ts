@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
+export default ((async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 	const File = Input.split(".").pop();
 
 	if (!File) {
@@ -13,13 +13,13 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 		typeof _Map[File as File] !== "undefined"
 			? _Map[File as File]
 			: typeof Option[File] !== "undefined"
-				? File
-				: false;
+			  ? File
+			  : false;
 
 	if (
 		Type &&
 		["avif", "gif", "heif", "jpeg", "png", "raw", "tiff", "webp"].includes(
-			Type
+			Type,
 		) &&
 		typeof Option[Type] !== "undefined" &&
 		Option[Type] !== false
@@ -29,11 +29,13 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (await import("../../Variable/Image/sharp.js")).default
+					: (
+							await import("../../Variable/Image/sharp.js")
+					  ).default,
 			).toBuffer())
 		);
 	}
-}) satisfies Type as Type;
+}) satisfies Type as Type);
 
 import type Type from "../../Interface/Image/Writesharp.js";
 import type File from "../../Type/Image/Filesharp.js";

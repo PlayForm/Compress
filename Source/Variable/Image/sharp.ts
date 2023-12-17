@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default {
+export default ({
 	avif: {
 		chromaSubsampling: "4:4:4",
 		effort: 9.0,
@@ -28,6 +28,6 @@ export default {
 	webp: {
 		effort: 6.0,
 	},
-} satisfies Type;
+} satisfies Type);
 
 import type Type from "../../Interface/Image/sharp.js";

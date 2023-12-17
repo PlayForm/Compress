@@ -31,7 +31,7 @@ export default interface Type extends Option {
 	Image?:
 		| boolean
 		| {
-				"sharp"?: sharp;
+				sharp?: sharp;
 		  };
 
 	/**
@@ -41,7 +41,7 @@ export default interface Type extends Option {
 	JavaScript?:
 		| boolean
 		| {
-				"terser"?: terser;
+				terser?: terser;
 		  };
 
 	/**
@@ -51,7 +51,7 @@ export default interface Type extends Option {
 	SVG?:
 		| boolean
 		| {
-				"svgo"?: svgo;
+				svgo?: svgo;
 		  };
 
 	/**

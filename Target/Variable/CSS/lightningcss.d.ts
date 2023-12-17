@@ -3,6 +3,6 @@
  *
  */
 declare const _default: {
-    minify: true;
+	minify: true;
 };
 export default _default;

@@ -3,12 +3,12 @@
  *
  */
 export default interface Type {
-	[key: string]: any;
-	CSS?: CSS | CSS[];
-	HTML?: HTML | HTML[];
-	Image?: Image | Image[];
-	JavaScript?: JavaScript | JavaScript[];
-	SVG?: SVG | SVG[];
+    [key: string]: any;
+    CSS?: CSS | CSS[];
+    HTML?: HTML | HTML[];
+    Image?: Image | Image[];
+    JavaScript?: JavaScript | JavaScript[];
+    SVG?: SVG | SVG[];
 }
 import type CSS from "../Type/Parser/CSS.js";
 import type HTML from "../Type/Parser/HTML.js";

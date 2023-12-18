@@ -45,13 +45,13 @@
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.22.1",
-		"sharp": "0.33.0",
+		"sharp": "0.33.1",
 		"svgo": "3.1.0",
 		"terser": "5.26.0",
 		"typescript-esbuild": "0.3.3"
 	},
 	"devDependencies": {
-		"astro": "4.0.5"
+		"astro": "4.0.6"
 	},
 	"publishConfig": {
 		"access": "public"

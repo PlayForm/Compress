@@ -3,5 +3,5 @@
  *
  */
 export default interface Type {
-	[key: string]: string;
+    [key: string]: string;
 }

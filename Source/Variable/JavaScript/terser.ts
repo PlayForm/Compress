@@ -2,7 +2,7 @@
  * @module JavaScript
  *
  */
-export default ({
+export default {
 	ecma: 5,
 	enclose: false,
 	keep_classnames: false,
@@ -14,6 +14,6 @@ export default ({
 	format: {
 		comments: false,
 	},
-} satisfies Type);
+} satisfies Type;
 
 import type Type from "../../Type/JavaScript/terser.js";

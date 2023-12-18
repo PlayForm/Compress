@@ -3,8 +3,8 @@
  *
  */
 declare const _default: {
-	comments: false;
-	forceMediaMerge: true;
-	restructure: false;
+    comments: false;
+    forceMediaMerge: true;
+    restructure: false;
 };
 export default _default;

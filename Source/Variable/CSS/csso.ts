@@ -2,10 +2,10 @@
  * @module CSS
  *
  */
-export default ({
+export default {
 	comments: false,
 	forceMediaMerge: true,
 	restructure: false,
-} satisfies Type);
+} satisfies Type;
 
 import type Type from "../../Interface/CSS/csso.js";

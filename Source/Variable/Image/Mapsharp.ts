@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default ({
+export default {
 	avci: "avif",
 	avcs: "avif",
 	avifs: "avif",
@@ -14,6 +14,6 @@ export default ({
 	jpe: "jpeg",
 	apng: "png",
 	jpg: "jpeg",
-} satisfies Type);
+} satisfies Type;
 
 import type Type from "../../Interface/Map.js";

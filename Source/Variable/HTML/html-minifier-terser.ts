@@ -2,7 +2,7 @@
  * @module HTML
  *
  */
-export default ({
+export default {
 	caseSensitive: true,
 	collapseInlineTagWhitespace: false,
 	collapseWhitespace: true,
@@ -79,6 +79,6 @@ export default ({
 	sortClassName: true,
 	trimCustomFragments: true,
 	useShortDoctype: false,
-} satisfies Type);
+} satisfies Type;
 
 import type Type from "../../Type/HTML/html-minifier-terser.js";

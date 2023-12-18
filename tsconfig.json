@@ -1,7 +1,8 @@
 {
 	"compilerOptions": {
+		"baseUrl": "./",
 		"outDir": "Target"
 	},
-	"extends": "@lightrix/configuration/Base/TypeScript",
-	"include": ["src"]
+	"extends": "typescript-esbuild/Target/Notation/TypeScript",
+	"include": ["Source"]
 }

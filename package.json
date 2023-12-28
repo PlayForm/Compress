@@ -38,7 +38,7 @@
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@types/csso": "5.0.3",
+		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"csso": "5.0.5",
 		"files-pipe": "2.1.4",

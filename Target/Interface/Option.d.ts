@@ -19,18 +19,28 @@ export default interface Type extends Option {
         "html-minifier-terser"?: html_minifier_terser;
     };
     /**
+<<<<<<< HEAD
+=======
+     * sharp option properties
+     *
+     */
+    Image?: boolean | {
+        sharp?: sharp;
+    };
+    /**
+>>>>>>> origin/main
      * terser option properties
      *
      */
     JavaScript?: boolean | {
-        "terser"?: terser;
+        terser?: terser;
     };
     /**
      * svgo option properties
      *
      */
     SVG?: boolean | {
-        "svgo"?: svgo;
+        svgo?: svgo;
     };
     /**
      * Map to different file paths

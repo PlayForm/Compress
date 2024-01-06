@@ -3,7 +3,7 @@
  *
  */
 export default (
-	await import("typescript-esbuild/Target/Function/Merge.js")
+	await import("../Function/Merge.js")
 ).default((await import("files-pipe/Target/Variable/Option.js")).default, {
 	CSS: {
 		csso: (await import("./CSS/csso.js")).default,

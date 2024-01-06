@@ -198,6 +198,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					}
 				}
 			},
+			// @TODO: Finish this
+			// "astro:config:setup": ({ addMiddleware }) => {
+			// 	addMiddleware();
+			// },
 		},
 	};
 }) satisfies Type as Type;
@@ -216,7 +220,7 @@ export const {
 } = await import("files-pipe/Target/Variable/Option.js");
 
 export const { default: Merge } = await import(
-	"typescript-esbuild/Target/Function/Merge.js"
+	"../Function/Merge.js"
 );
 
 export let _Action: Action;

@@ -99,7 +99,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					_Action = Merge(
 						Action,
 						Merge(Action, {
-							Wrote: async ({ Buffer, Input }) => {
+							Wrote: async ({ Buffer }) => {
 								switch (File) {
 									case "CSS": {
 										// TODO: Implement lightningcss

@@ -55,7 +55,7 @@ pnpx astro add astro-compress
 First, install the `AstroCompress` integration like so:
 
 ```sh
-npm install -D -E astro-community/astro-compress#no-sharp
+npm install -D -E astro-community/AstroCompress#no-sharp
 ```
 
 Then, apply this integration to your `astro.config.*` file using the

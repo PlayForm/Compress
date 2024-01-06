@@ -19,16 +19,6 @@ export default interface Type extends Option {
         "html-minifier-terser"?: html_minifier_terser;
     };
     /**
-<<<<<<< HEAD
-=======
-     * sharp option properties
-     *
-     */
-    Image?: boolean | {
-        sharp?: sharp;
-    };
-    /**
->>>>>>> origin/main
      * terser option properties
      *
      */

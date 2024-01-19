@@ -2,8 +2,8 @@
  * @module CSS
  *
  */
-export default {
+export default ({
 	minify: true,
-} satisfies Type;
+} satisfies Type);
 
 import type Type from "../../Interface/CSS/lightningcss.js";

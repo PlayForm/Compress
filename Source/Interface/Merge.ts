@@ -15,9 +15,7 @@ export default interface Type<
 	 * @param ...Objects - An arbitrary number of objects to be merged.
 	 *
 	 */
-	<Ts extends readonly unknown[]>(
-		...Objects: Ts
-	): DeepMergeHKT<
+	<Ts extends readonly unknown[]>(...Objects: Ts): DeepMergeHKT<
 		Ts,
 		GetDeepMergeMergeFunctionsURIs<PMF>,
 		DeepMergeBuiltInMetaData

@@ -13,4 +13,4 @@ export default interface Type
 	minify?: boolean;
 }
 
-import type { TransformOptions, CustomAtRules } from "lightningcss";
+import type { CustomAtRules, TransformOptions } from "lightningcss";

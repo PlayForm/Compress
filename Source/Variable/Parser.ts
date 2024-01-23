@@ -2,12 +2,12 @@
  * @module Parser
  *
  */
-export default ({
+export default {
 	CSS: ["csso", "lightningcss"],
 	HTML: "html-minifier-terser",
 	Image: "sharp",
 	JavaScript: "terser",
 	SVG: "svgo",
-} satisfies Type);
+} satisfies Type;
 
 import type Type from "../Interface/Parser.js";

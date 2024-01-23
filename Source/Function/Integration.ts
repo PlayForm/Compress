@@ -6,7 +6,7 @@
 // TODO: Test this for security
 export let System: string;
 
-export default (((...[_Option = {}]: Parameters<Type>) => {
+export default ((...[_Option = {}]: Parameters<Type>) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
 			value:
@@ -51,9 +51,11 @@ export default (((...[_Option = {}]: Parameters<Type>) => {
 		name: "astro-compress",
 		hooks: {
 			"astro:config:done": async ({
-				config: { outDir: { pathname } },
+				config: {
+					outDir: { pathname },
+				},
 			}) => {
-				System = (await import("path"))
+				System = (await import("node:path"))
 					.parse(pathname)
 					.dir.replace(/\\/g, "/");
 
@@ -236,7 +238,7 @@ export default (((...[_Option = {}]: Parameters<Type>) => {
 			// },
 		},
 	};
-}) satisfies Type as Type);
+}) satisfies Type as Type;
 
 import type Onsharp from "../Interface/Image/Onsharp.js";
 import type Type from "../Interface/Integration.js";
@@ -247,7 +249,9 @@ import type Path from "files-pipe/Target/Type/Path.js";
 export const { default: Default } = await import("../Variable/Option.js");
 
 export const {
-	default: { Cache: { Search } },
+	default: {
+		Cache: { Search },
+	},
 } = await import("files-pipe/Target/Variable/Option.js");
 
 export const { default: Merge } = await import("../Function/Merge.js");

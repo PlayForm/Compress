@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default ((async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
+export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 	const File = Input.split(".").pop();
 
 	if (!File) {
@@ -35,7 +35,7 @@ export default ((async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 			).toBuffer())
 		);
 	}
-}) satisfies Type as Type);
+}) satisfies Type as Type;
 
 import type Type from "../../Interface/Image/Writesharp.js";
 import type File from "../../Type/Image/Filesharp.js";

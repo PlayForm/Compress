@@ -211,6 +211,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									sequentialRead: true,
 									unlimited: true,
 									animated:
+										// biome-ignore lint/nursery/noUselessTernary:
 										format === "webp" || format === "gif"
 											? true
 											: false,

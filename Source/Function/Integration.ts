@@ -55,7 +55,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					outDir: { pathname },
 				},
 			}) => {
-				System = (await import("node:path"))
+				System = (await import("path"))
 					.parse(pathname)
 					.dir.replace(/\\/g, "/");
 

@@ -76,6 +76,8 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					return;
 				}
 
+				console.log(Paths);
+
 				if (!Paths.size) {
 					Paths.add(dir);
 				}

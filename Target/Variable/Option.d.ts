@@ -110,7 +110,7 @@ declare const _default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Path: string;
+    Path: string[];
     Cache: {
         Search: string;
         Folder: string;

@@ -54,6 +54,7 @@ export default (await import("../Function/Merge.js")).default(
 					writable: true,
 				}) && Plan,
 		},
+		Path: ["./_astro"],
 	} satisfies Type,
 );
 

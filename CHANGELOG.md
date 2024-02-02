@@ -1,3 +1,7 @@
+## 2.2.9
+
+-   Extended the default options to support the `_astro` directory, as well.
+
 ## 2.2.8
 
 -   Cleanup

@@ -129,8 +129,24 @@ export default {
 };
 ```
 
-to see the full option map visit:
+You can see the full option map here:
 [Source/Interface/Option.ts](https://github.com/astro-community/AstroCompress/blob/main/Source/Interface/Option.ts)
+
+### Output
+
+By default `AstroCompress` compresses the `outDir` `Astro` directory and the `_astro` generated images directory, if you'd like it to compress a different directory you would have to add it to the `AstroCompress` `Path` option, as well:
+
+```ts
+import Compress from "astro-compress";
+
+export default {
+    integrations: [
+        Compress({
+            Path: ["./dist", "./_astro", "./Compress"],
+        }),
+    ],
+};
+```
 
 ### Adding Multiple Paths
 

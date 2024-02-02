@@ -76,11 +76,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					return;
 				}
 
-				console.log(Paths);
-
-				if (!Paths.size) {
-					Paths.add(dir);
-				}
+				Paths.add(dir);
 
 				if (typeof Cache === "object" && Cache.Search === Search) {
 					Cache.Search = dir;

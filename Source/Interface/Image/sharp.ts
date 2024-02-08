@@ -9,6 +9,7 @@ export default interface Type {
 		| AvifOptions
 		| GifOptions
 		| HeifOptions
+		
 		| JpegOptions
 		| PngOptions
 		| TiffOptions

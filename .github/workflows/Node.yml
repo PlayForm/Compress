@@ -73,7 +73,7 @@ jobs:
                           --unsafe-perm=true
                         ]
 
-            - uses: actions/setup-node@v4.0.1
+            - uses: actions/setup-node@v4.0.2
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
@@ -85,7 +85,7 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: actions/upload-artifact@v4.3.0
+            - uses: actions/upload-artifact@v4.3.1
               with:
                   name: .-Node-${{ matrix.node-version }}-Target
                   path: ./Target

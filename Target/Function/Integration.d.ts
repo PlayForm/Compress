@@ -7,7 +7,7 @@ declare const _default: Type;
 export default _default;
 import type Type from "../Interface/Integration.js";
 import type Action from "files-pipe/Target/Interface/Action.js";
-export declare const Default: {
+export declare const Default: Omit<{} & {
     CSS: {
         csso: {
             comments: false;
@@ -47,21 +47,6 @@ export declare const Default: {
             useShortDoctype: false;
         };
     };
-    JavaScript: {
-        terser: {
-            ecma: 5;
-            enclose: false;
-            keep_classnames: false;
-            keep_fnames: false;
-            ie8: false;
-            module: false;
-            safari10: false;
-            toplevel: false;
-            format: {
-                comments: false;
-            };
-        };
-    };
     Image: {
         sharp: {
             avif: {
@@ -91,6 +76,21 @@ export declare const Default: {
             };
         };
     };
+    JavaScript: {
+        terser: {
+            ecma: 5;
+            enclose: false;
+            keep_classnames: false;
+            keep_fnames: false;
+            ie8: false;
+            module: false;
+            safari10: false;
+            toplevel: false;
+            format: {
+                comments: false;
+            };
+        };
+    };
     SVG: {
         svgo: {
             multipass: true;
@@ -115,24 +115,25 @@ export declare const Default: {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Action: {
-        Failed: ({ Input }: {
-            Input: any;
-        }) => Promise<string>;
-        Passed: ({ Before, Buffer }: {
-            Before: any;
-            Buffer: any;
-        }) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: {
-            Input: any;
-            Before: any;
-            After: any;
-        }) => Promise<string>;
-        Changed: (Plan: any) => Promise<any>;
-    };
     Path: string[];
-};
-export declare const Search: any;
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Logger: 2;
+    Action: Omit<{} & {
+        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+    }, "__proto__">;
+    Files: string;
+    Exclude: false;
+}, "__proto__">;
+export declare const Search: string;
 export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;
 export declare const Defaultsharp: typeof import("sharp");
 export declare let _Action: Action;

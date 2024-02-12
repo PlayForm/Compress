@@ -12,9 +12,9 @@ permissions:
 on:
     workflow_dispatch:
     push:
-        branches: [%DEFAULT%]
+        branches: [main]
     pull_request:
-        branches: [%DEFAULT%]
+        branches: [main]
     workflow_call:
 
 jobs:

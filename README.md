@@ -188,7 +188,7 @@ export default {
 };
 ```
 
-Or an array of the two.
+Or an array of the two:
 
 **`astro.config.ts`**
 

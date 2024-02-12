@@ -65,9 +65,7 @@ Then, apply this integration to your `astro.config.*` file using the
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
-export default { integrations: [Compress()] };
+export default { integrations: [(await import("astro-compress")).default()] };
 ```
 
 ## Getting started
@@ -114,11 +112,9 @@ or disable them entirely:
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			CSS: false,
 			HTML: false,
 			Image: false,
@@ -140,11 +136,9 @@ directory you would have to add it to the `AstroCompress` `Path` option, as
 well:
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			Path: ["./dist", "./_astro", "./Compress"],
 		}),
 	],
@@ -159,11 +153,9 @@ variable.
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			Path: ["./Target", "./Build"],
 		}),
 	],
@@ -177,11 +169,9 @@ You can also provide a map of paths for different input output directories.
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			Path: new Map([["./Source", "./Target"]]),
 		}),
 	],
@@ -193,11 +183,9 @@ Or an array of the two:
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			Path: [
 				// Compress Target
 				"./Target",
@@ -218,11 +206,9 @@ match on file names:
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			Exclude: [
 				"File.png",
 				(File: string) =>
@@ -241,11 +227,9 @@ value is `2`, but you can set it to `0` if you don't want to see debug messages:
 **`astro.config.ts`**
 
 ```ts
-import Compress from "astro-compress";
-
 export default {
 	integrations: [
-		Compress({
+		(await import("astro-compress")).default({
 			Logger: 0,
 		}),
 	],

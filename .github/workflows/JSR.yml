@@ -38,7 +38,7 @@ jobs:
               working-directory: .
               run: |
                   npm install --legacy-peer-deps
-                  npm run prepublishOnly --legacy-peer-deps --provenance
+                  npm run prepublishOnly --legacy-peer-deps
 
             - name: Install Deno
               uses: denoland/setup-deno@v1.1.4

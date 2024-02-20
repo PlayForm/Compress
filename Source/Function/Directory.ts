@@ -4,7 +4,7 @@
  *
  */
 export default (async (...[Path]: Parameters<Type>) => {
-	let Clean = (await import("path")).parse(Path).dir;
+	let { dir } = (await import("path")).parse(Path).dir;
 
 	Clean = (await import("path")).normalize(Clean);
 	Clean = Clean.replace(/\\/g, "/");

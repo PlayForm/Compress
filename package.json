@@ -44,7 +44,7 @@
 		"files-pipe": "2.1.8",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
-		"lightningcss": "1.23.0",
+		"lightningcss": "1.24.0",
 		"sharp": "0.33.2",
 		"svgo": "3.2.0",
 		"terser": "5.27.2"

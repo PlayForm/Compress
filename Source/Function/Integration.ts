@@ -13,7 +13,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 				Value === true
 					? Default[Key as keyof typeof Default]
 					: _Option[Key as keyof typeof _Option],
-		}),
+		})
 	);
 
 	const {
@@ -43,7 +43,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 		Object.entries(Parser).forEach(([Key, Value]) =>
 			Object.defineProperty(Parser, Key, {
 				value: Array.isArray(Value) ? Value : [Value],
-			}),
+			})
 		);
 	}
 
@@ -67,9 +67,9 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
 						(await import("kleur/colors")).black(
-							" AstroCompress processing ",
-						),
-					)}`,
+							" AstroCompress processing "
+						)
+					)}`
 				);
 
 				if (typeof _Map !== "object") {
@@ -121,7 +121,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										return (await import("csso")).minify(
 											Buffer.toString(),
 											// @ts-expect-error
-											Setting["csso"],
+											Setting["csso"]
 										).css;
 									}
 
@@ -131,7 +131,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										).minify(
 											Buffer.toString(),
 											// @ts-expect-error
-											Setting["html-minifier-terser"],
+											Setting["html-minifier-terser"]
 										);
 									}
 
@@ -143,7 +143,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 												).minify(
 													Buffer.toString(),
 													// @ts-expect-error
-													Setting["terser"],
+													Setting["terser"]
 												)
 											).code ?? Buffer
 										);
@@ -168,7 +168,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										).optimize(
 											Buffer.toString(),
 											// @ts-expect-error
-											Setting["svgo"],
+											Setting["svgo"]
 										);
 
 										return Data ?? Buffer;
@@ -192,10 +192,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 												await import(
 													"files-pipe/Target/Function/Bytes.js"
 												)
-											).default(Plan.Info.Total)}.`,
-									  )}`
+											).default(Plan.Info.Total)}.`
+										)}`
 									: false,
-						} satisfies Action),
+						} satisfies Action)
 					);
 
 					if (File === "Image") {

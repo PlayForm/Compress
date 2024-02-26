@@ -137,3 +137,4 @@ export declare const Search: string;
 export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;
 export declare const Defaultsharp: typeof import("sharp");
 export declare let _Action: Action;
+export declare const isArray: (arg: any) => arg is any[];

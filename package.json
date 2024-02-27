@@ -2,7 +2,7 @@
 	"name": "astro-compress",
 	"version": "2.2.11",
 	"private": false,
-	"description": "AstroJS compression utilities. 🗜️ Compress HTML, CSS, JavaScript and more!",
+	"description": "🗜️ AstroJS compression utilities.",
 	"keywords": [
 		"astro-integration",
 		"astro-component",

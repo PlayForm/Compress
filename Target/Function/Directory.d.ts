@@ -1,6 +1,5 @@
 /**
  * @module Directory
- * TODO: Test this for performance, mainly importing the Integration.js System variable
  *
  */
 declare const _default: Type;

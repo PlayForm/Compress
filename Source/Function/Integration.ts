@@ -2,7 +2,6 @@
  * @module Integration
  *
  */
-
 // TODO: Test this for security
 export let System: string;
 

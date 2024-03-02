@@ -1,17 +1,14 @@
 /**
  * @module Directory
- * TODO: Test this for performance, mainly importing the Integration.js System variable
  *
  */
 export default (async (...[Path]: Parameters<Type>) => {
 	let { dir } = (await import("path")).parse(Path);
 
-	dir = (await import("path")).normalize(dir);
-	dir = dir.replace(/\\/g, "/");
-	dir = dir.replace(
-		(await import("../Function/Integration.js")).System,
-		"",
-	);
+	dir = (await import("path"))
+		.normalize(dir)
+		.replace(/\\/g, "/")
+		.replace((await import("../Function/Integration.js")).System, "");
 
 	if (!dir.endsWith("/")) {
 		dir += "/";

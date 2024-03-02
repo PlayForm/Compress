@@ -50,11 +50,7 @@
 		"terser": "5.28.1"
 	},
 	"devDependencies": {
-<<<<<<< HEAD
-		"astro": "4.4.6",
-=======
 		"astro": "4.4.7",
->>>>>>> 936f23e0b7b54f1cd415bd50825595dd8935de45
 		"typescript-esbuild": "0.3.10"
 	},
 	"publishConfig": {

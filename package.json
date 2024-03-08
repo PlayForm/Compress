@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "2.2.12",
+	"version": "2.2.13",
 	"private": false,
 	"description": "🗜️ AstroJS compression utilities.",
 	"keywords": [
@@ -50,7 +50,7 @@
 		"terser": "5.29.1"
 	},
 	"devDependencies": {
-		"astro": "4.4.13",
+		"astro": "4.4.15",
 		"typescript-esbuild": "0.3.11"
 	},
 	"publishConfig": {

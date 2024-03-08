@@ -41,7 +41,7 @@
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"csso": "5.0.5",
-		"files-pipe": "2.1.9",
+		"files-pipe": "2.1.10",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.24.0",
@@ -51,7 +51,7 @@
 	},
 	"devDependencies": {
 		"astro": "4.4.13",
-		"typescript-esbuild": "0.3.10"
+		"typescript-esbuild": "0.3.11"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -17,13 +17,13 @@
 		"svg",
 		"withastro"
 	],
-	"homepage": "https://github.com/astro-community/AstroCompress#readme",
+	"homepage": "https://github.com/Playform/AstroCompress#readme",
 	"bugs": {
-		"url": "https://github.com/astro-community/AstroCompress/issues"
+		"url": "https://github.com/Playform/AstroCompress/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/astro-community/AstroCompress.git"
+		"url": "git+https://github.com/Playform/AstroCompress.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {

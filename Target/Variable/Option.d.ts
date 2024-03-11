@@ -2,7 +2,7 @@
  * @module Option
  *
  */
-declare const _default: {
+declare const _default: Omit<{} & {
     CSS: {
         csso: {
             comments: false;
@@ -42,21 +42,6 @@ declare const _default: {
             useShortDoctype: false;
         };
     };
-    JavaScript: {
-        terser: {
-            ecma: 5;
-            enclose: false;
-            keep_classnames: false;
-            keep_fnames: false;
-            ie8: false;
-            module: false;
-            safari10: false;
-            toplevel: false;
-            format: {
-                comments: false;
-            };
-        };
-    };
     Image: {
         sharp: {
             avif: {
@@ -86,6 +71,21 @@ declare const _default: {
             };
         };
     };
+    JavaScript: {
+        terser: {
+            ecma: 5;
+            enclose: false;
+            keep_classnames: false;
+            keep_fnames: false;
+            ie8: false;
+            module: false;
+            safari10: false;
+            toplevel: false;
+            format: {
+                comments: false;
+            };
+        };
+    };
     SVG: {
         svgo: {
             multipass: true;
@@ -110,21 +110,22 @@ declare const _default: {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Action: {
-        Failed: ({ Input }: {
-            Input: any;
-        }) => Promise<string>;
-        Passed: ({ Before, Buffer }: {
-            Before: any;
-            Buffer: any;
-        }) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: {
-            Input: any;
-            Before: any;
-            After: any;
-        }) => Promise<string>;
-        Changed: (Plan: any) => Promise<any>;
-    };
     Path: string[];
-};
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Logger: 2;
+    Action: Omit<{} & {
+        Failed: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: any) => Promise<string>;
+        Wrote: ({ Buffer }: any) => Promise<any>;
+        Fulfilled: ({ Files }: any) => Promise<string | false>;
+    }, "__proto__">;
+    Files: string;
+    Exclude: false;
+}, "__proto__">;
 export default _default;

@@ -28,7 +28,7 @@ export default (await import("../Function/Merge.js")).default(
 		Action: {
 			Failed: async ({ Input }) =>
 				`${red("Error:")} Cannot compress file ${gray(
-					await Directory(Input)
+					await Directory(Input),
 				)}${red((await import("path")).parse(Input).base)}`,
 			Passed: async ({ Before, Buffer }) =>
 				Before > _Buffer.byteLength(Buffer.toString()),
@@ -38,9 +38,9 @@ export default (await import("../Function/Merge.js")).default(
 				return `${gray(
 					`(-${await (
 						await import("files-pipe/Target/Function/Bytes.js")
-					).default(Saving)})`
+					).default(Saving)})`,
 				)}	${(await import("kleur/colors")).green(
-					`${((Saving / Before) * 100).toFixed(2)}%`
+					`${((Saving / Before) * 100).toFixed(2)}%`,
 				)} reduction in ${gray(await Directory(Input))}${(
 					await import("kleur/colors")
 				).cyan((await import("path")).parse(Input).base)}`;
@@ -55,7 +55,7 @@ export default (await import("../Function/Merge.js")).default(
 				}) && Plan,
 		},
 		Path: ["./_astro"],
-	} satisfies Type
+	} satisfies Type,
 );
 
 import type Type from "../Interface/Option.js";

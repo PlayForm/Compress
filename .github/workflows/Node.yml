@@ -12,9 +12,9 @@ permissions:
 on:
     workflow_dispatch:
     push:
-        branches: [main]
+        branches: [Current]
     pull_request:
-        branches: [main]
+        branches: [Current]
     workflow_call:
 
 jobs:
@@ -56,9 +56,9 @@ jobs:
                 node-version: [18, 19, 20]
 
         steps:
-            - uses: actions/checkout@v4.1.1
+            - uses: actions/checkout@v4.1.2
 
-            - uses: pnpm/action-setup@v2.4.0
+            - uses: pnpm/action-setup@v3.0.0
               with:
                   version: 8.6.12
                   run_install: |
@@ -73,7 +73,7 @@ jobs:
                           --unsafe-perm=true
                         ]
 
-            - uses: actions/setup-node@v4.0.1
+            - uses: actions/setup-node@v4.0.2
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
@@ -85,7 +85,7 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: actions/upload-artifact@v4.0.0
+            - uses: actions/upload-artifact@v4.3.1
               with:
                   name: .-Node-${{ matrix.node-version }}-Target
                   path: ./Target

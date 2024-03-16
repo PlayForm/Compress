@@ -84,7 +84,7 @@ export declare const Default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Path: string;
+    Path: string[];
     Cache: {
         Search: string;
         Folder: string;
@@ -95,13 +95,13 @@ export declare const Default: Omit<{} & {
         Passed: ({ Before, Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
-        Fulfilled: ({ Files }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+        Read: ({ Input }: any) => Promise<string>;
+        Wrote: ({ Buffer }: any) => Promise<any>;
+        Fulfilled: ({ Files }: any) => Promise<string | false>;
     }, "__proto__">;
     Files: string;
     Exclude: false;
 }, "__proto__">;
 export declare const Search: string;
-export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;
+export declare const Merge: import("@Interface/Merge.js").default<import("@Interface/Merge.js").Generic>;
 export declare let _Action: Action;

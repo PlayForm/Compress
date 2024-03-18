@@ -3,18 +3,16 @@
  *
  */
 export default (async (...[Path]: Parameters<Type>) => {
-	let { dir } = (await import("path")).parse(Path);
-
-	dir = (await import("path"))
-		.normalize(dir)
+	let Directory = (await import("path"))
+		.normalize((await import("path")).parse(Path).dir)
 		.replace(/\\/g, "/")
 		.replace((await import("../Function/Integration.js")).System, "");
 
-	if (!dir.endsWith("/")) {
-		dir += "/";
+	if (!Directory.endsWith("/")) {
+		Directory += "/";
 	}
 
-	return dir;
+	return Directory;
 }) satisfies Type as Type;
 
 import type Type from "../Interface/Directory.js";

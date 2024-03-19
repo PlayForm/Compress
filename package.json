@@ -35,6 +35,7 @@
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {
+		"Document": "TypeScriptDocument 'Source/**/*.ts'",
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
@@ -51,6 +52,7 @@
 	},
 	"devDependencies": {
 		"astro": "4.5.5",
+		"typescript-document": "0.0.2",
 		"typescript-esbuild": "0.4.3"
 	},
 	"publishConfig": {

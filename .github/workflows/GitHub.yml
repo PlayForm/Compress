@@ -20,19 +20,19 @@ jobs:
 
         env:
             ADBLOCK: true
-            TELEMETRY_DISABLED: 1
             ASTRO_TELEMETRY_DISABLED: 1
             AUTOMATEDLAB_TELEMETRY_OPTOUT: 1
             AZURE_CORE_COLLECT_TELEMETRY: 0
             CHOOSENIM_NO_ANALYTICS: 1
             DIEZ_DO_NOT_TRACK: 1
-            DO_NOT_TRACK: 1
             DOTNET_CLI_TELEMETRY_OPTOUT: 1
             DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT: 1
+            DO_NOT_TRACK: 1
             ET_NO_TELEMETRY: 1
             GATSBY_TELEMETRY_DISABLED: 1
-            GATSBY_TELEMETRY_OPT_OUT: 1
             GATSBY_TELEMETRY_OPTOUT: 1
+            GATSBY_TELEMETRY_OPT_OUT: 1
+            GRIT_TELEMETRY_DISABLED: 1
             HASURA_GRAPHQL_ENABLE_TELEMETRY: false
             HINT_TELEMETRY: off
             HOMEBREW_NO_ANALYTICS: 1
@@ -47,6 +47,7 @@ jobs:
             SAM_CLI_TELEMETRY: 0
             STNOUPGRADE: 1
             STRIPE_CLI_TELEMETRY_OPTOUT: 1
+            TELEMETRY_DISABLED: 1
 
         steps:
             - uses: pozil/auto-assign-issue@v1.13.0

@@ -179,12 +179,12 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 								}
 							},
 							Fulfilled: async (Plan) =>
-								Plan.Files > 0
+								Plan.File > 0
 									? `${(await import("kleur/colors")).green(
 											`✓ Successfully compressed a total of ${
-												Plan.Files
+												Plan.File
 											} ${File} ${
-												Plan.Files === 1
+												Plan.File === 1
 													? "file"
 													: "files"
 											} for ${await (

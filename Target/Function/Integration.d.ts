@@ -128,9 +128,9 @@ export declare const Default: Omit<{} & {
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
         Read: ({ Input }: any) => Promise<string>;
         Wrote: ({ Buffer }: any) => Promise<any>;
-        Fulfilled: ({ Files }: any) => Promise<string | false>;
+        Fulfilled: ({ File }: any) => Promise<string | false>;
     }, "__proto__">;
-    Files: string;
+    File: string;
     Exclude: false;
 }, "__proto__">;
 export declare const Search: string;

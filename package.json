@@ -52,7 +52,7 @@
 	},
 	"devDependencies": {
 		"typescript-document": "0.0.4",
-		"astro": "4.5.7",
+		"astro": "4.5.8",
 		"typescript-esbuild": "0.4.5"
 	},
 	"publishConfig": {

@@ -51,7 +51,7 @@
 		"terser": "5.29.2"
 	},
 	"devDependencies": {
-		"typescript-document": "0.0.4",
+		"typescript-document": "0.0.5",
 		"astro": "4.5.8",
 		"typescript-esbuild": "0.4.5"
 	},

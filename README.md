@@ -130,8 +130,7 @@ You can see the full option map here:
 
 ### Output
 
-By default `AstroCompress` compresses the `outDir` `Astro` directory and the
-`_astro` generated images directory, if you'd like it to compress a different
+By default `AstroCompress` compresses the `outDir` `Astro` directory, if you'd like it to compress a different
 directory you would have to add it to the `AstroCompress` `Path` option, as
 well:
 
@@ -139,7 +138,7 @@ well:
 export default {
 	integrations: [
 		(await import("astro-compress")).default({
-			Path: ["./dist", "./_astro", "./Compress"],
+			Path: ["./dist", "./Compress"],
 		}),
 	],
 };

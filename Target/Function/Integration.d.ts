@@ -115,7 +115,7 @@ export declare const Default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Path: string[];
+    Path: string;
     Cache: {
         Search: string;
         Folder: string;

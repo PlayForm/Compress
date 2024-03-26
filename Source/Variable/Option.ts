@@ -33,14 +33,14 @@ export default (await import("../Function/Merge.js")).default(
 			Passed: async ({ Before, Buffer }) =>
 				Before > _Buffer.byteLength(Buffer.toString()),
 			Accomplished: async ({ Input, Before, After }) => {
-				const Saving = Before - After;
+				const Save = Before - After;
 
 				return `${gray(
 					`(-${await (
 						await import("files-pipe/Target/Function/Bytes.js")
-					).default(Saving)})`,
+					).default(Save)})`,
 				)}	${(await import("kleur/colors")).green(
-					`${((Saving / Before) * 100).toFixed(2)}%`,
+					`${((Save / Before) * 100).toFixed(2)}%`,
 				)} reduction in ${gray(await Directory(Input))}${(
 					await import("kleur/colors")
 				).cyan((await import("path")).parse(Input).base)}`;

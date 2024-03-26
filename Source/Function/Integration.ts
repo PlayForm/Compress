@@ -180,20 +180,19 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 								}
 							},
-							Fulfilled: async (Plan) =>
-								Plan.File > 0
+							Fulfilled: async ({
+								File: Count,
+								Info: { Total },
+							}) =>
+								Count > 0
 									? `${(await import("kleur/colors")).green(
-											`✓ Successfully compressed a total of ${
-												Plan.File
-											} ${File} ${
-												Plan.File === 1
-													? "file"
-													: "files"
+											`✓ Successfully compressed a total of ${Count} ${File} ${
+												Count === 1 ? "file" : "files"
 											} for ${await (
 												await import(
 													"files-pipe/Target/Function/Bytes.js"
 												)
-											).default(Plan.Info.Total)}.`,
+											).default(Total)}.`,
 									  )}`
 									: false,
 						} satisfies Action),
@@ -205,23 +204,16 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 								const { format } =
 									await Defaultsharp(Input).metadata();
 
-								try {
-									return Defaultsharp(Input, {
-										failOn: "error",
-										sequentialRead: true,
-										unlimited: true,
-										animated:
-											// biome-ignore lint/nursery/noUselessTernary:
-											format === "webp" ||
-											format === "gif"
-												? true
-												: false,
-									});
-								} catch (_Error) {
-									console.log(_Error);
-								}
-
-								return Input;
+								return Defaultsharp(Input, {
+									failOn: "error",
+									sequentialRead: true,
+									unlimited: true,
+									animated:
+										// biome-ignore lint/nursery/noUselessTernary:
+										format === "webp" || format === "gif"
+											? true
+											: false,
+								});
 							},
 						} satisfies Action);
 					}
@@ -264,5 +256,7 @@ export const {
 export const { default: Merge } = await import("../Function/Merge.js");
 
 export const { default: Defaultsharp } = await import("sharp");
+
+Defaultsharp.cache(false);
 
 export let _Action: Action;

@@ -29,7 +29,7 @@ jobs:
             - uses: actions/setup-node@v4.0.2
               with:
                   node-version: "18"
-                  registry-url: "https://Registry.NPMJS.Org"
+                  registry-url: "https://registry.npmjs.org"
 
             - run: npm install -g npm
 

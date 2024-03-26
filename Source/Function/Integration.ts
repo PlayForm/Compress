@@ -205,16 +205,23 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 								const { format } =
 									await Defaultsharp(Input).metadata();
 
-								return Defaultsharp(Input, {
-									failOn: "none",
-									sequentialRead: true,
-									unlimited: true,
-									animated:
-										// biome-ignore lint/nursery/noUselessTernary:
-										format === "webp" || format === "gif"
-											? true
-											: false,
-								});
+								try {
+									return Defaultsharp(Input, {
+										failOn: "error",
+										sequentialRead: true,
+										unlimited: true,
+										animated:
+											// biome-ignore lint/nursery/noUselessTernary:
+											format === "webp" ||
+											format === "gif"
+												? true
+												: false,
+									});
+								} catch (_Error) {
+									console.log(_Error);
+								}
+
+								return Input;
 							},
 						} satisfies Action);
 					}

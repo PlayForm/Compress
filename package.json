@@ -17,19 +17,19 @@
 		"svg",
 		"withastro"
 	],
-	"homepage": "HTTPS://GitHub.Com/Playform/AstroCompress#readme",
+	"homepage": "https://github.com/Playform/AstroCompress#readme",
 	"bugs": {
-		"url": "HTTPS://GitHub.Com/Playform/AstroCompress/issues"
+		"url": "https://github.com/Playform/AstroCompress/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+HTTPS://GitHub.Com/Playform/AstroCompress.git"
+		"url": "git+https://github.com/Playform/AstroCompress.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Playform",
 		"email": "Hello@Playform.Cloud",
-		"url": "HTTPS://Playform.Cloud"
+		"url": "https://playform.cloud"
 	},
 	"type": "module",
 	"main": "./Target/Function/Integration.js",

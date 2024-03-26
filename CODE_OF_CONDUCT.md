@@ -128,19 +128,19 @@ community.
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.1, available at
-[HTTPS://WWW.Contributor-Covenant.Org/version/2/1/code_of_conduct.html][v2.1].
+[https://WWW.Contributor-Covenant.Org/version/2/1/code_of_conduct.html][v2.1].
 Community Impact Guidelines were inspired by [Mozilla's code of conduct
 enforcement ladder][Mozilla CoC].
 
 For answers to common questions about this code of conduct, see the FAQ at
-[HTTPS://WWW.Contributor-Covenant.Org/faq][FAQ]. Translations are available at
-[HTTPS://WWW.Contributor-Covenant.Org/translations][translations].
+[https://WWW.Contributor-Covenant.Org/faq][FAQ]. Translations are available at
+[https://WWW.Contributor-Covenant.Org/translations][translations].
 
-[homepage]: HTTPS://WWW.Contributor-Covenant.Org
-[v2.1]: HTTPS://WWW.Contributor-Covenant.Org/version/2/1/code_of_conduct.html
-[Mozilla CoC]: HTTPS://GitHub.Com/mozilla/diversity
-[FAQ]: HTTPS://WWW.Contributor-Covenant.Org/faq
-[translations]: HTTPS://WWW.Contributor-Covenant.Org/translations
+[homepage]: https://WWW.Contributor-Covenant.Org
+[v2.1]: https://WWW.Contributor-Covenant.Org/version/2/1/code_of_conduct.html
+[Mozilla CoC]: https://github.com/mozilla/diversity
+[FAQ]: https://WWW.Contributor-Covenant.Org/faq
+[translations]: https://WWW.Contributor-Covenant.Org/translations
 
 Thank you for being part of our community and helping us create a safe and
 respectful environment for everyone!

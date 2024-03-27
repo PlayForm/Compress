@@ -186,7 +186,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							}) =>
 								Count > 0
 									? `${(await import("kleur/colors")).green(
-											`✓ Successfully compressed a total of ${Count} ${File} ${
+											`✓ Successfully compressed a total of ${Count} ${File} ${
 												Count === 1 ? "file" : "files"
 											} for ${await (
 												await import(

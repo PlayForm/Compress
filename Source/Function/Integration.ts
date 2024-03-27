@@ -193,7 +193,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 													"files-pipe/Target/Function/Bytes.js"
 												)
 											).default(Total)}.`,
-										)}`
+									  )}`
 									: false,
 						} satisfies Action),
 					);

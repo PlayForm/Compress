@@ -53,7 +53,7 @@
 	"devDependencies": {
 		"astro": "4.5.10",
 		"typescript-document": "0.0.6",
-		"typescript-esbuild": "0.4.6"
+		"typescript-esbuild": "0.4.7"
 	},
 	"publishConfig": {
 		"access": "public"

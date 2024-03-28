@@ -47,7 +47,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	}
 
 	return {
-		name: "astro-compress",
+		name: "compress-astro",
 		hooks: {
 			"astro:config:done": async ({
 				config: {

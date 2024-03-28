@@ -17,18 +17,18 @@
 		"svg",
 		"withastro"
 	],
-	"homepage": "https://github.com/Playform/AstroCompress#readme",
+	"homepage": "https://github.com/Playform/CompressAstro#readme",
 	"bugs": {
-		"url": "https://github.com/Playform/AstroCompress/issues"
+		"url": "https://github.com/Playform/CompressAstro/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Playform/AstroCompress.git"
+		"url": "git+https://github.com/Playform/CompressAstro.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Playform",
-		"email": "Hello@Playform.Cloud",
+		"email": "hello@playform.cloud",
 		"url": "https://playform.cloud"
 	},
 	"type": "module",
@@ -52,8 +52,8 @@
 	},
 	"devDependencies": {
 		"astro": "4.5.10",
-		"typescript-document": "0.0.6",
-		"typescript-esbuild": "0.4.8"
+		"typescript-document": "0.0.7",
+		"typescript-esbuild": "0.4.9"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -65,9 +65,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			"astro:build:done": async ({ dir }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black(
-							" AstroCompress processing ",
-						),
+						(await import("kleur/colors")).black(" CompressAstro "),
 					)}`,
 				);
 
@@ -193,7 +191,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 													"files-pipe/Target/Function/Bytes.js"
 												)
 											).default(Total)}.`,
-									  )}`
+										)}`
 									: false,
 						} satisfies Action),
 					);

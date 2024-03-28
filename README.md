@@ -36,19 +36,19 @@ follow the prompts:
 Using NPM:
 
 ```sh
-npx astro add compress-astro
+npx astro add astro-compress
 ```
 
 Using Yarn:
 
 ```sh
-yarn astro add compress-astro
+yarn astro add astro-compress
 ```
 
 Using PNPM:
 
 ```sh
-pnpx astro add compress-astro
+pnpx astro add astro-compress
 ```
 
 ### Install dependencies manually
@@ -56,7 +56,7 @@ pnpx astro add compress-astro
 First, install the `CompressAstro` integration like so:
 
 ```sh
-npm install -D -E compress-astro
+npm install -D -E astro-compress
 ```
 
 Then, apply this integration to your `astro.config.*` file using the
@@ -65,7 +65,7 @@ Then, apply this integration to your `astro.config.*` file using the
 **`astro.config.ts`**
 
 ```ts
-export default { integrations: [(await import("compress-astro")).default()] };
+export default { integrations: [(await import("astro-compress")).default()] };
 ```
 
 ## Getting started
@@ -114,7 +114,7 @@ or disable them entirely:
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			CSS: false,
 			HTML: false,
 			Image: false,
@@ -137,7 +137,7 @@ well:
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			Path: ["./dist", "./Compress"],
 		}),
 	],
@@ -154,7 +154,7 @@ variable.
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			Path: ["./Target", "./Build"],
 		}),
 	],
@@ -170,7 +170,7 @@ You can also provide a map of paths for different input output directories.
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			Path: new Map([["./Source", "./Target"]]),
 		}),
 	],
@@ -184,7 +184,7 @@ Or an array of the two:
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			Path: [
 				// Compress Target
 				"./Target",
@@ -207,7 +207,7 @@ match on file names:
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			Exclude: [
 				"File.png",
 				(File: string) =>
@@ -228,14 +228,14 @@ value is `2`, but you can set it to `0` if you don't want to see debug messages:
 ```ts
 export default {
 	integrations: [
-		(await import("compress-astro")).default({
+		(await import("astro-compress")).default({
 			Logger: 0,
 		}),
 	],
 };
 ```
 
-[CompressAstro]: https://npmjs.org/compress-astro
+[CompressAstro]: https://npmjs.org/astro-compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser
 [terser]: https://npmjs.org/terser

@@ -1,12 +1,10 @@
 {
 	"name": "compress-astro",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": false,
 	"description": "🗜️  Compress Astro.",
 	"keywords": [
 		"astro",
-		"astro-component",
-		"astro-integration",
 		"compress",
 		"compression",
 		"css",
@@ -15,8 +13,7 @@
 		"img",
 		"javascript",
 		"performance",
-		"svg",
-		"withastro"
+		"svg"
 	],
 	"homepage": "https://github.com/Playform/CompressAstro#readme",
 	"bugs": {

@@ -47,7 +47,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	}
 
 	return {
-		name: "compress-astro",
+		name: "@playform/compress-astro",
 		hooks: {
 			"astro:config:done": async ({
 				config: {

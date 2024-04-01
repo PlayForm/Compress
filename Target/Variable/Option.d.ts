@@ -121,9 +121,9 @@ declare const _default: Omit<{} & {
         Passed: ({ Before, Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("files-pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input }: import("files-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("files-pipe/Target/Interface/File.js").default) => Promise<import("files-pipe/Target/Type/Buffer.js").Type>;
-        Fulfilled: ({ File }: import("files-pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+        Read: ({ Input }: any) => Promise<string>;
+        Wrote: ({ Buffer }: any) => Promise<any>;
+        Fulfilled: ({ File }: any) => Promise<string | false>;
     }, "__proto__">;
     File: string;
     Exclude: false;

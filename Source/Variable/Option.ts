@@ -3,7 +3,7 @@
  *
  */
 export default (await import("../Function/Merge.js")).default(
-	(await import("files-pipe/Target/Variable/Option.js")).default,
+	(await import("@playform/file-pipe/Target/Variable/Option.js")).default,
 	{
 		CSS: {
 			csso: (await import("./CSS/csso.js")).default,
@@ -37,7 +37,7 @@ export default (await import("../Function/Merge.js")).default(
 
 				return `${gray(
 					`(-${await (
-						await import("files-pipe/Target/Function/Bytes.js")
+						await import("@playform/file-pipe/Target/Function/Bytes.js")
 					).default(Save)})`,
 				)}	${(await import("kleur/colors")).green(
 					`${((Save / Before) * 100).toFixed(2)}%`,

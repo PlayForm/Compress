@@ -12,7 +12,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 				Value === true
 					? Default[Key as keyof typeof Default]
 					: _Option[Key as keyof typeof _Option],
-		}),
+		})
 	);
 
 	const {
@@ -42,7 +42,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 		Object.entries(Parser).forEach(([Key, Value]) =>
 			Object.defineProperty(Parser, Key, {
 				value: Array.isArray(Value) ? Value : [Value],
-			}),
+			})
 		);
 	}
 
@@ -65,8 +65,8 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			"astro:build:done": async ({ dir }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black(" CompressAstro "),
-					)}`,
+						(await import("kleur/colors")).black(" CompressAstro ")
+					)}`
 				);
 
 				if (typeof _Map !== "object") {
@@ -120,7 +120,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										return (await import("csso")).minify(
 											Buffer.toString(),
 											// @ts-expect-error
-											Setting["csso"],
+											Setting["csso"]
 										).css;
 									}
 
@@ -130,7 +130,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 										).minify(
 											Buffer.toString(),
 											// @ts-expect-error
-											Setting["html-minifier-terser"],
+											Setting["html-minifier-terser"]
 										);
 									}
 
@@ -142,7 +142,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 												).minify(
 													Buffer.toString(),
 													// @ts-expect-error
-													Setting["terser"],
+													Setting["terser"]
 												)
 											).code ?? Buffer
 										);
@@ -162,15 +162,13 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 
 									case "SVG": {
-										const { data: Data } = (
-											await import("svgo")
-										).optimize(
-											Buffer.toString(),
-											// @ts-expect-error
-											Setting["svgo"],
+										return (
+											(await import("svgo")).optimize(
+												Buffer.toString(),
+												// @ts-expect-error
+												Setting["svgo"]
+											).data ?? Buffer
 										);
-
-										return Data ?? Buffer;
 									}
 
 									default: {
@@ -190,10 +188,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 												await import(
 													"@playform/file-pipe/Target/Function/Bytes.js"
 												)
-											).default(Total)}.`,
+											).default(Total)}.`
 										)}`
 									: false,
-						} satisfies Action),
+						} satisfies Action)
 					);
 
 					if (File === "Image") {

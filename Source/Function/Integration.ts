@@ -188,7 +188,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 												Count === 1 ? "file" : "files"
 											} for ${await (
 												await import(
-													"files-pipe/Target/Function/Bytes.js"
+													"@playform/file-pipe/Target/Function/Bytes.js"
 												)
 											).default(Total)}.`,
 										)}`
@@ -221,7 +221,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							await (
 								await (
 									await new (
-										await import("files-pipe")
+										await import("@playform/file-pipe")
 									).default(Cache, Logger).In(Path)
 								).By(_Map[File] ?? "**/*")
 							).Not(Exclude)
@@ -240,8 +240,8 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 import type Onsharp from "../Interface/Image/Onsharp.js";
 import type Type from "../Interface/Integration.js";
 
-import type Action from "files-pipe/Target/Interface/Action.js";
-import type Path from "files-pipe/Target/Type/Path.js";
+import type Action from "@playform/file-pipe/Target/Interface/Action.js";
+import type Path from "@playform/file-pipe/Target/Type/Path.js";
 
 export const { default: Default } = await import("../Variable/Option.js");
 
@@ -249,7 +249,7 @@ export const {
 	default: {
 		Cache: { Search },
 	},
-} = await import("files-pipe/Target/Variable/Option.js");
+} = await import("@playform/file-pipe/Target/Variable/Option.js");
 
 export const { default: Merge } = await import("../Function/Merge.js");
 

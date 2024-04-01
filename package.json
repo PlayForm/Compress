@@ -1,6 +1,6 @@
 {
 	"name": "@playform/compress-astro",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": false,
 	"description": "🗜️ Compress.",
 	"keywords": [
@@ -14,7 +14,7 @@
 		"performance",
 		"svg"
 	],
-	"homepage": "https://github.com/Playform/CompressAstro#readme",
+	"homepage": "https://github.com/Playform/CompressAstro#ReadMe",
 	"bugs": {
 		"url": "https://github.com/Playform/CompressAstro/issues"
 	},
@@ -28,7 +28,6 @@
 		"email": "hello@playform.cloud",
 		"url": "https://playform.cloud"
 	},
-
 	"type": "module",
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
@@ -49,8 +48,8 @@
 		"terser": "5.30.0"
 	},
 	"devDependencies": {
-		"astro": "4.5.12",
-		"@playform/build": "0.0.1"
+		"@playform/build": "0.0.1",
+		"astro": "4.5.12"
 	},
 	"optionalDependencies": {
 		"@playform/document": "0.0.2"

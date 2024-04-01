@@ -62,7 +62,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					System = System.substring(1);
 				}
 			},
-			"astro:build:done": async ({ dir }) => {
+			"astro:build:done": async ({ dir: Directory }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
 						(await import("kleur/colors")).black(" CompressAstro ")
@@ -74,11 +74,11 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 				}
 
 				if (!Paths.size) {
-					Paths.add(dir);
+					Paths.add(Directory);
 				}
 
 				if (typeof Cache === "object" && Cache.Search === Search) {
-					Cache.Search = dir;
+					Cache.Search = Directory;
 				}
 
 				for (const [File, Setting] of Object.entries({

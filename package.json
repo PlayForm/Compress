@@ -28,6 +28,7 @@
 		"email": "hello@playform.cloud",
 		"url": "https://playform.cloud"
 	},
+
 	"type": "module",
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
@@ -36,7 +37,7 @@
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/file-pipe": "Playform/FilePipe#Current",
+		"@playform/file-pipe": "0.0.2",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"csso": "5.0.5",
@@ -49,10 +50,10 @@
 	},
 	"devDependencies": {
 		"astro": "4.5.12",
-		"typescript-esbuild": "0.4.10"
+		"@playform/build": "0.0.1"
 	},
 	"optionalDependencies": {
-		"typescript-document": "0.0.8"
+		"@playform/document": "0.0.2"
 	},
 	"publishConfig": {
 		"access": "public"

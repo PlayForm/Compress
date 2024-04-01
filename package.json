@@ -36,7 +36,7 @@
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/file-pipe": "0.0.1",
+		"@playform/file-pipe": "Playform/FilePipe#Current",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"csso": "5.0.5",

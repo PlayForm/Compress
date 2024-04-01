@@ -3,6 +3,6 @@
 		"baseUrl": "./",
 		"outDir": "Target"
 	},
-	"extends": "typescript-esbuild/Target/Notation/TypeScript",
+	"extends": "@playform/build/Target/Notation/TypeScript",
 	"include": ["Source"]
 }

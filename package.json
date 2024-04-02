@@ -49,7 +49,7 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.1",
-		"astro": "4.5.12"
+		"astro": "4.5.13"
 	},
 	"optionalDependencies": {
 		"@playform/document": "0.0.2"

@@ -81,7 +81,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					Cache.Search = Directory;
 				}
 
-				for (const [File, Setting] of Object.entries({
+				for (const [Type, Setting] of Object.entries({
 					CSS,
 					HTML,
 					Image,
@@ -89,7 +89,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					SVG,
 				})) {
 					if (
-						!(Setting && _Map[File]) ||
+						!(Setting && _Map[Type]) ||
 						typeof Setting !== "object"
 					) {
 						continue;
@@ -99,7 +99,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						Action,
 						Merge(Action, {
 							Wrote: async ({ Buffer, Input }) => {
-								switch (File) {
+								switch (Type) {
 									case "CSS": {
 										// TODO: Implement lightningcss
 										// console.log(
@@ -176,14 +176,11 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 								}
 							},
-							Fulfilled: async ({
-								File: Count,
-								Info: { Total },
-							}) =>
-								Count > 0
+							Fulfilled: async ({ File, Info: { Total } }) =>
+								File > 0
 									? `${(await import("kleur/colors")).green(
-											`✓ Successfully compressed a total of ${Count} ${File} ${
-												Count === 1 ? "file" : "files"
+											`✓ Successfully compressed a total of ${File} ${Type} ${
+												File === 1 ? "file" : "files"
 											} for ${await (
 												await import(
 													"@playform/file-pipe/Target/Function/Bytes.js"
@@ -194,7 +191,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						} satisfies Action)
 					);
 
-					if (File === "Image") {
+					if (Type === "Image") {
 						_Action = Merge(_Action, {
 							Read: async ({ Input }) => {
 								const { format } =
@@ -221,7 +218,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									await new (
 										await import("@playform/file-pipe")
 									).default(Cache, Logger).In(Path)
-								).By(_Map[File] ?? "**/*")
+								).By(_Map[Type] ?? "**/*")
 							).Not(Exclude)
 						).Pipe(_Action);
 					}

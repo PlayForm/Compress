@@ -77,4 +77,4 @@ import type sharp from "./Image/sharp.js";
 import type _Map from "./Map.js";
 import type Parser from "./Parser.js";
 
-import type Option from "@playform/file-pipe/Target/Interface/Option.js";
+import type Option from "@playform/pipe/Target/Interface/Option.js";

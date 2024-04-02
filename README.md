@@ -1,6 +1,6 @@
 <table><tr><td colspan=4><h3 align=center><picture><source media="(prefers-color-scheme: dark)" srcset=https://nikolahristov.tech/Image/GitHub/DarkAstro.svg><source media="(prefers-color-scheme: light)" srcset=https://nikolahristov.tech/Image/GitHub/LightAstro.svg><img alt=Astro src=https://nikolahristov.tech/Image/GitHub/LightAstro.svg width=28></picture><br>Related:<br></h3></td></tr><tr><td colspan=1 valign=top><br><a href=https://github.com/Playform/Inline target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/stars/Playform/Inline?label=stars&logo=github&color=black&labelColor=black&logoColor=white&logoWidth=0&logoColor=black"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/stars/Playform/Inline?label=stars&logo=github&color=white&labelColor=white&logoColor=black&logoWidth=0&logoColor=black"><img alt=Stars src="https://img.shields.io/github/stars/Playform/Inline?label=stars&logo=github&color=black&labelColor=black&logoColor=white&logoWidth=0&logoColor=black"></picture></a><br><a href=https://github.com/Playform/Inline target=_blank><b>Critters</b></a><br><b>🦔  Inline.<br/></b><br></td><td colspan=1 valign=top><br><a href=https://github.com/Playform/Inline/actions/workflows/Node.yml target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/Playform/Inline/Node.yml?branch=main&label=Build&logo=node.js&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/actions/workflow/status/Playform/Inline/Node.yml?branch=main&label=Build&logo=node.js&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Build src="https://img.shields.io/github/actions/workflow/status/Playform/Inline/Node.yml?branch=main&label=Build&logo=node.js&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Build></picture></a><br><a href="https://npmjs.org/@playform/inline?activeTab=dependencies" target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/librariesio/release/npm/@playform/inline?logo=dependabot&label=&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/librariesio/release/npm/@playform/inline?logo=dependabot&label=&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Dependencies src="https://img.shields.io/librariesio/release/npm/@playform/inline?logo=dependabot&label=&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Dependencies></picture></a><br><a href=https://npmjs.org/@playform/inline target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/v/@playform/inline?label=Version&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/v/@playform/inline?label=Version&logo=npm&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Version src="https://img.shields.io/npm/v/@playform/inline?label=Version&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Version></picture></a><br><a href=https://npmjs.org/@playform/inline target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dt/@playform/inline?label=Leaks&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dt/@playform/inline?label=Leaks&logo=npm&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Downloads src="https://img.shields.io/npm/dt/@playform/inline?label=Leaks&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Downloads></picture></a><br><br></td><td colspan=1 valign=top><br><a href=https://github.com/Playform/Inline target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/stars/Playform/Inline?label=stars&logo=github&color=black&labelColor=black&logoColor=white&logoWidth=0&logoColor=black"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/stars/Playform/Inline?label=stars&logo=github&color=white&labelColor=white&logoColor=black&logoWidth=0&logoColor=black"><img alt=Stars src="https://img.shields.io/github/stars/Playform/Inline?label=stars&logo=github&color=black&labelColor=black&logoColor=white&logoWidth=0&logoColor=black"></picture></a><br><a href=https://github.com/Playform/Inline target=_blank><b>Biome</b></a><br><b>🗻 Format.<br/></b><br></td><td colspan=1 valign=top><br><a href=https://github.com/Playform/Inline/actions/workflows/Node.yml target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/Playform/Inline/Node.yml?branch=main&label=Build&logo=node.js&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/actions/workflow/status/Playform/Inline/Node.yml?branch=main&label=Build&logo=node.js&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Build src="https://img.shields.io/github/actions/workflow/status/Playform/Inline/Node.yml?branch=main&label=Build&logo=node.js&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Build></picture></a><br><a href="https://npmjs.org/@playform/format?activeTab=dependencies" target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/librariesio/release/npm/@playform/format?logo=dependabot&label=&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/librariesio/release/npm/@playform/format?logo=dependabot&label=&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Dependencies src="https://img.shields.io/librariesio/release/npm/@playform/format?logo=dependabot&label=&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Dependencies></picture></a><br><a href=https://npmjs.org/@playform/format target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/v/@playform/format?label=Version&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/v/@playform/format?label=Version&logo=npm&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Version src="https://img.shields.io/npm/v/@playform/format?label=Version&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Version></picture></a><br><a href=https://npmjs.org/@playform/format target=_blank><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dt/@playform/format?label=Leaks&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0"><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/npm/dt/@playform/format?label=Leaks&logo=npm&color=white&labelColor=white&logoColor=black&logoWidth=0"><img alt=Downloads src="https://img.shields.io/npm/dt/@playform/format?label=Leaks&logo=npm&color=black&labelColor=black&logoColor=white&logoWidth=0" title=Downloads></picture></a><br><br></td></tr></table>
 
-# 🗜️ [CompressAstro]
+# 🗜️ [Compress]
 
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
@@ -10,12 +10,12 @@ your Astro project.
 
 > **Note**
 >
-> `CompressAstro` will not compress your requests, only your statically
+> `Compress` will not compress your requests, only your statically
 > generated build and pre-rendered routes.
 
 > [!IMPORTANT]
 >
-> Use `CompressAstro` last in your integration list for the best optimization.
+> Use `Compress` last in your integration list for the best optimization.
 
 ## Installation
 
@@ -30,7 +30,7 @@ command will:
 1. (Optionally) Install all necessary dependencies and peer dependencies
 2. (Also optionally) Update your `astro.config.*` file to apply this integration
 
-To install `CompressAstro`, run the following from your project directory and
+To install `Compress`, run the following from your project directory and
 follow the prompts:
 
 Using NPM:
@@ -53,7 +53,7 @@ pnpx astro add @playform/compress
 
 ### Install dependencies manually
 
-First, install the `CompressAstro` integration like so:
+First, install the `Compress` integration like so:
 
 ```sh
 npm install -D -E @playform/compress
@@ -130,9 +130,9 @@ You can see the full option map here:
 
 ### Output
 
-By default `CompressAstro` compresses the `outDir` `Astro` directory, if you'd
+By default `Compress` compresses the `outDir` `Astro` directory, if you'd
 like it to compress a different directory you would have to add it to the
-`CompressAstro` `Path` option, as well:
+`Compress` `Path` option, as well:
 
 ```ts
 export default {
@@ -235,7 +235,7 @@ export default {
 };
 ```
 
-[CompressAstro]: https://npmjs.org/@playform/compress
+[Compress]: https://npmjs.org/@playform/compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser
 [terser]: https://npmjs.org/terser

@@ -7,7 +7,7 @@ export default interface Type
 	/**
 	 * Whether to enable minification
 	 *
-	 * @default CompressAstro true
+	 * @default Compress true
 	 * @default lightningcss false
 	 */
 	minify?: boolean;

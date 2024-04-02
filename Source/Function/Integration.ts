@@ -65,7 +65,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			"astro:build:done": async ({ dir: Directory }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black(" CompressAstro ")
+						(await import("kleur/colors")).black(" Compress ")
 					)}`
 				);
 

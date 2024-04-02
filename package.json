@@ -4,15 +4,18 @@
 	"private": false,
 	"description": "🗜️ Compress.",
 	"keywords": [
+		"astro-integration",
+		"astro-component",
 		"astro",
-		"compress",
+		"compression",
 		"css",
 		"html",
-		"image",
 		"img",
+		"image",
 		"javascript",
 		"performance",
-		"svg"
+		"svg",
+		"withastro"
 	],
 	"homepage": "https://github.com/Playform/CompressAstro#ReadMe",
 	"bugs": {

@@ -1,5 +1,5 @@
 {
-	"name": "@playform/compress-astro",
+	"name": "@playform/compress",
 	"version": "0.0.2",
 	"private": false,
 	"description": "🗜️ Compress.",
@@ -16,13 +16,13 @@
 		"svg",
 		"withastro"
 	],
-	"homepage": "https://github.com/Playform/CompressAstro#ReadMe",
+	"homepage": "https://github.com/Playform/Compress#ReadMe",
 	"bugs": {
-		"url": "https://github.com/Playform/CompressAstro/issues"
+		"url": "https://github.com/Playform/Compress/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Playform/CompressAstro.git"
+		"url": "git+https://github.com/Playform/Compress.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {

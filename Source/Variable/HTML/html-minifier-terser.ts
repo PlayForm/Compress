@@ -81,4 +81,4 @@ export default {
 	useShortDoctype: false,
 } satisfies Type;
 
-import type Type from "../../Type/HTML/html-minifier-terser.js";
+import type Type from "@Type/HTML/html-minifier-terser.js";

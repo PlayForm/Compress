@@ -151,7 +151,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									case "Image": {
 										return await (
 											await import(
-												"../Function/Image/Writesharp.js"
+												"@Function/Image/Writesharp.js"
 											)
 										)
 											// @ts-expect-error
@@ -232,13 +232,13 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	};
 }) satisfies Type as Type;
 
-import type Onsharp from "../Interface/Image/Onsharp.js";
-import type Type from "../Interface/Integration.js";
+import type Onsharp from "@Interface/Image/Onsharp.js";
+import type Type from "@Interface/Integration.js";
 
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 import type Path from "@playform/pipe/Target/Type/Path.js";
 
-export const { default: Default } = await import("../Variable/Option.js");
+export const { default: Default } = await import("@Variable/Option.js");
 
 export const {
 	default: {
@@ -246,7 +246,7 @@ export const {
 	},
 } = await import("@playform/pipe/Target/Variable/Option.js");
 
-export const { default: Merge } = await import("../Function/Merge.js");
+export const { default: Merge } = await import("@Function/Merge.js");
 
 export const { default: Defaultsharp } = await import("sharp");
 

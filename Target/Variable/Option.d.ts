@@ -117,10 +117,10 @@ declare const _default: Omit<{} & {
     };
     Logger: 2;
     Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/file-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/file-pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/file-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Changed: (Plan: import("@playform/file-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
         Read: ({ Input }: any) => Promise<string>;
         Wrote: ({ Buffer }: any) => Promise<any>;
         Fulfilled: ({ File }: any) => Promise<string | false>;

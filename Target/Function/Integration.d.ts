@@ -5,8 +5,8 @@
 export declare let System: string;
 declare const _default: Type;
 export default _default;
-import type Type from "../Interface/Integration.js";
-import type Action from "@playform/file-pipe/Target/Interface/Action.js";
+import type Type from "@Interface/Integration.js";
+import type Action from "@playform/pipe/Target/Interface/Action.js";
 export declare const Default: Omit<{} & {
     CSS: {
         csso: {
@@ -122,10 +122,10 @@ export declare const Default: Omit<{} & {
     };
     Logger: 2;
     Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/file-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/file-pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/file-pipe/Target/Interface/File.js").default) => Promise<string>;
-        Changed: (Plan: import("@playform/file-pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
         Read: ({ Input }: any) => Promise<string>;
         Wrote: ({ Buffer }: any) => Promise<any>;
         Fulfilled: ({ File }: any) => Promise<string | false>;
@@ -134,6 +134,6 @@ export declare const Default: Omit<{} & {
     Exclude: false;
 }, "__proto__">;
 export declare const Search: string;
-export declare const Merge: import("@Interface/Merge.js").default<import("@Interface/Merge.js").Generic>;
+export declare const Merge: import("@Interface/Merge").default<import("@Interface/Merge").Generic>;
 export declare const Defaultsharp: typeof import("sharp");
 export declare let _Action: Action;

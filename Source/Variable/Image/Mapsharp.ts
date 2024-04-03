@@ -16,4 +16,4 @@ export default {
 	jpg: "jpeg",
 } satisfies Type;
 
-import type Type from "../../Interface/Map.js";
+import type Type from "@Interface/Map.js";

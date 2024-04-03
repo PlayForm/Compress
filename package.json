@@ -34,8 +34,8 @@
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {
-		"Document": "TypeScriptDocument 'Source/**/*.ts'",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+		"Document": "Document 'Source/**/*.ts'",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
 		"@playform/pipe": "0.0.2",
@@ -50,7 +50,7 @@
 		"terser": "5.30.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.1",
+		"@playform/build": "0.0.2",
 		"astro": "4.5.13"
 	},
 	"optionalDependencies": {

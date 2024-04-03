@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default interface Type {
+export default interface Interface {
 	[key: string]:
 		| undefined
 		| boolean

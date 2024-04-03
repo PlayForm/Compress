@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default interface Type {
+export default interface Interface {
 	// biome-ignore lint/suspicious/noExplicitAny:
 	(Option: Option, On: On): Promise<any>;
 }

@@ -10,8 +10,8 @@ your Astro project.
 
 > **Note**
 >
-> `Compress` will not compress your requests, only your statically
-> generated build and pre-rendered routes.
+> `Compress` will not compress your requests, only your statically generated
+> build and pre-rendered routes.
 
 > [!IMPORTANT]
 >
@@ -30,8 +30,8 @@ command will:
 1. (Optionally) Install all necessary dependencies and peer dependencies
 2. (Also optionally) Update your `astro.config.*` file to apply this integration
 
-To install `Compress`, run the following from your project directory and
-follow the prompts:
+To install `Compress`, run the following from your project directory and follow
+the prompts:
 
 Using NPM:
 
@@ -65,7 +65,9 @@ Then, apply this integration to your `astro.config.*` file using the
 **`astro.config.ts`**
 
 ```ts
-export default { integrations: [(await import("@playform/compress")).default()] };
+export default {
+	integrations: [(await import("@playform/compress")).default()],
+};
 ```
 
 ## Getting started
@@ -95,7 +97,7 @@ The following image file types will be compressed via [sharp]:
 -   tiff
 -   webp
 
-SVG compression is supported via [svgo].
+SVG compression is supported, as well via [svgo].
 
 ### Default Compression
 
@@ -130,9 +132,9 @@ You can see the full option map here:
 
 ### Output
 
-By default `Compress` compresses the `outDir` `Astro` directory, if you'd
-like it to compress a different directory you would have to add it to the
-`Compress` `Path` option, as well:
+By default `Compress` compresses the `outDir` `Astro` directory, if you'd like
+it to compress a different directory you would have to add it to the `Compress`
+`Path` option, as well:
 
 ```ts
 export default {

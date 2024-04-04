@@ -51,9 +51,7 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.2",
-		"astro": "4.5.15"
-	},
-	"optionalDependencies": {
+		"astro": "4.5.15",
 		"@playform/document": "0.0.3"
 	},
 	"publishConfig": {

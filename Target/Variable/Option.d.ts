@@ -121,9 +121,9 @@ declare const _default: Omit<{} & {
         Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
         Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
-        Read: ({ Input }: any) => Promise<string>;
-        Wrote: ({ Buffer }: any) => Promise<any>;
-        Fulfilled: ({ File }: any) => Promise<string | false>;
+        Read: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<import("@playform/pipe/Target/Type/Buffer").Type>;
+        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan").default) => Promise<string | false>;
     }, "__proto__">;
     File: string;
     Exclude: false;

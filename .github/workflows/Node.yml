@@ -83,7 +83,7 @@ jobs:
             - run: pnpm install
               working-directory: .
 
-            - run: pnpm run Build
+            - run: pnpm run prepublishOnly
               working-directory: .
 
             - uses: actions/upload-artifact@v4.3.1

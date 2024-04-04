@@ -126,14 +126,14 @@ export declare const Default: Omit<{} & {
         Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
         Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
-        Read: ({ Input }: any) => Promise<string>;
-        Wrote: ({ Buffer }: any) => Promise<any>;
-        Fulfilled: ({ File }: any) => Promise<string | false>;
+        Read: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<import("@playform/pipe/Target/Type/Buffer").Type>;
+        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan").default) => Promise<string | false>;
     }, "__proto__">;
     File: string;
     Exclude: false;
 }, "__proto__">;
 export declare const Search: string;
-export declare const Merge: import("@Interface/Merge").default<import("@Interface/Merge").Generic>;
+export declare const Merge: import("../Interface/Merge").default<import("../Interface/Merge").Generic>;
 export declare const Defaultsharp: typeof import("sharp");
 export declare let _Action: Action;

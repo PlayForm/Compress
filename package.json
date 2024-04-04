@@ -38,7 +38,7 @@
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/pipe": "0.0.1",
+		"@playform/pipe": "0.0.2",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"csso": "5.0.5",
@@ -50,9 +50,9 @@
 		"terser": "5.30.3"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.2",
-		"astro": "4.5.15",
-		"@playform/document": "0.0.3"
+		"@playform/document": "0.0.6",
+		"@playform/build": "0.0.5",
+		"astro": "4.5.16"
 	},
 	"publishConfig": {
 		"access": "public"

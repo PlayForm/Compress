@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default interface Type {
+export default interface Interface {
     [key: string]: undefined | boolean | AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | TiffOptions | WebpOptions;
     avif?: boolean | AvifOptions;
     gif?: boolean | GifOptions;

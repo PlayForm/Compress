@@ -2,7 +2,7 @@
  * @module Parser
  *
  */
-export default interface Type {
+export default interface Interface {
     [key: string]: any;
     CSS?: CSS | CSS[];
     HTML?: HTML | HTML[];

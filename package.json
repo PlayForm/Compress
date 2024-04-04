@@ -50,8 +50,8 @@
 		"terser": "5.30.3"
 	},
 	"devDependencies": {
-		"@playform/document": "0.0.6",
 		"@playform/build": "0.0.5",
+		"@playform/document": "0.0.6",
 		"astro": "4.5.16"
 	},
 	"publishConfig": {

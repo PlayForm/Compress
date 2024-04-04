@@ -31,9 +31,6 @@
 		"url": "https://playform.cloud"
 	},
 	"type": "module",
-	"imports": {
-		"@Variable/*": "Source/Variable/*"
-	},
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {

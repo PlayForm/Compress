@@ -30,4 +30,4 @@ export default {
 	},
 } satisfies Type;
 
-import type Type from "../../Interface/Image/sharp.js";
+import type Type from "@Interface/Image/sharp.js";

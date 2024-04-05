@@ -4,7 +4,7 @@
  */
 declare const _default: Type;
 export default _default;
-import type Type from "../../Interface/Image/Writesharp.js";
+import type Type from "@Interface/Image/Writesharp.js";
 export declare const _Map: {
     avci: string;
     avcs: string;

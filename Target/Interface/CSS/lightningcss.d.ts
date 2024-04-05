@@ -6,7 +6,7 @@ export default interface Type extends Omit<TransformOptions<CustomAtRules>, "fil
     /**
      * Whether to enable minification
      *
-     * @default CompressAstro true
+     * @default Compress true
      * @default lightningcss false
      */
     minify?: boolean;

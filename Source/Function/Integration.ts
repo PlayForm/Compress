@@ -47,7 +47,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	}
 
 	return {
-		name: "astro-compress",
+		name: "@playform/compress",
 		hooks: {
 			"astro:config:done": async ({
 				config: {
@@ -65,7 +65,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			"astro:build:done": async ({ dir: Directory }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black(" CompressAstro ")
+						(await import("kleur/colors")).black(" Compress ")
 					)}`
 				);
 
@@ -81,7 +81,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					Cache.Search = Directory;
 				}
 
-				for (const [File, Setting] of Object.entries({
+				for (const [Type, Setting] of Object.entries({
 					CSS,
 					HTML,
 					Image,
@@ -89,7 +89,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					SVG,
 				})) {
 					if (
-						!(Setting && _Map[File]) ||
+						!(Setting && _Map[Type]) ||
 						typeof Setting !== "object"
 					) {
 						continue;
@@ -99,7 +99,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						Action,
 						Merge(Action, {
 							Wrote: async ({ Buffer, Input }) => {
-								switch (File) {
+								switch (Type) {
 									case "CSS": {
 										// TODO: Implement lightningcss
 										// console.log(
@@ -149,16 +149,28 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 
 									case "Image": {
-										return await (
-											await import(
-												"../Function/Image/Writesharp.js"
-											)
-										)
-											// @ts-expect-error
-											.default(Setting["sharp"], {
-												Buffer,
-												Input,
-											} as Onsharp);
+										try {
+											if (
+												Buffer instanceof Defaultsharp
+											) {
+												return await (
+													await import(
+														"@Function/Image/Writesharp.js"
+													)
+												)
+													// @ts-expect-error
+													.default(Setting["sharp"], {
+														Buffer,
+														Input,
+													} as Onsharp);
+											} else {
+												return Buffer;
+											}
+										} catch (_Error) {
+											console.log(_Error);
+
+											return Buffer;
+										}
 									}
 
 									case "SVG": {
@@ -176,17 +188,14 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 								}
 							},
-							Fulfilled: async ({
-								File: Count,
-								Info: { Total },
-							}) =>
-								Count > 0
+							Fulfilled: async ({ File, Info: { Total } }) =>
+								File > 0
 									? `${(await import("kleur/colors")).green(
-											`✓ Successfully compressed a total of ${Count} ${File} ${
-												Count === 1 ? "file" : "files"
+											`✓ Successfully compressed a total of ${File} ${Type} ${
+												File === 1 ? "file" : "files"
 											} for ${await (
 												await import(
-													"@playform/file-pipe/Target/Function/Bytes.js"
+													"@playform/pipe/Target/Function/Bytes.js"
 												)
 											).default(Total)}.`
 										)}`
@@ -194,22 +203,29 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						} satisfies Action)
 					);
 
-					if (File === "Image") {
+					if (Type === "Image") {
 						_Action = Merge(_Action, {
-							Read: async ({ Input }) => {
-								const { format } =
-									await Defaultsharp(Input).metadata();
+							Read: async ({ Input, Buffer }) => {
+								try {
+									const { format } =
+										await Defaultsharp(Input).metadata();
 
-								return Defaultsharp(Input, {
-									failOn: "error",
-									sequentialRead: true,
-									unlimited: true,
-									animated:
-										// biome-ignore lint/nursery/noUselessTernary:
-										format === "webp" || format === "gif"
-											? true
-											: false,
-								});
+									return Defaultsharp(Input, {
+										failOn: "error",
+										sequentialRead: true,
+										unlimited: false,
+										animated:
+											// biome-ignore lint/nursery/noUselessTernary:
+											format === "webp" ||
+											format === "gif"
+												? true
+												: false,
+									});
+								} catch (_Error) {
+									console.log(_Error);
+
+									return Buffer;
+								}
 							},
 						} satisfies Action);
 					}
@@ -219,9 +235,9 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							await (
 								await (
 									await new (
-										await import("@playform/file-pipe")
+										await import("@playform/pipe")
 									).default(Cache, Logger).In(Path)
-								).By(_Map[File] ?? "**/*")
+								).By(_Map[Type] ?? "**/*")
 							).Not(Exclude)
 						).Pipe(_Action);
 					}
@@ -235,21 +251,21 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 	};
 }) satisfies Type as Type;
 
-import type Onsharp from "../Interface/Image/Onsharp.js";
-import type Type from "../Interface/Integration.js";
+import type Onsharp from "@Interface/Image/Onsharp.js";
+import type Type from "@Interface/Integration.js";
 
-import type Action from "@playform/file-pipe/Target/Interface/Action.js";
-import type Path from "@playform/file-pipe/Target/Type/Path.js";
+import type Action from "@playform/pipe/Target/Interface/Action.js";
+import type Path from "@playform/pipe/Target/Type/Path.js";
 
-export const { default: Default } = await import("../Variable/Option.js");
+export const { default: Default } = await import("@Variable/Option.js");
 
 export const {
 	default: {
 		Cache: { Search },
 	},
-} = await import("@playform/file-pipe/Target/Variable/Option.js");
+} = await import("@playform/pipe/Target/Variable/Option.js");
 
-export const { default: Merge } = await import("../Function/Merge.js");
+export const { default: Merge } = await import("@Function/Merge.js");
 
 export const { default: Defaultsharp } = await import("sharp");
 

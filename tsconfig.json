@@ -3,6 +3,6 @@
 		"baseUrl": "./",
 		"outDir": "Target"
 	},
-	"extends": "@playform/build/Target/Notation/TypeScript",
+	"extends": "@playform/build/tsconfig",
 	"include": ["Source"]
 }

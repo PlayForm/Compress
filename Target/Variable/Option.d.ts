@@ -110,20 +110,29 @@ declare const _default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Path: string;
     Cache: {
         Search: string;
         Folder: string;
     };
+    Path: string;
     Logger: 2;
     Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
         Read: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
         Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<import("@playform/pipe/Target/Type/Buffer").Type>;
+        Passed: ({ Before, Buffer }: {
+            Before: any;
+            Buffer: any;
+        }) => Promise<boolean>;
+        Failed: ({ Input }: {
+            Input: any;
+        }) => Promise<string>;
+        Accomplished: ({ Input, Before, After }: {
+            Input: any;
+            Before: any;
+            After: any;
+        }) => Promise<string>;
         Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan").default) => Promise<string | false>;
+        Changed: (Plan: any) => Promise<any>;
     }, "__proto__">;
     File: string;
     Exclude: false;

@@ -2,7 +2,7 @@
  * @module CSS
  *
  */
-export default interface Type
+export default interface Interface
 	extends Omit<TransformOptions<CustomAtRules>, "filename" | "code"> {
 	/**
 	 * Whether to enable minification

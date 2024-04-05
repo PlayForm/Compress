@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default interface Type extends Omit<File, "Buffer"> {
+export default interface Interface extends Omit<File, "Buffer"> {
 	Buffer: {
 		// biome-ignore lint/suspicious/noExplicitAny:
 		[key: string]: any;

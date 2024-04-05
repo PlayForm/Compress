@@ -7,6 +7,7 @@
 		"astro",
 		"astro-component",
 		"astro-integration",
+		"astro-compress",
 		"compress",
 		"css",
 		"html",

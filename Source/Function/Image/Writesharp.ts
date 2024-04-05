@@ -30,16 +30,16 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 				Option[Type] !== true
 					? Option[Type]
 					: (
-							await import("../../Variable/Image/sharp.js")
+							await import("@Variable/Image/sharp.js")
 					  ).default,
 			).toBuffer())
 		);
 	}
 }) satisfies Type as Type;
 
-import type Type from "../../Interface/Image/Writesharp.js";
-import type File from "../../Type/Image/Filesharp.js";
+import type Type from "@Interface/Image/Writesharp.js";
+import type File from "@Type/Image/Filesharp.js";
 
 export const { default: _Map } = await import(
-	"../../Variable/Image/Mapsharp.js"
+	"@Variable/Image/Mapsharp.js"
 );

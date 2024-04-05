@@ -1,6 +1,6 @@
 {
-	"name": "astro-compress",
-	"version": "2.2.21",
+	"name": "@playform/compress",
+	"version": "0.0.3",
 	"private": false,
 	"description": "🗜️ Compress.",
 	"keywords": [
@@ -16,13 +16,13 @@
 		"svg",
 		"withastro"
 	],
-	"homepage": "https://github.com/Playform/CompressAstro#ReadMe",
+	"homepage": "https://github.com/Playform/Compress#ReadMe",
 	"bugs": {
-		"url": "https://github.com/Playform/CompressAstro/issues"
+		"url": "https://github.com/Playform/Compress/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Playform/CompressAstro.git"
+		"url": "git+https://github.com/Playform/Compress.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
@@ -34,27 +34,23 @@
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {
-		"Document": "TypeScriptDocument 'Source/**/*.ts'",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+		"Document": "Document 'Source/**/*.ts'",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/file-pipe": "0.0.2",
+		"@playform/build": "0.0.5",
+		"@playform/document": "0.0.6",
+		"@playform/pipe": "0.0.2",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
+		"astro": "4.5.16",
 		"csso": "5.0.5",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.24.1",
 		"sharp": "0.33.3",
 		"svgo": "3.2.0",
-		"terser": "5.30.0"
-	},
-	"devDependencies": {
-		"@playform/build": "0.0.1",
-		"astro": "4.5.12"
-	},
-	"optionalDependencies": {
-		"@playform/document": "0.0.2"
+		"terser": "5.30.3"
 	},
 	"publishConfig": {
 		"access": "public"

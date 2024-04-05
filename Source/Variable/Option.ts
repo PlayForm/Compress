@@ -2,29 +2,29 @@
  * @module Option
  *
  */
-export default (await import("../Function/Merge.js")).default(
-	(await import("@playform/file-pipe/Target/Variable/Option.js")).default,
+export default (await import("@Function/Merge.js")).default(
+	(await import("@playform/pipe/Target/Variable/Option.js")).default,
 	{
 		CSS: {
-			csso: (await import("./CSS/csso.js")).default,
-			lightningcss: (await import("./CSS/lightningcss.js")).default,
+			csso: (await import("@Variable/CSS/csso.js")).default,
+			lightningcss: (await import("@Variable/CSS/lightningcss.js")).default,
 		},
 		HTML: {
 			"html-minifier-terser": (
-				await import("./HTML/html-minifier-terser.js")
+				await import("@Variable/HTML/html-minifier-terser.js")
 			).default,
 		},
 		JavaScript: {
-			terser: (await import("./JavaScript/terser.js")).default,
+			terser: (await import("@Variable/JavaScript/terser.js")).default,
 		},
 		Image: {
-			sharp: (await import("./Image/sharp.js")).default,
+			sharp: (await import("@Variable/Image/sharp.js")).default,
 		},
 		SVG: {
-			svgo: (await import("./SVG/svgo.js")).default,
+			svgo: (await import("@Variable/SVG/svgo.js")).default,
 		},
-		Map: (await import("./Map.js")).default,
-		Parser: (await import("./Parser.js")).default,
+		Map: (await import("@Variable/Map.js")).default,
+		Parser: (await import("@Variable/Parser.js")).default,
 		Action: {
 			Failed: async ({ Input }) =>
 				`${red("Error:")} Cannot compress file ${gray(
@@ -37,7 +37,7 @@ export default (await import("../Function/Merge.js")).default(
 
 				return `${gray(
 					`(-${await (
-						await import("@playform/file-pipe/Target/Function/Bytes.js")
+						await import("@playform/pipe/Target/Function/Bytes.js")
 					).default(Save)})`,
 				)}	${(await import("kleur/colors")).green(
 					`${((Save / Before) * 100).toFixed(2)}%`,
@@ -57,10 +57,10 @@ export default (await import("../Function/Merge.js")).default(
 	} satisfies Type,
 );
 
-import type Type from "../Interface/Option.js";
+import type Type from "@Interface/Option.js";
 
 const { gray, red } = await import("kleur/colors");
 
-const { default: Directory } = await import("../Function/Directory.js");
+const { default: Directory } = await import("@Function/Directory.js");
 
 const { Buffer: _Buffer } = await import("buffer");

@@ -2,10 +2,10 @@
  * @module Image
  *
  */
-export default interface Type {
+export default interface Interface {
 	// biome-ignore lint/suspicious/noExplicitAny:
 	(Option: Option, On: On): Promise<any>;
 }
 
-import type On from "./Onsharp.js";
-import type Option from "./sharp.js";
+import type On from "@Interface/Image/Onsharp.js";
+import type Option from "@Interface/Image/sharp.js";

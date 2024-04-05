@@ -206,27 +206,26 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					if (Type === "Image") {
 						_Action = Merge(_Action, {
 							Read: async ({ Input, Buffer }) => {
-								// try {
-								// 	const { format } =
-								// 		await Defaultsharp(Input).metadata();
+								try {
+									const { format } =
+										await Defaultsharp(Input).metadata();
 
-								// 	return Defaultsharp(Input, {
-								// 		failOn: "error",
-								// 		sequentialRead: true,
-								// 		unlimited: false,
-								// 		animated:
-								// 			// biome-ignore lint/nursery/noUselessTernary:
-								// 			format === "webp" ||
-								// 			format === "gif"
-								// 				? true
-								// 				: false,
-								// 	});
-								// } catch (_Error) {
-								// 	console.log(_Error);
+									return Defaultsharp(Input, {
+										failOn: "error",
+										sequentialRead: true,
+										unlimited: false,
+										animated:
+											// biome-ignore lint/nursery/noUselessTernary:
+											format === "webp" ||
+											format === "gif"
+												? true
+												: false,
+									});
+								} catch (_Error) {
+									console.log(_Error);
 
-								// 	return Buffer;
-								// }
-								return Buffer;
+									return Buffer;
+								}
 							},
 						} satisfies Action);
 					}

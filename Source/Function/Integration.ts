@@ -149,16 +149,22 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									}
 
 									case "Image": {
-										return await (
-											await import(
-												"@Function/Image/Writesharp.js"
+										try {
+											return await (
+												await import(
+													"@Function/Image/Writesharp.js"
+												)
 											)
-										)
-											// @ts-expect-error
-											.default(Setting["sharp"], {
-												Buffer,
-												Input,
-											} as Onsharp);
+												// @ts-expect-error
+												.default(Setting["sharp"], {
+													Buffer,
+													Input,
+												} as Onsharp);
+										} catch (_Error) {
+											console.log(_Error);
+
+											return Buffer;
+										}
 									}
 
 									case "SVG": {
@@ -193,20 +199,27 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 
 					if (Type === "Image") {
 						_Action = Merge(_Action, {
-							Read: async ({ Input }) => {
-								const { format } =
-									await Defaultsharp(Input).metadata();
+							Read: async ({ Input, Buffer }) => {
+								try {
+									const { format } =
+										await Defaultsharp(Input).metadata();
 
-								return Defaultsharp(Input, {
-									failOn: "error",
-									sequentialRead: true,
-									unlimited: true,
-									animated:
-										// biome-ignore lint/nursery/noUselessTernary:
-										format === "webp" || format === "gif"
-											? true
-											: false,
-								});
+									return Defaultsharp(Input, {
+										failOn: "error",
+										sequentialRead: true,
+										unlimited: false,
+										animated:
+											// biome-ignore lint/nursery/noUselessTernary:
+											format === "webp" ||
+											format === "gif"
+												? true
+												: false,
+									});
+								} catch (_Error) {
+									console.log(_Error);
+								}
+
+								return Buffer;
 							},
 						} satisfies Action);
 					}

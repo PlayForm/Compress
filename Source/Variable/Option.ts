@@ -54,10 +54,10 @@ export default (await import("@Function/Merge.js")).default(
 					writable: true,
 				}) && Plan,
 		},
-	} satisfies Type,
+	} satisfies Interface,
 );
 
-import type Type from "@Interface/Option.js";
+import type Interface from "@Interface/Option.js";
 
 const { gray, red } = await import("kleur/colors");
 

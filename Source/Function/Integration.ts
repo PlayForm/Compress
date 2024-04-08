@@ -5,7 +5,7 @@
 // TODO: Test this for security
 export let System: string;
 
-export default ((...[_Option = {}]: Parameters<Type>) => {
+export default ((...[_Option = {}]: Parameters<Interface>) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
 			value:
@@ -249,10 +249,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			// },
 		},
 	};
-}) satisfies Type as Type;
+}) satisfies Interface as Interface;
 
 import type Onsharp from "@Interface/Image/Onsharp.js";
-import type Type from "@Interface/Integration.js";
+import type Interface from "@Interface/Integration.js";
 
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 import type Path from "@playform/pipe/Target/Type/Path.js";

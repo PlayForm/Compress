@@ -2,7 +2,7 @@
  * @module Image
  *
  */
-export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
+export default (async (...[Option, { Buffer, Input }]: Parameters<Interface>) => {
 	const File = Input.split(".").pop();
 
 	if (!File) {
@@ -35,9 +35,9 @@ export default (async (...[Option, { Buffer, Input }]: Parameters<Type>) => {
 			).toBuffer())
 		);
 	}
-}) satisfies Type as Type;
+}) satisfies Interface as Interface;
 
-import type Type from "@Interface/Image/Writesharp.js";
+import type Interface from "@Interface/Image/Writesharp.js";
 import type File from "@Type/Image/Filesharp.js";
 
 export const { default: _Map } = await import(

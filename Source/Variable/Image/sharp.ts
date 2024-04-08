@@ -28,6 +28,6 @@ export default {
 	webp: {
 		effort: 6.0,
 	},
-} satisfies Type;
+} satisfies Interface;
 
-import type Type from "@Interface/Image/sharp.js";
+import type Interface from "@Interface/Image/sharp.js";

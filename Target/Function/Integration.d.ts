@@ -3,9 +3,9 @@
  *
  */
 export declare let System: string;
-declare const _default: Type;
+declare const _default: Interface;
 export default _default;
-import type Type from "@Interface/Integration.js";
+import type Interface from "@Interface/Integration.js";
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 export declare const Default: Omit<{} & {
     CSS: {

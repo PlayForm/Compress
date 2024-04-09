@@ -151,7 +151,8 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 									case "Image": {
 										try {
 											if (
-												Buffer instanceof Defaultsharp
+												Buffer instanceof
+												(await import("sharp")).default
 											) {
 												return await (
 													await import(
@@ -207,20 +208,30 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 						_Action = Merge(_Action, {
 							Read: async ({ Input, Buffer }) => {
 								try {
-									const { format } =
-										await Defaultsharp(Input).metadata();
+									(await import("sharp")).default.cache(
+										false
+									);
 
-									return Defaultsharp(Input, {
-										failOn: "error",
-										sequentialRead: true,
-										unlimited: false,
-										animated:
-											// biome-ignore lint/nursery/noUselessTernary:
-											format === "webp" ||
-											format === "gif"
-												? true
-												: false,
-									});
+									const { format } = await (
+										await import("sharp")
+									)
+										.default(Input)
+										.metadata();
+
+									return (await import("sharp")).default(
+										Input,
+										{
+											failOn: "error",
+											sequentialRead: true,
+											unlimited: true,
+											animated:
+												// biome-ignore lint/nursery/noUselessTernary:
+												format === "webp" ||
+												format === "gif"
+													? true
+													: false,
+										}
+									);
 								} catch (_Error) {
 									console.log(_Error);
 
@@ -266,9 +277,5 @@ export const {
 } = await import("@playform/pipe/Target/Variable/Option.js");
 
 export const { default: Merge } = await import("@Function/Merge.js");
-
-export const { default: Defaultsharp } = await import("sharp");
-
-Defaultsharp.cache(false);
 
 export let _Action: Action;

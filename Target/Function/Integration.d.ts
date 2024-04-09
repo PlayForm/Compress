@@ -144,5 +144,4 @@ export declare const Default: Omit<{} & {
 }, "__proto__">;
 export declare const Search: string;
 export declare const Merge: import("../Interface/Merge").default<import("../Interface/Merge").Generic>;
-export declare const Defaultsharp: typeof import("sharp");
 export declare let _Action: Action;

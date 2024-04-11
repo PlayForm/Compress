@@ -1,0 +1,108 @@
+
+> @playform/compress@0.0.3 prepublishOnly D:\Developer\Application\Playform\NPM\Compress
+> Build 'Source/**/*.ts'
+
+
+  Target\Function\Integration.js                2.5kb
+  Target\Variable\Option.js                     1.4kb
+  Target\Variable\HTML\html-minifier-terser.js  1.4kb
+  Target\Function\Image\Writesharp.js           430b 
+  Target\Variable\Image\sharp.js                278b 
+  ...and 30 more output files...
+
+⚡ Done in 103ms
+
+  Target/Function/Integration.js ────────────────── 2.5kb ─ 100.0%
+   └ Source/Function/Integration.ts ─────────────── 2.4kb ── 96.8%
+
+  Target/Variable/Option.js ─────────────────────── 1.4kb ─ 100.0%
+   └ Source/Variable/Option.ts ──────────────────── 1.4kb ── 98.5%
+
+  Target/Variable/HTML/html-minifier-terser.js ──── 1.4kb ─ 100.0%
+   └ Source/Variable/HTML/html-minifier-terser.ts ─ 1.4kb ── 98.5%
+
+  Target/Function/Image/Writesharp.js ───────────── 430b ── 100.0%
+   └ Source/Function/Image/Writesharp.ts ────────── 398b ─── 92.6%
+
+  Target/Variable/Image/sharp.js ────────────────── 278b ── 100.0%
+   └ Source/Variable/Image/sharp.ts ─────────────── 256b ─── 92.1%
+
+  Target/Function/Directory.js ──────────────────── 237b ── 100.0%
+   └ Source/Function/Directory.ts ───────────────── 215b ─── 90.7%
+
+  Target/Variable/Map.js ────────────────────────── 219b ── 100.0%
+   └ Source/Variable/Map.ts ─────────────────────── 197b ─── 90.0%
+
+  Target/Variable/Image/Mapsharp.js ─────────────── 161b ── 100.0%
+   └ Source/Variable/Image/Mapsharp.ts ──────────── 139b ─── 86.3%
+
+  Target/Variable/JavaScript/terser.js ──────────── 144b ── 100.0%
+   └ Source/Variable/JavaScript/terser.ts ───────── 122b ─── 84.7%
+
+  Target/Variable/Parser.js ─────────────────────── 131b ── 100.0%
+   └ Source/Variable/Parser.ts ──────────────────── 109b ─── 83.2%
+
+  Target/Variable/SVG/svgo.js ────────────────────── 98b ── 100.0%
+   └ Source/Variable/SVG/svgo.ts ─────────────────── 76b ─── 77.6%
+
+  Target/Function/Merge.js ───────────────────────── 93b ── 100.0%
+   └ Source/Function/Merge.ts ────────────────────── 71b ─── 76.3%
+
+  Target/Type/Image/Filesharp.js ─────────────────── 80b ── 100.0%
+   └ Source/Type/Image/Filesharp.ts ──────────────── 61b ─── 76.2%
+
+  Target/Variable/CSS/csso.js ────────────────────── 76b ── 100.0%
+   └ Source/Variable/CSS/csso.ts ─────────────────── 54b ─── 71.1%
+
+  Target/Variable/CSS/lightningcss.js ────────────── 40b ── 100.0%
+   └ Source/Variable/CSS/lightningcss.ts ─────────── 18b ─── 45.0%
+
+  Target/Interface/CSS/csso.js ────────────────────── 0b ── 100.0%
+
+  Target/Interface/CSS/lightningcss.js ────────────── 0b ── 100.0%
+
+  Target/Interface/Directory.js ───────────────────── 0b ── 100.0%
+
+  Target/Interface/Image/Onsharp.js ───────────────── 0b ── 100.0%
+
+  Target/Interface/Image/Writesharp.js ────────────── 0b ── 100.0%
+
+  Target/Interface/Image/sharp.js ─────────────────── 0b ── 100.0%
+
+  Target/Interface/Integration.js ─────────────────── 0b ── 100.0%
+
+  Target/Interface/Map.js ─────────────────────────── 0b ── 100.0%
+
+  Target/Interface/Merge.js ───────────────────────── 0b ── 100.0%
+
+  Target/Interface/Option.js ──────────────────────── 0b ── 100.0%
+
+  Target/Interface/Parser.js ──────────────────────── 0b ── 100.0%
+
+  Target/Type/HTML/html-minifier-terser.js ────────── 0b ── 100.0%
+
+  Target/Type/JavaScript/terser.js ────────────────── 0b ── 100.0%
+
+  Target/Type/Parser/CSS.js ───────────────────────── 0b ── 100.0%
+
+  Target/Type/Parser/HTML.js ──────────────────────── 0b ── 100.0%
+
+  Target/Type/Parser/Image.js ─────────────────────── 0b ── 100.0%
+
+  Target/Type/Parser/JavaScript.js ────────────────── 0b ── 100.0%
+
+  Target/Type/Parser/SVG.js ───────────────────────── 0b ── 100.0%
+
+  Target/Type/SVG/svgo.js ─────────────────────────── 0b ── 100.0%
+
+  Target/Variable/Middleware.js ───────────────────── 0b ── 100.0%
+
+Source/Variable/Option.ts(30,21): error TS7031: Binding element 'Input' implicitly has an 'any' type.
+
+Source/Variable/Option.ts(34,21): error TS7031: Binding element 'Before' implicitly has an 'any' type.
+Source/Variable/Option.ts(34,29): error TS7031: Binding element 'Buffer' implicitly has an 'any' type.
+Source/Variable/Option.ts(36,27): error TS7031: Binding element 'Input' implicitly has an 'any' type.
+Source/Variable/Option.ts(36,34): error TS7031: Binding element 'Before' implicitly has an 'any' type.
+Source/Variable/Option.ts(36,42): error TS7031: Binding element 'After' implicitly has an 'any' type.
+Source/Variable/Option.ts(49,20): error TS7006: Parameter 'Plan' implicitly has an 'any' type.
+

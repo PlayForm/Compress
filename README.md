@@ -237,7 +237,7 @@ export default {
 };
 ```
 
-[Compress]: https://npmjs.org/@playform/compress
+[Compress.]: https://npmjs.org/@playform/compress
 [csso]: https://npmjs.org/csso
 [html-minifier-terser]: https://npmjs.org/html-minifier-terser
 [terser]: https://npmjs.org/terser

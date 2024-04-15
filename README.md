@@ -237,13 +237,13 @@ export default {
 };
 ```
 
-[Compress.]: https://npmjs.org/@playform/compress
-[csso]: https://npmjs.org/csso
-[html-minifier-terser]: https://npmjs.org/html-minifier-terser
-[terser]: https://npmjs.org/terser
-[sharp]: https://npmjs.org/sharp
-[svgo]: https://npmjs.org/svgo
-[astro-integration]: https://docs.astro.build/en/guides/integrations-guide/
+[Compress.]: HTTPS://npmjs.org/@playform/compress
+[csso]: HTTPS://npmjs.org/csso
+[html-minifier-terser]: HTTPS://npmjs.org/html-minifier-terser
+[terser]: HTTPS://npmjs.org/terser
+[sharp]: HTTPS://npmjs.org/sharp
+[svgo]: HTTPS://npmjs.org/svgo
+[astro-integration]: HTTPS://docs.astro.build/en/guides/integrations-guide/
 
 ## Changelog
 

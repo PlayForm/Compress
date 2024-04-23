@@ -192,7 +192,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 							Fulfilled: async ({ File, Info: { Total } }) =>
 								File > 0
 									? `${(await import("kleur/colors")).green(
-											`✅ Successfully compressed a total of ${File} ${Type} ${
+											`✅ Successfully compressed a total of ${File} ${Type} ${
 												File === 1 ? "file" : "files"
 											} for ${await (
 												await import(

@@ -18,19 +18,19 @@
 		"withastro",
 		"playform"
 	],
-	"homepage": "HTTPS://GitHub.Com/Playform/Compress#readme",
+	"homepage": "HTTPS://GitHub.Com/PlayForm/Compress#readme",
 	"bugs": {
-		"url": "HTTPS://GitHub.Com/Playform/Compress/issues"
+		"url": "HTTPS://GitHub.Com/PlayForm/Compress/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+HTTPS://github.com/Playform/Compress.git"
+		"url": "git+HTTPS://github.com/PlayForm/Compress.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "⛲ Source ⁄ 🚪 Open —",
-		"email": "Source/Open@Playform.Cloud",
-		"url": "HTTPS://Playform.Cloud"
+		"email": "Source/Open@PlayForm.Cloud",
+		"url": "HTTPS://PlayForm.Cloud"
 	},
 	"type": "module",
 	"main": "./Target/Function/Integration.js",

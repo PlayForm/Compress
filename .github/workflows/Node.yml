@@ -57,7 +57,7 @@ jobs:
                 node-version: [18, 19, 20]
 
         steps:
-            - uses: actions/checkout@v4.1.2
+            - uses: actions/checkout@v4.1.4
 
             - uses: pnpm/action-setup@v3.0.0
               with:
@@ -86,7 +86,7 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: actions/upload-artifact@v4.3.2
+            - uses: actions/upload-artifact@v4.3.3
               with:
                   name: .-Node-${{ matrix.node-version }}-Target
                   path: ./Target

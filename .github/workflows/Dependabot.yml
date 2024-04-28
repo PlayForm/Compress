@@ -20,7 +20,7 @@ jobs:
         if: ${{ github.actor == 'dependabot[bot]' }}
 
         steps:
-            - uses: dependabot/fetch-metadata@v2.0.0
+            - uses: dependabot/fetch-metadata@v2.0.1
               with:
                   github-token: "${{ secrets.GITHUB_TOKEN }}"
 
@@ -35,7 +35,7 @@ jobs:
         if: ${{ github.actor == 'dependabot[bot]' }}
 
         steps:
-            - uses: dependabot/fetch-metadata@v2.0.0
+            - uses: dependabot/fetch-metadata@v2.0.1
               with:
                   github-token: "${{ secrets.GITHUB_TOKEN }}"
 

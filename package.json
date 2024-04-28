@@ -41,7 +41,7 @@
 	},
 	"dependencies": {
 		"@playform/adapt": "0.0.1",
-		"@playform/build": "0.0.7",
+		"@playform/build": "0.0.8",
 		"@playform/document": "0.0.6",
 		"@playform/pipe": "0.0.2",
 		"@types/csso": "5.0.4",

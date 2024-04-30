@@ -2,7 +2,7 @@
 	"name": "@playform/compress",
 	"version": "0.0.3",
 	"private": false,
-	"description": "🗜️ Compress —",
+	"description": "🗜️ — Compress —",
 	"keywords": [
 		"astro",
 		"astro-component",
@@ -28,7 +28,7 @@
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
-		"name": "⛲ Source ⁄ 🚪 Open —",
+		"name": "⛲ Source ⁄ 🚪 — Open —",
 		"email": "Source/Open@PlayForm.Cloud",
 		"url": "HTTPS://PlayForm.Cloud"
 	},

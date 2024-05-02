@@ -224,12 +224,10 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 											failOn: "error",
 											sequentialRead: true,
 											unlimited: true,
-											animated:
-												// biome-ignore lint/nursery/noUselessTernary:
+											animated: !!(
 												format === "webp" ||
 												format === "gif"
-													? true
-													: false,
+											),
 										}
 									);
 								} catch (_Error) {

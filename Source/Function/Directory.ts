@@ -15,4 +15,4 @@ export default (async (...[Path]: Parameters<Interface>) => {
 	return Directory;
 }) satisfies Interface as Interface;
 
-import type Interface from "@Interface/Directory.js";
+import type Interface from "../Interface/Directory.js";

@@ -2,12 +2,5 @@
  * @module SVG
  *
  */
-declare const _default: {
-    multipass: true;
-    js2svg: {
-        indent: number;
-        pretty: false;
-    };
-    plugins: "preset-default"[];
-};
+declare const _default: Type;
 export default _default;

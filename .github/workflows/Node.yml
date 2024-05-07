@@ -57,7 +57,7 @@ jobs:
                 node-version: [18, 19, 20]
 
         steps:
-            - uses: actions/checkout@v4.1.4
+            - uses: actions/checkout@v4.1.5
 
             - uses: pnpm/action-setup@v3.0.0
               with:

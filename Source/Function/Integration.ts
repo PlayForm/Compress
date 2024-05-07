@@ -73,7 +73,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					return;
 				}
 
-				if (!Paths.size) {
+				if (Paths.size === 0) {
 					Paths.add(Directory);
 				}
 

@@ -10,4 +10,4 @@ export default {
 	SVG: "**/*.svg",
 } satisfies Interface;
 
-import type Interface from "@Interface/Map.js";
+import type Interface from "../Interface/Map.js";

@@ -8,4 +8,4 @@ export default interface Interface {
 
 import type { AstroIntegration } from "astro";
 
-import type Option from "@Interface/Option.js";
+import type Option from "../Interface/Option.js";

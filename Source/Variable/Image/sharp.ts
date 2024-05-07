@@ -30,4 +30,4 @@ export default {
 	},
 } satisfies Interface;
 
-import type Interface from "@Interface/Image/sharp.js";
+import type Interface from "../Interface/Image/sharp.js";

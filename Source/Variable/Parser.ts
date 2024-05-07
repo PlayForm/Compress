@@ -10,4 +10,4 @@ export default {
 	SVG: "svgo",
 } satisfies Interface;
 
-import type Interface from "@Interface/Parser.js";
+import type Interface from "../Interface/Parser.js";

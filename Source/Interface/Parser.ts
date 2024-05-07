@@ -17,8 +17,8 @@ export default interface Interface {
 	SVG?: SVG | SVG[];
 }
 
-import type CSS from "@Type/Parser/CSS.js";
-import type HTML from "@Type/Parser/HTML.js";
-import type Image from "@Type/Parser/Image.js";
-import type JavaScript from "@Type/Parser/JavaScript.js";
-import type SVG from "@Type/Parser/SVG.js";
+import type CSS from "../Type/Parser/CSS.js";
+import type HTML from "../Type/Parser/HTML.js";
+import type Image from "../Type/Parser/Image.js";
+import type JavaScript from "../Type/Parser/JavaScript.js";
+import type SVG from "../Type/Parser/SVG.js";

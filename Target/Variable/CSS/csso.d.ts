@@ -2,9 +2,5 @@
  * @module CSS
  *
  */
-declare const _default: {
-    comments: false;
-    forceMediaMerge: true;
-    restructure: false;
-};
+declare const _default: Interface;
 export default _default;

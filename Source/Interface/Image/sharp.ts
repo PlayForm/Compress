@@ -27,6 +27,8 @@ export default interface Interface {
 	tiff?: boolean | TiffOptions;
 
 	webp?: boolean | WebpOptions;
+
+	sharp?: boolean 
 }
 
 import type {

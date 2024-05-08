@@ -97,14 +97,7 @@ declare const _default: Omit<{} & {
         };
     };
     SVG: {
-        svgo: {
-            multipass: true;
-            js2svg: {
-                indent: number;
-                pretty: false;
-            };
-            plugins: "preset-default"[];
-        };
+        svgo: Config;
     };
     Map: {
         CSS: string;

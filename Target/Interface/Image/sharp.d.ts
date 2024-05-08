@@ -11,5 +11,6 @@ export default interface Interface {
     png?: boolean | PngOptions;
     tiff?: boolean | TiffOptions;
     webp?: boolean | WebpOptions;
+    sharp?: boolean;
 }
 import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";

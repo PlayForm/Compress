@@ -28,7 +28,7 @@ export default interface Interface {
 
 	webp?: boolean | WebpOptions;
 
-	sharp?: boolean 
+	sharp?: boolean;
 }
 
 import type {

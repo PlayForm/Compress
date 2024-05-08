@@ -218,17 +218,21 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 										.default(Input)
 										.metadata();
 
+									const Default = {
+										animated: !!(
+											format === "webp" ||
+											format === "gif"
+										),
+									};
+
 									return (await import("sharp")).default(
 										Input,
-										{
-											failOn: "error",
-											sequentialRead: true,
-											unlimited: true,
-											animated: !!(
-												format === "webp" ||
-												format === "gif"
-											),
-										}
+										typeof Image === "object" &&
+											typeof Image.sharp === "object" &&
+											typeof Image.sharp.sharp ===
+												"object"
+											? Merge(Default, Image.sharp?.sharp)
+											: Default
 									);
 								} catch (_Error) {
 									console.log(_Error);

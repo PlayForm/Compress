@@ -11,4 +11,4 @@ export default {
 	plugins: ["preset-default"],
 } satisfies Type;
 
-import type Type from "../Type/SVG/svgo.js";
+import type Type from "../../Type/SVG/svgo.js";

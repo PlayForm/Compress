@@ -8,4 +8,4 @@ export default {
 	restructure: false,
 } satisfies Interface;
 
-import type Interface from "../Interface/CSS/csso.js";
+import type Interface from "../../Interface/CSS/csso.js";

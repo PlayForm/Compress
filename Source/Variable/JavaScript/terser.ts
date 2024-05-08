@@ -16,4 +16,4 @@ export default {
 	},
 } satisfies Type;
 
-import type Type from "../Type/JavaScript/terser.js";
+import type Type from "../../Type/JavaScript/terser.js";

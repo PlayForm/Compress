@@ -244,7 +244,7 @@ export default {
 };
 ```
 
-[Compress]: HTTPS://NPMJS.Org/@playform/compress
+[Compress]: HTTPS://NPMJS.Org/astro-compress
 [csso]: HTTPS://NPMJS.Org/csso
 [html-minifier-terser]: HTTPS://NPMJS.Org/html-minifier-terser
 [terser]: HTTPS://NPMJS.Org/terser

@@ -24,7 +24,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+HTTPS://github.com/PlayForm/Compress.git"
+		"url": "git+https://github.com/PlayForm/Compress.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {

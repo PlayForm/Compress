@@ -46,13 +46,13 @@
 		"@playform/pipe": "0.0.2",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "4.7.1",
+		"astro": "4.8.0",
 		"csso": "5.0.5",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.24.1",
 		"sharp": "0.33.3",
-		"svgo": "3.3.0",
+		"svgo": "3.3.2",
 		"terser": "5.31.0"
 	},
 	"publishConfig": {

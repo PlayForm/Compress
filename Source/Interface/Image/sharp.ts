@@ -4,15 +4,16 @@
  */
 export default interface Interface {
 	[key: string]:
-		| undefined
-		| boolean
 		| AvifOptions
 		| GifOptions
 		| HeifOptions
 		| JpegOptions
 		| PngOptions
+		| SharpOptions
 		| TiffOptions
-		| WebpOptions;
+		| WebpOptions
+		| boolean
+		| undefined;
 
 	avif?: boolean | AvifOptions;
 
@@ -27,6 +28,8 @@ export default interface Interface {
 	tiff?: boolean | TiffOptions;
 
 	webp?: boolean | WebpOptions;
+
+	sharp?: boolean | SharpOptions;
 }
 
 import type {
@@ -37,4 +40,5 @@ import type {
 	PngOptions,
 	TiffOptions,
 	WebpOptions,
+	SharpOptions,
 } from "sharp";

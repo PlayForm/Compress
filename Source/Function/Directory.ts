@@ -2,7 +2,7 @@
  * @module Directory
  *
  */
-export default (async (...[Path]: Parameters<Type>) => {
+export default (async (...[Path]: Parameters<Interface>) => {
 	let Directory = (await import("path"))
 		.normalize((await import("path")).parse(Path).dir)
 		.replace(/\\/g, "/")
@@ -13,6 +13,6 @@ export default (async (...[Path]: Parameters<Type>) => {
 	}
 
 	return Directory;
-}) satisfies Type as Type;
+}) satisfies Interface as Interface;
 
-import type Type from "@Interface/Directory.js";
+import type Interface from "../Interface/Directory.js";

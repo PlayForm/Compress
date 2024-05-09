@@ -6,7 +6,7 @@
  * @template PMF - A type parameter representing Partial<DeepMergeMergeFunctionsURIs>.
  *
  */
-export default interface Type<PMF extends Partial<DeepMergeMergeFunctionsURIs>> {
+export default interface Interface<PMF extends Partial<DeepMergeMergeFunctionsURIs>> {
     /**
      * Merges multiple objects of type Ts using the provided merge functions and built-in metadata.
      *

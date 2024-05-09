@@ -3,7 +3,7 @@
  *
  */
 export default interface Interface {
-    [key: string]: undefined | boolean | AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | TiffOptions | WebpOptions;
+    [key: string]: AvifOptions | GifOptions | HeifOptions | JpegOptions | PngOptions | SharpOptions | TiffOptions | WebpOptions | boolean | undefined;
     avif?: boolean | AvifOptions;
     gif?: boolean | GifOptions;
     heif?: boolean | HeifOptions;
@@ -11,5 +11,6 @@ export default interface Interface {
     png?: boolean | PngOptions;
     tiff?: boolean | TiffOptions;
     webp?: boolean | WebpOptions;
+    sharp?: boolean | SharpOptions;
 }
-import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions } from "sharp";
+import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions, SharpOptions } from "sharp";

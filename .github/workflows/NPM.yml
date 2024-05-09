@@ -24,7 +24,7 @@ jobs:
             id-token: write
 
         steps:
-            - uses: actions/checkout@v4.1.2
+            - uses: actions/checkout@v4.1.5
 
             - uses: actions/setup-node@v4.0.2
               with:
@@ -37,7 +37,6 @@ jobs:
               continue-on-error: true
               working-directory: .
               run: |
-                  npm install --legacy-peer-deps
-                  npm publish --legacy-peer-deps --provenance
+                  npm publish --legacy-peer-deps --provenance --ignore-scripts
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

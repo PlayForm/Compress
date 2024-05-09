@@ -4,6 +4,6 @@
  */
 export default {
 	minify: true,
-} satisfies Type;
+} satisfies Interface;
 
-import type Type from "@Interface/CSS/lightningcss.js";
+import type Interface from "../../Interface/CSS/lightningcss.js";

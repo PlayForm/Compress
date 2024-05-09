@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023-2024 Playform
+Copyright (c) 2023-2024 PlayForm
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -20,7 +20,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 """ This license applies to the `README.md` and parts of the `Source` directory
-of Compress originating from the https://github.com/withastro/astro
+of `Compress` originating from the https://github.com/withastro/astro
 repository:
 
 MIT License

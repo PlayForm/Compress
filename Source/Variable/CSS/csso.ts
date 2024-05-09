@@ -6,6 +6,6 @@ export default {
 	comments: false,
 	forceMediaMerge: true,
 	restructure: false,
-} satisfies Type;
+} satisfies Interface;
 
-import type Type from "@Interface/CSS/csso.js";
+import type Interface from "../../Interface/CSS/csso.js";

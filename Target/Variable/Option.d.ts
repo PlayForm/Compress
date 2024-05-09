@@ -47,6 +47,7 @@ declare const _default: Omit<{} & {
             avif: {
                 chromaSubsampling: string;
                 effort: number;
+                lossless: true;
             };
             gif: {
                 effort: number;
@@ -62,12 +63,21 @@ declare const _default: Omit<{} & {
                 compressionLevel: number;
                 palette: true;
             };
-            raw: {};
             tiff: {
                 compression: string;
             };
             webp: {
                 effort: number;
+                lossless: true;
+            };
+            heif: {
+                effort: number;
+                lossless: true;
+            };
+            sharp: {
+                failOn: "error";
+                sequentialRead: true;
+                unlimited: true;
             };
         };
     };
@@ -117,13 +127,13 @@ declare const _default: Omit<{} & {
     };
     Logger: 2;
     Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
-        Read: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<import("@playform/pipe/Target/Type/Buffer").Type>;
-        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan").default) => Promise<string | false>;
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     }, "__proto__">;
     File: string;
     Exclude: false;

@@ -6,6 +6,7 @@ declare const _default: {
     avif: {
         chromaSubsampling: string;
         effort: number;
+        lossless: true;
     };
     gif: {
         effort: number;
@@ -21,12 +22,21 @@ declare const _default: {
         compressionLevel: number;
         palette: true;
     };
-    raw: {};
     tiff: {
         compression: string;
     };
     webp: {
         effort: number;
+        lossless: true;
+    };
+    heif: {
+        effort: number;
+        lossless: true;
+    };
+    sharp: {
+        failOn: "error";
+        sequentialRead: true;
+        unlimited: true;
     };
 };
 export default _default;

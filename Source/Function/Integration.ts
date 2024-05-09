@@ -5,7 +5,7 @@
 // TODO: Test this for security
 export let System: string;
 
-export default ((...[_Option = {}]: Parameters<Type>) => {
+export default ((...[_Option = {}]: Parameters<Interface>) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
 			value:
@@ -65,7 +65,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			"astro:build:done": async ({ dir: Directory }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black(" Compress ")
+						(await import("kleur/colors")).black("Compress:")
 					)}`
 				);
 
@@ -73,7 +73,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 					return;
 				}
 
-				if (!Paths.size) {
+				if (Paths.size === 0) {
 					Paths.add(Directory);
 				}
 
@@ -151,7 +151,8 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 									case "Image": {
 										try {
 											if (
-												Buffer instanceof Defaultsharp
+												Buffer instanceof
+												(await import("sharp")).default
 											) {
 												return await (
 													await import(
@@ -191,7 +192,7 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 							Fulfilled: async ({ File, Info: { Total } }) =>
 								File > 0
 									? `${(await import("kleur/colors")).green(
-											`✓ Successfully compressed a total of ${File} ${Type} ${
+											`✅ Successfully compressed a total of ${File} ${Type} ${
 												File === 1 ? "file" : "files"
 											} for ${await (
 												await import(
@@ -207,20 +208,32 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 						_Action = Merge(_Action, {
 							Read: async ({ Input, Buffer }) => {
 								try {
-									const { format } =
-										await Defaultsharp(Input).metadata();
+									(await import("sharp")).default.cache(
+										false
+									);
 
-									return Defaultsharp(Input, {
-										failOn: "error",
-										sequentialRead: true,
-										unlimited: false,
-										animated:
-											// biome-ignore lint/nursery/noUselessTernary:
+									const { format } = await (
+										await import("sharp")
+									)
+										.default(Input)
+										.metadata();
+
+									const Default = {
+										animated: !!(
 											format === "webp" ||
 											format === "gif"
-												? true
-												: false,
-									});
+										),
+									};
+
+									return (await import("sharp")).default(
+										Input,
+										typeof Image === "object" &&
+											typeof Image.sharp === "object" &&
+											typeof Image.sharp.sharp ===
+												"object"
+											? Merge(Default, Image.sharp?.sharp)
+											: Default
+									);
 								} catch (_Error) {
 									console.log(_Error);
 
@@ -249,10 +262,10 @@ export default ((...[_Option = {}]: Parameters<Type>) => {
 			// },
 		},
 	};
-}) satisfies Type as Type;
+}) satisfies Interface as Interface;
 
-import type Onsharp from "@Interface/Image/Onsharp.js";
-import type Type from "@Interface/Integration.js";
+import type Onsharp from "../Interface/Image/Onsharp.js";
+import type Interface from "../Interface/Integration.js";
 
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 import type Path from "@playform/pipe/Target/Type/Path.js";
@@ -266,9 +279,5 @@ export const {
 } = await import("@playform/pipe/Target/Variable/Option.js");
 
 export const { default: Merge } = await import("@Function/Merge.js");
-
-export const { default: Defaultsharp } = await import("sharp");
-
-Defaultsharp.cache(false);
 
 export let _Action: Action;

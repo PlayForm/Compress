@@ -3,9 +3,9 @@
  *
  */
 export declare let System: string;
-declare const _default: Type;
+declare const _default: Interface;
 export default _default;
-import type Type from "@Interface/Integration.js";
+import type Interface from "../Interface/Integration.js";
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 export declare const Default: Omit<{} & {
     CSS: {
@@ -52,6 +52,7 @@ export declare const Default: Omit<{} & {
             avif: {
                 chromaSubsampling: string;
                 effort: number;
+                lossless: true;
             };
             gif: {
                 effort: number;
@@ -67,12 +68,21 @@ export declare const Default: Omit<{} & {
                 compressionLevel: number;
                 palette: true;
             };
-            raw: {};
             tiff: {
                 compression: string;
             };
             webp: {
                 effort: number;
+                lossless: true;
+            };
+            heif: {
+                effort: number;
+                lossless: true;
+            };
+            sharp: {
+                failOn: "error";
+                sequentialRead: true;
+                unlimited: true;
             };
         };
     };
@@ -122,18 +132,17 @@ export declare const Default: Omit<{} & {
     };
     Logger: 2;
     Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan").default) => Promise<any>;
-        Read: ({ Input }: import("@playform/pipe/Target/Interface/File").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File").default) => Promise<import("@playform/pipe/Target/Type/Buffer").Type>;
-        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan").default) => Promise<string | false>;
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     }, "__proto__">;
     File: string;
     Exclude: false;
 }, "__proto__">;
 export declare const Search: string;
-export declare const Merge: import("../Interface/Merge").default<import("../Interface/Merge").Generic>;
-export declare const Defaultsharp: typeof import("sharp");
+export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;
 export declare let _Action: Action;

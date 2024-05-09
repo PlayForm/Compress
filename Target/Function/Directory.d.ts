@@ -2,6 +2,6 @@
  * @module Directory
  *
  */
-declare const _default: Type;
+declare const _default: Interface;
 export default _default;
-import type Type from "@Interface/Directory.js";
+import type Interface from "../Interface/Directory.js";

@@ -6,6 +6,7 @@ export default {
 	avif: {
 		chromaSubsampling: "4:4:4",
 		effort: 9.0,
+		lossless: true,
 	},
 	gif: {
 		effort: 10.0,
@@ -21,13 +22,22 @@ export default {
 		compressionLevel: 9.0,
 		palette: true,
 	},
-	raw: {},
 	tiff: {
 		compression: "lzw",
 	},
 	webp: {
 		effort: 6.0,
+		lossless: true,
 	},
-} satisfies Type;
+	heif: {
+		effort: 9.0,
+		lossless: true,
+	},
+	sharp: {
+		failOn: "error",
+		sequentialRead: true,
+		unlimited: true,
+	},
+} satisfies Interface;
 
-import type Type from "@Interface/Image/sharp.js";
+import type Interface from "../../Interface/Image/sharp.js";

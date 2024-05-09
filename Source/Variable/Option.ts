@@ -7,7 +7,8 @@ export default (await import("@Function/Merge.js")).default(
 	{
 		CSS: {
 			csso: (await import("@Variable/CSS/csso.js")).default,
-			lightningcss: (await import("@Variable/CSS/lightningcss.js")).default,
+			lightningcss: (await import("@Variable/CSS/lightningcss.js"))
+				.default,
 		},
 		HTML: {
 			"html-minifier-terser": (
@@ -28,7 +29,7 @@ export default (await import("@Function/Merge.js")).default(
 		Action: {
 			Failed: async ({ Input }) =>
 				`${red("Error:")} Cannot compress file ${gray(
-					await Directory(Input),
+					await Directory(Input)
 				)}${red((await import("path")).parse(Input).base)}`,
 			Passed: async ({ Before, Buffer }) =>
 				Before > _Buffer.byteLength(Buffer.toString()),
@@ -38,9 +39,9 @@ export default (await import("@Function/Merge.js")).default(
 				return `${gray(
 					`(-${await (
 						await import("@playform/pipe/Target/Function/Bytes.js")
-					).default(Save)})`,
+					).default(Save)})`
 				)}	${(await import("kleur/colors")).green(
-					`${((Save / Before) * 100).toFixed(2)}%`,
+					`${((Save / Before) * 100).toFixed(2)}%`
 				)} reduction in ${gray(await Directory(Input))}${(
 					await import("kleur/colors")
 				).cyan((await import("path")).parse(Input).base)}`;
@@ -54,10 +55,10 @@ export default (await import("@Function/Merge.js")).default(
 					writable: true,
 				}) && Plan,
 		},
-	} satisfies Type,
+	} satisfies Interface
 );
 
-import type Type from "@Interface/Option.js";
+import type Interface from "../Interface/Option.js";
 
 const { gray, red } = await import("kleur/colors");
 

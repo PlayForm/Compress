@@ -2,7 +2,7 @@
  * @module CSS
  *
  */
-export default interface Type extends MinifyOptions, CompressOptions {
+export default interface Interface extends MinifyOptions, CompressOptions {
     /**
      * Specify what comments to leave:
      * - 'exclamation' or true – leave all exclamation comments

@@ -102,7 +102,14 @@ export declare const Default: Omit<{} & {
         };
     };
     SVG: {
-        svgo: Config;
+        svgo: {
+            multipass: true;
+            js2svg: {
+                indent: number;
+                pretty: false;
+            };
+            plugins: "preset-default"[];
+        };
     };
     Map: {
         CSS: string;

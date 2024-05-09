@@ -3,6 +3,18 @@
  *
  */
 export default interface Interface {
+	[key: string]:
+		| AvifOptions
+		| GifOptions
+		| HeifOptions
+		| JpegOptions
+		| PngOptions
+		| SharpOptions
+		| TiffOptions
+		| WebpOptions
+		| boolean
+		| undefined;
+
 	avif?: boolean | AvifOptions;
 
 	gif?: boolean | GifOptions;

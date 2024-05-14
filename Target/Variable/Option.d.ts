@@ -120,22 +120,28 @@ declare const _default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
-    Path: string;
     Cache: {
         Search: string;
         Folder: string;
     };
-    Logger: 2;
+    Logger: number;
     Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Read: ({ Input: e }: {
+            Input: any;
+        }) => Promise<string>;
+        Wrote: ({ Buffer: e }: {
+            Buffer: any;
+        }) => Promise<any>;
         Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Fulfilled: ({ File: e }: {
+            File: any;
+        }) => Promise<string | false>;
         Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
-        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     }, "__proto__">;
+    Exclude: boolean;
     File: string;
-    Exclude: false;
+    Path: string;
 }, "__proto__">;
 export default _default;

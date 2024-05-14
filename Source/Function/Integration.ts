@@ -262,7 +262,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 			// },
 		},
 	};
-}) satisfies Interface as Interface;
+}) satisfies Interface;
 
 import type Onsharp from "../Interface/Image/Onsharp.js";
 import type Interface from "../Interface/Integration.js";

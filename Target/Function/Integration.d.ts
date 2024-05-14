@@ -3,9 +3,26 @@
  *
  */
 export declare let System: string;
-declare const _default: Interface;
+declare const _default: (Option?: import("../Interface/Option.js").default | undefined) => {
+    name: string;
+    hooks: {
+        "astro:config:done": ({ config: { outDir: { pathname }, }, }: {
+            config: import("astro").AstroConfig;
+            setAdapter: (adapter: import("astro").AstroAdapter) => void;
+            logger: import("astro").AstroIntegrationLogger;
+        }) => Promise<void>;
+        "astro:build:done": ({ dir: Directory }: {
+            pages: {
+                pathname: string;
+            }[];
+            dir: URL;
+            routes: import("astro").RouteData[];
+            logger: import("astro").AstroIntegrationLogger;
+            cacheManifest: boolean;
+        }) => Promise<void>;
+    };
+};
 export default _default;
-import type Interface from "../Interface/Integration.js";
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 export declare const Default: Omit<{} & {
     CSS: {

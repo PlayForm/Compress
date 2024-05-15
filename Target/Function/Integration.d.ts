@@ -142,10 +142,15 @@ export declare const Default: Omit<{} & {
         JavaScript: "terser";
         SVG: "svgo";
     };
+<<<<<<< HEAD
+=======
+    Path: string;
+>>>>>>> 32a2c61697efdf02f4100f07508745f584f3b02f
     Cache: {
         Search: string;
         Folder: string;
     };
+<<<<<<< HEAD
     Logger: number;
     Action: Omit<{} & {
         Read: ({ Input: e }: {
@@ -165,6 +170,20 @@ export declare const Default: Omit<{} & {
     Exclude: boolean;
     File: string;
     Path: string;
+=======
+    Logger: 2;
+    Action: Omit<{} & {
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+    }, "__proto__">;
+    File: string;
+    Exclude: false;
+>>>>>>> 32a2c61697efdf02f4100f07508745f584f3b02f
 }, "__proto__">;
 export declare const Search: string;
 export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;

@@ -116,6 +116,26 @@ You can override any of the default options from the configurations of:
 -   [svgo](https://github.com/svg/svgo#configuration)
 -   [terser](https://github.com/terser/terser#minify-options-structure)
 
+**`astro.config.ts`**
+
+```ts
+export default {
+	integrations: [
+		(await import("@playform/compress")).default({
+			CSS: false,
+			HTML: {
+				'html-minifier-terser': {
+					removeAttributeQuotes: false,
+				},
+			},
+			Image: false,
+			JavaScript: false,
+			SVG: false,
+		}),
+	],
+};
+```
+
 or disable them entirely:
 
 **`astro.config.ts`**

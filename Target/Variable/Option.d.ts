@@ -2,7 +2,7 @@
  * @module Option
  *
  */
-declare const _default: Omit<{} & {
+declare const _default: {
     CSS: {
         csso: import("../Interface/CSS/csso.js").default;
         lightningcss: import("../Interface/CSS/lightningcss.js").default;
@@ -36,9 +36,6 @@ declare const _default: Omit<{} & {
             useShortDoctype: false;
         };
     };
-    Image: {
-        sharp: import("../Interface/Image/sharp.js").default;
-    };
     JavaScript: {
         terser: {
             ecma: 5;
@@ -54,6 +51,9 @@ declare const _default: Omit<{} & {
             };
         };
     };
+    Image: {
+        sharp: import("../Interface/Image/sharp.js").default;
+    };
     SVG: {
         svgo: {
             multipass: true;
@@ -66,28 +66,11 @@ declare const _default: Omit<{} & {
     };
     Map: import("../Interface/Map.js").default;
     Parser: import("../Interface/Parser.js").default;
-    Cache: {
-        Search: string;
-        Folder: string;
-    };
-    Logger: number;
-    Action: Omit<{} & {
+    Action: {
         Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input: e }: {
-            Input: any;
-        }) => Promise<string>;
-        Wrote: ({ Buffer: e }: {
-            Buffer: any;
-        }) => Promise<any>;
-        Fulfilled: ({ File: e }: {
-            File: any;
-        }) => Promise<string | false>;
-    }, "__proto__">;
-    Exclude: boolean;
-    File: string;
-    Path: string;
-}, "__proto__">;
+    };
+};
 export default _default;

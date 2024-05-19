@@ -7,7 +7,7 @@ declare const _default: Interface;
 export default _default;
 import type Interface from "../Interface/Integration.js";
 import type Action from "@playform/pipe/Target/Interface/Action.js";
-export declare const Default: Omit<{} & {
+export declare const Default: {
     CSS: {
         csso: import("../Interface/CSS/csso.js").default;
         lightningcss: import("../Interface/CSS/lightningcss.js").default;
@@ -41,9 +41,6 @@ export declare const Default: Omit<{} & {
             useShortDoctype: false;
         };
     };
-    Image: {
-        sharp: import("../Interface/Image/sharp.js").default;
-    };
     JavaScript: {
         terser: {
             ecma: 5;
@@ -59,6 +56,9 @@ export declare const Default: Omit<{} & {
             };
         };
     };
+    Image: {
+        sharp: import("../Interface/Image/sharp.js").default;
+    };
     SVG: {
         svgo: {
             multipass: true;
@@ -71,30 +71,13 @@ export declare const Default: Omit<{} & {
     };
     Map: import("../Interface/Map.js").default;
     Parser: import("../Interface/Parser.js").default;
-    Cache: {
-        Search: string;
-        Folder: string;
-    };
-    Logger: number;
-    Action: Omit<{} & {
+    Action: {
         Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
         Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input: e }: {
-            Input: any;
-        }) => Promise<string>;
-        Wrote: ({ Buffer: e }: {
-            Buffer: any;
-        }) => Promise<any>;
-        Fulfilled: ({ File: e }: {
-            File: any;
-        }) => Promise<string | false>;
-    }, "__proto__">;
-    Exclude: boolean;
-    File: string;
-    Path: string;
-}, "__proto__">;
-export declare const Search: string;
+    };
+};
+export declare const Search: any;
 export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;
 export declare let _Action: Action;

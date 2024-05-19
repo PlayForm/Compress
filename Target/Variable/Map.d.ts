@@ -2,11 +2,6 @@
  * @module Map
  *
  */
-declare const _default: {
-    CSS: string;
-    HTML: string;
-    Image: string;
-    JavaScript: string;
-    SVG: string;
-};
+declare const _default: Interface;
 export default _default;
+import type Interface from "../Interface/Map.js";

@@ -3,37 +3,14 @@
  *
  */
 export declare let System: string;
-declare const _default: (Option?: import("../Interface/Option.js").default | undefined) => {
-    name: string;
-    hooks: {
-        "astro:config:done": ({ config: { outDir: { pathname }, }, }: {
-            config: import("astro").AstroConfig;
-            setAdapter: (adapter: import("astro").AstroAdapter) => void;
-            logger: import("astro").AstroIntegrationLogger;
-        }) => Promise<void>;
-        "astro:build:done": ({ dir: Directory }: {
-            pages: {
-                pathname: string;
-            }[];
-            dir: URL;
-            routes: import("astro").RouteData[];
-            logger: import("astro").AstroIntegrationLogger;
-            cacheManifest: boolean;
-        }) => Promise<void>;
-    };
-};
+declare const _default: Interface;
 export default _default;
+import type Interface from "../Interface/Integration.js";
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 export declare const Default: Omit<{} & {
     CSS: {
-        csso: {
-            comments: false;
-            forceMediaMerge: true;
-            restructure: false;
-        };
-        lightningcss: {
-            minify: true;
-        };
+        csso: import("../Interface/CSS/csso.js").default;
+        lightningcss: import("../Interface/CSS/lightningcss.js").default;
     };
     HTML: {
         "html-minifier-terser": {
@@ -65,43 +42,7 @@ export declare const Default: Omit<{} & {
         };
     };
     Image: {
-        sharp: {
-            avif: {
-                chromaSubsampling: string;
-                effort: number;
-                lossless: true;
-            };
-            gif: {
-                effort: number;
-            };
-            jpeg: {
-                chromaSubsampling: string;
-                mozjpeg: true;
-                trellisQuantisation: true;
-                overshootDeringing: true;
-                optimiseScans: true;
-            };
-            png: {
-                compressionLevel: number;
-                palette: true;
-            };
-            tiff: {
-                compression: string;
-            };
-            webp: {
-                effort: number;
-                lossless: true;
-            };
-            heif: {
-                effort: number;
-                lossless: true;
-            };
-            sharp: {
-                failOn: "error";
-                sequentialRead: true;
-                unlimited: true;
-            };
-        };
+        sharp: import("../Interface/Image/sharp.js").default;
     };
     JavaScript: {
         terser: {
@@ -128,62 +69,31 @@ export declare const Default: Omit<{} & {
             plugins: "preset-default"[];
         };
     };
-    Map: {
-        CSS: string;
-        HTML: string;
-        Image: string;
-        JavaScript: string;
-        SVG: string;
-    };
-    Parser: {
-        CSS: ("csso" | "lightningcss")[];
-        HTML: "html-minifier-terser";
-        Image: "sharp";
-        JavaScript: "terser";
-        SVG: "svgo";
-    };
-<<<<<<< HEAD
-=======
-    Path: string;
->>>>>>> 32a2c61697efdf02f4100f07508745f584f3b02f
+    Map: import("../Interface/Map.js").default;
+    Parser: import("../Interface/Parser.js").default;
     Cache: {
         Search: string;
         Folder: string;
     };
-<<<<<<< HEAD
     Logger: number;
     Action: Omit<{} & {
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
         Read: ({ Input: e }: {
             Input: any;
         }) => Promise<string>;
         Wrote: ({ Buffer: e }: {
             Buffer: any;
         }) => Promise<any>;
-        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Fulfilled: ({ File: e }: {
             File: any;
         }) => Promise<string | false>;
-        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
     }, "__proto__">;
     Exclude: boolean;
     File: string;
     Path: string;
-=======
-    Logger: 2;
-    Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
-        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
-    }, "__proto__">;
-    File: string;
-    Exclude: false;
->>>>>>> 32a2c61697efdf02f4100f07508745f584f3b02f
 }, "__proto__">;
 export declare const Search: string;
 export declare const Merge: import("../Interface/Merge.js").default<import("../Interface/Merge.js").Generic>;

@@ -10,7 +10,7 @@ export default {
 	html5: true,
 	ignoreCustomComments: [
 		/^\s*#/,
-		/.*$.*/,
+		/^\s*$/,
 		/^\s*\[/,
 		/^\s*\]/,
 		/^\s*!/,

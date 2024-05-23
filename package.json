@@ -57,7 +57,7 @@
 		"astro": "4.8.7"
 	},
 	"peerDependenciesMeta": {
-		"@astro": {
+		"astro": {
 			"optional": true
 		}
 	},

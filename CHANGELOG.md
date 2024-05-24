@@ -1,8 +1,8 @@
-## 0.0.7
+## 2.2.25
 
 -   Bug fix
 
-## 0.0.6
+## 2.2.24
 
 -   Bug fix
 -   Implements lightningcss

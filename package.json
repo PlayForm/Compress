@@ -1,6 +1,6 @@
 {
-	"name": "@playform/compress",
-	"version": "0.0.7",
+	"name": "astro-compress",
+	"version": "2.2.25",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [

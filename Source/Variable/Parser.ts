@@ -8,6 +8,6 @@ export default {
 	Image: "sharp",
 	JavaScript: "terser",
 	SVG: "svgo",
-} satisfies Interface;
+} satisfies Interface as Interface;
 
 import type Interface from "../Interface/Parser.js";

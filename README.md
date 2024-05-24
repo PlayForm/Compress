@@ -5,7 +5,9 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-🎁 [CSS][csso] —
+🎁 [CSS (csso)][csso] —
+
+🎁 [CSS (lightningcss)][lightningcss] —
 
 🎁 [HTML][html-minifier-terser] —
 
@@ -111,10 +113,31 @@ SVG compression is supported, as well via [svgo].
 You can override any of the default options from the configurations of:
 
 -   [csso](https://github.com/css/csso#minifysource-options)
+-   [lightningcss](https://github.com/css/csso#minifysource-options)
 -   [html-minifier-terser](https://github.com/terser/html-minifier-terser#options-quick-reference)
 -   [sharp](https://sharp.pixelplumbing.com/api-output#jpeg)
 -   [svgo](https://github.com/svg/svgo#configuration)
 -   [terser](https://github.com/terser/terser#minify-options-structure)
+
+**`astro.config.ts`**
+
+```ts
+export default {
+	integrations: [
+		(await import("@playform/compress")).default({
+			CSS: false,
+			HTML: {
+				"html-minifier-terser": {
+					removeAttributeQuotes: false,
+				},
+			},
+			Image: false,
+			JavaScript: false,
+			SVG: false,
+		}),
+	],
+};
+```
 
 or disable them entirely:
 
@@ -246,6 +269,7 @@ export default {
 
 [Compress]: HTTPS://NPMJS.Org/astro-compress
 [csso]: HTTPS://NPMJS.Org/csso
+[lightningcss]: HTTPS://NPMJS.Org/lightningcss
 [html-minifier-terser]: HTTPS://NPMJS.Org/html-minifier-terser
 [terser]: HTTPS://NPMJS.Org/terser
 [sharp]: HTTPS://NPMJS.Org/sharp

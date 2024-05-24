@@ -38,6 +38,6 @@ export default {
 		sequentialRead: true,
 		unlimited: true,
 	},
-} satisfies Interface;
+} satisfies Interface as Interface;
 
 import type Interface from "../../Interface/Image/sharp.js";

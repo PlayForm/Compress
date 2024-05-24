@@ -2,7 +2,15 @@
  * @module Merge
  *
  */
-declare const _default: Interface<Generic>;
+declare const _default: <Ts extends readonly unknown[]>(...objects: Ts) => import("deepmerge-ts").DeepMergeHKT<Ts, Readonly<{
+    DeepMergeRecordsURI: "DeepMergeRecordsDefaultURI";
+    DeepMergeArraysURI: "DeepMergeArraysDefaultURI";
+    DeepMergeSetsURI: "DeepMergeSetsDefaultURI";
+    DeepMergeMapsURI: "DeepMergeMapsDefaultURI";
+    DeepMergeOthersURI: "DeepMergeLeafURI";
+    DeepMergeFilterValuesURI: "DeepMergeFilterValuesDefaultURI";
+}>, Readonly<{
+    key: PropertyKey;
+    parents: readonly Readonly<Record<PropertyKey, unknown>>[];
+}>>;
 export default _default;
-import type Interface from "../Interface/Merge.js";
-import type { Generic } from "../Interface/Merge.js";

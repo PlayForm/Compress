@@ -2,16 +2,27 @@
  * @module Option
  *
  */
-declare const _default: Omit<{} & {
+declare const _default: {
+    Path: string;
+    Cache: {
+        Search: string;
+        Folder: string;
+    };
+    Logger: 2;
+    Action: {
+        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
+        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
+        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
+        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
+        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
+    };
+    File: string;
+    Exclude: false;
     CSS: {
-        csso: {
-            comments: false;
-            forceMediaMerge: true;
-            restructure: false;
-        };
-        lightningcss: {
-            minify: true;
-        };
+        csso: import("../Interface/CSS/csso.js").default;
+        lightningcss: import("../Interface/CSS/lightningcss.js").default;
     };
     HTML: {
         "html-minifier-terser": {
@@ -43,43 +54,7 @@ declare const _default: Omit<{} & {
         };
     };
     Image: {
-        sharp: {
-            avif: {
-                chromaSubsampling: string;
-                effort: number;
-                lossless: true;
-            };
-            gif: {
-                effort: number;
-            };
-            jpeg: {
-                chromaSubsampling: string;
-                mozjpeg: true;
-                trellisQuantisation: true;
-                overshootDeringing: true;
-                optimiseScans: true;
-            };
-            png: {
-                compressionLevel: number;
-                palette: true;
-            };
-            tiff: {
-                compression: string;
-            };
-            webp: {
-                effort: number;
-                lossless: true;
-            };
-            heif: {
-                effort: number;
-                lossless: true;
-            };
-            sharp: {
-                failOn: "error";
-                sequentialRead: true;
-                unlimited: true;
-            };
-        };
+        sharp: import("../Interface/Image/sharp.js").default;
     };
     JavaScript: {
         terser: {
@@ -106,36 +81,7 @@ declare const _default: Omit<{} & {
             plugins: "preset-default"[];
         };
     };
-    Map: {
-        CSS: string;
-        HTML: string;
-        Image: string;
-        JavaScript: string;
-        SVG: string;
-    };
-    Parser: {
-        CSS: ("csso" | "lightningcss")[];
-        HTML: "html-minifier-terser";
-        Image: "sharp";
-        JavaScript: "terser";
-        SVG: "svgo";
-    };
-    Path: string;
-    Cache: {
-        Search: string;
-        Folder: string;
-    };
-    Logger: 2;
-    Action: Omit<{} & {
-        Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
-        Accomplished: ({ Input, Before, After }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Changed: (Plan: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<any>;
-        Read: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
-        Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
-        Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
-    }, "__proto__">;
-    File: string;
-    Exclude: false;
-}, "__proto__">;
+    Map: import("../Interface/Map.js").default;
+    Parser: import("../Interface/Parser.js").default;
+};
 export default _default;

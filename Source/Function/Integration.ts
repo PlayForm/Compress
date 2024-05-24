@@ -101,27 +101,38 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 							Wrote: async ({ Buffer, Input }) => {
 								switch (Type) {
 									case "CSS": {
-										// TODO: Implement lightningcss
-										// console.log(
-										// 	(await import("lightningcss"))
-										// 		.transform({
-										// 			code: (
-										// 				await import("buffer")
-										// 			).Buffer.from(
-										// 				Buffer.toString()
-										// 			),
-										// 			filename: Input,
-										// 			// minify: true,
-										// 			sourceMap: false,
-										// 		})
-										// 		.code.toString()
-										// );
+										let CSS = Buffer.toString();
 
-										return (await import("csso")).minify(
-											Buffer.toString(),
-											// @ts-expect-error
-											Setting["csso"]
-										).css;
+										// @ts-expect-error
+										if (Setting["csso"]) {
+											CSS = (await import("csso")).minify(
+												CSS,
+												// @ts-expect-error
+												Setting["csso"]
+											).css;
+										}
+
+										// @ts-expect-error
+										if (Setting["lightningcss"]) {
+											CSS = (await import("lightningcss"))
+												.transform(
+													Merge(
+														{
+															code: (
+																await import(
+																	"buffer"
+																)
+															).Buffer.from(CSS),
+															filename: Input,
+														},
+														// @ts-expect-error
+														Setting["lightningcss"]
+													)
+												)
+												.code.toString();
+										}
+
+										return CSS;
 									}
 
 									case "HTML": {
@@ -194,7 +205,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 									? `${(await import("kleur/colors")).green(
 											`✅ Successfully compressed a total of ${File} ${Type} ${
 												File === 1 ? "file" : "files"
-											} for ${await (
+											} for ${(
 												await import(
 													"@playform/pipe/Target/Function/Bytes.js"
 												)

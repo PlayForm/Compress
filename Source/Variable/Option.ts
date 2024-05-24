@@ -37,7 +37,7 @@ export default (await import("@Function/Merge.js")).default(
 				const Save = Before - After;
 
 				return `${gray(
-					`(-${await (
+					`(-${(
 						await import("@playform/pipe/Target/Function/Bytes.js")
 					).default(Save)})`
 				)}	${(await import("kleur/colors")).green(

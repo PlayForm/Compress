@@ -1,6 +1,6 @@
 {
-	"name": "astro-compress",
-	"version": "2.2.23",
+	"name": "@playform/compress",
+	"version": "0.0.6",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [
@@ -36,23 +36,36 @@
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/pipe": "0.0.3",
+		"@playform/pipe": "0.0.5",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "4.8.1",
 		"csso": "5.0.5",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
-		"lightningcss": "1.24.1",
-		"sharp": "0.33.3",
+		"lightningcss": "1.25.0",
+		"sharp": "0.33.4",
 		"svgo": "3.3.2",
 		"terser": "5.31.0"
 	},
-	"devDependencies": {
-		"@playform/build": "0.0.8"
+	"peerDependencies": {
+		"@playform/build": "0.0.9",
+		"@playform/document": "0.0.7",
+		"astro": "4.9.1"
+	},
+	"peerDependenciesMeta": {
+		"@playform/build": {
+			"optional": true
+		},
+		"@playform/document": {
+			"optional": true
+		},
+		"astro": {
+			"optional": true
+		}
 	},
 	"publishConfig": {
 		"access": "public"

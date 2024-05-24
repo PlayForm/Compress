@@ -1,6 +1,6 @@
 {
 	"name": "@playform/compress",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [
@@ -52,15 +52,15 @@
 		"terser": "5.31.0"
 	},
 	"peerDependencies": {
-		"@playform/document": "0.0.7",
 		"@playform/build": "0.0.9",
+		"@playform/document": "0.0.7",
 		"astro": "4.9.1"
 	},
 	"peerDependenciesMeta": {
-		"@playform/document": {
+		"@playform/build": {
 			"optional": true
 		},
-		"@playform/build": {
+		"@playform/document": {
 			"optional": true
 		},
 		"astro": {

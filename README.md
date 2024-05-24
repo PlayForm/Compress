@@ -5,9 +5,9 @@
 This **[Astro integration][astro-integration]** brings compression utilities to
 your Astro project.
 
-🎁 [CSS][csso] —
+🎁 [CSS (csso)][csso] —
 
-🎁 [CSS][lightningcss] —
+🎁 [CSS (lightningcss)][lightningcss] —
 
 🎁 [HTML][html-minifier-terser] —
 

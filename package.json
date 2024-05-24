@@ -1,6 +1,6 @@
 {
-	"name": "astro-compress",
-	"version": "2.2.24",
+	"name": "@playform/compress",
+	"version": "0.0.7",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [
@@ -53,14 +53,10 @@
 	},
 	"peerDependencies": {
 		"@playform/build": "0.0.9",
-		"@playform/document": "0.0.7",
 		"astro": "4.9.1"
 	},
 	"peerDependenciesMeta": {
 		"@playform/build": {
-			"optional": true
-		},
-		"@playform/document": {
 			"optional": true
 		},
 		"astro": {

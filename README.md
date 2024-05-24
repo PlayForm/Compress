@@ -124,7 +124,7 @@ You can override any of the default options from the configurations of:
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			CSS: false,
 			HTML: {
 				"html-minifier-terser": {

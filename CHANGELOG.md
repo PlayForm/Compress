@@ -1,3 +1,8 @@
+## 2.2.24
+
+-   Bug fix
+-   Implements lightningcss
+
 ## 2.2.23
 
 -   Cleanup

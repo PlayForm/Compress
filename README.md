@@ -7,6 +7,8 @@ your Astro project.
 
 🎁 [CSS][csso] —
 
+🎁 [CSS][lightningcss] —
+
 🎁 [HTML][html-minifier-terser] —
 
 🎁 [Image][sharp] —
@@ -124,7 +126,7 @@ export default {
 		(await import("@playform/compress")).default({
 			CSS: false,
 			HTML: {
-				'html-minifier-terser': {
+				"html-minifier-terser": {
 					removeAttributeQuotes: false,
 				},
 			},
@@ -266,6 +268,7 @@ export default {
 
 [Compress]: HTTPS://NPMJS.Org/@playform/compress
 [csso]: HTTPS://NPMJS.Org/csso
+[lightningcss]: HTTPS://NPMJS.Org/lightningcss
 [html-minifier-terser]: HTTPS://NPMJS.Org/html-minifier-terser
 [terser]: HTTPS://NPMJS.Org/terser
 [sharp]: HTTPS://NPMJS.Org/sharp

@@ -12,7 +12,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 				Value === true
 					? Default[Key as keyof typeof Default]
 					: _Option[Key as keyof typeof _Option],
-		})
+		}),
 	);
 
 	const {
@@ -42,7 +42,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 		Object.entries(Parser).forEach(([Key, Value]) =>
 			Object.defineProperty(Parser, Key, {
 				value: Array.isArray(Value) ? Value : [Value],
-			})
+			}),
 		);
 	}
 
@@ -65,8 +65,8 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 			"astro:build:done": async ({ dir: Directory }) => {
 				console.log(
 					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black("Compress:")
-					)}`
+						(await import("kleur/colors")).black("Compress:"),
+					)}`,
 				);
 
 				if (typeof _Map !== "object") {
@@ -108,7 +108,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 											CSS = (await import("csso")).minify(
 												CSS,
 												// @ts-expect-error
-												Setting["csso"]
+												Setting["csso"],
 											).css;
 										}
 
@@ -126,8 +126,8 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 															filename: Input,
 														},
 														// @ts-expect-error
-														Setting["lightningcss"]
-													)
+														Setting["lightningcss"],
+													),
 												)
 												.code.toString();
 										}
@@ -141,7 +141,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 										).minify(
 											Buffer.toString(),
 											// @ts-expect-error
-											Setting["html-minifier-terser"]
+											Setting["html-minifier-terser"],
 										);
 									}
 
@@ -153,7 +153,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 												).minify(
 													Buffer.toString(),
 													// @ts-expect-error
-													Setting["terser"]
+													Setting["terser"],
 												)
 											).code ?? Buffer
 										);
@@ -190,7 +190,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 											(await import("svgo")).optimize(
 												Buffer.toString(),
 												// @ts-expect-error
-												Setting["svgo"]
+												Setting["svgo"],
 											).data ?? Buffer
 										);
 									}
@@ -209,10 +209,10 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 												await import(
 													"@playform/pipe/Target/Function/Bytes.js"
 												)
-											).default(Total)}.`
+											).default(Total)}.`,
 										)}`
 									: false,
-						} satisfies Action)
+						} satisfies Action),
 					);
 
 					if (Type === "Image") {
@@ -220,7 +220,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 							Read: async ({ Input, Buffer }) => {
 								try {
 									(await import("sharp")).default.cache(
-										false
+										false,
 									);
 
 									const { format } = await (
@@ -243,7 +243,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 											typeof Image.sharp.sharp ===
 												"object"
 											? Merge(Default, Image.sharp?.sharp)
-											: Default
+											: Default,
 									);
 								} catch (_Error) {
 									console.log(_Error);

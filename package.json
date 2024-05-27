@@ -1,6 +1,6 @@
 {
 	"name": "@playform/compress",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [
@@ -52,7 +52,7 @@
 		"terser": "5.31.0"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.9"
+		"@playform/build": "0.0.10"
 	},
 	"publishConfig": {
 		"access": "public"

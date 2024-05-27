@@ -9,13 +9,13 @@ your Astro project.
 
 🎁 [CSS (lightningcss)][lightningcss] —
 
-🎁 [HTML][html-minifier-terser] —
+🎁 [HTML (html-minifier-terser)][html-minifier-terser] —
 
-🎁 [Image][sharp] —
+🎁 [Image (sharp)][sharp] —
 
-🎁 [JavaScript][terser] —
+🎁 [JavaScript (terser)][terser] —
 
-🎁 [SVG][svgo] —
+🎁 [SVG (svgo)][svgo] —
 
 > **Note**
 >

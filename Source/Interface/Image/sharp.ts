@@ -38,7 +38,7 @@ import type {
 	HeifOptions,
 	JpegOptions,
 	PngOptions,
+	SharpOptions,
 	TiffOptions,
 	WebpOptions,
-	SharpOptions,
 } from "sharp";

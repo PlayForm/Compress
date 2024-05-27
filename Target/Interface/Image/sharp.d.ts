@@ -13,4 +13,4 @@ export default interface Interface {
     webp?: boolean | WebpOptions;
     sharp?: boolean | SharpOptions;
 }
-import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, TiffOptions, WebpOptions, SharpOptions } from "sharp";
+import type { AvifOptions, GifOptions, HeifOptions, JpegOptions, PngOptions, SharpOptions, TiffOptions, WebpOptions } from "sharp";

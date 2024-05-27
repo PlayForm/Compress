@@ -21,7 +21,7 @@ export default (async (
 	if (
 		Type &&
 		["avif", "gif", "heif", "jpeg", "png", "raw", "tiff", "webp"].includes(
-			Type
+			Type,
 		) &&
 		typeof Option[Type] !== "undefined" &&
 		Option[Type] !== false
@@ -31,7 +31,9 @@ export default (async (
 			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (await import("@Variable/Image/sharp.js")).default
+					: (
+							await import("@Variable/Image/sharp.js")
+						).default,
 			).toBuffer())
 		);
 	}

@@ -42,6 +42,7 @@
 		"@playform/pipe": "0.0.5",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
+		"astro": "4.9.1",
 		"csso": "5.0.5",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
@@ -50,17 +51,8 @@
 		"svgo": "3.3.2",
 		"terser": "5.31.0"
 	},
-	"peerDependencies": {
-		"@playform/build": "0.0.9",
-		"astro": "4.9.1"
-	},
-	"peerDependenciesMeta": {
-		"@playform/build": {
-			"optional": true
-		},
-		"astro": {
-			"optional": true
-		}
+	"devDependencies": {
+		"@playform/build": "0.0.9"
 	},
 	"publishConfig": {
 		"access": "public"

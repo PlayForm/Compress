@@ -52,11 +52,7 @@
 		"terser": "5.31.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.10",
-		"astro": "4.10.0"
-	},
-	"peerDependencies": {
-		"astro": "*"
+		"@playform/build": "0.0.10"
 	},
 	"publishConfig": {
 		"access": "public"

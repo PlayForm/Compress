@@ -42,7 +42,11 @@
 		"@playform/pipe": "0.0.5",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
+<<<<<<< HEAD
 		"astro": "*",
+=======
+		"astro": "4.10.0",
+>>>>>>> e1bd8677e57aa7030be9ff744305973ad7a7337c
 		"csso": "5.0.5",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",

@@ -104,15 +104,6 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 										let CSS = Buffer.toString();
 
 										// @ts-expect-error
-										if (Setting["csso"]) {
-											CSS = (await import("csso")).minify(
-												CSS,
-												// @ts-expect-error
-												Setting["csso"],
-											).css;
-										}
-
-										// @ts-expect-error
 										if (Setting["lightningcss"]) {
 											CSS = (await import("lightningcss"))
 												.transform(
@@ -130,6 +121,15 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 													),
 												)
 												.code.toString();
+										}
+
+										// @ts-expect-error
+										if (Setting["csso"]) {
+											CSS = (await import("csso")).minify(
+												CSS,
+												// @ts-expect-error
+												Setting["csso"],
+											).css;
 										}
 
 										return CSS;

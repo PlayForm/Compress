@@ -56,7 +56,7 @@
 		"astro": "4.10.0"
 	},
 	"peerDependencies": {
-		"astro": "^4.10.0"
+		"astro": "*"
 	},
 	"publishConfig": {
 		"access": "public"

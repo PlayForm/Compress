@@ -10,5 +10,12 @@ export default interface Interface extends Omit<TransformOptions<CustomAtRules>,
      * @default lightningcss false
      */
     minify?: boolean;
+    /**
+     * Whether to remove unused selectors or keywords.
+     *
+     * @default Compress false
+     * @default lightningcss undefined
+     */
+    unusedSymbols?: string[] | boolean;
 }
 import type { CustomAtRules, TransformOptions } from "lightningcss";

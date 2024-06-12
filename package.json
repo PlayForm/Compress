@@ -1,6 +1,6 @@
 {
 	"name": "astro-compress",
-	"version": "2.2.27",
+	"version": "2.2.28",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [
@@ -39,7 +39,7 @@
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/pipe": "0.0.5",
+		"@playform/pipe": "0.0.6",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"astro": "*",
@@ -52,7 +52,7 @@
 		"terser": "5.31.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.10"
+		"@playform/build": "0.0.11"
 	},
 	"publishConfig": {
 		"access": "public"

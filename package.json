@@ -36,7 +36,7 @@
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
 	"scripts": {
-		"prepublishOnly": "yarn Build 'Source/**/*.ts'"
+		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
 		"@playform/pipe": "0.0.6",

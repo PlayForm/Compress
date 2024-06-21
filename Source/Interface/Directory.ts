@@ -6,4 +6,4 @@ export default interface Interface {
 	(Path: string): Promise<ParsedPath["dir"]>;
 }
 
-import type { ParsedPath } from "path";
+import type { ParsedPath } from "node:path";

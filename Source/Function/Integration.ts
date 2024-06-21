@@ -54,7 +54,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					outDir: { pathname },
 				},
 			}) => {
-				System = (await import("path"))
+				System = (await import("node:path"))
 					.parse(pathname)
 					.dir.replace(/\\/g, "/");
 
@@ -111,7 +111,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 														{
 															code: (
 																await import(
-																	"buffer"
+																	"node:buffer"
 																)
 															).Buffer.from(CSS),
 															filename: Input,

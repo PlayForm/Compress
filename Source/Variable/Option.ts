@@ -7,7 +7,8 @@ export default (await import("@Function/Merge.js")).default(
 	{
 		CSS: {
 			csso: (await import("@Variable/CSS/csso.js")).default,
-			lightningcss: (await import("@Variable/CSS/lightningcss.js")).default,
+			lightningcss: (await import("@Variable/CSS/lightningcss.js"))
+				.default,
 		},
 		HTML: {
 			"html-minifier-terser": (

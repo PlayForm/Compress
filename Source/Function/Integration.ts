@@ -267,7 +267,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					}
 				}
 			},
-			// @TODO: Finish this
+			// TODO: Finish this
 			// "astro:config:setup": ({ addMiddleware }) => {
 			// 	addMiddleware();
 			// },

@@ -52,7 +52,7 @@
 		"terser": "5.31.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.1.0"
+		"@playform/build": "0.1.1"
 	},
 	"publishConfig": {
 		"access": "public"

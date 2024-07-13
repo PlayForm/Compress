@@ -1,1 +1,1 @@
-var t=async(...[r])=>{let e=(await import("node:path")).normalize((await import("node:path")).parse(r).dir).replace(/\\/g,"/").replace((await import("./Integration.js")).System,"");return e.endsWith("/")||(e+="/"),e};export{t as default};
+var t=async(...[r])=>{let e=(await import("path")).normalize((await import("path")).parse(r).dir).replace(/\\/g,"/").replace((await import("./Integration.js")).System,"");return e.endsWith("/")||(e+="/"),e};export{t as default};

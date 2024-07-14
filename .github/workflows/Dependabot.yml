@@ -1,0 +1,45 @@
+name: Dependabot
+
+concurrency:
+    group: Dependabot-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    security-events: write
+    contents: write
+    pull-requests: write
+
+on:
+    workflow_dispatch:
+    pull_request:
+
+jobs:
+    Approve:
+        runs-on: ubuntu-latest
+
+        if: ${{ github.actor == 'dependabot[bot]' }}
+
+        steps:
+            - uses: dependabot/fetch-metadata@v2.2.0
+              with:
+                  github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+            - run: gh pr review --approve "$PR_URL"
+              env:
+                  PR_URL: ${{github.event.pull_request.html_url}}
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    Merge:
+        runs-on: ubuntu-latest
+
+        if: ${{ github.actor == 'dependabot[bot]' }}
+
+        steps:
+            - uses: dependabot/fetch-metadata@v2.2.0
+              with:
+                  github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+            - run: gh pr merge --auto --merge "$PR_URL"
+              env:
+                  PR_URL: ${{github.event.pull_request.html_url}}
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

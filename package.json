@@ -56,6 +56,7 @@
 		"@playform/build": "0.1.1"
 	},
 	"publishConfig": {
+		"provenance": true,
 		"access": "public"
 	}
 }

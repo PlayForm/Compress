@@ -90,15 +90,5 @@ export declare const Default: {
     Parser: import("../Interface/Parser.js").default;
 };
 export declare const Search: string;
-export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => import("deepmerge-ts").DeepMergeHKT<Ts, Readonly<{
-    DeepMergeRecordsURI: "DeepMergeRecordsDefaultURI";
-    DeepMergeArraysURI: "DeepMergeArraysDefaultURI";
-    DeepMergeSetsURI: "DeepMergeSetsDefaultURI";
-    DeepMergeMapsURI: "DeepMergeMapsDefaultURI";
-    DeepMergeOthersURI: "DeepMergeLeafURI";
-    DeepMergeFilterValuesURI: "DeepMergeFilterValuesDefaultURI";
-}>, Readonly<{
-    key: PropertyKey;
-    parents: ReadonlyArray<Readonly<Record<PropertyKey, unknown>>>;
-}>>;
+export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => import("deepmerge-ts").DeepMergeHKT<Ts, import("deepmerge-ts").GetDeepMergeFunctionsURIs<{}>, import("deepmerge-ts").DeepMergeBuiltInMetaData>;
 export declare let _Action: Action;

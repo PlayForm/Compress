@@ -1,6 +1,6 @@
 {
 	"name": "@playform/compress",
-	"version": "0.0.13",
+	"version": "0.1.0",
 	"private": false,
 	"description": "🗜️ Compress —",
 	"keywords": [
@@ -40,7 +40,7 @@
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"@playform/pipe": "0.0.6",
+		"@playform/pipe": "0.1.0",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
 		"astro": "*",
@@ -53,7 +53,7 @@
 		"terser": "5.31.3"
 	},
 	"devDependencies": {
-		"@playform/build": "0.1.1"
+		"@playform/build": "0.1.2"
 	},
 	"publishConfig": {
 		"provenance": true,

@@ -37,14 +37,10 @@ export default (await import("@Function/Merge.js")).default(
 				const Save = Before - After;
 
 				return `${gray(
-					`(-${(
-						await import("@playform/pipe/Target/Function/Bytes.js")
-					).default(Save)})`,
+					`(-${(await import("@playform/pipe/Target/Function/Bytes.js")).default(Save)})`,
 				)}	${(await import("kleur/colors")).green(
 					`${((Save / Before) * 100).toFixed(2)}%`,
-				)} reduction in ${gray(await Directory(Input))}${(
-					await import("kleur/colors")
-				).cyan((await import("path")).parse(Input).base)}`;
+				)} reduction in ${gray(await Directory(Input))}${(await import("kleur/colors")).cyan((await import("path")).parse(Input).base)}`;
 			},
 			Changed: async (Plan) =>
 				Object.defineProperty(Plan.Info, "Total", {

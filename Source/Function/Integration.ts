@@ -47,7 +47,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 	}
 
 	return {
-		name: "astro-compress",
+		name: "@playform/compress",
 		hooks: {
 			"astro:config:done": async ({
 				config: {
@@ -267,7 +267,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					}
 				}
 			},
-			// @TODO: Finish this
+			// TODO: Finish this
 			// "astro:config:setup": ({ addMiddleware }) => {
 			// 	addMiddleware();
 			// },

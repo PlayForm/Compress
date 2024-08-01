@@ -45,6 +45,7 @@
 		"@types/html-minifier-terser": "7.0.2",
 		"astro": "*",
 		"csso": "5.0.5",
+		"deepmerge-ts": "7.1.0",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.25.1",

@@ -1,5 +1,16 @@
 ## 0.1.1
-	
+
+### Changed
+
+-   Updated .npmignore file:
+    -   Reordered ignored directories and files
+    -   Added 'Summary.md' to ignored files
+
+### Fixed
+
+-   Improved code formatting in Source/Function/Image/Writesharp.ts:
+    -   Simplified import statement for default sharp options
+
 ## 0.1.0
 
 ### Added

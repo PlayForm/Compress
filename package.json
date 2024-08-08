@@ -48,10 +48,10 @@
 		"deepmerge-ts": "7.1.0",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
-		"lightningcss": "1.25.1",
+		"lightningcss": "1.26.0",
 		"sharp": "0.33.4",
 		"svgo": "4.0.0-rc.0",
-		"terser": "5.31.3"
+		"terser": "5.31.4"
 	},
 	"devDependencies": {
 		"@playform/build": "0.1.3"

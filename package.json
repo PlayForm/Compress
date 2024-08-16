@@ -9,6 +9,7 @@
 		"astro-integration",
 		"astro-compress",
 		"compress",
+		"minify",
 		"css",
 		"html",
 		"image",

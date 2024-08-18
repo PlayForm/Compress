@@ -31,7 +31,9 @@ export default (async (
 			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (await import("@Variable/Image/sharp.js")).default,
+					: (
+							await import("@Variable/Image/sharp.js")
+						).default,
 			).toBuffer())
 		);
 	}

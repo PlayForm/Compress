@@ -267,6 +267,10 @@ export default {
 };
 ```
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a history of changes to this integration.
+
 [Compress]: HTTPS://NPMJS.Org/@playform/compress
 [csso]: HTTPS://NPMJS.Org/csso
 [lightningcss]: HTTPS://NPMJS.Org/lightningcss
@@ -275,7 +279,3 @@ export default {
 [sharp]: HTTPS://NPMJS.Org/sharp
 [svgo]: HTTPS://NPMJS.Org/svgo
 [astro-integration]: HTTPS://docs.astro.build/en/guides/integrations-guide/
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for a history of changes to this integration.

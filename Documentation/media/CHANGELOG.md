@@ -65,7 +65,7 @@
 
 ### Added
 
--   Added "astro-compress" and "playform" to keywords
+-   Added "@playform/compress" and "playform" to keywords
 -   Added astro v4.9.2 as a dependency
 
 ### Changed
@@ -132,7 +132,7 @@
 
 ### Added
 
--   Added "astro-compress" to keywords
+-   Added "@playform/compress" to keywords
 -   Added astro v4.8.1 as a dependency
 
 ### Changed

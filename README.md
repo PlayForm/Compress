@@ -26,7 +26,7 @@ your Astro project.
 >
 > Use `Compress` last in your integration list for the best optimizations.
 
-## Installation
+## 🚀 Installation
 
 There are two ways to add integrations to your project. Let's try the most
 convenient option first!

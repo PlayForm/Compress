@@ -87,7 +87,7 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: actions/upload-artifact@v4.3.6
+            - uses: actions/upload-artifact@v4.4.0
               with:
                   name: .-Node-${{ matrix.node-version }}-Target
                   path: ./Target

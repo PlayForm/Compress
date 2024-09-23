@@ -36,6 +36,9 @@
 	"type": "module",
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
+	"bin": {
+		"Compress": "Target/Class/Compress.js"
+	},
 	"scripts": {
 		"Run": "Build 'Source/**/*.ts' --Watch",
 		"prepublishOnly": "Build 'Source/**/*.ts'"
@@ -44,7 +47,8 @@
 		"@playform/pipe": "0.1.1",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "4.15.8",
+		"astro": "4.15.9",
+		"commander": "12.1.0",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.0",
 		"html-minifier-terser": "7.2.0",

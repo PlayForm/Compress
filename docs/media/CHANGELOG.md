@@ -1,3 +1,24 @@
+## 0.1.2
+
+### Changed
+
+-   Updated README badges to use HTTPS URLs
+-   Updated README table layout for better visual presentation
+-   Updated dependency badges in README to use correct package name
+    (`@playform/compress` instead of `@playform/inline`)
+-   Updated README to remove unnecessary line breaks and improve spacing
+-   Updated `Source/Function/Image/Writesharp.ts` to simplify an import
+    statement
+-   Added `Source/Function/CLI.ts` for command-line interface functionality
+-   Added `Source/Interface/CLI.ts` to define the command-line interface
+-   Updated `package.json` to include necessary CLI dependencies
+
+### Fixed
+
+-   Fixed broken links in README badges
+-   Fixed alignment and spacing issues in README table
+-   Fixed incorrect package name in dependency badges
+
 ## 0.1.1
 
 ### Changed

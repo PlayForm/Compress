@@ -60,12 +60,6 @@ export default (async (...[_Option = {}]: Parameters<Interface>) => {
 		System = System.substring(1);
 	}
 
-	console.log(
-		`\n${(await import("kleur/colors")).bgGreen(
-			(await import("kleur/colors")).black("Compress:"),
-		)}`,
-	);
-
 	if (typeof _Map !== "object") {
 		return;
 	}

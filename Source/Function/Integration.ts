@@ -69,12 +69,6 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 				}
 			},
 			"astro:build:done": async ({ dir: Directory }) => {
-				console.log(
-					`\n${(await import("kleur/colors")).bgGreen(
-						(await import("kleur/colors")).black("Compress:"),
-					)}`,
-				);
-
 				if (typeof _Map !== "object") {
 					return;
 				}

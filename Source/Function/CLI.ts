@@ -5,7 +5,7 @@ import type Interface from "../Interface/CLI.js";
 import type Onsharp from "../Interface/Image/Onsharp.js";
 
 /**
- * @module Integration
+ * @module CLI
  *
  */
 // TODO: Test this for security

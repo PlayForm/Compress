@@ -1,3 +1,5 @@
+import type { Pattern } from "@playform/pipe";
+
 import type Option from "../Interface/Option.js";
 
 /**
@@ -5,5 +7,5 @@ import type Option from "../Interface/Option.js";
  *
  */
 export default interface Interface {
-	(Option?: Option): Promise<void>;
+	(File: Pattern[], Option?: Option): Promise<void>;
 }

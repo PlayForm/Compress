@@ -1,11 +1,9 @@
-import type OptionPipe from "@playform/pipe/Target/Interface/Option.js";
-
-import type Option from "../Interface/Option.js";
+import type { Pattern } from "fast-glob";
 
 /**
  * @module CLI
  *
  */
 export default interface Interface {
-	(File: OptionPipe["File"], Option?: Option): Promise<void>;
+	(File: Pattern[], Compress?: Pattern): Promise<void>;
 }

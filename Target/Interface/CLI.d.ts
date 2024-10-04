@@ -1,6 +1,6 @@
 import type Option from "../Interface/Option.js";
 /**
- * @module Integration
+ * @module CLI
  *
  */
 export default interface Interface {

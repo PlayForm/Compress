@@ -1,4 +1,4 @@
-import type { Pattern } from "@playform/pipe";
+import type OptionPipe from "@playform/pipe/Target/Interface/Option.js";
 
 import type Option from "../Interface/Option.js";
 
@@ -7,5 +7,5 @@ import type Option from "../Interface/Option.js";
  *
  */
 export default interface Interface {
-	(File: Pattern[], Option?: Option): Promise<void>;
+	(File: OptionPipe["File"], Option?: Option): Promise<void>;
 }

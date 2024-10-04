@@ -1,11 +1,11 @@
-import type Interface from "../Interface/Compress.js";
+import type Interface from "../Interface/Pipe.js";
 
 /**
- * @module Compress
+ * @module Pipe
  *
  */
 export default (async (
-	...[Cache, Logger, Path, _Map, Type, Exclude, Action]: Parameters<Interface>
+	...[Cache, Logger, Path, FileBy, FileNot, Action]: Parameters<Interface>
 ) =>
 	await (
 		await (
@@ -14,6 +14,6 @@ export default (async (
 					Cache,
 					Logger,
 				).In(Path)
-			).By(_Map[Type] ?? "**/*")
-		).Not(Exclude)
+			).By(FileBy)
+		).Not(FileNot)
 	).Pipe(Action)) satisfies Interface as Interface;

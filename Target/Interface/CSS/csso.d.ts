@@ -1,3 +1,4 @@
+import type { CompressOptions, MinifyOptions } from "csso";
 /**
  * @module CSS
  *
@@ -29,4 +30,3 @@ export default interface Interface extends MinifyOptions, CompressOptions {
      */
     restructure?: boolean;
 }
-import type { CompressOptions, MinifyOptions } from "csso";

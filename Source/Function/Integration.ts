@@ -255,12 +255,11 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					}
 
 					for (const Path of Paths) {
-						(await import("@Function/Compress.js")).default(
+						(await import("@Function/Pipe.js")).default(
 							Cache,
 							Logger,
 							Path,
-							_Map,
-							Type,
+							_Map[Type] ?? "**/*",
 							Exclude,
 							_Action,
 						);

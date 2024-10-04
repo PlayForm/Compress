@@ -50,7 +50,7 @@
 		"astro": "4.15.11",
 		"commander": "12.1.0",
 		"csso": "5.0.5",
-		"deepmerge-ts": "7.1.0",
+		"deepmerge-ts": "7.1.1",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.27.0",

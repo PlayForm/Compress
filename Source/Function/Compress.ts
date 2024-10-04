@@ -1,9 +1,12 @@
+import type Interface from "../Interface/Compress.js";
+
 /**
  * @module Compress
  *
  */
-
-export default async (...[Cache]: Parameters<Interface>) => {
+export default (async (
+	...[Cache, Logger, Path, _Map, Type, Exclude, Action]: Parameters<Interface>
+) => {
 	await (
 		await (
 			await (
@@ -14,4 +17,4 @@ export default async (...[Cache]: Parameters<Interface>) => {
 			).By(_Map[Type] ?? "**/*")
 		).Not(Exclude)
 	).Pipe(Action);
-};
+}) satisfies Interface as Interface;

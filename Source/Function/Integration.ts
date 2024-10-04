@@ -255,7 +255,15 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					}
 
 					for (const Path of Paths) {
-						await import('@Function/Compress.js')
+						(await import("@Function/Compress.js")).default(
+							Cache,
+							Logger,
+							Path,
+							_Map,
+							Type,
+							Exclude,
+							_Action,
+						);
 					}
 				}
 			},

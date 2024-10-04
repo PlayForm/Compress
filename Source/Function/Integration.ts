@@ -255,15 +255,7 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					}
 
 					for (const Path of Paths) {
-						await (
-							await (
-								await (
-									await new (
-										await import("@playform/pipe")
-									).default(Cache, Logger).In(Path)
-								).By(_Map[Type] ?? "**/*")
-							).Not(Exclude)
-						).Pipe(_Action);
+						await import('@Function/Compress.js')
 					}
 				}
 			},

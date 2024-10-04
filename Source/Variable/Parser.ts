@@ -1,3 +1,5 @@
+import type Interface from "../Interface/Parser.js";
+
 /**
  * @module Parser
  *
@@ -9,5 +11,3 @@ export default {
 	JavaScript: "terser",
 	SVG: "svgo",
 } satisfies Interface as Interface;
-
-import type Interface from "../Interface/Parser.js";

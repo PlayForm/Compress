@@ -1,3 +1,5 @@
+import type Interface from "../Interface/Option.js";
+
 /**
  * @module Option
  *
@@ -53,8 +55,6 @@ export default (await import("@Function/Merge.js")).default(
 		},
 	} satisfies Interface,
 );
-
-import type Interface from "../Interface/Option.js";
 
 const { gray, red } = await import("kleur/colors");
 

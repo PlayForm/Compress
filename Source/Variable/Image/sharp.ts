@@ -1,3 +1,5 @@
+import type Interface from "../../Interface/Image/sharp.js";
+
 /**
  * @module Image
  *
@@ -39,5 +41,3 @@ export default {
 		unlimited: true,
 	},
 } satisfies Interface as Interface;
-
-import type Interface from "../../Interface/Image/sharp.js";

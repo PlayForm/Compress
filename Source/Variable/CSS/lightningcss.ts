@@ -1,3 +1,5 @@
+import type Interface from "../../Interface/CSS/lightningcss.js";
+
 /**
  * @module CSS
  *
@@ -7,5 +9,3 @@ export default {
 	sourceMap: false,
 	unusedSymbols: false,
 } satisfies Interface as Interface;
-
-import type Interface from "../../Interface/CSS/lightningcss.js";

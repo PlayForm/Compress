@@ -1,3 +1,5 @@
+import type { CustomAtRules, TransformOptions } from "lightningcss";
+
 /**
  * @module CSS
  *
@@ -22,5 +24,3 @@ export default interface Interface
 	 */
 	unusedSymbols?: string[] | boolean;
 }
-
-import type { CustomAtRules, TransformOptions } from "lightningcss";

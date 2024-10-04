@@ -1,3 +1,5 @@
+import type Interface from "../../Interface/CSS/csso.js";
+
 /**
  * @module CSS
  *
@@ -7,5 +9,3 @@ export default {
 	forceMediaMerge: true,
 	restructure: false,
 } satisfies Interface as Interface;
-
-import type Interface from "../../Interface/CSS/csso.js";

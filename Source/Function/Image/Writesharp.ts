@@ -1,3 +1,6 @@
+import type Interface from "../../Interface/Image/Writesharp.js";
+import type File from "../../Type/Image/Filesharp.js";
+
 /**
  * @module Image
  *
@@ -31,15 +34,10 @@ export default (async (
 			(await Buffer[Type](
 				Option[Type] !== true
 					? Option[Type]
-					: (
-							await import("@Variable/Image/sharp.js")
-						).default,
+					: (await import("@Variable/Image/sharp.js")).default,
 			).toBuffer())
 		);
 	}
 }) satisfies Interface as Interface;
-
-import type Interface from "../../Interface/Image/Writesharp.js";
-import type File from "../../Type/Image/Filesharp.js";
 
 export const { default: _Map } = await import("@Variable/Image/Mapsharp.js");

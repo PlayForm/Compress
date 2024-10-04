@@ -1,3 +1,5 @@
+import type Type from "../../Type/SVG/svgo.js";
+
 /**
  * @module SVG
  *
@@ -10,5 +12,3 @@ export default {
 	},
 	plugins: ["preset-default"],
 } satisfies Type;
-
-import type Type from "../../Type/SVG/svgo.js";

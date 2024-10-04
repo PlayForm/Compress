@@ -1,4 +1,7 @@
-import type Cache from "@playform/pipe/Target/Interface/Cache";
+import type Pipe from "@playform/pipe/Target/Class/Pipe.js";
+import type Path from "@playform/pipe/Target/Type/Path.js";
+
+import type Option from "../Interface/Option.js";
 
 /**
  * @module Compress
@@ -6,12 +9,12 @@ import type Cache from "@playform/pipe/Target/Interface/Cache";
  */
 export default interface Interface {
 	(
-		Cache: Cache,
-		Logger: unknown,
-		Path: unknown,
-		_Map: unknown,
-		Type: unknown,
-		Exclude: unknown,
-		Action: unknown,
-	): Promise<void>;
+		Cache: Option["Cache"],
+		Logger: Option["Logger"],
+		Path: Path,
+		_Map: Exclude<Option["Map"], undefined>,
+		Type: keyof Option["Map"],
+		Exclude: Option["Exclude"],
+		Action: Option["Action"],
+	): Promise<Pipe>;
 }

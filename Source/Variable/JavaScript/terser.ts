@@ -1,3 +1,5 @@
+import type Type from "../../Type/JavaScript/terser.js";
+
 /**
  * @module JavaScript
  *
@@ -15,5 +17,3 @@ export default {
 		comments: false,
 	},
 } satisfies Type;
-
-import type Type from "../../Type/JavaScript/terser.js";

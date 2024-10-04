@@ -1,3 +1,5 @@
+import type Interface from "../Interface/Map.js";
+
 /**
  * @module Map
  *
@@ -9,5 +11,3 @@ export default {
 	JavaScript: "**/*.{js,mjs,cjs,jsm,mts,tsx,ts}",
 	SVG: "**/*.svg",
 } satisfies Interface as Interface;
-
-import type Interface from "../Interface/Map.js";

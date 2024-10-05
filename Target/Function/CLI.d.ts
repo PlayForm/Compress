@@ -1,7 +1,7 @@
 import type Action from "@playform/pipe/Target/Interface/Action.js";
 import type Interface from "../Interface/CLI.js";
 /**
- * @module Integration
+ * @module CLI
  *
  */
 export declare let System: string;

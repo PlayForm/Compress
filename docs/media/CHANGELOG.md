@@ -1,7 +1,25 @@
 ## 0.1.2
 
+### Added
+
+-   New CLI functionality with `Compress` command
+-   New `CLI.ts` and `Pipe.ts` functions for improved command-line operations
+-   Added `commander` dependency for CLI support
+-   Added `fast-glob` dependency for file pattern matching
+
 ### Changed
 
+-   Updated package name from `astro-compress` to `@playform/compress`
+-   Updated various dependencies to their latest versions:
+    -   `@playform/pipe` from 0.1.0 to 0.1.1
+    -   `deepmerge-ts` from 7.1.0 to 7.1.1
+    -   `lightningcss` from 1.25.1 to 1.27.0
+    -   `sharp` from 0.33.4 to 0.33.5
+    -   `svgo` from 4.0.0-rc.0 to 3.3.2
+    -   `terser` from 5.31.3 to 5.34.1
+    -   `@playform/build` from 0.1.3 to 0.1.7
+-   Refactored and improved various TypeScript interfaces and types
+-   Updated README with new installation instructions and badge styling
 -   Updated README badges to use HTTPS URLs
 -   Updated README table layout for better visual presentation
 -   Updated dependency badges in README to use correct package name
@@ -13,8 +31,15 @@
 -   Added `Source/Interface/CLI.ts` to define the command-line interface
 -   Updated `package.json` to include necessary CLI dependencies
 
+### Removed
+
+-   Removed `Documentation/` directory (replaced with `docs/`)
+-   Removed `Summary.md` file
+
 ### Fixed
 
+-   Various code improvements and refactoring for better type safety and
+    performance
 -   Fixed broken links in README badges
 -   Fixed alignment and spacing issues in README table
 -   Fixed incorrect package name in dependency badges

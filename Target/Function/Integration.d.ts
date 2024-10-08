@@ -8,12 +8,12 @@ export declare let System: string;
 declare const _default: Interface;
 export default _default;
 export declare const Default: {
+    Path: string;
     Cache: {
         Search: string;
         Folder: string;
     };
     Logger: 2;
-    Exclude: false;
     Action: {
         Failed: ({ Input }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<string>;
         Passed: ({ Before, Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<boolean>;
@@ -23,8 +23,8 @@ export declare const Default: {
         Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
         Fulfilled: ({ File }: import("@playform/pipe/Target/Interface/Plan.js").default) => Promise<string | false>;
     };
-    Path: string;
     File: string;
+    Exclude: false;
     CSS: {
         csso: import("../Interface/CSS/csso.js").default;
         lightningcss: import("../Interface/CSS/lightningcss.js").default;

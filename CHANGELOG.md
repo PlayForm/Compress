@@ -1,3 +1,9 @@
+## 0.1.4
+
+### Fixed
+
+-   Fixes missing `Pipe.js`
+
 ## 0.1.2
 
 ### Added

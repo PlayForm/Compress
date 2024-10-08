@@ -256,15 +256,14 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 
 					for (const Path of Paths) {
 						await (
-							await import("@Function/Pipes.js")
-						)(
-							Cache,
-							Logger,
-							Path,
-							_Map[Type] ?? "**/*",
-							Exclude,
-							_Action,
-						);
+							await (
+								await (
+									await new (
+										await import("@playform/pipe")
+									).default(Cache, Logger).In(Path)
+								).By(_Map[Type] ?? "**/*")
+							).Not(Exclude)
+						).Pipe(_Action);
 					}
 				}
 			},

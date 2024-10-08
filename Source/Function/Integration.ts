@@ -255,7 +255,9 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 					}
 
 					for (const Path of Paths) {
-						(await import("@Function/Pipe.js")).default(
+						await (
+							await import("@Function/Pipe.js")
+						).default(
 							Cache,
 							Logger,
 							Path,

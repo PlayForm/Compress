@@ -17,6 +17,7 @@ export default {
 		/^\s*\]/,
 		/^\s*!/,
 		/^\s*\//,
+		/^\s*astro:.*/,
 		/^\s*astro:end/,
 	],
 	ignoreCustomFragments: [],

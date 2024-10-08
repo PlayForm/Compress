@@ -36,9 +36,6 @@
 	"type": "module",
 	"main": "./Target/Function/Integration.js",
 	"types": "./Target/Function/Integration.d.ts",
-	"bin": {
-		"Compress": "Target/Class/Compress.js"
-	},
 	"scripts": {
 		"Run": "Build 'Source/**/*.ts' --Watch",
 		"prepublishOnly": "Build 'Source/**/*.ts'"

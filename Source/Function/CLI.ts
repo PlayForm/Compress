@@ -1,8 +1,6 @@
 import type Action from "@playform/pipe/Target/Interface/Action.js";
-import type Path from "@playform/pipe/Target/Type/Path.js";
 
 import type Interface from "../Interface/CLI.js";
-import type Onsharp from "../Interface/Image/Onsharp.js";
 
 /**
  * @module CLI
@@ -11,7 +9,7 @@ import type Onsharp from "../Interface/Image/Onsharp.js";
 // TODO: Test this for security
 export let System: string;
 
-export default (async (...[File, Compress]: Parameters<Interface>) => {
+export default (async (...[_File, _Compress]: Parameters<Interface>) => {
 	// Object.entries(_Option).forEach(([Key, Value]) =>
 	// 	Object.defineProperty(_Option, Key, {
 	// 		value:

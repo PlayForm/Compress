@@ -70,6 +70,6 @@ jobs:
               continue-on-error: true
               working-directory: .
               run: |
-                  npm publish --legacy-peer-deps --provenance --ignore-scripts
+                  npm publish --legacy-peer-deps --provenance --ignore-scripts --dry-run
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

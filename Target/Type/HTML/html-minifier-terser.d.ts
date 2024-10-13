@@ -1,4 +1,5 @@
 import type { Options } from "html-minifier-terser";
+
 /**
  * @module HTML
  *

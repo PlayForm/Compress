@@ -1,4 +1,5 @@
 import type Interface from "../../Interface/CSS/csso.js";
+
 /**
  * @module CSS
  *

@@ -3,5 +3,5 @@
  *
  */
 export default interface Interface {
-    [key: string]: string;
+	[key: string]: string;
 }

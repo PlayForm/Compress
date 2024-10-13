@@ -1,4 +1,5 @@
 import type Interface from "../Interface/Map.js";
+
 /**
  * @module Map
  *

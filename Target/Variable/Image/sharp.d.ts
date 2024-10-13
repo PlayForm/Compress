@@ -1,4 +1,5 @@
 import type Interface from "../../Interface/Image/sharp.js";
+
 /**
  * @module Image
  *

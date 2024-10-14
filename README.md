@@ -2,20 +2,20 @@
 
 # 🗜️ [Compress] —
 
-This **[Astro integration][astro-integration]** brings compression utilities to
+This **[`Astro integration`][astro-integration]** brings compression utilities to
 your Astro project.
 
-🎁 [CSS (csso)][csso] —
+🎁 [`CSS (csso)`][csso] —
 
-🎁 [CSS (lightningcss)][lightningcss] —
+🎁 [`CSS (lightningcss)`][lightningcss] —
 
-🎁 [HTML (html-minifier-terser)][html-minifier-terser] —
+🎁 [`HTML (html-minifier-terser)`][html-minifier-terser] —
 
-🎁 [Image (sharp)][sharp] —
+🎁 [`Image (sharp)`][sharp] —
 
-🎁 [JavaScript (terser)][terser] —
+🎁 [`JavaScript (terser)`][terser] —
 
-🎁 [SVG (svgo)][svgo] —
+🎁 [`SVG (svgo)`][svgo] —
 
 > **Note**
 >
@@ -84,7 +84,7 @@ export default {
 The utility will now automatically compress all your CSS, HTML, SVG, JavaScript
 and image files in the Astro `outDir` folder.
 
-The following image file types will be compressed via [sharp]:
+The following image file types will be compressed via [`sharp`]:
 
 -   avci
 -   avcs
@@ -106,7 +106,7 @@ The following image file types will be compressed via [sharp]:
 -   tiff
 -   webp
 
-SVG compression is supported, as well via [svgo].
+SVG compression is supported, as well via [`svgo`].
 
 ### Default Compression
 

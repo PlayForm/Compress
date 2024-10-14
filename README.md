@@ -84,7 +84,7 @@ export default {
 The utility will now automatically compress all your CSS, HTML, SVG, JavaScript
 and image files in the Astro `outDir` folder.
 
-The following image file types will be compressed via [`sharp`]:
+The following image file types will be compressed via [`sharp`][sharp]:
 
 -   avci
 -   avcs

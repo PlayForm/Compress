@@ -11,7 +11,7 @@ import type Interface from "../Interface/Integration.js";
 // TODO: Test this for security
 export let System: string;
 
-export default ((...[_Option = {}]: Parameters<Interface>) => {
+export default ((...[_Option = {}]) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
 			value:
@@ -41,6 +41,10 @@ export default ((...[_Option = {}]: Parameters<Interface>) => {
 	if (typeof Path !== "undefined") {
 		if (Array.isArray(Path) || Path instanceof Set) {
 			Path.forEach((Path) => Paths.add(Path));
+		}
+
+		if (Path instanceof Map) {
+			Paths.add(Path);
 		}
 	}
 

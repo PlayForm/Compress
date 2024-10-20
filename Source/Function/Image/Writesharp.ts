@@ -6,7 +6,7 @@ import type File from "../../Type/Image/Filesharp.js";
  *
  */
 export default (async (
-	...[Option, { Buffer, Input }]: Parameters<Interface>
+	...[Option, { Buffer, Input }]
 ) => {
 	const File = Input.split(".").pop();
 

@@ -4,7 +4,7 @@ import type Interface from "../Interface/Directory.js";
  * @module Directory
  *
  */
-export default (async (...[Path]: Parameters<Interface>) => {
+export default (async (...[Path]) => {
 	let Directory = (await import("path"))
 		.normalize((await import("path")).parse(Path).dir)
 		.replace(/\\/g, "/")

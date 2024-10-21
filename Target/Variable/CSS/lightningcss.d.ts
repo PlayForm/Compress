@@ -1,5 +1,4 @@
 import type Interface from "../../Interface/CSS/lightningcss.js";
-
 /**
  * @module CSS
  *

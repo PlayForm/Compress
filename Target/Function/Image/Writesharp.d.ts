@@ -1,5 +1,4 @@
 import type Interface from "../../Interface/Image/Writesharp.js";
-
 /**
  * @module Image
  *

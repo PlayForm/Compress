@@ -1,5 +1,4 @@
 import type { MinifyOptions } from "terser";
-
 /**
  * @module JavaScript
  *

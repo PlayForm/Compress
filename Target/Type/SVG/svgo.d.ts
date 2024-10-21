@@ -1,5 +1,4 @@
 import type { Config } from "svgo";
-
 /**
  * @module SVG
  *

@@ -21,8 +21,8 @@ export default interface Interface extends Option {
 	CSS?:
 		| boolean
 		| {
-				csso?: csso;
-				lightningcss?: lightningcss;
+				csso?: csso | boolean;
+				lightningcss?: lightningcss | boolean;
 		  };
 
 	/**
@@ -32,7 +32,7 @@ export default interface Interface extends Option {
 	HTML?:
 		| boolean
 		| {
-				"html-minifier-terser"?: html_minifier_terser;
+				"html-minifier-terser"?: html_minifier_terser | boolean;
 		  };
 
 	/**
@@ -42,7 +42,7 @@ export default interface Interface extends Option {
 	Image?:
 		| boolean
 		| {
-				sharp?: sharp;
+				sharp?: sharp | boolean;
 		  };
 
 	/**
@@ -52,7 +52,7 @@ export default interface Interface extends Option {
 	JavaScript?:
 		| boolean
 		| {
-				terser?: terser;
+				terser?: terser | boolean;
 		  };
 
 	/**
@@ -62,7 +62,7 @@ export default interface Interface extends Option {
 	SVG?:
 		| boolean
 		| {
-				svgo?: svgo;
+				svgo?: svgo | boolean;
 		  };
 
 	/**

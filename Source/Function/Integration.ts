@@ -118,7 +118,7 @@ export default ((...[_Option = {}]) => {
 															{
 																code: (
 																	await import(
-																		"buffer"
+																		"node:buffer"
 																	)
 																).Buffer.from(
 																	CSS,

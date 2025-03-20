@@ -9,8 +9,7 @@ export default (await import("@Function/Merge.js")).default(
 	{
 		CSS: {
 			csso: (await import("@Variable/CSS/csso.js")).default,
-			lightningcss: (await import("@Variable/CSS/lightningcss.js"))
-				.default,
+			lightningcss: false,
 		},
 		HTML: {
 			"html-minifier-terser": (
@@ -60,4 +59,4 @@ const { gray, red } = await import("kleur/colors");
 
 const { default: Directory } = await import("@Function/Directory.js");
 
-const { Buffer: _Buffer } = await import("buffer");
+const { Buffer: _Buffer } = await import("node:buffer");

@@ -44,7 +44,7 @@
 		"@playform/pipe": "0.1.2",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "*",
+		"astro": "5.5.3",
 		"commander": "13.1.0",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.5",

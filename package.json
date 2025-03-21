@@ -3,22 +3,7 @@
 	"version": "0.1.7",
 	"private": false,
 	"description": "Compress 🗜️",
-	"keywords": [
-		"astro",
-		"astro-component",
-		"astro-integration",
-		"@playform/compress",
-		"compress",
-		"minify",
-		"css",
-		"html",
-		"image",
-		"javascript",
-		"performance",
-		"svg",
-		"withastro",
-		"playform"
-	],
+	
 	"homepage": "HTTPS://GitHub.Com/PlayForm/Compress#readme",
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/PlayForm/Compress/issues"

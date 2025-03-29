@@ -27,7 +27,7 @@ export declare const Default: {
     Exclude: false;
     CSS: {
         csso: import("../Interface/CSS/csso.js").default;
-        lightningcss: import("../Interface/CSS/lightningcss.js").default;
+        lightningcss: false;
     };
     HTML: {
         "html-minifier-terser": {

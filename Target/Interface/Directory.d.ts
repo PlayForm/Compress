@@ -1,4 +1,4 @@
-import type { ParsedPath } from "path";
+import type { ParsedPath } from "node:path";
 /**
  * @module Directory
  *

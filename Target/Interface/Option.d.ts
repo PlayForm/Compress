@@ -17,36 +17,36 @@ export default interface Interface extends Option {
      *
      */
     CSS?: boolean | {
-        csso?: csso;
-        lightningcss?: lightningcss;
+        csso?: csso | boolean;
+        lightningcss?: lightningcss | boolean;
     };
     /**
      * html-minifier-terser option properties
      *
      */
     HTML?: boolean | {
-        "html-minifier-terser"?: html_minifier_terser;
+        "html-minifier-terser"?: html_minifier_terser | boolean;
     };
     /**
      * sharp option properties
      *
      */
     Image?: boolean | {
-        sharp?: sharp;
+        sharp?: sharp | boolean;
     };
     /**
      * terser option properties
      *
      */
     JavaScript?: boolean | {
-        terser?: terser;
+        terser?: terser | boolean;
     };
     /**
      * svgo option properties
      *
      */
     SVG?: boolean | {
-        svgo?: svgo;
+        svgo?: svgo | boolean;
     };
     /**
      * Map to different file paths

@@ -1,12 +1,10 @@
 ## 2.3.7
 
-## 2.3.6
+### Add
 
-### Added
+- Add `DEPENDENTS.md` to `.npmignore`.
 
-- Added `DEPENDENTS.md` to `.npmignore`.
-
-### Changed
+### Change
 
 - Updated package version from `2.3.5` to `2.3.6`.
 - Updated contact email in `package.json` from `Source/Open@PlayForm.Cloud` to
@@ -22,19 +20,46 @@
     - `@playform/build` from `0.1.8` to `0.2.1`.
     - `browserslist` from `4.24.2` to `4.24.4`.
 
-### Fixed
+### Fix
+
+- Modified `Cache.Search` assignment in `Integration.ts` to ensure `Directory`
+  is converted to a string using `Directory.toString()`.
+
+## 2.3.6
+
+### Add
+
+- Add `DEPENDENTS.md` to `.npmignore`.
+
+### Change
+
+- Updated package version from `2.3.5` to `2.3.6`.
+- Updated contact email in `package.json` from `Source/Open@PlayForm.Cloud` to
+  `Source/Open@PlayForm.LTD`.
+- Updated URL in `package.json` from `HTTPS://PlayForm.Cloud` to
+  `HTTPS://PlayForm.LTD`.
+- Updated dependencies in `package.json`:
+    - `@playform/pipe` from `0.1.1` to `0.1.2`.
+    - `commander` from `12.1.0` to `13.0.0`.
+    - `fast-glob` from `3.3.2` to `3.3.3`.
+    - `lightningcss` from `1.27.0` to `1.28.2`.
+    - `terser` from `5.36.0` to `5.37.0`.
+    - `@playform/build` from `0.1.8` to `0.2.1`.
+    - `browserslist` from `4.24.2` to `4.24.4`.
+
+### Fix
 
 - Modified `Cache.Search` assignment in `Integration.ts` to ensure `Directory`
   is converted to a string using `Directory.toString()`.
 
 ## 2.3.5
 
-### Added
+### Add
 
 - New Configuration folder with `ESBuild.js` and `ESBuild.ts` files
-- Added browserslist as a development dependency
+- Add browserslist as a development dependency
 
-### Changed
+### Change
 
 - Updated `.npmignore` to exclude the `Configuration/` directory
 - Modified `package.json` scripts to use the new `ESBuild` configuration
@@ -42,31 +67,31 @@
 - Enhanced error handling in CSS compression in Source/Function/Integration.ts
 - Updated `Source/Interface/CSS/lightningcss.ts` to set default value for
   `unusedSymbols`
-- Added targets to `Source/Variable/CSS/lightningcss.ts`
+- Add targets to `Source/Variable/CSS/lightningcss.ts`
 
 ## 2.3.4
 
-### Changed
+### Change
 
 - Updated dependencies
 - Typings update
 
 ## 2.3.3
 
-### Fixed
+### Fix
 
 - Fixes missing `Pipe.js`
 
 ## 2.3.2
 
-### Added
+### Add
 
 - New CLI functionality with `Compress` command
 - New `CLI.ts` and `Pipe.ts` functions for improved command-line operations
-- Added `commander` dependency for CLI support
-- Added `fast-glob` dependency for file pattern matching
+- Add `commander` dependency for CLI support
+- Add `fast-glob` dependency for file pattern matching
 
-### Changed
+### Change
 
 - Updated package name from `astro-compress` to `@playform/compress`
 - Updated various dependencies to their latest versions:
@@ -85,8 +110,8 @@
   (`@playform/compress` instead of `@playform/inline`)
 - Updated `README` to remove unnecessary line breaks and improve spacing
 - Updated `Source/Function/Image/Writesharp.ts` to simplify an import statement
-- Added `Source/Function/CLI.ts` for command-line interface functionality
-- Added `Source/Interface/CLI.ts` to define the command-line interface
+- Add `Source/Function/CLI.ts` for command-line interface functionality
+- Add `Source/Interface/CLI.ts` to define the command-line interface
 - Updated `package.json` to include necessary CLI dependencies
 
 ### Removed
@@ -94,48 +119,48 @@
 - Removed `Documentation/` directory (replaced with `docs/`)
 - Removed `Summary.md` file
 
-### Fixed
+### Fix
 
 - Various code improvements and refactoring for better type safety and
   performance
-- Fixed broken links in `README` badges
-- Fixed alignment and spacing issues in `README` table
-- Fixed incorrect package name in dependency badges
+- Fix broken links in `README` badges
+- Fix alignment and spacing issues in `README` table
+- Fix incorrect package name in dependency badges
 
 ## 2.3.1
 
-### Changed
+### Change
 
 - Updated .npmignore file:
     - Reordered ignored directories and files
-    - Added `Summary.md` to ignored files
+    - Add `Summary.md` to ignored files
 
-### Fixed
+### Fix
 
 - Improved code formatting in Source/Function/Image/Writesharp.ts:
     - Simplified import statement for default sharp options
 
 ## 2.3.0
 
-### Changed
+### Change
 
 - Updated TODO comments in Integration.ts and Middleware.ts
 
 ## 2.2.28
 
-### Changed
+### Change
 
 - Updated lightningcss interface and options
 
 ## 2.2.27
 
-### Changed
+### Change
 
 - Reordered CSS processing in Integration.ts (lightningcss now runs before csso)
 
 ## 2.2.26
 
-### Changed
+### Change
 
 - Minor formatting changes and comma additions
 
@@ -145,33 +170,33 @@ No changes recorded in this version.
 
 ## 2.2.24
 
-### Changed
+### Change
 
 - Updated sharp configuration in Integration.ts
 - Removed Merge.ts interface
 
 ## 2.2.23
 
-### Changed
+### Change
 
 - Updated CSS processing in Integration.ts to support both csso and lightningcss
 - Minor updates to sharp configuration and error handling
 
 ## 2.2.22
 
-### Changed
+### Change
 
 - Updated import paths to use @ prefix
 - Renamed some Type interfaces to Interface
 - Updated sharp configuration and processing
-- Added support for lightningcss
+- Add support for lightningcss
 - Updated various option configurations
 
 ## 2.2.21
 
 This version marks the beginning of the recorded changes.
 
-### Added
+### Add
 
 - Significant project restructuring with separate directories for Source,
   Interface, Type, and Variable
@@ -181,10 +206,10 @@ This version marks the beginning of the recorded changes.
 - Expanded support for additional image formats and optimization options
 - Enhanced error handling and logging
 - New "Run" script for building and watching `Source/\*_/_.ts` files
-- Added svgo `v4.0.0`-rc.0 dependency
-- Added terser v5.31.3 dependency
+- Add svgo `v4.0.0`-rc.0 dependency
+- Add terser v5.31.3 dependency
 
-### Changed
+### Change
 
 - Major refactoring of the integration functionality in
   Source/Function/Integration.ts
@@ -195,8 +220,8 @@ This version marks the beginning of the recorded changes.
 
 ### Dependency Updates
 
-- Added svgo `v4.0.0`-rc.0
-- Changed astro dependency to use any version (\*)
+- Add svgo `v4.0.0`-rc.0
+- Change astro dependency to use any version (\*)
 - Updated `@playform/build` to `v0.1.2`
 - Updated `@playform/pipe` to `v0.1.0`
 - Updated lightningcss to `v1.25.1`
@@ -215,18 +240,18 @@ This version marks the beginning of the recorded changes.
 
 ## 0.0.12
 
-### Changed
+### Change
 
 - Updated astro to use any version (\*)
 
 ## 0.0.10
 
-### Added
+### Add
 
-- Added "@playform/compress" and "playform" to keywords
-- Added astro `v4.9.2` as a dependency
+- Add "@playform/compress" and "playform" to keywords
+- Add astro `v4.9.2` as a dependency
 
-### Changed
+### Change
 
 - Updated description to "🗜️ Compress —"
 - Updated homepage, bugs, and repository URLs
@@ -239,11 +264,11 @@ This version marks the beginning of the recorded changes.
 
 ## 0.0.9
 
-### Added
+### Add
 
-- Added astro `v4.9.2` as a dependency
+- Add astro `v4.9.2` as a dependency
 
-### Changed
+### Change
 
 - Moved `@playform/build` to `devDependencies`
 
@@ -253,7 +278,7 @@ This version marks the beginning of the recorded changes.
 
 ## 0.0.8
 
-### Changed
+### Change
 
 - Updated lightningcss to `v1.25.1`
 
@@ -265,18 +290,18 @@ This version marks the beginning of the recorded changes.
 
 ## 0.0.6
 
-### Changed
+### Change
 
 - Reordered peerDependencies and peerDependenciesMeta
 
 ## 0.0.5
 
-### Added
+### Add
 
-- Added "Document" script for documenting `Source/\*_/_.ts` files
-- Added `@playform/document` v0.0.7 as a peerDependency
+- Add "Document" script for documenting `Source/\*_/_.ts` files
+- Add `@playform/document` v0.0.7 as a peerDependency
 
-### Changed
+### Change
 
 - Updated `@playform/pipe` to `v0.0.5`
 - Updated lightningcss to `v1.25.0`
@@ -288,12 +313,12 @@ This version marks the beginning of the recorded changes.
 
 ## 0.0.4
 
-### Added
+### Add
 
-- Added "@playform/compress" to keywords
-- Added astro `v4.8.1` as a dependency
+- Add "@playform/compress" to keywords
+- Add astro `v4.8.1` as a dependency
 
-### Changed
+### Change
 
 - Updated description to "🗜️ Compress —"
 - Updated homepage, bugs, and repository URLs to use HTTPS
@@ -307,28 +332,28 @@ This version marks the beginning of the recorded changes.
 
 ## 0.0.3
 
-### Added
+### Add
 
-- Added `@playform/build`, `@playform/document`, and astro as dependencies
+- Add `@playform/build`, `@playform/document`, and astro as dependencies
 
-### Changed
+### Change
 
 - Moved `csso`, `html-minifier-terser`, `lightningcss`, `sharp`, `svgo`, and
   `terser` to dependencies
 
 ## 0.0.2
 
-### Changed
+### Change
 
 - Reverted various changes from previous versions
 
 ## 0.0.1
 
-### Added
+### Add
 
 - Initial setup of AstroCompress integration
 - Implemented various compression functions for CSS, HTML, JavaScript, Images,
   and SVG
-- Added configuration options for different file types
+- Add configuration options for different file types
 - Set up basic project structure with separate files for different
   functionalities

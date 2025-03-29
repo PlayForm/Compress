@@ -1,5 +1,33 @@
 ## 0.1.8
 
+### Change
+
+- Updated core module imports to use Node.js `node:` protocol for `fs`, `path`,
+  and `buffer`
+- Updated dependencies to latest versions:
+    - `commander` (13.0.0 → 13.1.0)
+    - `deepmerge-ts` (7.1.3 → 7.1.5)
+    - `lightningcss` (1.28.2 → 1.29.3)
+    - `terser` (5.37.0 → 5.39.0)
+    - `browserslist` (4.24.3 → 4.24.4)
+- Modified package metadata including:
+    - Version bump to 0.1.8
+    - Description formatting changes
+    - Script name adjustments in package.json
+- Changed default configuration to disable `lightningcss` compressor by default
+
+### Add
+
+- Support boolean type for compression options (`csso`, `lightningcss`,
+  `html-minifier-terser`, `sharp`, `terser`, `svgo`) to allow disabling specific
+  compressors
+
+### Fix
+
+- Fixed type casting in ESBuild configuration by explicitly specifying `Plugin`
+  type
+- Corrected import statements for Node.js core modules
+
 ## 0.1.7
 
 ### Add

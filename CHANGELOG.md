@@ -1,5 +1,10 @@
 ## 0.1.9
 
+### Add
+
+- Support for JSON file compression with automatic parsing and minification
+- JSON compression enabled by default in configuration
+
 ## 0.1.8
 
 ### Change

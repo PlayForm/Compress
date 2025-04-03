@@ -17,6 +17,8 @@ to your Astro project.
 
 [`SVG (svgo)`][svgo] 🎁
 
+[`JSON`][JSON] 🎁
+
 > **Note**
 >
 > `Compress` will not compress your requests, only your statically generated
@@ -81,8 +83,8 @@ export default {
 
 ## Getting started
 
-The utility will now automatically compress all your CSS, HTML, SVG, JavaScript
-and image files in the Astro `outDir` folder.
+The utility will now automatically compress all your CSS, HTML, SVG, JavaScript,
+JSON and image files in the Astro `outDir` folder.
 
 The following image file types will be compressed via [`sharp`][sharp]:
 
@@ -274,6 +276,8 @@ export default {
 [terser]: HTTPS://NPMJS.Org/terser
 [sharp]: HTTPS://NPMJS.Org/sharp
 [svgo]: HTTPS://NPMJS.Org/svgo
+[JSON]:
+	HTTPS://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 [astro-integration]: HTTPS://docs.astro.build/en/guides/integrations-guide/
 
 ## Changelog

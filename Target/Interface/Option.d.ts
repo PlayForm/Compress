@@ -49,6 +49,11 @@ export default interface Interface extends Option {
         svgo?: svgo | boolean;
     };
     /**
+     * JSON option properties
+     *
+     */
+    JSON?: boolean;
+    /**
      * Map to different file paths
      *
      */

@@ -25,6 +25,7 @@ export default (await import("@Function/Merge.js")).default(
 		SVG: {
 			svgo: (await import("@Variable/SVG/svgo.js")).default,
 		},
+		JSON: true,
 		Map: (await import("@Variable/Map.js")).default,
 		Parser: (await import("@Variable/Parser.js")).default,
 		Action: {

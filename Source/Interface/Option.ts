@@ -66,6 +66,12 @@ export default interface Interface extends Option {
 		  };
 
 	/**
+	 * JSON option properties
+	 *
+	 */
+	JSON?: boolean;
+
+	/**
 	 * Map to different file paths
 	 *
 	 */

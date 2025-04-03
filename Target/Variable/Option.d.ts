@@ -82,6 +82,7 @@ declare const _default: {
             plugins: "preset-default"[];
         };
     };
+    JSON: true;
     Map: import("../Interface/Map.js").default;
     Parser: import("../Interface/Parser.js").default;
 };

@@ -8,7 +8,6 @@ import type Interface from "../Interface/Integration.js";
  * @module Integration
  *
  */
-// TODO: Test this for security
 export let System: string;
 
 export default ((...[_Option = {}]) => {
@@ -23,17 +22,30 @@ export default ((...[_Option = {}]) => {
 
 	const {
 		Path,
+
 		Cache,
+
 		Logger,
+
 		Map: _Map,
+
 		Exclude,
+
 		Action,
+
 		CSS,
+
 		HTML,
+
 		Image,
+
 		JavaScript,
+
 		SVG,
+
 		Parser,
+
+		JSON: _JSON,
 	} = Merge(Default, _Option);
 
 	const Paths = new Set<Path>();
@@ -58,6 +70,7 @@ export default ((...[_Option = {}]) => {
 
 	return {
 		name: "@playform/compress",
+
 		hooks: {
 			"astro:config:done": async ({
 				config: {
@@ -72,6 +85,7 @@ export default ((...[_Option = {}]) => {
 					System = System.substring(1);
 				}
 			},
+
 			"astro:build:done": async ({ dir: Directory }) => {
 				if (typeof _Map !== "object") {
 					return;
@@ -87,20 +101,27 @@ export default ((...[_Option = {}]) => {
 
 				for (const [Type, Setting] of Object.entries({
 					CSS,
+
 					HTML,
+
 					Image,
+
 					JavaScript,
+
 					SVG,
+
+					JSON: _JSON,
 				})) {
 					if (
 						!(Setting && _Map[Type]) ||
-						typeof Setting !== "object"
+						(typeof Setting !== "object" && Type !== "JSON")
 					) {
 						continue;
 					}
 
 					_Action = Merge(
 						Action,
+
 						Merge(Action, {
 							Wrote: async ({ Buffer, Input }) => {
 								switch (Type) {
@@ -123,8 +144,10 @@ export default ((...[_Option = {}]) => {
 																).Buffer.from(
 																	CSS,
 																),
+
 																filename: Input,
 															},
+
 															// @ts-expect-error
 															Setting[
 																"lightningcss"
@@ -140,6 +163,7 @@ export default ((...[_Option = {}]) => {
 													await import("csso")
 												).minify(
 													CSS,
+
 													// @ts-expect-error
 													Setting["csso"],
 												).css;
@@ -156,6 +180,7 @@ export default ((...[_Option = {}]) => {
 											await import("html-minifier-terser")
 										).minify(
 											Buffer.toString(),
+
 											// @ts-expect-error
 											Setting["html-minifier-terser"],
 										);
@@ -168,6 +193,7 @@ export default ((...[_Option = {}]) => {
 													await import("terser")
 												).minify(
 													Buffer.toString(),
+
 													// @ts-expect-error
 													Setting["terser"],
 												)
@@ -189,6 +215,7 @@ export default ((...[_Option = {}]) => {
 													// @ts-expect-error
 													.default(Setting["sharp"], {
 														Buffer,
+
 														Input,
 													} as Onsharp);
 											} else {
@@ -205,10 +232,23 @@ export default ((...[_Option = {}]) => {
 										return (
 											(await import("svgo")).optimize(
 												Buffer.toString(),
+
 												// @ts-expect-error
 												Setting["svgo"],
 											).data ?? Buffer
 										);
+									}
+
+									case "JSON": {
+										try {
+											return JSON.stringify(
+												JSON.parse(Buffer.toString()),
+											);
+										} catch (_Error) {
+											console.log(_Error);
+
+											return Buffer;
+										}
 									}
 
 									default: {
@@ -216,6 +256,7 @@ export default ((...[_Option = {}]) => {
 									}
 								}
 							},
+
 							Fulfilled: async ({ File, Info: { Total } }) =>
 								File > 0
 									? `${(await import("kleur/colors")).green(
@@ -254,6 +295,7 @@ export default ((...[_Option = {}]) => {
 
 									return (await import("sharp")).default(
 										Input,
+
 										typeof Image === "object" &&
 											typeof Image.sharp === "object" &&
 											typeof Image.sharp.sharp ===
@@ -283,10 +325,6 @@ export default ((...[_Option = {}]) => {
 					}
 				}
 			},
-			// TODO: Finish this
-			// "astro:config:setup": ({ addMiddleware }) => {
-			// 	addMiddleware();
-			// },
 		},
 	};
 }) satisfies Interface as Interface;

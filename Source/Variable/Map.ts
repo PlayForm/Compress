@@ -10,4 +10,5 @@ export default {
 	Image: "**/*.{apng,avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}",
 	JavaScript: "**/*.{js,mjs,cjs,jsm,mts,tsx,ts}",
 	SVG: "**/*.svg",
+	JSON: "**/*.json",
 } satisfies Interface as Interface;

@@ -58,7 +58,7 @@ jobs:
 
             - run: |
                   git config user.name "Auto"
-                  git config user.email "auto@playform.cloud"
+                  git config user.email "Commit@PlayForm.Cloud"
                   git add .
                   git commit -a --allow-empty-message -m ""
 

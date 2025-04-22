@@ -20,10 +20,10 @@ export default interface Interface extends Option {
 	 */
 	CSS?:
 		| boolean
-		| {
+		| Partial<{
 				csso?: csso | boolean;
 				lightningcss?: lightningcss | boolean;
-		  };
+		  }>;
 
 	/**
 	 * html-minifier-terser option properties
@@ -69,7 +69,12 @@ export default interface Interface extends Option {
 	 * JSON option properties
 	 *
 	 */
-	JSON?: boolean;
+	JSON?:
+		| boolean
+		| {
+				replacer?: Parameters<JSON["stringify"]>[1];
+				space?: Parameters<JSON["stringify"]>[2];
+		  };
 
 	/**
 	 * Map to different file paths

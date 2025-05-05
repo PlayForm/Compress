@@ -30,8 +30,8 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Source ✍🏻 Open 👐🏻",
-		"email": "Source/Open@PlayForm.LTD",
-		"url": "HTTPS://PlayForm.LTD"
+		"email": "Source/Open@PlayForm.Cloud",
+		"url": "HTTPS://PlayForm.Cloud"
 	},
 	"type": "module",
 	"main": "./Target/Function/Integration.js",
@@ -58,7 +58,7 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.2.3",
-		"browserslist": "4.24.4",
+		"browserslist": "4.24.5",
 		"lightningcss": "1.29.3"
 	},
 	"publishConfig": {

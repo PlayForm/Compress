@@ -54,7 +54,7 @@
 		"lightningcss": "1.30.0",
 		"sharp": "0.34.1",
 		"svgo": "3.3.2",
-		"terser": "5.39.0"
+		"terser": "5.39.1"
 	},
 	"devDependencies": {
 		"@playform/build": "0.2.4",

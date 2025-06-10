@@ -1,3 +1,30 @@
+## 0.2.0
+
+### Breaking Change
+
+- Updated `commander` dependency from 13.1.0 → 14.0.0 (major version update)
+
+### Change
+
+- Updated contact information in package.json to use `PlayForm.Cloud` domain
+- Updated dependencies to latest versions:
+    - `astro` (wildcard → ^5.9.2)
+    - `lightningcss` (1.29.3 → 1.30.1)
+    - `sharp` (0.33.5 → 0.34.2)
+    - `terser` (5.39.0 → 5.42.0)
+    - `@playform/build` (0.2.1 → 0.2.4)
+    - `browserslist` (4.24.4 → 4.25.0)
+- Refactored option interfaces to use `Partial<>` type for more flexible
+  configuration
+- Improved code organization in:
+    - Image processing module (Writesharp.ts)
+    - Core integration logic (Integration.ts)
+
+### Add
+
+- Enhanced JSON compression options with configurable `replacer` and `space`
+  parameters for `JSON.stringify`
+
 ## 0.1.9
 
 ### Add

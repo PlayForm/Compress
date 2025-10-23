@@ -58,7 +58,7 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.2.5",
-		"browserslist": "4.26.3",
+		"browserslist": "4.27.0",
 		"lightningcss": "1.30.2"
 	},
 	"publishConfig": {

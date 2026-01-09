@@ -1,0 +1,54 @@
+:root {
+	--dark-color-background: #000;
+	--dark-color-background-secondary: #000;
+	--dark-code-background: #040404;
+	--color-accent: #2463eb;
+	--light-hl-0: #b58900;
+	--light-hl-1: #d33682;
+	--light-hl-2: #dc322f;
+	--light-hl-3: #2aa198;
+	--light-hl-4: #859900;
+	--dark-hl-0: #ffdd00;
+	--dark-hl-1: #ff66ff;
+	--dark-hl-2: #ff4444;
+	--dark-hl-3: #44ffff;
+	--dark-hl-4: #44ff44;
+}
+
+body #tsd-search .field label {
+	left: 50%;
+	margin-left: -20px;
+	z-index: 1;
+	text-align: center;
+}
+
+body #tsd-search.has-focus .field label {
+	display: none;
+}
+
+body #tsd-search .field input {
+	z-index: 2;
+}
+
+body pre,
+body .tsd-page-toolbar,
+body .tsd-generator {
+	border: none;
+}
+
+body .tsd-navigation a,
+body .tsd-navigation summary > span,
+body .tsd-page-navigation a {
+	padding: 0.5rem;
+	border-radius: 8px;
+}
+
+body .tsd-description .tsd-signatures .tsd-signature,
+body .tsd-signature,
+body .tsd-signatures .tsd-signature,
+body .tsd-typography td,
+body .tsd-typography th,
+body code.tsd-tag {
+	border-radius: 12px;
+	border-width: 2px;
+}

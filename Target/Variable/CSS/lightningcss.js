@@ -1,1 +1,1 @@
-var e={and_chr:8978432,and_ff:9109504,android:8978432,chrome:7143424,edge:8847360,firefox:8388608,ios_saf:1050112,op_mob:5242880,opera:7602176,safari:1180672,samsung:1769472};var r={minify:!0,sourceMap:!1,unusedSymbols:[],targets:e};export{r as default};
+var e={and_chr:9371648,and_ff:9568256,android:9371648,chrome:7143424,edge:9240576,firefox:9175040,ios_saf:1180928,op_mob:5242880,opera:8126464,safari:1704192,samsung:1835008};var r={minify:!0,sourceMap:!1,unusedSymbols:[],targets:e};export{r as default};

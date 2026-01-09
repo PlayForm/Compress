@@ -57,9 +57,9 @@ jobs:
             id-token: write
 
         steps:
-            - uses: actions/checkout@v5.0.0
+            - uses: actions/checkout@v6.0.1
 
-            - uses: actions/setup-node@v6.0.0
+            - uses: actions/setup-node@v6.1.0
               with:
                   node-version: "18"
                   registry-url: "https://registry.npmjs.org"
@@ -70,6 +70,6 @@ jobs:
               continue-on-error: true
               working-directory: .
               run: |
-                  npm publish --legacy-peer-deps --provenance --ignore-scripts
+                  npm publish --legacy-peer-deps --ignore-scripts
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

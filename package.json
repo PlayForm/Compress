@@ -1,6 +1,6 @@
 {
 	"name": "@playform/compress",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"private": false,
 	"description": "Compress 🗜️",
 	"keywords": [
@@ -19,7 +19,7 @@
 		"withastro",
 		"playform"
 	],
-	"homepage": "HTTPS://GitHub.Com/PlayForm/Compress#readme",
+	"homepage": "HTTPS://GitHub.Com/PlayForm/Compress?tab=readme-ov-file",
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/PlayForm/Compress/issues"
 	},
@@ -41,10 +41,10 @@
 		"prepublishOnly": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts"
 	},
 	"dependencies": {
-		"@playform/pipe": "0.1.3",
+		"@playform/pipe": "0.1.4",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "5.15.6",
+		"astro": "5.16.8",
 		"commander": "14.0.2",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.5",
@@ -57,8 +57,8 @@
 		"terser": "5.44.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.2.5",
-		"browserslist": "4.28.0",
+		"@playform/build": "0.2.6",
+		"browserslist": "4.28.1",
 		"lightningcss": "1.30.2"
 	},
 	"publishConfig": {

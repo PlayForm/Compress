@@ -18,7 +18,7 @@ on:
 jobs:
     Publish:
         runs-on: ubuntu-latest
-
+        environment: Release
         env:
             ADBLOCK: true
             ASTRO_TELEMETRY_DISABLED: 1
@@ -61,15 +61,13 @@ jobs:
 
             - uses: actions/setup-node@v6.1.0
               with:
-                  node-version: "18"
-                  registry-url: "https://registry.npmjs.org"
+                  node-version: "24"
 
-            - run: npm install -g npm
+            - run: npm install -g npm@latest
+              continue-on-error: true
 
             - name: Publish .
               continue-on-error: true
               working-directory: .
               run: |
                   npm publish --legacy-peer-deps --ignore-scripts
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

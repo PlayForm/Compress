@@ -1,5 +1,21 @@
 ## 0.2.1
 
+### Change
+
+- Updated dependencies to latest versions:
+    - `@playform/pipe` (0.1.3 → 0.1.4)
+    - `astro` (^5.9.2 → 5.16.8)
+    - `commander` (14.0.0 → 14.0.2)
+    - `lightningcss` (1.30.1 → 1.30.2)
+    - `sharp` (0.34.2 → 0.34.5)
+    - `svgo` (3.3.2 → 4.0.0)
+    - `terser` (5.42.0 → 5.44.1)
+    - `@playform/build` (0.2.4 → 0.2.6)
+    - `browserslist` (4.25.0 → 4.28.1)
+- Updated homepage URL in package.json to point to readme overview tab
+- Removed `@ts-expect-error` comment in ESBuild configuration files
+- Bumped package version from 0.2.0 to 0.2.1
+
 ## 0.2.0
 
 ### Breaking Change

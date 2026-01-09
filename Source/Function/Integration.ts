@@ -10,6 +10,18 @@ import type Interface from "../Interface/Integration.js";
  */
 export let System: string;
 
+export const { default: Default } = await import("@Variable/Option.js");
+
+export const {
+	default: {
+		Cache: { Search },
+	},
+} = await import("@playform/pipe/Target/Variable/Option.js");
+
+export const { default: Merge } = await import("@Function/Merge.js");
+
+export let _Action: Action;
+
 export default ((...[_Option = {}]) => {
 	Object.entries(_Option).forEach(([Key, Value]) =>
 		Object.defineProperty(_Option, Key, {
@@ -328,15 +340,3 @@ export default ((...[_Option = {}]) => {
 		},
 	};
 }) satisfies Interface as Interface;
-
-export const { default: Default } = await import("@Variable/Option.js");
-
-export const {
-	default: {
-		Cache: { Search },
-	},
-} = await import("@playform/pipe/Target/Variable/Option.js");
-
-export const { default: Merge } = await import("@Function/Merge.js");
-
-export let _Action: Action;

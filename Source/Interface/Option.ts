@@ -20,10 +20,10 @@ export default interface Interface extends Option {
 	 */
 	CSS?:
 		| boolean
-		| {
+		| Partial<{
 				csso?: csso | boolean;
 				lightningcss?: lightningcss | boolean;
-		  };
+		  }>;
 
 	/**
 	 * html-minifier-terser option properties
@@ -31,9 +31,9 @@ export default interface Interface extends Option {
 	 */
 	HTML?:
 		| boolean
-		| {
+		| Partial<{
 				"html-minifier-terser"?: html_minifier_terser | boolean;
-		  };
+		  }>;
 
 	/**
 	 * sharp option properties
@@ -41,9 +41,9 @@ export default interface Interface extends Option {
 	 */
 	Image?:
 		| boolean
-		| {
+		| Partial<{
 				sharp?: sharp | boolean;
-		  };
+		  }>;
 
 	/**
 	 * terser option properties
@@ -51,9 +51,9 @@ export default interface Interface extends Option {
 	 */
 	JavaScript?:
 		| boolean
-		| {
+		| Partial<{
 				terser?: terser | boolean;
-		  };
+		  }>;
 
 	/**
 	 * svgo option properties
@@ -61,15 +61,20 @@ export default interface Interface extends Option {
 	 */
 	SVG?:
 		| boolean
-		| {
+		| Partial<{
 				svgo?: svgo | boolean;
-		  };
+		  }>;
 
 	/**
 	 * JSON option properties
 	 *
 	 */
-	JSON?: boolean;
+	JSON?:
+		| boolean
+		| Partial<{
+				replacer?: Parameters<JSON["stringify"]>[1];
+				space?: Parameters<JSON["stringify"]>[2];
+		  }>;
 
 	/**
 	 * Map to different file paths

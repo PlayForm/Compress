@@ -5,8 +5,6 @@ import type Interface from "../Interface/Integration.js";
  *
  */
 export declare let System: string;
-declare const _default: Interface;
-export default _default;
 export declare const Default: {
     Path: string;
     Cache: {
@@ -104,3 +102,5 @@ export declare const Merge: <Ts extends readonly unknown[]>(...objects: Ts) => i
     parents: ReadonlyArray<Readonly<Record<PropertyKey, unknown>>>;
 }>>;
 export declare let _Action: Action;
+declare const _default: Interface;
+export default _default;

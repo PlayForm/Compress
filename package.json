@@ -19,7 +19,7 @@
 		"withastro",
 		"playform"
 	],
-	"homepage": "HTTPS://GitHub.Com/PlayForm/Compress#readme",
+	"homepage": "HTTPS://GitHub.Com/PlayForm/Compress?tab=readme-ov-file",
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/PlayForm/Compress/issues"
 	},
@@ -30,8 +30,8 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Source ✍🏻 Open 👐🏻",
-		"email": "Source/Open@PlayForm.LTD",
-		"url": "HTTPS://PlayForm.LTD"
+		"email": "Source/Open@PlayForm.Cloud",
+		"url": "HTTPS://PlayForm.Cloud"
 	},
 	"type": "module",
 	"main": "./Target/Function/Integration.js",
@@ -41,25 +41,25 @@
 		"prepublishOnly": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts"
 	},
 	"dependencies": {
-		"@playform/pipe": "0.1.3",
+		"@playform/pipe": "0.1.4",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "*",
-		"commander": "13.1.0",
+		"astro": "5.16.8",
+		"commander": "14.0.2",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.5",
 		"fast-glob": "3.3.3",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
-		"lightningcss": "1.29.3",
-		"sharp": "0.33.5",
-		"svgo": "3.3.2",
-		"terser": "5.39.0"
+		"lightningcss": "1.30.2",
+		"sharp": "0.34.5",
+		"svgo": "4.0.0",
+		"terser": "5.44.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.2.1",
-		"browserslist": "4.24.4",
-		"lightningcss": "1.29.3"
+		"@playform/build": "0.2.6",
+		"browserslist": "4.28.1",
+		"lightningcss": "1.30.2"
 	},
 	"publishConfig": {
 		"access": "public",

@@ -45,7 +45,6 @@ export default {
 		}'`,
 		"process.env.TARGETS": JSON.stringify(
 			(await import("lightningcss")).browserslistToTargets(
-				// @ts-expect-error
 				(await import("browserslist")).default("defaults"),
 			),
 		),

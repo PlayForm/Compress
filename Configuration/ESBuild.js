@@ -34,8 +34,6 @@ export default {
     ],
     define: {
         "process.env.VERSION_PACKAGE": `'${(await (await import("@playform/build/Target/Function/JSON.js")).default("package.json"))?.version}'`,
-        "process.env.TARGETS": JSON.stringify((await import("lightningcss")).browserslistToTargets(
-        // @ts-expect-error
-        (await import("browserslist")).default("defaults"))),
+        "process.env.TARGETS": JSON.stringify((await import("lightningcss")).browserslistToTargets((await import("browserslist")).default("defaults"))),
     },
 };

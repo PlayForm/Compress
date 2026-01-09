@@ -1,1 +1,1 @@
-var s={CSS:"**/*.css",HTML:"**/*.html",Image:"**/*.{apng,avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}",JavaScript:"**/*.{js,mjs,cjs,jsm,mts,tsx,ts}",SVG:"**/*.svg",JSON:"**/*.json"};export{s as default};
+var f={CSS:"**/*.css",HTML:"**/*.html",Image:"**/*.{apng,avci,avcs,avif,avifs,gif,heic,heics,heif,heifs,jfif,jif,jpe,jpeg,jpg,png,raw,tiff,webp}",JavaScript:"**/*.{js,mjs,cjs,jsm,mts,tsx,ts}",SVG:"**/*.svg",JSON:"**/*.json"};export{f as default};

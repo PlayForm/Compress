@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Fix `astro` version to \* in dependencies
+
 ## 0.2.1
 
 ### Change

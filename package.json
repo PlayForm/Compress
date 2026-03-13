@@ -44,22 +44,22 @@
 		"@playform/pipe": "0.1.4",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "5.16.8",
-		"commander": "14.0.2",
+		"astro": "*",
+		"commander": "14.0.3",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.5",
 		"fast-glob": "3.3.3",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
-		"lightningcss": "1.30.2",
+		"lightningcss": "1.32.0",
 		"sharp": "0.34.5",
-		"svgo": "4.0.0",
-		"terser": "5.44.1"
+		"svgo": "4.0.1",
+		"terser": "5.46.0"
 	},
 	"devDependencies": {
-		"@playform/build": "0.2.6",
+		"@playform/build": "0.3.0",
 		"browserslist": "4.28.1",
-		"lightningcss": "1.30.2"
+		"lightningcss": "1.32.0"
 	},
 	"publishConfig": {
 		"access": "public",

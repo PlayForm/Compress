@@ -1,6 +1,43 @@
 ## 2.4.1
 
+### Add
+
+- New `Configuration/ESBuild.d.ts` file providing TypeScript definitions for
+  ESBuild configuration.
+
+### Change
+
+- Updated package version from `2.4.0` to `2.4.1`.
+- Updated dependencies in `package.json`:
+    - `@playform/pipe` from `0.1.4` to `0.1.5`.
+    - `terser` from `5.46.0` to `5.46.1`.
+    - `@playform/build` from `0.3.0` to `0.3.1`.
+    - `browserslist` from `4.28.1` to `4.28.2`.
+- Updated `.npmignore` to include `Configuration/` directory.
+
+### Fix
+
+- Updated `tsconfig.json` `rootDir` to use relative path (`./Source`).
+
 ## 2.4.0
+
+### Add
+
+- New `context7.json` file for Context7 integration.
+
+### Change
+
+- Updated package version from `2.3.9` to `2.4.0`.
+- Updated `astro` dependency in `package.json` from `5.16.8` to `*` (accepts any
+  version).
+- Updated dependencies in `package.json`:
+    - `commander` from `14.0.2` to `14.0.3`.
+    - `lightningcss` from `1.30.2` to `1.32.0`.
+    - `svgo` from `4.0.0` to `4.0.1`.
+    - `terser` from `5.44.1` to `5.46.0`.
+    - `@playform/build` from `0.2.6` to `0.3.0`.
+    - `lightningcss` (dev) from `1.30.2` to `1.32.0`.
+- Updated `.npmignore` to include `Documentation/` directory.
 
 ## 2.3.9
 

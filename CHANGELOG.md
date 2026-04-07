@@ -1,20 +1,8 @@
-## 0.2.3
+## 2.4.1
 
-### Change
+## 2.4.0
 
-- Removed `Configuration/` from `.npmignore` to include type definitions in the
-  package.
-- Updated dependencies to latest versions:
-    - `@playform/pipe` (0.1.4 → 0.1.5)
-    - `terser` (5.46.0 → 5.46.1)
-    - `@playform/build` (0.3.0 → 0.3.1)
-    - `browserslist` (4.28.1 → 4.28.2)
-
-## 0.2.2
-
-- Fix `astro` version to \* in dependencies
-
-## 0.2.1
+## 2.3.9
 
 ### Change
 

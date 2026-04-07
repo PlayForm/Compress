@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"baseUrl": "./",
 		"outDir": "Target",
-		"rootDir": "Source"
+		"rootDir": "./Source"
 	},
 	"extends": "@playform/build/tsconfig",
 	"include": ["Source"]

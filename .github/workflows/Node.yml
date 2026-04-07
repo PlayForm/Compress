@@ -59,9 +59,9 @@ jobs:
                 node-version: [18, 19, 20]
 
         steps:
-            - uses: actions/checkout@v6.0.2
+            - uses: actions/checkout@v6.0.1
 
-            - uses: pnpm/action-setup@v5.0.0
+            - uses: pnpm/action-setup@v4.2.0
               with:
                   version: 9.3.0
                   run_install: |
@@ -76,7 +76,7 @@ jobs:
                           --unsafe-perm=true
                         ]
 
-            - uses: actions/setup-node@v6.3.0
+            - uses: actions/setup-node@v6.1.0
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
@@ -88,7 +88,7 @@ jobs:
             - run: pnpm run prepublishOnly
               working-directory: .
 
-            - uses: actions/upload-artifact@v7.0.0
+            - uses: actions/upload-artifact@v6.0.0
               with:
                   name: .-Node-${{ matrix.node-version }}-Target
                   path: ./Target

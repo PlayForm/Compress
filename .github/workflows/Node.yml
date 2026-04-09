@@ -59,7 +59,7 @@ jobs:
                 node-version: [18, 19, 20]
 
         steps:
-            - uses: actions/checkout@v6.0.1
+            - uses: actions/checkout@v6.0.2
 
             - uses: pnpm/action-setup@v5.0.0
               with:

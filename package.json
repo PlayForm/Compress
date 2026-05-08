@@ -44,7 +44,6 @@
 		"@playform/pipe": "0.1.5",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "*",
 		"commander": "14.0.3",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.5",
@@ -60,6 +59,9 @@
 		"@playform/build": "0.3.1",
 		"browserslist": "4.28.2",
 		"lightningcss": "1.32.0"
+	},
+	"peerDependencies": {
+		"astro": "*"
 	},
 	"publishConfig": {
 		"access": "public",

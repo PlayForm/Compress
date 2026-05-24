@@ -44,7 +44,7 @@
 		"@playform/pipe": "0.1.5",
 		"@types/csso": "5.0.4",
 		"@types/html-minifier-terser": "7.0.2",
-		"astro": "*",
+		"astro": "^6.3.7",
 		"commander": "14.0.3",
 		"csso": "5.0.5",
 		"deepmerge-ts": "7.1.5",
@@ -54,7 +54,7 @@
 		"lightningcss": "1.32.0",
 		"sharp": "0.34.5",
 		"svgo": "4.0.1",
-		"terser": "5.47.1"
+		"terser": "5.48.0"
 	},
 	"devDependencies": {
 		"@playform/build": "0.3.2",

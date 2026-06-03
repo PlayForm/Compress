@@ -51,7 +51,7 @@ jobs:
             VCPKG_DISABLE_METRICS: 1
 
         steps:
-            - uses: actions/checkout@v6.0.2
+            - uses: actions/checkout@v6.0.3
 
             - run: |
                   echo "Update: $(date)" > .github/Update.md

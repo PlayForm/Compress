@@ -51,7 +51,7 @@
 		"fast-glob": "3.3.3",
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
-		"lightningcss": "1.32.0",
+		"lightningcss": "1.33.0",
 		"sharp": "0.35.3",
 		"svgo": "4.0.2",
 		"terser": "5.49.0"
@@ -59,7 +59,7 @@
 	"devDependencies": {
 		"@playform/build": "0.3.2",
 		"browserslist": "4.28.6",
-		"lightningcss": "1.32.0"
+		"lightningcss": "1.33.0"
 	},
 	"publishConfig": {
 		"access": "public",

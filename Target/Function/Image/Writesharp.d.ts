@@ -1,5 +1,5 @@
 import type Interface from "../../Interface/Image/Writesharp.js";
-export declare const _Map: import("../../Interface/Map.js").default;
+export declare const _Map: any;
 /**
  * @module Image
  *

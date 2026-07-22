@@ -59,9 +59,9 @@ jobs:
                 node-version: [18, 19, 20]
 
         steps:
-            - uses: actions/checkout@v6.0.3
+            - uses: actions/checkout@v7.0.0
 
-            - uses: pnpm/action-setup@v6.0.8
+            - uses: pnpm/action-setup@v6.0.9
               with:
                   version: 9.3.0
                   run_install: |
@@ -76,7 +76,7 @@ jobs:
                           --unsafe-perm=true
                         ]
 
-            - uses: actions/setup-node@v6.4.0
+            - uses: actions/setup-node@v7.0.0
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"

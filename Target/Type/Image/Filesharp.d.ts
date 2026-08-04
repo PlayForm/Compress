@@ -4,4 +4,4 @@
  */
 export type Type = keyof typeof _Map;
 export type { Type as default };
-export declare const _Map: any;
+export declare const _Map: import("../../Interface/Map").default;

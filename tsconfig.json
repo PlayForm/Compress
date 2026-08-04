@@ -1,7 +1,13 @@
 {
 	"compilerOptions": {
 		"outDir": "Target",
-		"rootDir": "./Source"
+		"rootDir": "./Source",
+		"paths": {
+			"@Function/*": ["./Source/Function/*"],
+			"@Interface/*": ["./Source/Interface/*"],
+			"@Type/*": ["./Source/Type/*"],
+			"@Variable/*": ["./Source/Variable/*"]
+		}
 	},
 	"extends": "@playform/build/tsconfig",
 	"include": ["Source"]

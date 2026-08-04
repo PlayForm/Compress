@@ -1,3 +1,12 @@
+## 0.2.4
+
+### Change
+
+- Updated dependencies to latest versions:
+    - `@playform/build` (0.3.1 → 0.3.4)
+    - `terser` (5.46.1 → 5.49.1)
+    - `@types/csso` (5.0.4 → 5.0.5)
+
 ## 0.2.3
 
 ### Change
@@ -263,7 +272,7 @@
 
 ### Change
 
-- Updated description to "🗜️ Compress —"
+- Updated description to "🗜️ Compress -"
 - Updated homepage, bugs, and repository URLs
 - Updated author information
 - Updated @playform/pipe to v0.0.5
@@ -330,7 +339,7 @@
 
 ### Change
 
-- Updated description to "🗜️ Compress —"
+- Updated description to "🗜️ Compress -"
 - Updated homepage, bugs, and repository URLs to use HTTPS
 - Updated author information
 - Updated @playform/pipe to v0.0.3

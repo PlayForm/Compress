@@ -57,7 +57,7 @@
 		"terser": "5.49.0"
 	},
 	"devDependencies": {
-		"@playform/build": "0.3.3",
+		"@playform/build": "0.3.4",
 		"browserslist": "4.28.7",
 		"lightningcss": "1.33.0"
 	},

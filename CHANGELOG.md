@@ -178,7 +178,7 @@
 
 ### Change
 
-- Updated package name from `astro-compress` to `@playform/compress`
+- Updated package name from `astro-compress` to `astro-compress`
 - Updated various dependencies to their latest versions:
     - `@playform/pipe` from 0.1.0 to 0.1.1
     - `deepmerge-ts` from 7.1.0 to 7.1.1
@@ -192,7 +192,7 @@
 - Updated README badges to use HTTPS URLs
 - Updated README table layout for better visual presentation
 - Updated dependency badges in README to use correct package name
-  (`@playform/compress` instead of `@playform/inline`)
+  (`astro-compress` instead of `@playform/inline`)
 - Updated README to remove unnecessary line breaks and improve spacing
 - Updated `Source/Function/Image/Writesharp.ts` to simplify an import statement
 - Added `Source/Function/CLI.ts` for command-line interface functionality
@@ -279,7 +279,7 @@
 
 ### Add
 
-- Added "@playform/compress" and "playform" to keywords
+- Added "astro-compress" and "playform" to keywords
 - Added astro v4.9.2 as a dependency
 
 ### Change
@@ -346,7 +346,7 @@
 
 ### Add
 
-- Added "@playform/compress" to keywords
+- Added "astro-compress" to keywords
 - Added astro v4.8.1 as a dependency
 
 ### Change

@@ -47,19 +47,19 @@ the prompts:
 Using NPM:
 
 ```sh
-npx astro add @playform/compress
+npx astro add astro-compress
 ```
 
 Using Yarn:
 
 ```sh
-yarn astro add @playform/compress
+yarn astro add astro-compress
 ```
 
 Using PNPM:
 
 ```sh
-pnpx astro add @playform/compress
+pnpx astro add astro-compress
 ```
 
 ### Install dependencies manually
@@ -67,7 +67,7 @@ pnpx astro add @playform/compress
 First, install the `Compress` integration like so:
 
 ```sh
-npm install -D -E @playform/compress
+npm install -D -E astro-compress
 ```
 
 Then, apply this integration to your `astro.config.*` file using the
@@ -77,7 +77,7 @@ Then, apply this integration to your `astro.config.*` file using the
 
 ```ts
 export default {
-	integrations: [(await import("@playform/compress")).default()],
+	integrations: [(await import("astro-compress")).default()],
 };
 ```
 
@@ -126,7 +126,7 @@ You can override any of the default options from the configurations of:
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			CSS: false,
 			HTML: {
 				"html-minifier-terser": {
@@ -149,7 +149,7 @@ or disable them entirely:
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			CSS: false,
 			HTML: false,
 			Image: false,
@@ -173,7 +173,7 @@ it to compress a different directory you would have to add it to the `Compress`
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			Path: ["./dist", "./Compress"],
 		}),
 	],
@@ -190,7 +190,7 @@ variable.
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			Path: ["./Target", "./Build"],
 		}),
 	],
@@ -206,7 +206,7 @@ You can also provide a map of paths for different input output directories.
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			Path: new Map([["./Source", "./Target"]]),
 		}),
 	],
@@ -220,7 +220,7 @@ Or an array of the two:
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			Path: [
 				// Compress Target
 				"./Target",
@@ -243,7 +243,7 @@ match on file names:
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			Exclude: [
 				"File.png",
 				(File: string) =>
@@ -264,14 +264,14 @@ value is `2`, but you can set it to `0` if you don't want to see debug messages:
 ```ts
 export default {
 	integrations: [
-		(await import("@playform/compress")).default({
+		(await import("astro-compress")).default({
 			Logger: 0,
 		}),
 	],
 };
 ```
 
-[Compress]: HTTPS://NPMJS.Org/@playform/compress
+[Compress]: HTTPS://NPMJS.Org/astro-compress
 [csso]: HTTPS://NPMJS.Org/csso
 [lightningcss]: HTTPS://NPMJS.Org/lightningcss
 [html-minifier-terser]: HTTPS://NPMJS.Org/html-minifier-terser

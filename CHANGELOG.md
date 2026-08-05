@@ -82,7 +82,7 @@
     - `lightningcss` (1.28.2 → 1.29.3)
     - `terser` (5.37.0 → 5.39.0)
     - `@playform/build` (0.2.1 → 0.2.4)
-    - `browserslist` (4.24.3 → 4.24.4)
+    - `browserslist` (4.24.2 → 4.24.4)
 - Allowed compression options (`csso`, `lightningcss`, `html-minifier-terser`,
   `sharp`, `terser`, `svgo`) to accept a boolean in addition to their option
   object
@@ -103,6 +103,7 @@
     - `terser` (5.36.0 → 5.37.0)
     - `@playform/build` (0.1.8 → 0.2.1)
     - `browserslist` (4.24.2 → 4.24.4)
+    - Added `lightningcss` (1.28.2) as a new devDependency
 - Added `DEPENDENTS.md` to `.npmignore`
 
 ## 2.3.5
@@ -183,6 +184,7 @@
 ### Change
 
 - Reordered the `.npmignore` entries
+- Added `deepmerge-ts` (7.1.0) as a new dependency
 - Updated dependencies:
     - `deepmerge-ts` (7.1.0 → 7.1.1)
     - `@playform/build` (0.1.2 → 0.1.3)
@@ -272,7 +274,7 @@
     - `@playform/pipe` (0.0.3 → 0.0.5)
     - `lightningcss` (1.24.1 → 1.25.0)
     - `sharp` (0.33.3 → 0.33.4)
-    - `astro` (4.8.1 → * in peerDependencies)
+    - `astro` (4.8.1 → 4.9.1 in peerDependencies)
 - Moved `@playform/build`/`@playform/document`/`astro` into `peerDependencies`
   (optional) and removed `@playform/build` from `devDependencies`
 - Fixed the HTML `ignoreCustomComments` regex (`/.*$.*/` → `/.*\$.*/`) in

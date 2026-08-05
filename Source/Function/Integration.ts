@@ -150,9 +150,7 @@ export default ((...[_Option = {}]) => {
 														Merge(
 															{
 																code: (
-																	await import(
-																		"node:buffer"
-																	)
+																	await import("node:buffer")
 																).Buffer.from(
 																	CSS,
 																),
@@ -220,9 +218,7 @@ export default ((...[_Option = {}]) => {
 												(await import("sharp")).default
 											) {
 												return await (
-													await import(
-														"@Function/Image/Writesharp.js"
-													)
+													await import("@Function/Image/Writesharp.js")
 												)
 													// @ts-expect-error
 													.default(Setting["sharp"], {
@@ -275,9 +271,7 @@ export default ((...[_Option = {}]) => {
 											`✓ Successfully compressed a total of ${File} ${Type} file${
 												File !== 1 ? "s" : ""
 											} for ${(
-												await import(
-													"@playform/pipe/Target/Function/Bytes.js"
-												)
+												await import("@playform/pipe/Target/Function/Bytes.js")
 											).default(Total)}.`,
 										)}`
 									: false,

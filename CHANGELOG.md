@@ -1,385 +1,354 @@
-## 0.2.4
+## 2.4.1
+
+### Add
+
+- Added `Configuration/ESBuild.d.ts` type declaration for the ESBuild build
+  configuration
 
 ### Change
 
-- Bumped package version from 0.2.3 to 0.2.4
-- Updated dependencies to latest versions:
-    - `@playform/pipe` (0.1.5 → 0.1.6)
-    - `@types/csso` (5.0.4 → 5.0.5)
-    - `commander` (14.0.3 → 15.0.0)
-    - `lightningcss` (1.32.0 → 1.33.0)
-    - `sharp` (0.34.5 → 0.35.3)
-    - `svgo` (4.0.1 → 4.0.2)
-    - `terser` (5.46.1 → 5.49.2)
-    - `@playform/build` (0.3.1 → 0.3.4)
-    - `browserslist` (4.28.2 → 4.28.7)
-- Updated `tsconfig.json` to replace `baseUrl` with path aliases:
-    - `@Function/*` → `./Source/Function/*`
-    - `@Interface/*` → `./Source/Interface/*`
-    - `@Type/*` → `./Source/Type/*`
-    - `@Variable/*` → `./Source/Variable/*`
-
-## 0.2.3
-
-### Change
-
-- Removed `Configuration/` from `.npmignore` to include type definitions in the
-  package.
-- Updated dependencies to latest versions:
+- Updated dependencies:
     - `@playform/pipe` (0.1.4 → 0.1.5)
     - `terser` (5.46.0 → 5.46.1)
     - `@playform/build` (0.3.0 → 0.3.1)
     - `browserslist` (4.28.1 → 4.28.2)
 
-## 0.2.2
+## 2.4.0
 
-- Fix `astro` version to \* in dependencies
+### Add
 
-## 0.2.1
+- Added `context7.json` for Context7 integration with the documentation
 
 ### Change
 
-- Updated dependencies to latest versions:
+- Added `Documentation/` back to `.npmignore`
+- Updated dependencies:
+    - `astro` (5.16.8 → *)
+    - `commander` (14.0.2 → 14.0.3)
+    - `lightningcss` (1.30.2 → 1.32.0)
+    - `svgo` (4.0.0 → 4.0.1)
+    - `terser` (5.44.1 → 5.46.0)
+    - `@playform/build` (0.2.6 → 0.3.0)
+
+## 2.3.9
+
+### Change
+
+- Updated homepage URL to point at the README overview tab
+  (`?tab=readme-ov-file`)
+- Reverted author contact information back to the `PlayForm.Cloud` domain
+- Updated dependencies:
     - `@playform/pipe` (0.1.3 → 0.1.4)
-    - `astro` (^5.9.2 → 5.16.8)
-    - `commander` (14.0.0 → 14.0.2)
-    - `lightningcss` (1.30.1 → 1.30.2)
-    - `sharp` (0.34.2 → 0.34.5)
+    - `astro` (* → 5.16.8)
+    - `commander` (13.1.0 → 14.0.2)
+    - `lightningcss` (1.29.3 → 1.30.2)
+    - `sharp` (0.33.5 → 0.34.5)
     - `svgo` (3.3.2 → 4.0.0)
-    - `terser` (5.42.0 → 5.44.1)
-    - `@playform/build` (0.2.4 → 0.2.6)
-    - `browserslist` (4.25.0 → 4.28.1)
-- Updated homepage URL in package.json to point to readme overview tab
-- Removed `@ts-expect-error` comment in ESBuild configuration files
-- Bumped package version from 0.2.0 to 0.2.1
+    - `terser` (5.39.0 → 5.44.1)
+    - `@playform/build` (0.2.1 → 0.2.6)
+    - `browserslist` (4.24.4 → 4.28.1)
+- Enhanced the `JSON` compression option to accept a
+  `Partial<{ replacer, space }>` object in addition to a boolean
+- Cleaned up the ESBuild configuration by removing a redundant
+  `@ts-expect-error` comment
 
-## 0.2.0
-
-### Breaking Change
-
-- Updated `commander` dependency from 13.1.0 → 14.0.0 (major version update)
-
-### Change
-
-- Updated contact information in package.json to use `PlayForm.Cloud` domain
-- Updated dependencies to latest versions:
-    - `astro` (wildcard → ^5.9.2)
-    - `lightningcss` (1.29.3 → 1.30.1)
-    - `sharp` (0.33.5 → 0.34.2)
-    - `terser` (5.39.0 → 5.42.0)
-    - `@playform/build` (0.2.1 → 0.2.4)
-    - `browserslist` (4.24.4 → 4.25.0)
-- Refactored option interfaces to use `Partial<>` type for more flexible
-  configuration
-- Improved code organization in:
-    - Image processing module (Writesharp.ts)
-    - Core integration logic (Integration.ts)
+## 2.3.8
 
 ### Add
 
-- Enhanced JSON compression options with configurable `replacer` and `space`
-  parameters for `JSON.stringify`
-
-## 0.1.9
-
-### Add
-
-- Support for JSON file compression with automatic parsing and minification
-- JSON compression enabled by default in configuration
-
-## 0.1.8
+- Added JSON file compression — the integration now parses and re-stringifies
+  `.json` files
+- Added `JSON` option to enable/disable JSON compression (enabled by default)
+- Registered the `JSON` glob pattern (`**/*.json`) in the compression map
 
 ### Change
 
-- Updated core module imports to use Node.js `node:` protocol for `fs`, `path`,
-  and `buffer`
-- Updated dependencies to latest versions:
+- Removed the unused `Source/Variable/Middleware.ts` stub (middleware TODO)
+- Removed the `// TODO: Test this for security` marker from the integration
+
+## 2.3.7
+
+### Change
+
+- Updated the package description to `Compress 🗜️`
+- Updated author name to `Source ✍🏻 Open 👐🏻`
+- Switched all Node.js core module imports to the `node:` protocol (`path`,
+  `buffer`, `fs/promises`) across `Directory.ts`, `Integration.ts`, `Option.ts`,
+  and the ESBuild configuration
+- Updated dependencies:
+    - `@playform/pipe` (0.1.2 → 0.1.3)
     - `commander` (13.0.0 → 13.1.0)
     - `deepmerge-ts` (7.1.3 → 7.1.5)
     - `lightningcss` (1.28.2 → 1.29.3)
     - `terser` (5.37.0 → 5.39.0)
+    - `@playform/build` (0.2.1 → 0.2.4)
     - `browserslist` (4.24.3 → 4.24.4)
-- Modified package metadata including:
-    - Version bump to 0.1.8
-    - Description formatting changes
-    - Script name adjustments in package.json
-- Changed default configuration to disable `lightningcss` compressor by default
+- Allowed compression options (`csso`, `lightningcss`, `html-minifier-terser`,
+  `sharp`, `terser`, `svgo`) to accept a boolean in addition to their option
+  object
+- Changed the default `lightningcss` compressor configuration to `false`
 
-### Add
-
-- Support boolean type for compression options (`csso`, `lightningcss`,
-  `html-minifier-terser`, `sharp`, `terser`, `svgo`) to allow disabling specific
-  compressors
-
-### Fix
-
-- Fixed type casting in ESBuild configuration by explicitly specifying `Plugin`
-  type
-- Corrected import statements for Node.js core modules
-
-## 0.1.7
-
-### Add
-
-- Dependents stats for PlayForm/Compress badge to `README.md`.
-- `DEPENDENTS.md` file containing a list of repositories that depend on this
-  package.
+## 2.3.6
 
 ### Change
 
-- Updated `package.json` to include updated contact information and package
-  dependencies.
-- Updated `README.md` to reflect the updated organization name in the URLs and
-  images.
+- Updated author contact information to use the `PlayForm.LTD` domain
+- Fixed `Cache.Search` being set correctly to the output directory string in
+  `Integration.ts`
+- Updated dependencies:
+    - `@playform/pipe` (0.1.1 → 0.1.2)
+    - `commander` (12.1.0 → 13.0.0)
+    - `fast-glob` (3.3.2 → 3.3.3)
+    - `lightningcss` (1.27.0 → 1.28.2)
+    - `terser` (5.36.0 → 5.37.0)
+    - `@playform/build` (0.1.8 → 0.2.1)
+    - `browserslist` (4.24.2 → 4.24.4)
+- Added `DEPENDENTS.md` to `.npmignore`
 
-### Fix
-
-- Corrected a bug in `Source/Function/Integration.ts` where `Cache.Search` was
-  not being set correctly.
-
-## 0.1.6
-
-### Add
-
-- New Configuration folder with ESBuild.js and ESBuild.ts files
-- Added browserslist as a development dependency
-
-### Change
-
-- Updated .npmignore to exclude the Configuration/ directory
-- Modified package.json scripts to use the new ESBuild configuration
-- Updated version to 0.1.6
-- Enhanced error handling in CSS compression in Source/Function/Integration.ts
-- Updated Source/Interface/CSS/lightningcss.ts to set default value for
-  unusedSymbols
-- Added targets to Source/Variable/CSS/lightningcss.ts
-
-## 0.1.5
-
-### Change
-
-- Updated dependencies
-- Typings update
-
-## 0.1.4
-
-### Fix
-
-- Fixes missing `Pipe.js`
-
-## 0.1.2
+## 2.3.5
 
 ### Add
 
-- New CLI functionality with `Compress` command
-- New `CLI.ts` and `Pipe.ts` functions for improved command-line operations
-- Added `commander` dependency for CLI support
-- Added `fast-glob` dependency for file pattern matching
+- Added `Configuration/ESBuild.js` and `Configuration/ESBuild.ts` to build with
+  ESBuild instead of the default `@playform/build` pipeline
+- Added `browserslist` as a development dependency and wired
+  `process.env.TARGETS` (via `lightningcss.browserslistToTargets`) into the
+  ESBuild define
 
 ### Change
 
-- Updated package name from `astro-compress` to `astro-compress`
-- Updated various dependencies to their latest versions:
-    - `@playform/pipe` from 0.1.0 to 0.1.1
-    - `deepmerge-ts` from 7.1.0 to 7.1.1
-    - `lightningcss` from 1.25.1 to 1.27.0
-    - `sharp` from 0.33.4 to 0.33.5
-    - `svgo` from 4.0.0-rc.0 to 3.3.2
-    - `terser` from 5.31.3 to 5.34.1
-    - `@playform/build` from 0.1.3 to 0.1.7
-- Refactored and improved various TypeScript interfaces and types
-- Updated README with new installation instructions and badge styling
-- Updated README badges to use HTTPS URLs
-- Updated README table layout for better visual presentation
-- Updated dependency badges in README to use correct package name
-  (`astro-compress` instead of `@playform/inline`)
-- Updated README to remove unnecessary line breaks and improve spacing
-- Updated `Source/Function/Image/Writesharp.ts` to simplify an import statement
-- Added `Source/Function/CLI.ts` for command-line interface functionality
-- Added `Source/Interface/CLI.ts` to define the command-line interface
-- Updated `package.json` to include necessary CLI dependencies
+- Updated the `Run` and `prepublishOnly` scripts to use the new ESBuild
+  configuration
+- Updated dependencies:
+    - Added `browserslist` (4.24.2)
+- Changed the success message to use correct singular/plural (`file` vs `files`)
+- Changed `lightningcss` `unusedSymbols` default from `false` to `[]` and
+  narrowed its type to `string[]`
+- Added `targets` (from `process.env.TARGETS`) to the `lightningcss` variable
+  configuration
+- Wrapped the CSS compression step in a `try/catch` for safer error handling
+
+## 2.3.4
+
+### Change
+
+- Updated dependencies:
+    - `terser` (5.34.1 → 5.36.0)
+    - `@playform/build` (0.1.7 → 0.1.8)
+- Changed the `lightningcss` `unusedSymbols` default from `false` to `[]`
+- Simplified function signatures in `Directory.ts`, `Writesharp.ts`, and
+  `Integration.ts` by dropping the explicit `Parameters<Interface>` casts
+- Added support for accepting a `Path` instance (when a `Map`) directly into the
+  set of paths to compress
+
+## 2.3.3
 
 ### Removed
 
-- Removed `Documentation/` directory (replaced with `docs/`)
-- Removed `Summary.md` file
-
-### Fix
-
-- Various code improvements and refactoring for better type safety and
-  performance
-- Fixed broken links in README badges
-- Fixed alignment and spacing issues in README table
-- Fixed incorrect package name in dependency badges
-
-## 0.1.1
+- Removed the `Source/Class/Compress.ts` CLI entry point
+- Removed `Source/Function/CLI.ts` and `Source/Function/Pipe.ts`, reverting to
+  the inline `@playform/pipe` integration in `Integration.ts`
+- Removed `Source/Interface/Pipe.ts`
 
 ### Change
 
-- Updated .npmignore file:
-    - Reordered ignored directories and files
-    - Added 'Summary.md' to ignored files
+- Updated dependencies:
+    - `deepmerge-ts` (7.1.1 → 7.1.3)
 
-### Fix
-
-- Improved code formatting in Source/Function/Image/Writesharp.ts:
-    - Simplified import statement for default sharp options
-
-## 0.1.0
+## 2.3.2
 
 ### Add
 
-- Significant project restructuring with separate directories for Source,
-  Interface, Type, and Variable
-- New modules and interfaces for CSS, HTML, Image, JavaScript, and SVG file
-  types
-- Utility functions: Directory and Merge
-- Expanded support for additional image formats and optimization options
-- Enhanced error handling and logging
-- New "Run" script for building and watching 'Source/\*_/_.ts' files
-- Added svgo v4.0.0-rc.0 dependency
-- Added terser v5.31.3 dependency
+- Added a `Compress` CLI command (new `Source/Class/Compress.ts`,
+  `Source/Function/CLI.ts`, `Source/Function/Pipe.ts`,
+  `Source/Interface/CLI.ts`, `Source/Interface/Pipe.ts`)
+- Added a `bin` entry (`Compress` → `Target/Class/Compress.js`)
+- Added `commander` (12.1.0) and `fast-glob` (3.3.2) for CLI support
 
 ### Change
 
-- Major refactoring of the integration functionality in
-  Source/Function/Integration.ts
-- Moved configuration options to separate files in the Variable directory
-- Updated and expanded type definitions throughout the project
-- Modularized and improved compression logic for different file types
-- Overall code structure is now more modular and type-safe
+- Updated dependencies:
+    - `@playform/pipe` (0.1.0 → 0.1.1)
+    - `deepmerge-ts` (7.1.0 → 7.1.1)
+    - `lightningcss` (1.25.1 → 1.27.0)
+    - `sharp` (0.33.4 → 0.33.5)
+    - `svgo` (4.0.0-rc.0 → 3.3.2)
+    - `terser` (5.31.3 → 5.34.1)
+    - `@playform/build` (0.1.3 → 0.1.7)
+- Swapped `.npmignore` from excluding `Source/` to excluding `docs/` and
+  `Summary.md`
 
-### Dependency Updates
+## 2.3.1
 
-- Added svgo v4.0.0-rc.0
-- Changed astro dependency to use any version (\*)
-- Updated @playform/build to v0.1.2
-- Updated @playform/pipe to v0.1.0
-- Updated lightningcss to v1.25.1
-- Updated sharp to v0.33.4
-- Updated terser to v5.31.3
+### Change
+
+- Reordered the `.npmignore` entries
+- Updated dependencies:
+    - `deepmerge-ts` (7.1.0 → 7.1.1)
+    - `@playform/build` (0.1.2 → 0.1.3)
+- Set `provenance: true` after the `access: public` field in `package.json`
+  publish config
+- Simplified an import statement in `Source/Function/Image/Writesharp.ts`
+
+## 2.3.0
+
+### Add
+
+- Added a `Run` script (`Build 'Source/**/*.ts' --Watch`)
+
+### Change
+
+- Updated dependencies:
+    - `@playform/pipe` (0.0.6 → 0.1.0)
+    - `svgo` (3.3.2 → 4.0.0-rc.0)
+    - `terser` (5.31.1 → 5.31.3)
+    - `@playform/build` (0.0.11 → 0.1.2)
+- Enabled `provenance: true` in the publish config
+- Changed a `// @TODO: Finish this` comment to `// TODO: Finish this` in
+  `Integration.ts` and `Middleware.ts`
+- Inlined the `Bytes` import and the reduction-message string concatenation in
+  `Option.ts`
+
+## 2.2.28
+
+### Add
+
+- Added an `unusedSymbols` option to the `lightningcss` configuration (string[]
+  | boolean) to control removal of unused selectors/keywords
+
+### Change
+
+- Updated dependencies:
+    - `@playform/pipe` (0.0.5 → 0.0.6)
+    - `@playform/build` (0.0.10 → 0.0.11)
+- Set `unusedSymbols: false` as the default in the `lightningcss` variable
+  configuration
+
+## 2.2.27
+
+### Change
+
+- Updated dependencies:
+    - `astro` (4.9.2 → *)
+    - `terser` (5.31.0 → 5.31.1)
+- Fixed CSS compression so the result correctly extracts `.css` from the
+  `csso.minify()` return in `Integration.ts`
+
+## 2.2.26
+
+### Change
+
+- Updated dependencies:
+    - `astro` (4.9.1 → 4.9.2)
+    - `lightningcss` (1.25.0 → 1.25.1)
+    - `@playform/build` (0.0.9 → 0.0.10)
+- Moved `@playform/build` from `peerDependencies` back to `devDependencies` and
+  removed the `peerDependenciesMeta` optional blocks
+- Various import-statement and trailing-comma cleanups in `Writesharp.ts`,
+  `Integration.ts`, `csso.ts`, and `Option.ts`
+
+## 2.2.25
 
 ### Removed
 
-- Removed specific version for astro dependency
+- Removed `@playform/document` from `peerDependencies` and
+  `peerDependenciesMeta`
 
-## 0.0.13
-
-### Removed
-
-- Removed @playform/document from peerDependencies and peerDependenciesMeta
-
-## 0.0.12
-
-### Change
-
-- Updated astro to use any version (\*)
-
-## 0.0.10
+## 2.2.24
 
 ### Add
 
-- Added "astro-compress" and "playform" to keywords
-- Added astro v4.9.2 as a dependency
+- Implemented `lightningcss` compression in the CSS pipeline (was previously a
+  TODO/console.log stub) — it now runs `csso` and/or `lightningcss` based on the
+  per-type `Setting`
 
 ### Change
 
-- Updated description to "🗜️ Compress -"
-- Updated homepage, bugs, and repository URLs
-- Updated author information
-- Updated @playform/pipe to v0.0.5
-- Updated lightningcss to v1.25.1
-- Updated sharp to v0.33.4
-- Updated svgo to v3.3.2
-- Updated terser to v5.31.0
+- Simplified `Merge.ts` to call `deepmergeCustom({...})` directly (dropped the
+  generic `Interface<Generic>` wrapper and removed `Source/Interface/Merge.ts`)
+- Changed all `satisfies Interface` declarations to
+  `satisfies Interface as Interface` across the `Variable/*` modules
+- Updated dependencies:
+    - `@playform/pipe` (0.0.3 → 0.0.5)
+    - `lightningcss` (1.24.1 → 1.25.0)
+    - `sharp` (0.33.3 → 0.33.4)
+    - `astro` (4.8.1 → * in peerDependencies)
+- Moved `@playform/build`/`@playform/document`/`astro` into `peerDependencies`
+  (optional) and removed `@playform/build` from `devDependencies`
+- Fixed the HTML `ignoreCustomComments` regex (`/.*$.*/` → `/.*\$.*/`) in
+  `html-minifier-terser.ts`
 
-## 0.0.9
+## 2.2.23
 
 ### Add
 
-- Added astro v4.9.2 as a dependency
+- Added `astro-compress` to keywords, and `playform` alongside `withastro`
+- Added a `devDependencies` block with `@playform/build` (0.0.8)
 
 ### Change
 
-- Moved @playform/build to devDependencies
+- Reverted most `@Function`/`@Interface`/`@Type`/`@Variable` path-alias imports
+  back to relative imports across `Directory.ts`, `Writesharp.ts`,
+  `Integration.ts`, `Merge.ts`, `Option.ts`, and the `Interface`/`Variable`
+  modules
+- Rewrote the image (`sharp`) handling in `Integration.ts`:
+    - Detect sharp buffers via
+      `Buffer instanceof (await import("sharp")).default` instead of the cached
+      `Defaultsharp`
+    - Disabled sharp's libvips cache per run and compute `animated` from the
+      input metadata (`webp`/`gif`)
+    - Merge user `Image.sharp?.sharp` options into the default sharp options
+    - Changed the success banner from `✓` to `✅`
+- Changed the console banner from `black(" Compress ")` to `black("Compress:")`
+  and switched `if (!Paths.size)` to `if (Paths.size === 0)`
+- Updated package metadata:
+    - Description → `🗜️ Compress —`
+    - Homepage/bugs/repository URLs updated to HTTPS and the `PlayForm` casing
+    - Author renamed to `🖋️ Source — 👐🏻 Open —` with
+      `Source/Open@PlayForm.Cloud`
+- Updated dependencies:
+    - `@playform/pipe` (0.0.2 → 0.0.3)
+    - `astro` (4.5.16 → 4.8.1)
+    - `svgo` (3.2.0 → 3.3.2)
+    - `terser` (5.30.3 → 5.31.0)
+- Removed the `Document` script and moved `@playform/build`/`@playform/document`
+  out of dependencies
+- Expanded the `sharp` option interface to support `sharp?` and `SharpOptions`
 
-### Removed
-
-- Removed peerDependencies and peerDependenciesMeta
-
-## 0.0.8
-
-### Change
-
-- Updated lightningcss to v1.25.1
-
-## 0.0.7
-
-### Removed
-
-- Removed @playform/document from peerDependencies and peerDependenciesMeta
-
-## 0.0.6
-
-### Change
-
-- Reordered peerDependencies and peerDependenciesMeta
-
-## 0.0.5
+## 2.2.22
 
 ### Add
 
-- Added "Document" script for documenting 'Source/\*_/_.ts' files
-- Added @playform/document v0.0.7 as a peerDependency
+- Migrated all internal imports to `@Function`/`@Interface`/`@Type`/`@Variable`
+  path aliases (via `tsconfig` paths) across `Directory.ts`, `Writesharp.ts`,
+  `Integration.ts`, `Merge.ts`, and the `Interface`/`Variable` modules
+- Added `astro-component` and `astro-integration` keywords; replaced the `img`
+  keyword with `svg` and `withastro`
 
 ### Change
 
-- Updated @playform/pipe to v0.0.5
-- Updated lightningcss to v1.25.0
-- Updated sharp to v0.33.4
-- Updated svgo to v3.3.2
-- Updated terser to v5.31.0
-- Updated @playform/build to v0.0.9
-- Updated astro peerDependency to v4.9.1
+- Renamed every `export default interface Type` to
+  `export default interface Interface` across all interface modules
+- Switched `Document`/`prepublishOnly` scripts from
+  `TypeScriptDocument`/`TypeScriptESBuild` to `Document`/`Build`
+- Updated package metadata:
+    - Description → `🗜️ Compress.`
+    - Homepage, bugs, and repository URLs changed from `CompressAstro` to
+      `Compress`
+- Updated dependencies:
+    - Replaced `@playform/file-pipe` (0.0.2) with `@playform/pipe` (0.0.2),
+      `@playform/build` (0.0.5), and `@playform/document` (0.0.6)
+    - `astro` (4.5.12 → 4.5.16)
+    - `terser` (5.30.0 → 5.30.3)
+- Removed `devDependencies` and `optionalDependencies` blocks
 
-## 0.0.4
+## 2.2.21
 
 ### Add
 
-- Added "astro-compress" to keywords
-- Added astro v4.8.1 as a dependency
-
-### Change
-
-- Updated description to "🗜️ Compress -"
-- Updated homepage, bugs, and repository URLs to use HTTPS
-- Updated author information
-- Updated @playform/pipe to v0.0.3
-- Moved @playform/build to devDependencies
-
-### Removed
-
-- Removed "Document" script
-
-## 0.0.3
-
-### Add
-
-- Added @playform/build, @playform/document, and astro as dependencies
-
-### Change
-
-- Moved csso, html-minifier-terser, lightningcss, sharp, svgo, and terser to
-  dependencies
-
-## 0.0.2
-
-### Change
-
-- Reverted various changes from previous versions
-
-## 0.0.1
-
-### Add
-
-- Initial release
+- Initial entry in this changelog for the `astro-compress` package (formerly
+  `CompressAstro`), version `2.2.21`
+- Renamed the integration banner from `CompressAstro` to `Compress` in
+  `Integration.ts`
+- Updated the JSDoc default references from `CompressAstro` to `Compress` in the
+  `csso` and `lightningcss` interfaces

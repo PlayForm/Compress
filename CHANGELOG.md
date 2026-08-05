@@ -2,10 +2,22 @@
 
 ### Change
 
+- Bumped package version from 0.2.3 to 0.2.4
 - Updated dependencies to latest versions:
-    - `@playform/build` (0.3.1 → 0.3.4)
-    - `terser` (5.46.1 → 5.49.1)
+    - `@playform/pipe` (0.1.5 → 0.1.6)
     - `@types/csso` (5.0.4 → 5.0.5)
+    - `commander` (14.0.3 → 15.0.0)
+    - `lightningcss` (1.32.0 → 1.33.0)
+    - `sharp` (0.34.5 → 0.35.3)
+    - `svgo` (4.0.1 → 4.0.2)
+    - `terser` (5.46.1 → 5.49.2)
+    - `@playform/build` (0.3.1 → 0.3.4)
+    - `browserslist` (4.28.2 → 4.28.7)
+- Updated `tsconfig.json` to replace `baseUrl` with path aliases:
+    - `@Function/*` → `./Source/Function/*`
+    - `@Interface/*` → `./Source/Interface/*`
+    - `@Type/*` → `./Source/Type/*`
+    - `@Variable/*` → `./Source/Variable/*`
 
 ## 0.2.3
 

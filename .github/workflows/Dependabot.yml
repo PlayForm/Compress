@@ -20,14 +20,14 @@ jobs:
             github.event.pull_request.user.login == 'dependabot[bot]' }}
 
         steps:
-            - uses: dependabot/fetch-metadata@v3.1.0
+            - uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
               with:
-                  github-token: "${{ secrets.DEPENDABOT_TOKEN }}"
+                  github-token: "${{ secrets.GITHUB_TOKEN }}"
 
             - run: gh pr review --approve "$PR_URL"
               env:
                   PR_URL: ${{github.event.pull_request.html_url}}
-                  GITHUB_TOKEN: ${{secrets.DEPENDABOT_TOKEN}}
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     Merge:
         runs-on: ubuntu-latest
@@ -38,11 +38,11 @@ jobs:
             github.event.pull_request.user.login == 'dependabot[bot]' }}
 
         steps:
-            - uses: dependabot/fetch-metadata@v3.1.0
+            - uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
               with:
-                  github-token: "${{ secrets.DEPENDABOT_TOKEN }}"
+                  github-token: "${{ secrets.GITHUB_TOKEN }}"
 
             - run: gh pr merge --auto --merge "$PR_URL"
               env:
                   PR_URL: ${{github.event.pull_request.html_url}}
-                  GITHUB_TOKEN: ${{secrets.DEPENDABOT_TOKEN}}
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

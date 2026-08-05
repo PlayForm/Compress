@@ -1,3 +1,25 @@
+## 2.4.2
+
+### Add
+
+- Added TypeScript path aliases (`@Function/*`, `@Interface/*`, `@Type/*`,
+  `@Variable/*`) in `tsconfig.json` to support the `@Function`/`@Interface`/
+  `@Type`/`@Variable` import style (the `baseUrl` setting was removed as part of
+  this change)
+
+### Change
+
+- Updated dependencies:
+    - `@playform/pipe` (0.1.5 → 0.1.6)
+    - `@types/csso` (5.0.4 → 5.0.5)
+    - `commander` (14.0.3 → 15.0.0)
+    - `lightningcss` (1.32.0 → 1.33.0)
+    - `sharp` (0.34.5 → 0.35.3)
+    - `svgo` (4.0.1 → 4.0.2)
+    - `terser` (5.46.1 → 5.49.2)
+    - `@playform/build` (0.3.1 → 0.3.4)
+    - `browserslist` (4.28.2 → 4.28.7)
+
 ## 2.4.1
 
 ### Add
@@ -334,9 +356,12 @@
 - Switched `Document`/`prepublishOnly` scripts from
   `TypeScriptDocument`/`TypeScriptESBuild` to `Document`/`Build`
 - Updated package metadata:
-    - Description → `🗜️ Compress.`
     - Homepage, bugs, and repository URLs changed from `CompressAstro` to
       `Compress`
+- Renamed the integration banner from `CompressAstro` to `Compress` in
+  `Integration.ts`
+- Updated the JSDoc default references from `CompressAstro` to `Compress` in the
+  `csso` and `lightningcss` interfaces
 - Updated dependencies:
     - Replaced `@playform/file-pipe` (0.0.2) with `@playform/pipe` (0.0.2),
       `@playform/build` (0.0.5), and `@playform/document` (0.0.6)
@@ -350,7 +375,3 @@
 
 - Initial entry in this changelog for the `astro-compress` package (formerly
   `CompressAstro`), version `2.2.21`
-- Renamed the integration banner from `CompressAstro` to `Compress` in
-  `Integration.ts`
-- Updated the JSDoc default references from `CompressAstro` to `Compress` in the
-  `csso` and `lightningcss` interfaces

@@ -121,6 +121,33 @@ You can override any of the default options from the configurations of:
 - [`svgo`](HTTPS://GitHub.Com/svg/svgo#configuration)
 - [`terser`](HTTPS://GitHub.Com/terser/terser#minify-options-structure)
 
+> [!IMPORTANT]
+>
+> **`lightningcss` is the default CSS compressor and `csso` is disabled by
+> default.** `csso` silently deletes modern CSS it cannot parse rather than
+> leaving it untouched — Media Queries Level 4 range syntax
+> (`@media (width>=40rem)`, which Tailwind CSS v4 emits for every responsive
+> breakpoint) and CSS nesting blocks are dropped from the output with no error
+> or warning.
+
+If you still want `csso`, enable it explicitly — and be aware it runs *after*
+`lightningcss`, so it can undo what `lightningcss` correctly preserved:
+
+**`astro.config.ts`**
+
+```ts
+export default {
+	integrations: [
+		(await import("astro-compress")).default({
+			CSS: {
+				csso: true,
+				lightningcss: true,
+			},
+		}),
+	],
+};
+```
+
 **`astro.config.ts`**
 
 ```ts

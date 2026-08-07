@@ -17,6 +17,10 @@ export default interface Interface extends Option {
 	/**
 	 * csso, lightningcss option properties
 	 *
+	 * `lightningcss` is the default CSS compressor. `csso` is opt-in: it
+	 * silently drops Media Queries Level 4 range syntax and CSS nesting.
+	 *
+	 * @default { csso: false, lightningcss: {…} }
 	 */
 	CSS?:
 		| boolean

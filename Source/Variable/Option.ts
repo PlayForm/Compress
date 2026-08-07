@@ -8,8 +8,9 @@ export default (await import("@Function/Merge.js")).default(
 	(await import("@playform/pipe/Target/Variable/Option.js")).default,
 	{
 		CSS: {
-			csso: (await import("@Variable/CSS/csso.js")).default,
-			lightningcss: false,
+			csso: false,
+			lightningcss: (await import("@Variable/CSS/lightningcss.js"))
+				.default,
 		},
 		HTML: {
 			"html-minifier-terser": (

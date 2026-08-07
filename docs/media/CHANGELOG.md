@@ -1,3 +1,33 @@
+## 0.2.5
+
+### Fix
+
+- Disabled `csso` by default, making `lightningcss` the only CSS compressor
+  enabled out of the box. `csso` silently deletes modern CSS it cannot parse
+  instead of leaving it untouched:
+    - Media Queries Level 4 range syntax — `@media (width>=40rem)` — is removed
+      entirely, which broke every responsive breakpoint on Tailwind CSS v4 sites
+      because `@tailwindcss/vite` emits `sm:`, `md:`, `lg:`, `xl:` and `2xl:`
+      using that syntax. ([#640](HTTPS://GitHub.Com/PlayForm/Compress/issues/640))
+    - CSS nesting blocks are dropped from the output.
+      ([#400](HTTPS://GitHub.Com/PlayForm/Compress/issues/400))
+- Because `csso` ran after `lightningcss` in the compression chain, enabling
+  `lightningcss` was not enough to avoid the problem — `csso` discarded the
+  correct output it produced.
+
+### Change
+
+- `Source/Variable/Option.ts` now defaults `CSS` to
+  `{ csso: false, lightningcss: {…} }`.
+- `Source/Variable/Parser.ts` now lists `lightningcss` as the sole default CSS
+  parser instead of `["csso", "lightningcss"]`.
+- Documented the modern-CSS limitation and the opt-in procedure for `csso` in
+  `README.md` and in the `Source/Interface/CSS/csso.ts` type documentation.
+- Bumped package version from 0.2.4 to 0.2.5
+
+`csso` remains fully supported for anyone who wants it and can be re-enabled
+explicitly with `CSS: { csso: true }`.
+
 ## 0.2.4
 
 ### Change

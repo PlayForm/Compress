@@ -5,7 +5,7 @@ import type Interface from "../Interface/Parser.js";
  *
  */
 export default {
-	CSS: ["csso", "lightningcss"],
+	CSS: "lightningcss",
 	HTML: "html-minifier-terser",
 	Image: "sharp",
 	JavaScript: "terser",

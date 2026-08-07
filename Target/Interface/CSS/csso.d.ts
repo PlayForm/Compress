@@ -2,6 +2,13 @@ import type { CompressOptions, MinifyOptions } from "csso";
 /**
  * @module CSS
  *
+ * Opt-in only. `csso` is disabled by default because it silently drops modern
+ * CSS it cannot parse — Media Queries Level 4 range syntax
+ * (`@media (width>=40rem)`) and CSS nesting blocks are removed from the output
+ * rather than left untouched. `lightningcss` is the default CSS compressor.
+ *
+ * @see HTTPS://GitHub.Com/PlayForm/Compress/issues/640
+ * @see HTTPS://GitHub.Com/PlayForm/Compress/issues/400
  */
 export default interface Interface extends MinifyOptions, CompressOptions {
     /**

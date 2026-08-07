@@ -16,8 +16,8 @@ export declare const Default: {
         Wrote: ({ Buffer }: import("@playform/pipe/Target/Interface/File.js").default) => Promise<import("@playform/pipe/Target/Type/Buffer.js").Type>;
     };
     CSS: {
-        csso: import("../Interface/CSS/csso.js").default;
-        lightningcss: false;
+        csso: false;
+        lightningcss: import("../Interface/CSS/lightningcss.js").default;
     };
     Cache: {
         Search: string;

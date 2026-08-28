@@ -53,7 +53,7 @@
 		"kleur": "4.1.5",
 		"lightningcss": "1.33.0",
 		"sharp": "0.35.3",
-		"svgo": "4.0.2",
+		"svgo": "4.1.0",
 		"terser": "5.50.0"
 	},
 	"devDependencies": {

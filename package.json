@@ -52,7 +52,7 @@
 		"html-minifier-terser": "7.2.0",
 		"kleur": "4.1.5",
 		"lightningcss": "1.33.0",
-		"sharp": "0.35.3",
+		"sharp": "0.35.4",
 		"svgo": "4.1.0",
 		"terser": "5.51.2"
 	},

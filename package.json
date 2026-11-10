@@ -45,7 +45,7 @@
 		"@types/csso": "5.0.5",
 		"@types/html-minifier-terser": "7.0.2",
 		"astro": "*",
-		"commander": "15.0.0",
+		"commander": "15.1.0",
 		"csso": "5.0.5",
 		"deepmerge-ts": "8.0.2",
 		"fast-glob": "3.3.3",
